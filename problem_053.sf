@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# How many, not necessarily distinct, values of  nCr, for 1 ≤ n ≤ 100, are greater than one-million?
+
+# https://projecteuler.net/problem=53
+
+var count = 0;
+
+for k in (1 .. 100) {
+    for n in (k+1 .. 100) {
+        if (n.nok(k) > 1e6) {
+            ++count;
+        }
+    }
+}
+
+say count;

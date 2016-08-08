@@ -1,0 +1,22 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+var sum = 0;
+local Num!PREC = 102*4
+
+for i in (1 .. 100) {
+
+    next if i.is_sqr;
+    var sr = i.sqrt;
+
+    var x = sr.to_s;
+    x -= /\./;
+    x.substr!(0, 100);
+
+    sum += x.to_i.digits.sum;
+}
+
+say sum.int;

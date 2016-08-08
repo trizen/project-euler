@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# Considering natural numbers of the form, a^b, where a, b < 100, what is the maximum digital sum?
+
+# https://projecteuler.net/problem=56
+
+var max = 0;
+var r = range(90, 99);
+
+r.each { |i|
+    r.each { |j|
+        var sum = (i**j -> digits.sum);
+        if (sum > max) {
+            max = sum;
+        }
+    }
+}
+
+say max;

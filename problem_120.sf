@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+func max_square_remainder(a) {
+    a * (a - (2 - (a % 2)));
+}
+
+var sum = 0;
+for a in (3 .. 1e3) {
+    sum += max_square_remainder(a);
+}
+say sum;

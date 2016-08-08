@@ -1,0 +1,17 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000.
+
+# https://projecteuler.net/problem=48
+
+var sum = 0;
+
+1000.times { |i|
+    sum += i**i;
+}
+
+say sum.to_s.substr(-10);

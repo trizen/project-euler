@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# Find the sum of the digits in the number 100!
+
+# https://projecteuler.net/problem=20
+
+var n = 100!;
+say +(^n.len).map { |i| n.digit(i) }.sum;
+
+# Alternatively:
+say 100!.digits.sum;
