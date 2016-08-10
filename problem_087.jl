@@ -14,7 +14,7 @@ for i in 1:2:max
     isprime(i) && push!(primes, i)
 end
 
-function count_primes(limit)
+function count_primes(primes, limit)
 
     seen = Dict{Int64, Bool}()
     len = length(primes)
@@ -37,4 +37,4 @@ function count_primes(limit)
     count
 end
 
-println(count_primes(limit))
+println(count_primes(primes, limit))
