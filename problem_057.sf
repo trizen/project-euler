@@ -1,0 +1,25 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=57
+
+func kn((0)) { 1 }
+func kn((1)) { 0 }
+func kn( n ) is cached {
+    2*kn(n-1) + kn(n-2)
+}
+
+func kd((0)) { 0 }
+func kd((1)) { 1 }
+func kd( n ) is cached {
+    2*kd(n-1) + kd(n-2)
+}
+
+say (1..1000 -> count_by {|k|
+    var x = kn(k)
+    var y = kd(k)
+    (x+y).log10.int > y.log10.int
+})
