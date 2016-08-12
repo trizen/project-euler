@@ -4,6 +4,8 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=58
+
 use 5.010;
 use ntheory qw(is_prime);
 
