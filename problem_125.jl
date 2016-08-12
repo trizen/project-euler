@@ -17,42 +17,40 @@
     return false
 end
 
-count = 0
-sum = 0
+function count_sum()
 
-const limit = 100000000
+    sum = 0
+    const limit = 100000000
 
-for i in 1:9
-    if is_csquare(i)
-        count += 1
-        sum += i
-    end
-end
-
-i = 1
-while true
-    s = string(i)
-    r = reverse(s)
-    p = s * r
-    k = parse(Int64, p)
-    k >= limit && break
-
-    if is_csquare(k)
-        count += 1
-        sum += k
-    end
-
-    for j in 0:9
-        p = s * string(j) * r
-        k = parse(Int64, p)
-        k >= limit && break
-        if is_csquare(k)
-            count += 1
-            sum += k
+    for i in 1:9
+        if is_csquare(i)
+            sum += i
         end
     end
-    i += 1
+
+    i = 1
+    while true
+        s = string(i)
+        r = reverse(s)
+        p = s * r
+        k = parse(Int64, p)
+        k >= limit && break
+
+        if is_csquare(k)
+            sum += k
+        end
+
+        for j in 0:9
+            p = s * string(j) * r
+            k = parse(Int64, p)
+            k >= limit && break
+            if is_csquare(k)
+                sum += k
+            end
+        end
+        i += 1
+    end
+    return sum
 end
 
-println("count: ", count)
-println("sum: ", sum)
+println(count_sum())
