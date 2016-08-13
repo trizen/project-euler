@@ -4,6 +4,8 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# usage: perl problem_081.pl < p081_matrix.txt
+
 use 5.010;
 use List::Util qw(min);
 use Memoize qw(memoize);
@@ -20,19 +22,17 @@ my $end = $#matrix;
 sub path {
     my ($i, $j) = @_;
 
-    if ($i < $end and $j < $end) {
-        return $matrix[$i][$j] + min(path($i + 1, $j), path($i, $j + 1));
-    }
+    my @paths;
 
     if ($i < $end) {
-        return $matrix[$i][$j] + path($i + 1, $j);
+        push @paths, path($i + 1, $j);
     }
 
     if ($j < $end) {
-        return $matrix[$i][$j] + path($i, $j + 1);
+        push @paths, path($i, $j + 1);
     }
 
-    $matrix[$i][$j];
+    $matrix[$i][$j] + (min(@paths) || 0);
 }
 
 say path(0, 0);

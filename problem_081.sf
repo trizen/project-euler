@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# usage: sidef problem_081.sf < p081_matrix.txt
+
+var matrix = []
+
+ARGF.each { |line|
+    matrix << line.trim.split(',').map{.to_n}
+}
+
+var end = matrix.end
+
+func path(i, j) is cached {
+    var paths = []
+
+    if (i < end) {
+        paths << path(i+1, j)
+    }
+
+    if (j < end) {
+        paths << path(i, j+1)
+    }
+
+    matrix[i][j] + (paths.min \\ 0)
+}
+
+say path(0, 0)
