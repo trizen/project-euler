@@ -4,6 +4,8 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=125
+
 @inline function is_csquare(n)
     s = isqrt(n)
     for i in 1:s-1

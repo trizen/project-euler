@@ -1,0 +1,44 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 08 August 2016
+# Website: https://github.com/trizen
+
+# The minimal path sum in the 5 by 5 matrix below, by starting in any cell
+# in the left column and finishing in any cell in the right column, and only
+# moving up, down, and right; the sum is equal to 994.
+
+# Find the minimal path sum, in a 31K text file containing a 80 by 80 matrix,
+# from the left column to the right column.
+
+# https://projecteuler.net/problem=82
+
+# usage: sidef script.sf < p082_matrix.txt
+
+var matrix = []
+ARGF.each { |line|
+    matrix << line.trim.split(',').map{ .to_n }
+}
+
+var end = matrix.end
+
+func path(i, j, prev='ok') is cached {
+
+    j >= end && return matrix[i][j]
+
+    var paths = []
+    if (i>0 && prev!='down') {
+        paths << path(i-1, j, 'up')
+    }
+
+    paths << path(i, j+1)
+
+    if (i<end && prev!='up') {
+        paths << path(i+1, j, 'down')
+    }
+
+    paths.min + matrix[i][j]
+}
+
+say (0..end -> map {|i| path(i, 0) }.min)
