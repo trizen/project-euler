@@ -17,7 +17,7 @@ memoize('two_way_path');
 
 my @matrix;
 while (<>) {
-    push @matrix, [split /,/];
+    push @matrix, [split(/,/)];
 }
 
 sub draw {
