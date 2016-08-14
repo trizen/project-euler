@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# Date: 14 August 2016
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# Find the last 8 digits of 1777↑↑1855.
+
+# https://projecteuler.net/problem=188
+
+func hyper(n, (1)) { n }
+
+func hyper(n, k) {
+    expmod(n, hyper(n, k-1), 1e8)
+}
+
+say hyper(1777, 1855)
