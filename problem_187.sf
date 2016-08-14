@@ -8,18 +8,18 @@
 
 # https://projecteuler.net/problem=187
 
-var limit = 10**8;
+require('ntheory')
 
-var nt = frequire('ntheory');
-var primes = nt.primes(0, limit/2);
+var limit = 10**8
+var primes = %S<ntheory>.primes(0, limit/2)
 
-var count = 0;
-var len = primes.end;
+var count = 0
+var end = primes.end
 
-primes.range.each { |i|
-    range(i, len).each { |j|
-        primes[i]*primes[j] >= limit ? break : ++count;
+for i in ^primes {
+    for j in (i .. end) {
+        primes[i]*primes[j] >= limit ? break : ++count
     }
 }
 
-say count;
+say count
