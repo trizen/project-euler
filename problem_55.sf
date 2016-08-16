@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# Date: 16 August 2016
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=55
+
+say (^10_000 -> count_by { |n|
+    ^49 -> any {
+        n += n.to_s.flip.to_n
+        n.to_s.is_palindrome
+    } -> not
+})
