@@ -45,7 +45,7 @@ for my $i (0 .. $end-4) {
                  and is_prime("$p4$p3"))
                   || next;
 
-                foreach my $m ($l+1 .. $end) {
+                for my $m ($l+1 .. $end) {
                     my $p5 = $primes[$m];
 
                     (    is_prime("$p1$p5")
