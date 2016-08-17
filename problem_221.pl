@@ -9,7 +9,7 @@
 
 use 5.010;
 use strict;
-use ntheory qw(divisors is_prime);
+use ntheory qw(divisors);
 
 my %nums;
 my $count = 0;
@@ -17,7 +17,7 @@ my $count = 0;
 my $nth = 150000;
 my $prev = 6;
 
-OUT: for my $n (1 .. $nth) {
+OUT: foreach my $n (1 .. $nth) {
     foreach my $d (divisors($n**2 + 1)) {
         my $A = $n * ($n + $d) * ($n + ($n**2 + 1) / $d);
 
