@@ -124,23 +124,13 @@ forperm {
 
     foreach my $ah (keys %{$h[0]}) {
         foreach my $at (keys %{$h[0]{$ah}}) {
-            if (exists $h[1]{$at}) {
-                foreach my $bt (keys %{$h[1]{$at}}) {
-                    if (exists $h[2]{$bt}) {
-                        foreach my $ct (keys %{$h[2]{$bt}}) {
-                            if (exists $h[3]{$ct}) {
-                                foreach my $dt (keys %{$h[3]{$ct}}) {
-                                    if (exists $h[4]{$dt}) {
-                                        foreach my $et (keys %{$h[4]{$dt}}) {
-                                            if (exists $h[5]{$et}) {
-                                                if (exists $h[5]{$et}{$ah}) {
-                                                    my @nums = split(' ', "$ah$at $at$bt $bt$ct $ct$dt $dt$et $et$ah");
-                                                    say "sum(@nums) = ", sum(@nums);
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+            foreach my $bt (keys %{$h[1]{$at}}) {
+                foreach my $ct (keys %{$h[2]{$bt}}) {
+                    foreach my $dt (keys %{$h[3]{$ct}}) {
+                        foreach my $et (keys %{$h[4]{$dt}}) {
+                            if (exists $h[5]{$et}{$ah}) {
+                                my @nums = split(' ', "$ah$at $at$bt $bt$ct $ct$dt $dt$et $et$ah");
+                                say "sum(@nums) = ", sum(@nums);
                             }
                         }
                     }
