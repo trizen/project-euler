@@ -26,7 +26,7 @@ sub power {
     $s;
 }
 
-my $k = 1_000_000_000_000;
+my $k = 1_000_000_000_000;      # 2560000 yields the same answer
 my $t = power($k, 5);
 
 sub f {
