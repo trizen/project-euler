@@ -38,8 +38,8 @@ foreach my $n (1 .. $end - 1) {
 }
 
 my $count = 0;
-while (my ($perim, $k) = each %triangle) {
-    ++$count if $k == 1;
+foreach my $v(values %triangle) {
+    ++$count if $v == 1;
 }
 
 say $count;

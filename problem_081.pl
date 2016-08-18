@@ -14,7 +14,7 @@ memoize('path');
 
 my @matrix;
 while (<>) {
-    push @matrix, [split /,/];
+    push @matrix, [split(/,/)];
 }
 
 my $end = $#matrix;

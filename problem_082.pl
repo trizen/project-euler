@@ -21,7 +21,7 @@ use Memoize qw(memoize);
 
 my @matrix;
 while (<>) {
-    push @matrix, [split /,/];
+    push @matrix, [split(/,/)];
 }
 
 memoize('path');
