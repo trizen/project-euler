@@ -14,14 +14,21 @@ function count_singular_triples(limit::Int64)
 
     for n in 1:upto-1
         for m in n+1:2:upto
+
+            x = (m^2 - n^2)
+            y = (2 * m * n)
+            z = (m^2 + n^2)
+
+            x+y+z > limit && break
+
             if gcd(n, m) == 1
                 k = 1
                 while true
-                    x = k * (m^2 - n^2)
-                    y = k * (2 * m * n)
-                    z = k * (m^2 + n^2)
+                    x2 = k * x
+                    y2 = k * y
+                    z2 = k * z
 
-                    p = x + y + z
+                    p = x2 + y2 + z2
                     p > limit && break
 
                     if !haskey(triangle, p)
