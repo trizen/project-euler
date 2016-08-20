@@ -1,0 +1,28 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 20 August 2016
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=85
+
+var t = 2_000_000
+var m = Inf
+var v = [0, 0]
+
+var (x, y) = (t.isqrt, 1)
+
+loop {
+    var p = binomial(x+1, 2)*binomial(y+1, 2)
+    var d = abs(p - t)
+
+    if (d < m) {
+        v = [x, y]
+        m = $d
+    }
+
+    x >= y ? (p > t ? --x : ++y) : break
+}
+
+say "#{v} = #{v.prod}"
