@@ -5,7 +5,7 @@
 # Date: 21 August 2016
 # Website: https://github.com/trizen
 
-# # https://projecteuler.net/problem=381
+# https://projecteuler.net/problem=381
 
 # Based on the following relations:
 #
