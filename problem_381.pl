@@ -5,6 +5,8 @@
 # Date: 21 August 2016
 # Website: https://github.com/trizen
 
+# # https://projecteuler.net/problem=381
+
 # Based on the following relations:
 #
 #   (p-1)! mod p = p-1
