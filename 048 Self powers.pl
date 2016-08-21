@@ -18,6 +18,7 @@ my $sum = 0;
 my $mod = 10**10;
 
 foreach my $i (1 .. 1000) {
+    next if $i % 10 == 0;
     $sum += powmod($i, $i, $mod);
     $sum %= $mod;
 }
