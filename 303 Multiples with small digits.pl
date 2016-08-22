@@ -25,7 +25,7 @@ sub lsd_multiple {
     if (    $n > 10
         and ($n % 9 == 0)
         and defined($big[$n % 10])
-        and ($n / 9) =~ /^(.)\1*\z/) {
+        and ($n / 9) =~ /^(.)\1*+\z/) {
         return $big[$n % 10][length($n) - 2];
     }
 
