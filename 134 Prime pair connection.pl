@@ -17,7 +17,7 @@ use ntheory qw(forprimes next_prime invmod);
 my $p1  = 5;
 my $sum = 0;
 my $log = length($p1);
-my $pow = 10**($log + 1);
+my $pow = 10**$log;
 
 forprimes {
     if (length($p1) != $log) {
