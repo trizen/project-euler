@@ -12,7 +12,7 @@
 # S = k*g + p1
 
 var p1 = 5
-var p2 = 5.next_prime
+var p2 = p1.next_prime
 
 var sum = 0
 var len = p1.len
