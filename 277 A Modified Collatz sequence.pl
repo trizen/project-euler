@@ -42,22 +42,17 @@ my $j = 1;
 my $s = 'UDDDUdddDDUDDddDdDddDDUDDdUUDd';
 my $l = length($s);
 
-OUTER: while (1) {
-    for (my $i = $from ; ; $i += $step) {
+for (my $i = $from ; ; $i += $step) {
 
-        my $c = collatz($i);
-        if (substr($c, 0, $j) eq substr($s, 0, $j)) {
+    my $c = collatz($i);
+    if (substr($c, 0, $j) eq substr($s, 0, $j)) {
 
-            if ($j == $l) {
-                say $i;
-                last OUTER;
-            }
-
-            $from = $i;
-            $step *= 3;
-            $j += 1;
-
+        if ($j == $l) {
+            say $i;
             last;
         }
+
+        $step *= 3;
+        $j += 1;
     }
 }
