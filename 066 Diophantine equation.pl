@@ -12,14 +12,7 @@ use strict;
 use warnings;
 
 use Math::BigNum qw(:constant);
-local $Math::BigNum::PREC = 10000;
-
 use ntheory qw(is_power sqrtint);
-
-sub quadratic_formula {
-    my ($x, $y, $z) = @_;
-    (-$y - sqrt($y**2 - 4 * $x * $z)) / (2 * $x);
-}
 
 sub sqrt_convergents {
     my ($n) = @_;
@@ -52,9 +45,8 @@ sub solve {
     my @period = @c;
     for (my $i = 0 ; ; ++$i) {
         if ($i > $#c) { push @c, @period; $i = 2 * $i - 1 }
-        my $x = continued_frac($i, [$k, @c])->denominator;
-        my $y = quadratic_formula(-$d, 0, $x**2 - 1);
-        return $x if $y->is_pos and $y->is_int;
+        my $x = continued_frac($i, [$k, (@c) x ($i + 1)])->denominator;
+        return $x if is_power(4 * $d * ($x**2 - 1), 2);
     }
 }
 
