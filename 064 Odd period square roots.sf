@@ -1,0 +1,32 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 31 August 2016
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=64
+
+# Algorithm from:
+#   http://web.math.princeton.edu/mathlab/jr02fall/Periodicity/mariusjp.pdf
+
+func period_length(n) {
+
+    var x = n.isqrt
+    var y = x
+    var z = 1
+
+    var period = 0
+
+    do {
+        y = (((x + y) // z) * z - y)
+        z = ((n - y*y) // z)
+        ++period
+    } while ((y != x) || (z != 1))
+
+    return period
+}
+
+say (1..10000 -> count_by { |n|
+    n.is_sqr ? false : (period_length(n) % 2 != 0)
+})
