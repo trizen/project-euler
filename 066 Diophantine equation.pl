@@ -34,7 +34,7 @@ sub sqrt_convergents {
 
 sub continued_frac {
     my ($i, $c) = @_;
-    $i == -1 ? 0 : 1 / ($c->[$i] + continued_frac($i - 1, $c));
+    $i->is_neg ? 0 : ($c->[$i] + continued_frac($i - 1, $c))->binv;
 }
 
 sub solve {
@@ -46,7 +46,7 @@ sub solve {
     for (my $i = 0 ; ; ++$i) {
         if ($i > $#c) { push @c, @period; $i = 2 * $i - 1 }
         my $x = continued_frac($i, [$k, (@c) x ($i + 1)])->denominator;
-        return $x if is_power(4 * $d * ($x**2 - 1), 2);
+        return $x if is_power(4 * $d * ($x*$x - 1), 2);
     }
 }
 
