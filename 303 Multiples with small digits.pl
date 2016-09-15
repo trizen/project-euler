@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=303
 
+# Runtime: 1 min 17.65s
+
 use 5.014;
 use ntheory qw(todigitstring fromdigits);
 

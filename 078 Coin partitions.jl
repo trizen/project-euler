@@ -6,6 +6,8 @@
 
 # https://projecteuler.net/problem=78
 
+# Runtime: 0.406s
+
 function coin_partitions()
     n = 2
     p = [1]

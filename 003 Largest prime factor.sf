@@ -9,6 +9,8 @@
 
 # https://projecteuler.net/problem=3
 
+# Runtime: 0.149s
+
 var nt = frequire('ntheory');
 
 var n = 600851475143;

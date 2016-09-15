@@ -9,4 +9,6 @@
 
 # https://projecteuler.net/problem=16
 
+# Runtime: 0.147s
+
 say (2**1000 -> digits.sum);

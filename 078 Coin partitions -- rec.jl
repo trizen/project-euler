@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=78
 
+# Runtime: 1.526s
+
 function partitions_count(n::Int64, mod::Int64, cache)
 
     if haskey(cache, n)

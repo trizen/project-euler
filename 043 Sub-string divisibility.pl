@@ -4,7 +4,14 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=43
+
+# Runtime: 3.210s
+
 use 5.010;
+use strict;
+use integer;
+
 use ntheory qw(forperm);
 
 my $sum    = 0;

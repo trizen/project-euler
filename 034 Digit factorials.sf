@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=34
 
+# Runtime: 3.873s
+
 func factorial(n) is cached {
     n < 2 ? 1 : n*factorial(n-1);
 }

@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=381
 
+# Runtime: 2.691s
+
 # Based on the following relations:
 #
 #   (p-1)! mod p = p-1

@@ -7,6 +7,10 @@
 # General formula: n^9 + n^6 * p = (n^3 + n^2)^3 where p is a prime number.
 # From the above formula results that p must have the form: 3n^2 + 3n + 1.
 
+# https://projecteuler.net/problem=131
+
+# Runtime: 0.040s
+
 use integer;
 use ntheory qw(is_prime);
 

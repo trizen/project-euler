@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=140
+
+# Runtime: 0.149s
+
 # After some analysis, I ended up with the following formula:
 #
 #      f(x) = -(x(3x + 1)) / (x^2 + x - 1)

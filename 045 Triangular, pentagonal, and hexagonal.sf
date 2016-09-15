@@ -9,6 +9,8 @@
 
 # https://projecteuler.net/problem=45
 
+# Runtime: 0.793s
+
 for n in (144 .. Inf) {
     var h = n*(2*n - 1);
     if ((sqrt(1 + 24*h).inc %% 6) && (sqrt(1 + 8*h).dec %% 2)) {

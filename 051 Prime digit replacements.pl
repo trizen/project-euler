@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=51
 
+# Runtime: 9.698s
+
 use 5.014;
 use ntheory qw(primes forcomb);
 

@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=134
 
+# Runtime: 0.107s
+
 use strict;
 use ntheory qw(forprimes next_prime invmod);
 

@@ -6,7 +6,11 @@
 
 # https://projecteuler.net/problem=58
 
+# Runtime: 0.040s
+
 use 5.010;
+use strict;
+
 use ntheory qw(is_prime);
 
 my $i = 1;

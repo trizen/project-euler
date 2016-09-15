@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=71
 
+# Runtime: 0.150s
+
 func before_numerator(b, n, d, m) {
     m -= (m+b % d);
     int(m/n + m/d - m/(n*d));

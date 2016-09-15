@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=18
 
+# Runtime: 0.029s
+
 use 5.010;
 use List::Util qw(max);
 use Memoize qw(memoize);

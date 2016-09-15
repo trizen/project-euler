@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=65
 
+# Runtime: 0.112s
+
 func e(n, i=1) {
 
     return 0 if (i >= n);

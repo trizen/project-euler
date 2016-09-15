@@ -10,41 +10,42 @@
 
 # https://projecteuler.net/problem=37
 
-var nt = frequire('ntheory');
+# Runtime: 3.822s
 
 func is_truncatable_prime(n) {
 
-    nt.is_prime(n) || return false;
+    n.is_prime || return false
 
-    var orig = n;
+    var orig = n
+    var l = n.len
 
-    loop {
-        var d = int(n / 10);
-        d > 0 || break;
-        nt.is_prime(d) || return false;
-        n = d;
+    (l-1).times {
+        n //= 10                          # /
+        n.is_prime || return false
     }
 
     n = orig;
-
-    var l = n.log10.int;
-    range(1, n.len-1).each { |i|
-        n -= (orig.digit(-i) * 10**(l-i + 1));
-        nt.is_prime(n) || return false;
+    var p = 10**(l-1)
+    (l-1).itimes { |i|
+         n -= (orig.digit(i) * p)
+         n.is_prime || return false
+         p //= 10                         # /
     }
 
-    return true;
+    return true
 }
 
 var sum = 0;
 var count = 0;
+var p = 11;
 
-Math.inf.times { |i|
-    if (i > 7 && is_truncatable_prime(i)) {
-        say i;
-        sum += i;
+loop {
+    if (is_truncatable_prime(p)) {
+        say p;
+        sum += p;
         ++count == 11 && break;
     }
+    p.next_prime!
 }
 
 say "Sum: #{sum}";

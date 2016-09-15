@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=221
 
+# Runtime: 3.966s
+
 use 5.010;
 use strict;
 use ntheory qw(divisors);

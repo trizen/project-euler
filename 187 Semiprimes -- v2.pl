@@ -2,7 +2,10 @@
 
 # Derived from a method posted by Dana Jacobsen.
 # Date: 22 August 2016
+
 # https://projecteuler.net/problem=187
+
+# Runtime: 0.051s
 
 use strict;
 use integer;

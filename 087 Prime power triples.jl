@@ -6,6 +6,8 @@
 
 # https://projecteuler.net/problem=87
 
+# Runtime: 0.632s
+
 limit = 50_000_000
 max = isqrt(limit)
 primes = Int64[2]

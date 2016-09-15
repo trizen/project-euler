@@ -9,16 +9,16 @@
 
 # https://projecteuler.net/problem=10
 
-var nt = frequire('ntheory');
+# Runtime: 3.419s
 
 func sum_primes(limit) {
-    var sum = 0;
-    limit.times { |i|
-        if (nt.is_prime(i)) {
-            sum += i;
-        }
-    };
-    return sum;
+    var sum = 0
+    var p = 2
+    loop {
+        sum += p
+        p.next_prime! < limit || break
+    }
+    return sum
 }
 
-say sum_primes(2e6);
+say sum_primes(2e6)

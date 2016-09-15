@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=55
 
+# Runtime: 1.316s
+
 say (^10_000 -> count_by { |n|
     ^49 -> any {
         n += n.to_s.flip.to_n

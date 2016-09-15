@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=25
 
+# Runtime: 0.163s
+
 func fib_n_digits(n) {
     var (f1, f2) = (1, 1);
 

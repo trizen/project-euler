@@ -10,6 +10,8 @@
 # Algorithm from:
 #   http://web.math.princeton.edu/mathlab/jr02fall/Periodicity/mariusjp.pdf
 
+# Runtime: 6.840s
+
 func period_length(n) {
 
     var x = n.isqrt

@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# # https://projecteuler.net/problem=23
+
+# Runtime: 5.372s
+
 use 5.010;
 use integer;
 use ntheory qw(divisor_sum);

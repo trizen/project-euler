@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/perl
 
 # Author: Daniel "Trizen" Șuteu
 # License: GPLv3
@@ -14,16 +14,23 @@
 
 # https://projecteuler.net/problem=40
 
-# Runtime: 59.832s
+# Runtime: 0.031s
 
-var str = '';
-{ |i|
-    str += i;
-    str.len >= 1000000 && break;
-} * Inf;
+use 5.010;
+use strict;
+use integer;
 
-var prod = 1;
-{ |i|
-    prod *= Num(str.char(10**(i-1) - 1));
-} * 7;
-say prod;
+my $str = '';
+
+for (my $i = 1 ; ; ++$i) {
+    $str .= $i;
+    last if (length($str) >= 1000000);
+}
+
+my $prod = 1;
+
+foreach my $i (0 .. 6) {
+    $prod *= substr($str, 10**($i) - 1, 1);
+}
+
+say $prod;

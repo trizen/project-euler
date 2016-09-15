@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=93
+
+# Runtime: 13.819s
+
 use 5.010;
 use strict;
 use warnings;

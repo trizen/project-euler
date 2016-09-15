@@ -4,10 +4,16 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=70
+
+# Runtime: 31.826s
+
+use strict;
 use ntheory qw(euler_phi);
+
 my %min = (ratio => 'inf');
 
-foreach my $n (2 .. 1e7-1) {
+foreach my $n (2 .. 1e7-1) {            # actually, we can iterate only over composite numbers
     my $phi = euler_phi($n);
 
     if (length($phi) == length($n)

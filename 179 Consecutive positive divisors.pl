@@ -9,7 +9,11 @@
 
 # https://projecteuler.net/problem=179
 
+# Runtime: 6.453s
+
 use 5.010;
+use strict;
+
 use ntheory qw(divisors);
 
 my $count = 0;

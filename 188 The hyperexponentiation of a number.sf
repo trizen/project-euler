@@ -9,6 +9,8 @@
 
 # https://projecteuler.net/problem=188
 
+# Runtime: 0.230s
+
 func hyper(n, (1)) { n }
 
 func hyper(n, k) {

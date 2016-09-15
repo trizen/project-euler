@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=80
+
+# Runtime: 0.195s
+
 var sum = 0;
 local Num!PREC = 102*4
 

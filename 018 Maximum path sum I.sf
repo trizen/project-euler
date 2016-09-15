@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=18
 
+# Runtime: 0.173s
+
 var data = <<'EOT';
 75
 95 64

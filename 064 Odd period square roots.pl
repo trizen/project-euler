@@ -10,6 +10,8 @@
 # Algorithm from:
 #   http://web.math.princeton.edu/mathlab/jr02fall/Periodicity/mariusjp.pdf
 
+# Runtime: 0.170s
+
 use 5.010;
 use strict;
 

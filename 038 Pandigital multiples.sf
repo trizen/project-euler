@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=38
 
+# Runtime: 1.324s
+
 func valid_num(n) {
     var digits = n.digits;
 

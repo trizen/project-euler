@@ -6,6 +6,8 @@
 
 # https://projecteuler.net/problem=87
 
+# Runtime: 1.536s
+
 use 5.010;
 use ntheory qw(primes);
 

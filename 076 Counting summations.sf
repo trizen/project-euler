@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=76
 
+# Runtime: 0.626s
+
 var nums = [];
 
 func count(n, i=0, sum=0) is cached {

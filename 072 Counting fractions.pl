@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=72
 
+# Runtime: 0.413s
+
 use 5.010;
 use ntheory qw(euler_phi);
 

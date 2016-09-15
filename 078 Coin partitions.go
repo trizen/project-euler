@@ -3,6 +3,10 @@
 // License: GPLv3
 // Website: https://github.com/trizen
 
+// https://projecteuler.net/problem=78
+
+// Runtime: 0.161s
+
 package main
 
 import "fmt"

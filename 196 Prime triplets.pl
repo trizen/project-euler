@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=196
 
+# Runtime: 8.838s
+
 use 5.010;
 use strict;
 use integer;

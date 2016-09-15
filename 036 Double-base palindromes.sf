@@ -8,10 +8,14 @@
 
 # https://projecteuler.net/problem=36
 
+# Runtime: 7.016s
+
 var sum = 0;
+
 for i in ^1e6 {
     if (i.to_s.is_palindrome && i.as_bin.is_palindrome) {
         sum += i;
     }
 }
+
 say sum;

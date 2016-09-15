@@ -13,16 +13,18 @@
 
 # https://projecteuler.net/problem=14
 
+# Runtime: 47.259s
+
 func collatz(n) is cached {
     n.is_one ? 1
              : (n.is_even ? 1+collatz(n/2)
-                          : 1+collatz(3*n + 1));
+                          : 1+collatz((3*n + 1)/2));
 }
 
 var num = 0;
 var max = 0;
 
-range(1, 1e6-1).each { |i|
+for i in (1 ..^ 1e6) {
     var value = collatz(i);
     if (value > max) {
         max = value;

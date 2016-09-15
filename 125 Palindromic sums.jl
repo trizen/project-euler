@@ -6,6 +6,8 @@
 
 # https://projecteuler.net/problem=125
 
+# Runtime: 3.127s
+
 @inline function is_csquare(n)
     s = isqrt(n)
     for i in 1:s-1

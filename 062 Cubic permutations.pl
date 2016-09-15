@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=62
+
+# Runtime: 3.156s
+
 my %table;
 my $i = 1;
 

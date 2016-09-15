@@ -13,6 +13,8 @@
 
 # https://projecteuler.net/problem=9
 
+# Runtime: 2.234s
+
 var num = 1000;
 var max = int(num/2);
 

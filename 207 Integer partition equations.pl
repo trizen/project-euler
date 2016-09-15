@@ -5,9 +5,11 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# A naive approach; almost brute-force.
+
 # https://projecteuler.net/problem=207
 
-# A naive approach; almost brute-force.
+# Runtime: 41.345s
 
 use 5.010;
 use strict;

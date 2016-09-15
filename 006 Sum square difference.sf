@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=6
 
+# Runtime: 0.148s
+
 func sum_pow_2(n) {
     1/3 * [n**3, (3/2)*(n**2), (1/2)*n].sum;
 }

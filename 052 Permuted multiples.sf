@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=52
 
+# Runtime: 8.445s
+
 var x = 1;
 loop {
     if ([String(2*x), String(3*x), String(4*x), String(5*x), String(6*x)].map{.sort}.join ~~ /^(\d+)\1{4}$/) {

@@ -9,6 +9,8 @@
 
 # https://projecteuler.net/problem=4
 
+# Runtime: 5.833s
+
 ## TODO: find a better algorithm!
 
 var candidates = [];

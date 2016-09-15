@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=75
 
+# Runtime: 0.480s
+
 function count_singular_triples(limit::Int64)
 
     triangle = Dict{Int64, Int64}()

@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=104
+
+# Runtime: 1.681s
+
 use 5.010;
 use strict;
 use integer;

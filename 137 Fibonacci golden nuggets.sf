@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=137
+
+# Runtime: 0.154s
+
 # I first derived a closed-form to the infinite sum:
 #
 #                             -(x / (x^2 + x - 1))

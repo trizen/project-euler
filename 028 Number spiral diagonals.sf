@@ -22,6 +22,8 @@ What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed 
 
 # https://projecteuler.net/problem=28
 
+# Runtime: 0.153s
+
 var n = 1001;
 
 var sum = 1;

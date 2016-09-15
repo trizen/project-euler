@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=85
 
+# Runtime: 0.214s
+
 var t = 2_000_000
 var m = Inf
 var v = [0, 0]

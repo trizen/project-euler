@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=58
 
+# Runtime: 1.439s
+
 var f1 = func(n) { 3 + n*(4*n - 6) };
 var f2 = func(n) { 5 + n*(4*n - 8) };
 var f3 = func(n) { 7 + n*(4*n - 10) };

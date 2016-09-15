@@ -4,6 +4,12 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=68
+
+# Runtime: 4.326s
+
+use strict;
+use integer;
 use ntheory qw(forperm);
 
 my $max  = '';

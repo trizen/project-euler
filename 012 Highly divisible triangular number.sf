@@ -6,7 +6,9 @@
 
 # What is the value of the first triangle number to have over five hundred divisors?
 
-# # https://projecteuler.net/problem=12
+# https://projecteuler.net/problem=12
+
+# Runtime: 6.496s
 
 var nt = frequire('ntheory');
 

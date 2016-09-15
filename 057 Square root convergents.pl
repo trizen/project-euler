@@ -6,6 +6,8 @@
 
 # https://projecteuler.net/problem=57
 
+# Runtime: 0.288s
+
 use 5.020;
 use Memoize qw(memoize);
 use Math::BigNum qw(:constant);

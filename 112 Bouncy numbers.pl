@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=112
+
+# Runtime: 4.030s
+
 use List::Util qw(all);
 
 sub is_bouncy {

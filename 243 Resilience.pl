@@ -4,6 +4,8 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=243
+
 use List::Util qw(product);
 use ntheory qw(euler_phi next_prime);
 

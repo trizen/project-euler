@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=46
 
+# Runtime: 0.307s
+
 range(3, 1e100, 2).each { |n|
     n.is_prime && next;
 

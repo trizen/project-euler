@@ -9,4 +9,6 @@
 
 # https://projecteuler.net/problem=97
 
+# Runtime: 0.130s
+
 say ((28433 * 2**7830457)+ 1 % 10**10);

@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=74
 
+# Runtime: 9.957s
+
 fac = Int64[factorial(i) for i in 0:9]
 
 function f(n::Int64, fac)

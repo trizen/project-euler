@@ -4,6 +4,10 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=120
+
+# Runtime: 0.154s
+
 func max_square_remainder(a) {
     a * (a - (2 - (a % 2)));
 }

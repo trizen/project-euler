@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=29
 
+# Runtime: 0.322s
+
 var count = 0;
 var seen = Hash.new;
 

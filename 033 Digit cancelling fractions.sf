@@ -9,6 +9,8 @@
 
 # https://projecteuler.net/problem=33
 
+# Runtime: 0.147s
+
 var prod = 1;
 
 9.times { |i|

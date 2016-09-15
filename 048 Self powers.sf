@@ -8,10 +8,12 @@
 
 # https://projecteuler.net/problem=48
 
-var sum = 0;
+# Runtime: 0.139s
+
+var sum = 0
 
 1000.times { |i|
-    sum += i**i;
+    sum += i**i
 }
 
-say sum.to_s.substr(-10);
+say (sum % 10**10)

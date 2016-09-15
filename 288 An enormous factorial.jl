@@ -7,6 +7,8 @@
 
 # https://projecteuler.net/problem=288
 
+# Runtime: 1.276s
+
 const p = 61
 const q = 10^7
 const k = 10

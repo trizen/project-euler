@@ -10,6 +10,8 @@
 
 # https://projecteuler.net/problem=2
 
+# Runtime: 0.160s
+
 func sum_even_fibs(max) {
     var n = [1, 2];
 
