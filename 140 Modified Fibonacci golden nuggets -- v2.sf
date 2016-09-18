@@ -1,0 +1,55 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# Date: 19 September 2016
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=140
+
+# Runtime: 0.143s
+
+func lucas(n) is cached {
+    n.is_one ? 1
+             : (n.is_zero ? 2
+                          : (lucas(n-1) + lucas(n-2)));
+}
+
+func fib(n) is cached {
+    n.is_one ? 1
+             : (n.is_zero ? 0
+                          : (fib(n-1) + fib(n-2)));
+}
+
+func f_even(n) {        # 2n
+
+    var f1 = fib(n)
+    var f2 = fib(n+1)
+
+    f1 * (3*f1 + f2)
+}
+
+func f_odd(n) {         # 2n+1
+
+    var f1 = fib(n+1)
+    var l1 = lucas(n)
+
+    var f2 = fib(n+2)
+    var l2 = lucas(n+1)
+
+    -((f1+l1) * ((3*(f1+l1))/(f2+l2) + 1)) / (f2 + l2) /
+            (((f1+l1)**2)/((f2+l2)**2) + ((f1+l1)/(f2+l2)) - 1)
+}
+
+var sum = 0;
+
+30.times { |n|          # starts at 1
+    if (n.is_even) {
+        sum += f_even(n)
+    }
+    else {
+        sum += f_odd(n)
+    }
+}
+
+say sum;
