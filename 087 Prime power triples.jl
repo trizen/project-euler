@@ -8,6 +8,8 @@
 
 # Runtime: 0.632s
 
+using Primes
+
 limit = 50_000_000
 max = isqrt(limit)
 primes = Int64[2]
