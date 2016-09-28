@@ -13,12 +13,11 @@ using Primes
 
 @inline function eulerphi(n::Int64)
 
-    m = n
     for p in keys(factor(n))
-        m -= div(m, p)
+        n -= div(n, p)
     end
 
-    m
+    n
 end
 
 function g(n::Int64)
