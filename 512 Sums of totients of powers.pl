@@ -19,7 +19,7 @@ sub g {
 
     my $sum = 0;
     for (my $k = 1 ; $k <= $n ; $k += 2) {
-        $sum += euler_phi($k) % ($k + 1);
+        $sum += euler_phi($k);
     }
     $sum;
 }
