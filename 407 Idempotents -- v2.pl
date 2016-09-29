@@ -15,15 +15,15 @@ use integer;
 
 use ntheory qw(
   powmod
-  factor
   forcomb
   euler_phi
+  factor_exp
   prime_count
   is_prime_power
   forcomposites
 );
 
-use List::Util qw(uniq product);
+use List::Util qw(product);
 
 my $limit = 10**7;
 my $sum   = prime_count($limit);
@@ -36,7 +36,7 @@ forcomposites {
         my $c   = $_;
         my $max = 0;
 
-        my @f   = uniq(factor($c));
+        my @f   = map { $_->[0] } factor_exp($c);
         my $len = scalar(@f);
 
         foreach my $i (1 .. $len - 1) {

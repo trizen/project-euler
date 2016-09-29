@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=512
 
-# Runtime: pretty long
+# Runtime: ~20 min
 
 using Primes
 
