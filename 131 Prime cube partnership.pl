@@ -11,6 +11,7 @@
 
 # Runtime: 0.040s
 
+use strict;
 use integer;
 use ntheory qw(is_prime);
 

@@ -6,26 +6,25 @@
 
 # https://projecteuler.net/problem=70
 
-# Runtime: 31.826s
+# Runtime: 6.563s
 
 use strict;
-use ntheory qw(euler_phi);
+use ntheory qw(euler_phi forcomposites);
 
 my %min = (ratio => 'inf');
 
-foreach my $n (2 .. 1e7-1) {            # actually, we can iterate only over composite numbers
-    my $phi = euler_phi($n);
+forcomposites {
+    my $phi = euler_phi($_);
+    my $ratio = $_ / $phi;
 
-    if (length($phi) == length($n)
+    if ($ratio < $min{ratio}
+        and length($phi) == length($_)
         and join('', sort split(//, $phi)) eq
-            join('', sort split(//, $n))
+            join('', sort split(//, $_))
     ) {
-        my $ratio = $n / $phi;
-        if ($ratio < $min{ratio}) {
-            $min{ratio} = $ratio;
-            $min{num}   = $n;
-        }
+        $min{ratio} = $ratio;
+        $min{num}   = $_;
     }
-}
+} 1e7-1;
 
 print "$min{num} -> $min{ratio}\n";
