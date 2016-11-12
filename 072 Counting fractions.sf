@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# Date: 15 August 2016
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=72
+
+# Runtime: 10.663s
+
+func count_frac(n) {
+
+    var sum = 0
+    n.times { |k|
+        sum += euler_totient(k)
+    }
+    sum - 1
+}
+
+say count_frac(1e6)

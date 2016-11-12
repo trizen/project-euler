@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 22 August 2016
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=124
+
+# Runtime: 6.294s
+
+var list = (1..100_000 -> map { |i|
+    [i.is_square_free ? i : i.factor_pairs»first»().prod, i]
+})
+
+list.sort! {|a,b|
+           (a[0] <=> b[0]) ||
+           (a[1] <=> b[1])
+}
+
+say list[10000-1][1]
