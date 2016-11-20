@@ -9,9 +9,6 @@
 
 # https://projecteuler.net/problem=3
 
-# Runtime: 0.149s
+# Runtime: 0.128
 
-var nt = frequire('ntheory');
-
-var n = 600851475143;
-say [nt.factor(n)][-1];
+say factor(600851475143)[-1]

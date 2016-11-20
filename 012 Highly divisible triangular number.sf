@@ -8,14 +8,12 @@
 
 # https://projecteuler.net/problem=12
 
-# Runtime: 6.496s
+# Runtime: 0.263s
 
-var nt = frequire('ntheory');
-
-var n = 0;
+var n = 0
 Inf.times { |i|
     n += i;
-    if ([nt.divisors(n)].len > 500) {
+    if (n.sigma0 > 500) {
         say n;
         break;
     }

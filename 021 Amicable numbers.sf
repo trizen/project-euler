@@ -9,21 +9,19 @@
 
 # https://projecteuler.net/problem=21
 
-# Runtime: 1.411s
-
-var ntheory = frequire('ntheory');
+# Runtime: 0.359s
 
 var sum = 0;
-var mem = Hash.new;
+var mem = Hash();
 
-range(2, 10000-1).each { |i|
+for i in (2 ..^ 10000) {
 
-    var d = ntheory.divisor_sum(i)-i;
+    var d = i.sigma-i;
 
     if (mem.exists(d)) {
 
         var n = mem{d};
-        if (ntheory.divisor_sum(n)-n == d) {
+        if (n.sigma-n == d) {
             sum += d+n;
             say "#{d} #{n}";
         }
