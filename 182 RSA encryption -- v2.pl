@@ -1,0 +1,33 @@
+#!/usr/bin/perl
+
+# Daniel "Trizen" Șuteu
+# Date: 13 January 2017
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=182
+
+# Runtime: 1.514s
+
+use 5.010;
+use strict;
+use warnings;
+
+use ntheory qw(gcd powmod);
+
+my $p = 1009;
+my $q = 3643;
+
+my $n   = ($p * $q);
+my $phi = ($p - 1) * ($q - 1);
+my $sum = 0;
+
+foreach my $e (2 .. $phi - 1) {
+    if (gcd($e, $phi) == 1) {
+        if ((1 + gcd($e - 1, $q - 1)) * (1 + gcd($e - 1, $p - 1)) == 9) {
+            $sum += $e;
+        }
+    }
+}
+
+say $sum;
