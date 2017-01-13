@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=182
 
-# Runtime: 1.514s
+# Runtime: 1.200s
 
 use 5.010;
 use strict;
@@ -24,7 +24,8 @@ my $sum = 0;
 
 foreach my $e (2 .. $phi - 1) {
     if (gcd($e, $phi) == 1) {
-        if ((1 + gcd($e - 1, $q - 1)) * (1 + gcd($e - 1, $p - 1)) == 9) {
+        if (    gcd($e - 1, $p - 1) == 2
+            and gcd($e - 1, $q - 1) == 2) {
             $sum += $e;
         }
     }
