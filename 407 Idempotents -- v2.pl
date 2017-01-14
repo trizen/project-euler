@@ -15,6 +15,7 @@ use integer;
 
 use ntheory qw(
   powmod
+  vecprod
   forcomb
   euler_phi
   factor_exp
@@ -22,8 +23,6 @@ use ntheory qw(
   is_prime_power
   forcomposites
 );
-
-use List::Util qw(product);
 
 my $limit = 10**7;
 my $sum   = prime_count($limit);
@@ -41,7 +40,7 @@ forcomposites {
 
         foreach my $i (1 .. $len - 1) {
             forcomb {
-                my $d = product(@f[@_]);
+                my $d = vecprod(@f[@_]);
                 my $f = $c / $d;
                 my $g = $d * powmod($d, euler_phi($f) - 1, $f);
                 $g > $max && ($max = $g);

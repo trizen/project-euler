@@ -1,0 +1,27 @@
+#!/usr/bin/perl
+
+# Daniel "Trizen" Șuteu
+# Date: 13 January 2017
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=182
+
+# Runtime: 55.211s
+
+var p = 1009
+var q = 3643
+
+var phi = (p - 1)*(q - 1)
+var sum = 0
+
+for e in (2 .. phi-1) {
+    if (gcd(e, phi) == 1) {
+        if ((gcd(e - 1, p - 1) == 2) &&
+            (gcd(e - 1, q - 1) == 2)) {
+            sum += e
+        }
+    }
+}
+
+say sum
