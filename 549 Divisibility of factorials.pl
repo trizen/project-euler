@@ -7,65 +7,69 @@
 
 # https://projecteuler.net/problem=549
 
-# Runtime: 8 min 10.49s
+# Runtime: 6 min 33.61s
 
+use utf8;
 use 5.010;
 use strict;
 use integer;
 
-use List::Util qw(uniq max);
-use ntheory qw(factor factorial forcomposites sum_primes vecprod);
+use ntheory qw(
+    vecmax
+    vecsum
+    is_prime
+    factorial
+    sum_primes
+    factor_exp
+    forcomposites
+);
 
 my $limit = 10**8;
 
 my %cache;
 
 sub smarandache {
-    my ($f, $u) = @_;
+    my ($n) = @_;
 
-    ((my $x = @$u) == (my $y = @$f))
-      && return $f->[-1];
+    return $n if is_prime($n);
 
-    if ($x == 1) {
+    my @f = factor_exp($n);
+    my $Ω = vecsum(map { $_->[1] } @f);
 
-        my $k = $u->[0];
+    (@f == $Ω)
+      && return $f[-1][0];
 
-        ($y <= $k)
-          && return $k * $y;
+    if (@f == 1) {
 
-        my $key = "@$f";
+        my $ϕ = $f[0][0];
 
-        exists($cache{$key})
-          && return $cache{$key};
+        ($Ω <= $ϕ)
+          && return $ϕ * $Ω;
 
-        my $n = vecprod(@$f);
+        exists($cache{$n})
+          && return $cache{$n};
 
-        my $max = $k * $y;
-        my $f   = factorial($max - $k);
+        my $m = $ϕ * $Ω;
+        my $f = factorial($m - $ϕ);
 
         while ($f % $n == 0) {
-            $max -= $k;
-            $f /= $max;
+            $m -= $ϕ;
+            $f /= $m;
         }
 
-        return ($cache{$key} = $max);
+        return ($cache{$n} = $m);
     }
 
-    my %count;
-    ++$count{$_} for @$f;
-
-    max(map {
-            $count{$_} == 1
-                ? $_
-                : smarandache([($_) x $count{$_}], [$_])
-    } @$u);
+    vecmax(map {
+            $_->[1] == 1 ? $_->[0]
+                         : smarandache($_->[0]**$_->[1])
+    } @f);
 }
 
 my $sum = 0;
 
 forcomposites {
-    my @f = factor($_);
-    $sum += smarandache(\@f, [uniq(@f)]);
+    $sum += smarandache($_);
 } $limit;
 
 $sum += sum_primes($limit);
