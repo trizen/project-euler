@@ -1,5 +1,11 @@
-
 \\ Pari/GP
+
+\\ Daniel "Trizen" Șuteu
+\\ Date: 14 January 2017
+\\ License: GPLv3
+\\ https://github.com/trizen
+
+\\ https://projecteuler.net/problem=182
 
 p = 1009
 q = 3643
