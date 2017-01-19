@@ -7,10 +7,10 @@
 
 # https://projecteuler.net/problem=124
 
-# Runtime: 5.610s (under -O1)
+# Runtime: 5.110s (under -O1)
 
 var list = (1..100_000 -> map { |i|
-    [i.is_square_free ? i : i.pfactor»first()».prod, i]
+    [i.is_square_free ? i : i.rad, i]
 })
 
 list.sort! {|a,b|
