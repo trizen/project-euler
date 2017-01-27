@@ -16,7 +16,7 @@ use warnings;
 use ntheory qw(forperm is_prime);
 
 # It cannot be a 9-digit pandigital prime as it would be divisible by 3. (45 / 3 = 15)
-# It cannot be a 8-digit pandigital prime as it would be divisible by 9. (36 / 9 = 4)
+# It cannot be a 8-digit pandigital prime as it would be divisible by 3. (36 / 3 = 12)
 
 foreach my $n (reverse(1 .. 7)) {
     my $found = 0;
