@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 27 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=39
+
+# Runtime: 1.840s
+
+var t = Hash()
+var limit = 1000
+
+for i in (1 .. (limit/3 - 1)) {
+    for j in (i+1 .. (limit-i)/2) {
+        var c = (i*i + j*j)
+        (i + j + c.sqrt > limit) && break
+
+        if (c.is_sqr) {
+            t{i + j + c.isqrt} := 0 ++
+        }
+    }
+}
+
+say t.keys.sort_by { t{_} }[-1]
