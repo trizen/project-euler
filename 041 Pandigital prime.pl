@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=41
 
-# Runtime: 1.048s
+# Runtime: 0.074s
 
 use 5.010;
 use strict;
@@ -15,7 +15,10 @@ use warnings;
 
 use ntheory qw(forperm is_prime);
 
-foreach my $n (reverse(1 .. 9)) {
+# It cannot be a 9-digit pandigital prime as it would be divisible by 3. (45 / 3 = 15)
+# It cannot be a 8-digit pandigital prime as it would be divisible by 9. (36 / 9 = 4)
+
+foreach my $n (reverse(1 .. 7)) {
     my $found = 0;
     my $prime = 0;
 
