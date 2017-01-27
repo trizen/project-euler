@@ -1,8 +1,12 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
+# Daniel "Trizen" Șuteu
 # License: GPLv3
-# Website: https://github.com/trizen
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=28
+
+# Runtime: 0.153s
 
 /*
 
@@ -19,10 +23,6 @@ It can be verified that the sum of the numbers on the diagonals is 101.
 What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
 
 */
-
-# https://projecteuler.net/problem=28
-
-# Runtime: 0.153s
 
 var n = 1001;
 

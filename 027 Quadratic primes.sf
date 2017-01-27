@@ -1,0 +1,40 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 27 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=27
+
+# Runtime: 1.749s
+
+var limit = 1000
+
+var m = 0
+var p = 0
+var q = 0
+
+var primes = limit.primes
+
+for a,b in (primes ~X primes) {
+
+    do {
+        var n = 0
+        while (n*n + a*n + b -> is_prime) { ++n }
+        if (n > m) {
+            (m, p, q) = (n, a, b)
+        }
+    }
+
+    do {
+        var n = 0
+        while (n*n - a*n + b -> is_prime) { ++n }
+        if (n > m) {
+            (m, p, q) = (n, -a, b)
+        }
+    }
+}
+
+say "n^2 + #{p}*n + #{q} for 0 <= n < #{m}"
+say "#{p} * #{q} = #{p * q}"
