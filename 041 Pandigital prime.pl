@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=41
 
-# Runtime: 0.074s
+# Runtime: 0.030s
 
 use 5.010;
 use strict;
@@ -19,18 +19,16 @@ use ntheory qw(forperm is_prime);
 # It cannot be a 8-digit pandigital prime as it would be divisible by 3. (36 / 3 = 12)
 
 foreach my $n (reverse(1 .. 7)) {
-    my $found = 0;
     my $prime = 0;
 
     forperm {
         my $k = join('', map { $_ + 1 } @_);
         if (is_prime($k)) {
-            $found = 1;
             $prime = $k;
         }
     } $n;
 
-    if ($found) {
+    if ($prime != 0) {
         say "$n-digit pandigital prime: $prime";
         last;
     }

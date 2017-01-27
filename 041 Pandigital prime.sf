@@ -1,0 +1,30 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 27 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=41
+
+# Runtime: 0.265s
+
+# It cannot be a 9-digit pandigital prime as it would be divisible by 3. (45 / 3 = 15)
+# It cannot be a 8-digit pandigital prime as it would be divisible by 3. (36 / 3 = 12)
+
+for n in (1..7 -> flip) {
+    var prime = 0
+
+    1..n -> to_a.permutations { |p|
+        var k = Num(p.join)
+
+        if (k.is_prime) {
+            prime = k
+        }
+    }
+
+    if (prime != 0) {
+        say "#{n}-digit pandigital prime: #{prime}"
+        break
+    }
+}
