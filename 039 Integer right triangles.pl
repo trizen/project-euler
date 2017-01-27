@@ -17,8 +17,8 @@ use ntheory qw(is_power sqrtint);
 my %t;
 my $limit = 1000;
 
-foreach my $i (1 .. $limit/3) {
-    foreach my $j ($i + 1 .. $limit/2) {
+foreach my $i (1 .. $limit / 3 - 1) {
+    foreach my $j ($i + 1 .. ($limit - $i) / 2) {
         my $c = $i**2 + $j**2;
         last if ($i + $j + sqrt($c) > $limit);
 
