@@ -7,13 +7,15 @@
 
 # https://projecteuler.net/problem=41
 
-# Runtime: 0.134s
+# Runtime: 1.048s
 
 use 5.010;
 use strict;
+use warnings;
+
 use ntheory qw(forperm is_prime);
 
-foreach my $n (reverse(1 .. 8)) {
+foreach my $n (reverse(1 .. 9)) {
     my $found = 0;
     my $prime = 0;
 
