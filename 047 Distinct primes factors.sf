@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 28 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=47
+
+# Runtime: 2.016s
+
+for n in (647 .. Inf) {
+    if ((omega(n + 0) == 4) &&
+        (omega(n + 1) == 4) &&
+        (omega(n + 2) == 4) &&
+        (omega(n + 3) == 4)
+    ) {
+        say n
+        break
+    }
+}
