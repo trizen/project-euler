@@ -1,0 +1,76 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 28 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=89
+
+# Runtime: 0.382s
+
+# usage: sidef script.sf < p089_roman.txt
+
+func roman2arabic(roman) {
+
+    var arabic = 0
+    var last_digit = 1000
+
+    static lookup = Hash(
+        I =>    1,
+        V =>    5,
+        X =>   10,
+        L =>   50,
+        C =>  100,
+        D =>  500,
+        M => 1000,
+    )
+
+    for digit in (roman.chars.map { lookup{_} }) {
+        if (last_digit < digit) {
+            arabic -= 2*last_digit
+        }
+        arabic += (last_digit = digit)
+    }
+
+    return arabic
+}
+
+func arabic2roman(arabic) {
+
+    static lookup = [
+        [M  => 1000],
+        [CM =>  900],
+        [D  =>  500],
+        [CD =>  400],
+        [C  =>  100],
+        [XC =>   90],
+        [L  =>   50],
+        [XL =>   40],
+        [X  =>   10],
+        [IX =>    9],
+        [V  =>    5],
+        [IV =>    4],
+        [I  =>    1],
+    ]
+
+    var roman = ''
+
+    for pair in (lookup) {
+        while (arabic >= pair[1]) {
+            roman  += pair[0]
+            arabic -= pair[1]
+        }
+    }
+
+    return roman
+}
+
+var saved = 0
+
+ARGF.each { |line|
+    line.strip!
+    saved += (line.len - arabic2roman(roman2arabic(line)).len)
+}
+
+say saved
