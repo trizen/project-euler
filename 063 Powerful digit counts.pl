@@ -14,15 +14,12 @@ use strict;
 
 use Math::GMP qw(:constant);
 
-my $prev  = 0;
 my $count = 0;
 
-for (my $n = 1 ; ; ++$n) {
+for (my $n = 1 ; $n < 10 ; ++$n) {
     foreach my $m (1 .. 3*$n) {   # just works™
         ++$count if (length($n**$m) == $m);
     }
-    $prev == $count && last;
-    $prev =  $count;
 }
 
 say $count;
