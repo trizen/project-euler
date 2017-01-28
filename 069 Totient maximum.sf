@@ -1,0 +1,24 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 28 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=69
+
+# Runtime: 0.117s
+
+var limit = 1_000_000
+
+var primorial = 1
+
+for (var p = 2; true; p.next_prime!) {
+    primorial *= p
+    if (primorial > limit) {
+        primorial /= p
+        break
+    }
+}
+
+say primorial
