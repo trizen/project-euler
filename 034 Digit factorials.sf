@@ -1,23 +1,23 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
+# Daniel "Trizen" Șuteu
 # License: GPLv3
-# Website: https://github.com/trizen
+# https://github.com/trizen
 
 # Find the sum of all numbers which are equal to the sum of the factorial of their digits.
 
 # https://projecteuler.net/problem=34
 
-# Runtime: 3.873s
+# Runtime: 1.904s
 
-func factorial(n) is cached {
-    n < 2 ? 1 : n*factorial(n-1);
-}
+var sum = 0
 
-var sum = 0;
-range(3, 1e5, 2).each { |i|
-    if (i.digits.map{|d| factorial(d)}.sum == i) {
-        sum += i;
+var f = (0..9 -> map {|d| d! })
+
+for n in (3 .. 1e5 -> by(2)) {
+    if (n.digits.sum_by { f[_] } == n) {
+        sum += n
     }
 }
-say sum;
+
+say sum
