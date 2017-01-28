@@ -22,8 +22,8 @@ forprimes {
     push @{$perms{join '', sort split //}}, $_;
 } 1000, 9999;
 
-foreach my $key (keys %perms) {
-    (my @p = @{$perms{$key}}) >= 3 or next;
+foreach my $perm (values %perms) {
+    (my @p = @$perm) >= 3 or next;
 
     my %diffs;
     foreach my $i (0 .. $#p) {

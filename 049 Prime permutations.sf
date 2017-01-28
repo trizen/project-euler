@@ -1,0 +1,33 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 28 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=49
+
+# Runtime: 0.265s
+
+var perms = Hash()
+
+for p in (primes(1000, 9999)) {
+    perms{p.digits.sort.join} := [] << p
+}
+
+perms.each_v { |p|
+    p.len >= 3 || next
+
+    var diffs = Hash()
+    for i in (0 .. p.end) {
+        for j in (i+1 .. p.end) {
+            diffs{p[j] - p[i]} := [] << (p[i], p[j])
+        }
+    }
+
+    diffs.each_kv { |k,v|
+        if (v.uniq.len == 3) {
+            say "#{k}: #{v.uniq}"
+        }
+    }
+}
