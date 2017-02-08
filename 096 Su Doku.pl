@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=96
 
-# Runtime: 22.547s
+# Runtime: 13.888s
 
 use 5.016;
 use strict;
@@ -22,8 +22,8 @@ sub check {
     $jd == $id && return 1;
     $jm == $im && return 1;
 
-        $id / 3 == $jd / 3
-    and $jm / 3 == $im / 3;
+    $id / 3 == $jd / 3 and
+    $jm / 3 == $im / 3;
 }
 
 my @lookup;
@@ -56,7 +56,9 @@ sub solve_sudoku {
         }
 
         $callback->(@grid);
+        goto SOLUTION_FOUND;
     }->();
+    SOLUTION_FOUND: return;
 }
 
 open my $fh, '<', 'p096_sudoku.txt'
