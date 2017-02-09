@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=193
 
-# Runtime: 4.397s
+# Runtime: 4.370s
 
 use 5.010;
 use strict;
@@ -21,9 +21,9 @@ sub squarefree_count_pow2 {
     my $count = 0;
     my $n     = 1 << $pow;
 
-    my $k = 1;
+    my $k = 0;
     foreach my $m (moebius(1, sqrtint($n))) {
-        $count += $m * $n / ($k++)**2;
+        $count += $m * $n / (++$k)**2;
     }
 
     return $count;
