@@ -13,7 +13,7 @@ use 5.010;
 use strict;
 use integer;
 
-use ntheory qw(moebius);
+use ntheory qw(moebius sqrtint);
 
 sub squarefree_count_pow2 {
     my ($pow) = @_;
@@ -22,7 +22,7 @@ sub squarefree_count_pow2 {
     my $n     = 1 << $pow;
 
     my $k = 1;
-    foreach my $m (moebius(1, 1 << ($pow >> 1))) {
+    foreach my $m (moebius(1, sqrtint($n))) {
         $count += $m * $n / ($k++)**2;
     }
 
