@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
 # Daniel "Trizen" Șuteu
-# Date: 16 August 2016
+# Date: 17 February 2017
 # License: GPLv3
 # https://github.com/trizen
 

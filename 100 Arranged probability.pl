@@ -1,9 +1,9 @@
 #!/usr/bin/perl
 
-# Author: Daniel "Trizen" Șuteu
-# Date: 16 August 2016
+# Daniel "Trizen" Șuteu
+# Date: 17 February 2017
 # License: GPLv3
-# Website: https://github.com/trizen
+# https://github.com/trizen
 
 # https://projecteuler.net/problem=100
 

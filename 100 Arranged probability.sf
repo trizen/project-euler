@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 17 February 2017
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=100
+
+# Runtime: 0.118s
+
+for m in (1 .. Inf) {
+
+    var n = (
+        -(1 + sqrt(2)) * (3 - 2*sqrt(2))**m
+        -(1 - sqrt(2)) * (3 + 2*sqrt(2))**m - 2
+    ) ./ 4
+
+    if (n > 1e12) {
+
+        var b = (
+            (sqrt(2) + 2) * (3 - 2*sqrt(2))**m
+          - (sqrt(2) - 2) * (3 + 2*sqrt(2))**m + 4
+        ) ./ 8
+
+        say b.round(0)
+        break
+    }
+}
