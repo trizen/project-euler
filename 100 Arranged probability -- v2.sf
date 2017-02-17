@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 17 February 2017
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=100
+
+# Runtime: 0.188s
+
+func a(n) is cached {
+    n == 0 && return 0
+    n == 1 && return 3
+    6*a(n-1) - a(n-2) + 2
+}
+
+func b(n) is cached {
+    n == 0 && return 1
+    n == 1 && return 3
+    6*b(n-1) - b(n-2) - 2
+}
+
+for n in (1 .. Inf) {
+    if (a(n) > 1e12) {
+        say b(n)
+        break
+    }
+}
