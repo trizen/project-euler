@@ -32,8 +32,10 @@ sub recurse {
 
         if ($x % $y == 0) {
             foreach my $i (1, 3, 7, 9) {
-                if (($x . $i) < $limit and is_prime($x . $i)) {
-                    push(@valid, $x . $i) if is_prime($x / $y);
+                if (    ($x . $i) < $limit
+                    and is_prime($x . $i)
+                    and is_prime($x / $y)) {
+                    push(@valid, $x . $i);
                 }
             }
 
