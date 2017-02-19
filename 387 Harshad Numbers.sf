@@ -1,0 +1,46 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 20 February 2017
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=387
+
+# Runtime: 2.425s
+
+var valid = []
+var limit = 1e14
+
+func recurse(num, sum) {
+
+    if ((100*num + 1) >= limit) {
+        return nil
+    }
+
+    for n in (0 .. 9) {
+
+        var x = (10*num + n)
+        var y = (   sum + n)
+
+        if (y.divides(x)) {
+            for i in ([1, 3, 7, 9]) {
+                var p = (10*x + i)
+                if (p < limit   &&
+                    is_prime(p) &&
+                    is_prime(x / y)
+                ) {
+                    valid << p
+                }
+            }
+
+            recurse(x, y)
+        }
+    }
+}
+
+for i in ([1,2,4,6,8]) {
+    recurse(i, i)
+}
+
+say valid.sum
