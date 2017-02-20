@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=348
 
-# Runtime: 2 min, 52 sec
+# Runtime: 1 min, 17 sec
 
 use 5.010;
 use strict;
@@ -18,7 +18,7 @@ my $count = 0;
 my $sum   = 0;
 
 OUTER: for (my $i = 1 ; ; ++$i) {
-    for (my $j = 1 ; ; ++$j) {
+    for my $j (1 .. $i / 2) {
 
         my $s = $i**2;
         my $c = $j**3;
@@ -32,8 +32,6 @@ OUTER: for (my $i = 1 ; ; ++$i) {
                 last OUTER if ++$count == 5;
             }
         }
-
-        last if $j > $i;
     }
 }
 
