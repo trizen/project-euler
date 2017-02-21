@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 22 February 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=463
+
+# Runtime: 0.012s
+
+func S(n) is cached {
+
+    if (n <= 2) {
+        return n
+    }
+
+    var (q, r) = divmod(n, 4)
+
+    given(r) {
+        when(3) {
+            -8*S(q) + 6*S(2*q + 1) - 1
+        }
+        when(2) {
+            -2*S(q-1) - 6*S(q) + 3*S(2*q) + 3*S(2*q + 1) - 1
+        }
+        when(1) {
+            -2*S(q-1) - 6*S(q) + 4*S(2*q) + 2*S(2*q + 1) - 1
+        }
+        when(0) {
+            -3*S(q-1) - 5*S(q) + 6*S(2*q) - 1
+        }
+    } % 1e9
+}
+
+say "S(3^37) mod 10^9 = #{S(3**37)}"
