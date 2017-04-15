@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=182
 
-# Runtime: 55.211s
+# Runtime: 53.434s
 
 var p = 1009
 var q = 3643
