@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=485
 
-# Runtime: 7 min.
+# Runtime: 4 min, 41 sec.
 
 using Primes
 
