@@ -13,7 +13,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use ntheory qw(gcd powmod);
+use ntheory qw(gcd);
 
 my $p = 1009;
 my $q = 3643;

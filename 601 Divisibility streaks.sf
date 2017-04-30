@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 27 January 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=601
+
+# Runtime: 0.028s
+
+func count(n, k) {
+    var lcm    = Math.lcm((1..n)...)
+    var period = Math.lcm(lcm, n + 1)/lcm
+    var count  = floor((k - 2) / lcm)
+    count - floor(count / period)
+}
+
+say sum(1..31, {|k| count(k, 4**k) })
