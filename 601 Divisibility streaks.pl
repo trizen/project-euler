@@ -14,27 +14,16 @@ use strict;
 use ntheory qw(lcm);
 
 sub count {
-    my ($n, $l, $k) = @_;
-
-    if ($n % 2 == 0) {
-        my $period = lcm($l, $n+1)/$l;
-        my $count  = int(($k - 2) / $l);
-        $count - int($count / $period);
-    }
-    else {
-        int(($k - 2) / (2*$l) + 1/2);
-    }
-}
-
-my @lcm;
-foreach my $n (1 .. 31) {
-    my $lcm = lcm(1 .. $n);
-    push @lcm, [$n, $lcm] if lcm($lcm, $n + 1) != $lcm;
+    my ($n, $k) = @_;
+    my $lcm    = lcm(1 .. $n);
+    my $period = lcm($lcm, $n + 1) / $lcm;
+    my $count  = int(($k - 2) / $lcm);
+    $count - int($count / $period);
 }
 
 my $sum = 0;
-foreach my $g (@lcm) {
-    $sum += count($g->[0], $g->[1], 4**$g->[0]);
+foreach my $n (1 .. 31) {
+    $sum += count($n, 4**$n);
 }
 
 say $sum;
