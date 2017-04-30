@@ -26,7 +26,7 @@ func is_truncatable_prime(n) {
 
     n = orig;
     var p = 10**(l-1)
-    (l-1).itimes { |i|
+    (l-1).times { |i|
          n -= (orig.digit(i) * p)
          n.is_prime || return false
          p //= 10                         # /

@@ -10,12 +10,7 @@
 # Runtime: 10.663s
 
 func count_frac(n) {
-
-    var sum = 0
-    n.times { |k|
-        sum += euler_totient(k)
-    }
-    sum - 1
+    sum(2..n, {|k| euler_totient(k) })
 }
 
 say count_frac(1e6)

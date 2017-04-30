@@ -35,7 +35,7 @@ func f(x) {
 
 var sum = 0;
 
-30.times { |i|          # starts at 1
+for i in (1..30) {
     if (i.is_even) {
         sum += f(fib(i)/fib(i+1));
     }

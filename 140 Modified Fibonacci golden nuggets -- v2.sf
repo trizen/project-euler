@@ -43,7 +43,7 @@ func f_odd(n) {         # 2n+1
 
 var sum = 0;
 
-30.times { |n|          # starts at 1
+for n in (1..30) {
     if (n.is_even) {
         sum += f_even(n)
     }

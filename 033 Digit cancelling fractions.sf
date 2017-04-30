@@ -11,17 +11,13 @@
 
 # Runtime: 0.147s
 
-var prod = 1;
+var prod = 1
 
-9.times { |i|
-    9.times { |j|
-        9.times { |k|
-            next if (i == j);
-            if ((10*i + j) / (10*j + k) == i/k) {
-                prod *= i/k;
-            }
-        }
+[1..10, 1..10, 1..10].cartesian { |i,j,k|
+    next if (i == j)
+    if ((10*i + j) / (10*j + k) == i/k) {
+        prod *= i/k
     }
 }
 
-say prod.de;
+say prod.de

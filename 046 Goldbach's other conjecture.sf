@@ -13,8 +13,8 @@
 range(3, 1e100, 2).each { |n|
     n.is_prime && next;
 
-    (n/2).isqrt.times { |i|
-        if (::is_prime(n - 2*(i**2))) {
+    for i in (1 .. isqrt(n/2)) {
+        if (is_prime(n - 2*(i**2))) {
             goto :NEXT;
         }
     }
