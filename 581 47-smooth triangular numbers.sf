@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 01 May 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=581
+
+var smooth = 47
+
+var sum  = 0
+var list = [1]
+var seen = Hash()
+
+{ |p|
+    say "#{p} -> #{sum}"
+
+    { |n|
+        if (!seen.exists(n) && is_smooth(n+1, smooth)) {
+            seen{n} = true
+            sum += n
+        }
+
+        if (n*p <= 1109496723125) {
+            list << n*p
+        }
+    } << list
+} << primes(2, smooth)
+
+say sum
