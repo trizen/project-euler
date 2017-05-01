@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=581
 
-# Runtime: 1 min, 41 sec
+# Runtime: 1 min.
 
 =for comment
 
@@ -33,9 +33,8 @@ sub is_smooth {
     my ($n) = @_;
 
     foreach my $p (@primes) {
-        my $v = valuation($n, $p);
-        if ($v != 0) {
-            $n /= $p**$v;
+        if ($n % $p == 0) {
+            $n /= $p**valuation($n, $p);
             return 1 if $n == 1;
         }
     }
