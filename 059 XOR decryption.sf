@@ -11,7 +11,9 @@
 
 # https://projecteuler.net/problem=59
 
-var enc = eval('[' + %f'p059_cipher.txt'.open_r.slurp + ']')
+# Runtime: 0.369s
+
+var enc = eval('[' + %f'p059_cipher.txt'.read + ']')
 
 var p_len = 3       # password length
 var pass = []       # decoded password
@@ -20,8 +22,8 @@ for p in (^p_len) {
     for c in ('a'.ord .. 'z'.ord) {
 
         var dec = []
-        for i in (p .. enc.end -> by(p_len)) {
-            dec << chr(enc[i] ^ c);
+        for i in (p..enc.end `by` p_len) {
+            dec << chr(enc[i] ^ c)
         }
 
         # The number of non-alpha and non-space chars
@@ -36,6 +38,7 @@ for p in (^p_len) {
 }
 
 var dec = []
+
 for i in (^enc) {
     dec << enc[i]^pass[i % p_len]
 }

@@ -6,13 +6,13 @@
 
 # https://projecteuler.net/problem=42
 
-# Runtime: 0.664s
+# Runtime: 0.653s
 
-var words = eval('[' + %f'p042_words.txt'.open_r.slurp + ']')
+var words = eval('[' + %f'p042_words.txt'.read + ']')
 
 var dict = Hash()
-dict{@|'A'..'Z'} = @|1..26
+dict{('A'..'Z')...} = (1..26)...
 
 say words.count { |word|
-    8*word.chars.map{ dict{_} }.sum + 1 -> is_sqr
+    8*word.chars.map{ dict{_} }.sum + 1 -> is_square
 }

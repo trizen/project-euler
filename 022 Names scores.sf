@@ -11,15 +11,13 @@
 
 # https://projecteuler.net/problem=22
 
-var arr = eval("[" + %f'0022-names.txt'.open_r.slurp + "]").sort;
+# Runtime: 3.559s
 
-var alphabet = Hash();
-alphabet{'A'..'Z'} = @|(1..26);
+var arr = eval("[" + %f'p022_names.txt'.read + "]").sort
 
-var total = 0;
-arr.range.each { |i|
-    var name = arr[i];
-    var name_score = name.chars.map{|c| alphabet{c} }.sum;
-    total += (name_score * (i+1));
-}
-say total;
+var alphabet = Hash()
+alphabet{('A'..'Z')...} = (1..26)...
+
+say sum(^arr, { |i|
+    arr[i].chars.map{|c| alphabet{c} }.sum * (i+1)
+})
