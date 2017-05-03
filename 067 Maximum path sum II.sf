@@ -8,17 +8,17 @@
 
 # https://projecteuler.net/problem=67
 
-var data = %f'0067-triangle.txt'.open_r.slurp;
-var triangle = data.lines.map{.words.map{.to_i}};
+var data = %f'p067_triangle.txt'.read
+var triangle = data.lines.map{.words.map{.to_i}}
 
-var sum = [0];
+var sum = [0]
 
 triangle.each { |x|
     sum = [
-            x.first + sum.first,
-            range(1, x.end-1) -> map{|i| x[i] + Math.max(sum[i-1, i])}...,
-            x.last + sum.last,
-          ];
+            x[0] + sum[0],
+            {|i| x[i] + max(sum[i-1, i]) }.map(1 ..^ x.end)...,
+            x[-1] + sum[-1],
+          ]
 }
 
-say sum.max;
+say sum.max
