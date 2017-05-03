@@ -16,14 +16,14 @@
 
 # Runtime: 59.832s
 
-var str = '';
-{ |i|
-    str += i;
-    str.len >= 1000000 && break;
-} * Inf;
+var str = ''
+for i (1..Inf) {
+    str += i
+    str.len >= 1000000 && break
+}
 
-var prod = 1;
-{ |i|
-    prod *= Num(str.char(10**(i-1) - 1));
-} * 7;
-say prod;
+var prod = 1
+for i (0..6) {
+    prod *= str.char(10**i - 1)
+}
+say prod
