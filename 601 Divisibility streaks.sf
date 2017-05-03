@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=601
 
-# Runtime: 0.028s
+# Runtime: 0.115s
 
 func count(n, k) {
     var lcm    = Math.lcm((1..n)...)
