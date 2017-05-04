@@ -31,9 +31,9 @@ foreach my $p (2, 3, 5) {
 }
 
 @smooth =
-  sort { $b <=> $a }
+  sort { $b <=> $a    }
   grep { is_prime($_) }
-  map { $_ + 1 } @smooth;
+  map  { $_ + 1       } @smooth;
 
 my @h = (1);
 my $sum = 1;
