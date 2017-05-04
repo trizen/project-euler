@@ -17,7 +17,7 @@ use strict;
 use ntheory qw(
   factor
   euler_phi
-  is_square_free
+  is_prime
   );
 
 my @smooth = (1);
@@ -34,28 +34,21 @@ foreach my $p (2, 3, 5) {
 
 @smooth =
   sort { $b <=> $a }
-  grep { is_square_free($_) and ((factor(euler_phi($_)))[-1] <= 5) }
+  grep { is_prime($_) }
   map { $_ + 1 } @smooth;
 
 my @h = (1);
-my %seen;
 my $sum = 1;
 
 foreach my $p (@smooth) {
     foreach my $n (@h) {
         if (
                 $p * $n <= $limit
-            and !exists($seen{$p * $n})
             and (factor(euler_phi($n * $p)))[-1] <= 5
         ) {
-
-            if ($p == 2) {
+            if ($p == 2) { # optional optimization
                 foreach my $n (@h) {
-                    while (
-                            $n * $p <= $limit
-                        and !exists($seen{$p * $n})
-                        and (factor(euler_phi($n * $p)))[-1] <= 5
-                    ) {
+                    while ($n * $p <= $limit) {
                         $sum += ($n * $p) % $mod;
                         $sum %= $mod;
                         $n *= $p;
@@ -64,7 +57,6 @@ foreach my $p (@smooth) {
                 last;
             }
             else {
-                undef $seen{$n * $p};
                 $sum += ($n * $p) % $mod;
                 $sum %= $mod;
                 push @h, $n * $p;
