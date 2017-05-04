@@ -7,9 +7,7 @@
 
 # https://projecteuler.net/problem=516
 
-# Not a very good solution: requires over 6 GB of RAM.
-
-# Runtime: 2 min, 57 sec.
+# Runtime: 41.831s.
 
 use 5.010;
 use strict;
