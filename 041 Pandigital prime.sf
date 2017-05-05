@@ -15,7 +15,7 @@
 for n in (1..7 -> flip) {
     var prime = 0
 
-    @(1..n -> flip).permutations { |p|
+    @(1..n -> flip).permutations { |*p|
         var k = Num(p.join)
 
         if (k.is_prime) {
