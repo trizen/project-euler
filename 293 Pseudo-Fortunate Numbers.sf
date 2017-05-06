@@ -1,0 +1,28 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 06 May 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=293
+
+# Runtime: 1.356s
+
+var limit = 1e9
+var admis = []
+
+func rec(n, p) {
+    if (n>1 && n<limit) {
+        admis << n
+    }
+
+    if (n*p < limit) {
+        rec(n*p, p)
+        rec(n*p, p.next_prime)
+    }
+}
+
+rec(1, 2)
+
+say admis.map {|n| (n+1).next_prime - n }.uniq.sum

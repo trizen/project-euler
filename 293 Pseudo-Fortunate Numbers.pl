@@ -33,4 +33,4 @@ sub rec {
 
 rec(1, 2);
 
-say vecsum(uniq(map { next_prime($_+1) - $_ } uniq(@admis)));
+say vecsum(uniq(map { next_prime($_+1) - $_ } @admis));
