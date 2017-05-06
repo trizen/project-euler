@@ -10,17 +10,16 @@
 
 # Runtime: 0.322s
 
-var count = 0;
-var seen = Hash.new;
+var count = 0
+var seen = Hash()
 
-range(2, 100).each { |a|
-    range(2, 100).each { |b|
-        var p = a**b;
-        if (!seen.has_key(p)) {
-            seen{p} = 1;
-            ++count;
+for a (2..100) {
+    for b (2..100) {
+        if (!seen.exists(a**b)) {
+            seen{a**b} = true
+            ++count
         }
     }
 }
 
-say count;
+say count

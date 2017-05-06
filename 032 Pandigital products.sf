@@ -14,7 +14,7 @@ func valid_num(n) {
     var digits = n.digits;
 
     return false if (digits.contains(0));
-    return false if (digits.unique.len != n.len);
+    return false if (digits.uniq.len != n.len);
 
     return true;
 }
@@ -23,7 +23,7 @@ var a = (range(1, 99)   -> grep(valid_num));
 var b = (range(1, 9999) -> grep(valid_num));
 
 var sum = 0;
-var seen = Hash.new;
+var seen = Hash();
 
 a.each { |x|
     b.each { |y|
