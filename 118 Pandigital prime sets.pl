@@ -33,10 +33,6 @@ my $limit = $#primes;
 sub p_118 {
     my ($pos, $root) = @_;
 
-    if ($pos > $limit) {
-        return;
-    }
-
     if (length($root) == 9) {
         return ++$count;
     }
