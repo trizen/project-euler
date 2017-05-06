@@ -13,10 +13,10 @@ func nth_permutation(arr, k) {
     gather {
         while (arr) {
             var f = factorial(arr.end)
-            var i = k//f
-            k %= f
-            take(arr[i])
-            arr = [arr[^i], arr[i+1 .. arr.end]]
+            (var q, k) = divmod(k, f)
+            q %= arr.len
+            take(arr[q])
+            arr = [arr[^q], arr[q+1 .. arr.end]]
         }
     }
 }
