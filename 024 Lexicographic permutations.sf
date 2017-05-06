@@ -10,12 +10,12 @@
 
 # Runtime: 7.307s
 
-var i = 0;
-var arr = @(0..9);
+var i = 0
+var arr = @(0..9)
 
-arr.permutations { |p|
+arr.permutations { |*p|
     if (++i == 1e6) {
-        say p.join;
-        break;
+        say p.join
+        break
     }
 }
