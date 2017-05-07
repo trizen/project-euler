@@ -17,7 +17,8 @@ function p_225(nth=124)
         cache = Dict{Int64, Int64}()
 
         function tribonacci(n)
-            n <= 3 ? 1 : haskey(cache, n) ? cache[n] : cache[n] = (
+            n <= 3 ? 1 :
+            haskey(cache, n) ? cache[n] : cache[n] = (
                 tribonacci(n - 1) % k
               + tribonacci(n - 2) % k
               + tribonacci(n - 3) % k
