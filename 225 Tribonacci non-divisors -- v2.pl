@@ -26,8 +26,7 @@ my $num = 0;
 my $nth = 124;
 
 for (my ($c, $k) = (1, 1) ; $c <= $nth ; $k += 2) {
-    my %cache;
-    for (my $n = 4 ; ; $n += 3) {
+    for (my ($n, %cache) = 4 ; ; $n += 3) {
         my $t1 = tribonacci($n,     $k, \%cache) || last;
         my $t2 = tribonacci($n + 1, $k, \%cache) || last;
         my $t3 = tribonacci($n + 2, $k, \%cache) || last;
