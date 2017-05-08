@@ -7,14 +7,14 @@
 
 # https://projecteuler.net/problem=169
 
-# Runtime: 0.159s
+# Runtime: 0.091s
 
 use 5.010;
 use strict;
 use warnings;
 
 use Memoize qw(memoize);
-use Math::BigNum qw(:constant);
+use Math::AnyNum qw(:overload);
 
 memoize('f');
 

@@ -10,7 +10,7 @@
 
 use 5.020;
 use Memoize qw(memoize);
-use Math::BigNum qw(:constant);
+use Math::AnyNum qw(:overload);
 use experimental qw(signatures);
 
 memoize('kn');
