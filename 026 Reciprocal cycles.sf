@@ -11,8 +11,8 @@
 # Runtime: 4.211s
 
 func rec_cycle(d) {
-    range(1, d).each { |x|
-        if (modpow(10, x, d) == 1) {
+    for x in (1..d) {
+        if (powmod(10, x, d) == 1) {
             return x;
         }
     }
@@ -22,7 +22,7 @@ func rec_cycle(d) {
 var d = 1;
 var max = 0;
 
-range(2, 1000).each { |i|
+for i in (2..1000) {
     var r = rec_cycle(i);
 
     if (r > max) {
