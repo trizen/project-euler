@@ -1,0 +1,30 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 11 May 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=129
+
+# Runtime: 34.454s
+
+for n (1e6 .. Inf) {
+
+    gcd(n, 10) == 1 || next
+
+    var k = 1
+    var sum = 1
+
+    loop {
+        sum += powmod(10, k, n)
+        sum %= n
+        sum.is_zero && break
+        ++k
+    }
+
+    if (k+1 > 1e6) {
+        say "A(#{n}) = #{k+1}"
+        break
+    }
+}
