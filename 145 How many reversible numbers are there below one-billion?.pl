@@ -16,7 +16,7 @@ use integer;
 my $count = 0;
 
 foreach my $n (1 .. 10**9) {
-    if ((($n + reverse($n)) =~ tr/13579//dsr) eq '' and $n % 10 != 0) {
+    if ($n % 10 != 0 and (($n + reverse($n)) =~ tr/13579//dsr) eq '') {
         ++$count;
     }
 }

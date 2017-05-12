@@ -24,10 +24,10 @@
 #
 #                             Fn ∗ F(n+1)
 
-var max = 15;
+var max = 15
 
 func fib(n) is cached {
-    n > 1 ? (fib(n-1) + fib(n-2)) : n;
+    n > 1 ? (fib(n-1) + fib(n-2)) : n
 }
 
-say (fib(2*max) * fib(2*max + 1));
+say (fib(2*max) * fib(2*max + 1))

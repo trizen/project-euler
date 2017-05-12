@@ -12,13 +12,13 @@
 func lucas(n) is cached {
     n.is_one ? 1
              : (n.is_zero ? 2
-                          : (lucas(n-1) + lucas(n-2)));
+                          : (lucas(n-1) + lucas(n-2)))
 }
 
 func fib(n) is cached {
     n.is_one ? 1
              : (n.is_zero ? 0
-                          : (fib(n-1) + fib(n-2)));
+                          : (fib(n-1) + fib(n-2)))
 }
 
 func f_even(n) {        # 2n
@@ -41,7 +41,7 @@ func f_odd(n) {         # 2n+1
             (((f1+l1)**2)/((f2+l2)**2) + ((f1+l1)/(f2+l2)) - 1)
 }
 
-var sum = 0;
+var sum = 0
 
 for n in (1..30) {
     if (n.is_even) {
@@ -52,4 +52,4 @@ for n in (1..30) {
     }
 }
 
-say sum;
+say sum
