@@ -1,0 +1,34 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 13 May 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=130
+
+# Runtime: 2 min, 11 sec
+
+var sum   = 0
+var count = 0
+
+for n in (2..Inf -> lazy.grep { !.is_prime && gcd(_, 10).is_one }) {
+
+    var r = 1
+    var p = 0
+
+    for k in (1 ..^ n) {
+        r += powmod(10, k, n)
+        r %= n
+        p += 1
+        r.is_one && break
+    }
+
+    if (r.is_one && p.divides(n-1)) {
+        sum += n
+        say "[#{count+1}] #{n}"
+        ++count == 25 && break
+    }
+}
+
+say sum
