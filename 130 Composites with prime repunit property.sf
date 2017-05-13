@@ -12,7 +12,7 @@
 var sum   = 0
 var count = 0
 
-for n in (2..Inf -> lazy.grep { !.is_prime && gcd(_, 10).is_one }) {
+for n in (2..Inf -> lazy.grep { !.is_prime && .is_coprime(10) }) {
 
     var r = 1
     var p = 0
@@ -21,10 +21,10 @@ for n in (2..Inf -> lazy.grep { !.is_prime && gcd(_, 10).is_one }) {
         r += powmod(10, k, n)
         r %= n
         p += 1
-        r.is_one && break
+        r == 1 && break
     }
 
-    if (r.is_one && p.divides(n-1)) {
+    if ((r == 1) && p.divides(n-1)) {
         sum += n
         say "[#{count+1}] #{n}"
         ++count == 25 && break
