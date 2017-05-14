@@ -21,7 +21,7 @@ my $iter  = prime_iterator();
 
 my $factors_sum = 0;
 
-OUTER: while (my $p = $iter->()) {
+while (my $p = $iter->()) {
 
     gcd($n, $p) == 1 or next;
 
@@ -32,13 +32,10 @@ OUTER: while (my $p = $iter->()) {
         $sum += powmod(10, $k, $p);
         $sum %= $p;
         $period += 1;
-
-        if ($sum == 0) {
-            ($n % $period == 0) ? last : next OUTER;
-        }
+        $sum == 0 and last;
     }
 
-    if ($sum == 0) {
+    if ($sum == 0 and $n % $period == 0) {
         $factors_sum += $p;
         say "[$count] $p is a prime factor -> $factors_sum";
         last if --$count <= 0;
