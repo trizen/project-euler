@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=129
 
-# Runtime: 1.116s
+# Runtime: 1.086s
 
 use 5.010;
 use strict;
@@ -19,8 +19,8 @@ for (my $n = 1e6 ; ; ++$n) {
 
     gcd($n, 10) == 1 or next;
 
-    my $k = 1;
-    for (my $sum = 1 ; ; ++$k) {
+    my $k = 0;
+    for (my $sum = 0 ; ; ++$k) {
         $sum += powmod(10, $k, $n);
         $sum %= $n;
         last if $sum == 0;
