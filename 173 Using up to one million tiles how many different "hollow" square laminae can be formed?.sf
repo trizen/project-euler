@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 16 May 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=173
+
+# Runtime: 54.074s
+
+var count = 0
+var tiles = 1e6
+
+for k (1 .. tiles>>2) {
+    var sum = 0
+    for j (k+2 .. Inf `by` 2) {
+        sum += (2*j + 2*(j-2))
+        (sum <= tiles) ? ++count : break
+    }
+}
+
+say count
