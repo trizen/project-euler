@@ -47,7 +47,6 @@ my $sum    = 0;
 my @smooth = (1);
 
 foreach my $p (@primes) {
-    say "$p -> $sum";
     foreach my $n (@smooth) {
         if (!exists($seen{$n}) and is_smooth($n+1)) {
             undef $seen{$n};
@@ -58,6 +57,7 @@ foreach my $p (@primes) {
             push @smooth, $n*$p;
         }
     }
+    say "$p -> $sum";
 }
 
 say "Sum: $sum";
