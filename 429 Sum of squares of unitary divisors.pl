@@ -9,8 +9,6 @@
 
 # Runtime: 4.686s
 
-# Answer: 98792821
-
 use 5.010;
 use strict;
 use warnings;
