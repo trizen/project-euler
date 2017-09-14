@@ -2,7 +2,7 @@
 
 # Daniel "Trizen" Șuteu
 # License: GPLv3
-# Date: 14 August 2017
+# Date: 14 September 2017
 # https://github.com/trizen
 
 # https://projecteuler.net/problem=609
