@@ -1,0 +1,43 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# Date: 24 September 2017
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=61
+
+# Runtime: 2.106s
+
+var(:trig, :square, :penta, :hexa, :hepta, :octa)
+
+var seq = (1000..9999 -> lazy.grep {|n|
+    n.digit(2) != 0
+})
+
+seq.each { |n|
+    var h = Number(n.digits.head(2).join)
+    var t = Number(n.digits.tail(2).join)
+
+    is_polygonal(n, 3) && (trig{h}{t}   = true)
+    is_polygonal(n, 4) && (square{h}{t} = true)
+    is_polygonal(n, 5) && (penta{h}{t}  = true)
+    is_polygonal(n, 6) && (hexa{h}{t}   = true)
+    is_polygonal(n, 7) && (hepta{h}{t}  = true)
+    is_polygonal(n, 8) && (octa{h}{t}   = true)
+}
+
+var a = [trig, square, penta, hexa, hepta, octa]
+
+a.permutations { |*h|
+    h.dig(0)         \\ next -> each_k { |ah|
+    h.dig(0, ah)     \\ next -> each_k { |at|
+    h.dig(1, at)     \\ next -> each_k { |bt|
+    h.dig(2, bt)     \\ next -> each_k { |ct|
+    h.dig(3, ct)     \\ next -> each_k { |dt|
+    h.dig(4, dt)     \\ next -> each_k { |et|
+    h.dig(5, et, ah) \\ next
+        var nums = "#{ah}#{at} #{at}#{bt} #{bt}#{ct} #{ct}#{dt} #{dt}#{et} #{et}#{ah}".words
+        say "sum(#{nums.join(', ')}) = #{nums.sum}"
+    }}}}}}
+}
