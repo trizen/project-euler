@@ -1,4 +1,11 @@
 
+\\ Daniel "Trizen" Șuteu
+\\ License: GPLv3
+\\ Date: 27 September 2017
+\\ https://github.com/trizen
+
+\\ https://projecteuler.net/problem=235
+
 \\
 \\ s(n) = sum((900-3k)*x^(k-1), {k=1..n})
 \\
