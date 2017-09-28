@@ -11,8 +11,9 @@
 
 func nth_permutation(arr, k) {
     gather {
+        var f = factorial(arr.len)
         while (arr) {
-            var f = factorial(arr.end)
+            f //= arr.len
             (var q, k) = divmod(k, f)
             q %= arr.len
             take(arr[q])
