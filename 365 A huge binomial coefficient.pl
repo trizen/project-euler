@@ -18,12 +18,11 @@
 
 use 5.020;
 use strict;
+use integer;
 use warnings;
 
 use experimental qw(signatures);
-use ntheory qw(factor_exp chinese invmod mulmod primes powmod);
-
-use integer;
+use ntheory qw(chinese invmod mulmod primes powmod);
 
 sub factorial_prime_pow ($n, $p) {
 
