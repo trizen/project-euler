@@ -5,7 +5,7 @@
 # Date: 03 October 2017
 # https://github.com/trizen
 
-# https://projecteuler.net/problem=601
+# https://projecteuler.net/problem=451
 
 # Runtime: ~14 minutes
 
