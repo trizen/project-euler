@@ -4,6 +4,10 @@
 # 29 September 2017
 # https://github.com/trizen
 
+# https://projecteuler.net/problem=248
+
+# Runtime: 0.788s
+
 use 5.010;
 use strict;
 use warnings;
@@ -16,7 +20,6 @@ use ntheory qw(is_prime divisors valuation factorial);
 # which in turn is based on invphi.gp v1.3 by Max Alekseyev.
 
 # See also:
-#   https://projecteuler.net/problem=248
 #   https://en.wikipedia.org/wiki/Euler%27s_totient_function
 #   https://github.com/danaj/Math-Prime-Util/blob/master/examples/inverse_totient.pl
 
