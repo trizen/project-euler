@@ -6,7 +6,7 @@
 
 # https://projecteuler.net/problem=214
 
-# Runtime: 14.080s
+# Runtime: 12.672s
 
 use 5.010;
 use strict;
@@ -21,7 +21,7 @@ forprimes {
 
     my $len = 1;
 
-    for (my $n = euler_phi($_); ; $n = euler_phi($n)) {
+    for (my $n = $_ - 1 ; ; $n = euler_phi($n)) {
         last if ++$len > $chain_len;
         last if $n == 1;
     }
