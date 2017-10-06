@@ -7,14 +7,14 @@
 
 # https://projecteuler.net/problem=451
 
-# Runtime: ~14 minutes
+# Runtime: ~5 minutes
 
 use 5.010;
 use strict;
 use warnings;
 
 use ntheory qw(:all);
-use Algorithm::Loops qw(NestedLoops);
+use Set::Product::XS qw(product);
 
 sub l {
     my ($n) = @_;
@@ -24,11 +24,8 @@ sub l {
         return (($n >> 1) + 1);
     }
 
-    # Prime power
-    is_prime_power($n) && return 1;
-
-    # Twice a prime power
-    if (valuation($n, 2) == 1 and is_prime_power($n >> 1)) {
+    # Prime power or twice a prime power
+    if (is_prime_power($n) or ($n % 2 == 0 and is_prime_power($n >> 1))) {
         return 1;
     }
 
@@ -52,18 +49,15 @@ sub l {
         }
     }
 
-    # Create a Cartesian product iterator
-    my $iter = NestedLoops([values(%table)]);
-
     my $solution = 1;
 
     # Generate the solutions and pick the largest one bellow n-1
-    while (my @list = $iter->()) {
-        my $x = chinese(@list);
+    product {
+        my $x = chinese(@_);
         if ($x > $solution and $x < $n - 1) {
             $solution = $x;
         }
-    }
+    } values %table;
 
     return $solution;
 }
