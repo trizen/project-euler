@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 10 October 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=9
+
+# Runtime: 0.135s
+
+func pythagorean_triplet(limit) {
+    for n in (1..limit) {
+        for m in (n+1 .. limit -> by(2)) {
+
+            gcd(n, m) == 1 || next
+
+            var x = (m**2 - n**2)
+            var y = 2*n*m
+            var z = (m**2 + n**2)
+
+            for (var k = 1; true ; ++k) {
+                var a = k*x
+                var b = k*y
+                var c = k*z
+
+                break if (a+b+c > limit)
+
+                if (a+b+c == limit) {
+                    return a*b*c
+                }
+            }
+        }
+    }
+}
+
+say pythagorean_triplet(1000)
