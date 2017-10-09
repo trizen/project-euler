@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 09 October 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=4
+
+# Runtime: 0.175s
+
+func p_004() {
+    for n in (999 `downto` 100) {
+        var k = Num("#{n}#{Str(n).reverse}")
+        k.divisors.grep{.len == 3}.combinations(2, {|a,b|
+            return(k, a, b) if (a*b == k)
+        })
+    }
+}
+
+var (k, a, b) = p_004()
+say "#{a}*#{b} = #{k}"
