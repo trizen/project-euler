@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 09 October
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=7
+
+# Runtime: 2.873s
+
+var n = 10_001
+var upper = int(n*(n.log + n.log.log))
+
+var sieve = [true, true]
+for i in (2..upper.isqrt) {
+    for j in (i*i .. upper -> by(i)) {
+        sieve[j] = true
+    }
+}
+
+sieve.map_kv! {|k,v| v ? () : k }
+
+say sieve[n-1]

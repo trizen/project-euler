@@ -11,5 +11,4 @@
 
 # Runtime: 0.135s
 
-var nt = frequire('ntheory');
-say nt.nth_prime(10001);
+say prime(10_001)
