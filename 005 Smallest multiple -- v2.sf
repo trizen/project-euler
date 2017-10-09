@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 09 October 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=5
+
+# Runtime: 0.118s
+
+var limit = 20
+
+say limit.primes.prod_by {|p|
+    p**limit.ilog(p)
+}
