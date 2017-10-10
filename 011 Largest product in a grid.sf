@@ -33,22 +33,28 @@ var text = <<'EOT';
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 EOT
 
-var matrix = text.lines.map {.words.map{.to_i}};
+var matrix = text.lines.map { .split.map{ Num(_) } }
 
-var end = 19;
-var products = [];
+var e = 19
+var products = []
 
-range(0, end).each { |j|
-    range(0, end-3).each { |i|
-        products << (matrix[j][i] * matrix[j][i+1] * matrix[j][i+2] * matrix[j][i+3]);
-        products << (matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j]);
-        if (j + 3 <= end) {
-            products << (matrix[i][j] * matrix[i+1][j+1] * matrix[i+2][j+2] * matrix[i+3][j+3]);
-        }
-        if (end - j - 3 > 0) {
-            products << (matrix[i][end-j] * matrix[i+1][end - j+1] * matrix[i+2][end - j+2] * matrix[i+3][end - j+3]);
-        }
+for j,i in (0..e ~X 0..(e-3)) {
+
+    # Horizontal
+    products << (matrix[j][i] * matrix[j][i+1] * matrix[j][i+2] * matrix[j][i+3])
+
+    # Vertical
+    products << (matrix[i][j] * matrix[i+1][j] * matrix[i+2][j] * matrix[i+3][j])
+
+    # Left-to-right diagonal
+    if (j + 3 <= e) {
+        products << (matrix[i][j] * matrix[i+1][j+1] * matrix[i+2][j+2] * matrix[i+3][j+3])
+    }
+
+    # Right-to-left diagonal
+    if (e - j >= 3) {
+        products << (matrix[i][e-j] * matrix[i+1][e-j - 1] * matrix[i+2][e-j - 2] * matrix[i+3][e-j - 3])
     }
 }
 
-say products.max;
+say products.max
