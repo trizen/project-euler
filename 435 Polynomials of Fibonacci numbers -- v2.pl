@@ -8,7 +8,7 @@
 
 # Runtime: 0.990s
 
-use 5.020;
+use 5.010;
 use strict;
 use warnings;
 
@@ -32,7 +32,6 @@ foreach my $p (factor_exp(factorial(15))) {
         }
 
         $sum = addmod($sum, mulmod($f2, $power_sum, $pp), $pp);
-        ($f1, $f2) = ($f2, addmod($f1, $f2, $pp));
 
         push @array, $sum;
 
@@ -42,6 +41,8 @@ foreach my $p (factor_exp(factorial(15))) {
             $sum = $array[($n % $k) - 1];
             last;
         }
+
+        ($f1, $f2) = ($f2, addmod($f1, $f2, $pp));
     }
 
     push @chinese, [$sum, $pp];
