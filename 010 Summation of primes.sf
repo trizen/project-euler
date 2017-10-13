@@ -9,14 +9,12 @@
 
 # https://projecteuler.net/problem=10
 
-# Runtime: 3.419s
+# Runtime: 1.986s
 
 func sum_primes(limit) {
     var sum = 0
-    var p = 2
-    loop {
+    for (var p = 2; p < limit; p.next_prime!) {
         sum += p
-        p.next_prime! < limit || break
     }
     return sum
 }

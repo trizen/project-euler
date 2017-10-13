@@ -13,18 +13,16 @@
 # Runtime: 0.160s
 
 func sum_even_fibs(max) {
-    var n = [1, 2];
+    var (a, b) = (0, 1)
 
-    var sum = 0;
-    while (n[1] < max) {
-        n[0,1] = (n[1], n[0] + n[1]);
+    var sum = 0
 
-        if (n[0].is_even) {
-            sum += n[0];
-        }
+    while (a <= max) {
+        (a, b) = (b, a + b)
+        sum += a if a.is_even
     }
 
-    return sum;
+    return sum
 }
 
-say sum_even_fibs(4e6);
+say sum_even_fibs(4e6)

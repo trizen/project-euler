@@ -10,7 +10,7 @@
 
 # https://projecteuler.net/problem=37
 
-# Runtime: 3.822s
+# Runtime: 2.635s
 
 func is_truncatable_prime(n) {
 
