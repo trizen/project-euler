@@ -25,24 +25,19 @@ sub modular_cubes {
 
         push @{$table{$pp}}, [1, $pp];
 
+        my %seen;
         foreach my $x (2 .. $pp - 1) {
             if (powmod($x, 3, $pp) == 1) {
-                push @{$table{$pp}}, grep { $_->[0] > 1 } ([$x, $pp], [$x - 1, $pp], [$x - 2, $pp]);
+                push @{$table{$pp}}, grep { $_->[0] > 1 and !$seen{$_->[0]}++ } ([$x, $pp], [$x - 1, $pp], [$x - 2, $pp]);
             }
         }
-
-        @{$table{$pp}} = do {
-            my %seen;
-            grep { !$seen{$_->[0]}++ } @{$table{$pp}};
-        };
     }
 
-    my %seen;
     my $sum = 0;
 
     product {
         my $x = chinese(@_);
-        if ($x > 1 and powmod($x, 3, $n) == 1 and !$seen{$x}++) {
+        if ($x > 1 and powmod($x, 3, $n) == 1) {
             $sum += $x;
         }
     } values %table;
