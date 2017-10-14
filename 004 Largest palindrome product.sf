@@ -16,8 +16,8 @@
 var candidates = []
 
 var k = 0
-range(999, 100, -1).each { |i|
-    for (var m = 0; m <= k; m++) {
+for i in (999 `downto` 100) {
+    for m in (0 .. k) {
         var j = 999-m
         var p = i*j
         if (p.to_s.is_palindrome) {
