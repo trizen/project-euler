@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 18 October 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=183
+
+# Runtime: 0.550s
+
+define e = Num.e
+
+say sum_by(5..10_000, {|n|
+    var M = round(n/e)
+    var r = M/gcd(n, M)
+
+    r.remdiv!(2)
+    r.remdiv!(5)
+
+    r == 1 ? -n : n
+})
