@@ -1,0 +1,33 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 19 October 2017
+# https://github.com/trizen
+
+# Runtime: 0.143s
+
+# https://projecteuler.net/problem=191
+
+func p_191(Number days) {
+    func (len=0, hasL=false, hasA1=false, hasA2=false) is cached {
+
+        var count = ((len == days) ? 1 : 0)
+
+        if (len < days) {
+
+            if (!hasA1 || !hasA2) {
+                count += __FUNC__(len + 1, hasL, hasA2, true)
+            }
+
+            count += __FUNC__(len + 1, hasL, hasA2, false)
+
+            if (!hasL) {
+                count += __FUNC__(len + 1, true, hasA2, false)
+            }
+        }
+
+        return count
+    }()
+}
+
+say p_191(30)

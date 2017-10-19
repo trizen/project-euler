@@ -8,6 +8,8 @@
 
 # https://projecteuler.net/problem=191
 
+# For a faster solution, see version 2.
+
 function p_191(days::Int64)
 
     count = 0
