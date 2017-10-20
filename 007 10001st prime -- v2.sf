@@ -6,15 +6,17 @@
 
 # https://projecteuler.net/problem=7
 
-# Runtime: 2.873s
+# Runtime: 1.226s
 
 var n = 10_001
 var upper = int(n*(n.log + n.log.log))
 
 var sieve = [true, true]
 for i in (2..upper.isqrt) {
-    for j in (i*i .. upper -> by(i)) {
-        sieve[j] = true
+    if (!sieve[i]) {
+        for j in (i*i .. upper -> by(i)) {
+            sieve[j] = true
+        }
     }
 }
 
