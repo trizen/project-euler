@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 22 October 2017
+# https://github.com/trizen
+
+# Runtime: 0.126s
+
+# https://projecteuler.net/problem=138
+
+say sum(1..12, {|n|
+    fibonacci(6*n + 3) / 2
+})
