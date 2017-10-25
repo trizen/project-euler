@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=135
 
-# Runtime: 4.611s
+# Runtime: 3.973s
 
 use 5.010;
 use strict;
@@ -31,8 +31,8 @@ sub has_ten_solutions {
 
         ($k % 4 == 0) ? ($k >>= 2) : next;
 
-        my $x1 = 3*$k - sqrt(4 * $k**2 - $n);
-        my $x2 = 3*$k + sqrt(4 * $k**2 - $n);
+        my $x1 = 3*$k - (($q - $p) >> 1);
+        my $x2 = 3*$k + (($q - $p) >> 1);
 
         if (($x1 - 2*$k) > 0) {
             ++$count;
