@@ -1,0 +1,11 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 30 October 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=6
+
+# Runtime: 0.148s
+
+say (faulhaber(100, 1)**2 - faulhaber(100, 2))
