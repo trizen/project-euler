@@ -1,28 +1,26 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# Edited: 04 November 2017
+# https://github.com/trizen
 
 # How many circular primes are there below one million?
 
 # https://projecteuler.net/problem=35
 
-# Runtime: 9.660s
+# Runtime: 1.235s
 
-var count = 4;      # circular primes less than 10
-var limit = 1e6;
+var count = 4      # number of circular primes < 10
+var limit = 1e6
 
-range(11, limit-1, 2).each { |i|
-    var s = i.to_s;
-    s ~~ /[^1379]/ && next;
-    i.is_prime || next;
-    var d = s.chars;
-    range(0, d.end).each { |i|
-        Num(d.rotate(i).join).is_prime || goto :NEXT;
+for (var p = 11; p < limit; p.next_prime!) {
+    var s = Str(p)
+    next if s.contains(/[^1379]/)
+    var d = s.chars
+
+    if (d.range.all {|k| Num(d.rotate(k).join).is_prime }) {
+        ++count
     }
-    ++count;
-    @:NEXT;
 }
 
-say count;
+say count
