@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 04 November 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=12
+
+# Runtime: 0.932s
+
+say polygonal(^Inf -> first_by { |i|
+    i*(i+1)/2 -> factor_exp.prod_by {|f| f[1] + 1 } > 500
+}, 3)
