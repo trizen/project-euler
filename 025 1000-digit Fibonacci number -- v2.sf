@@ -1,0 +1,20 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 05 November 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=25
+
+# Runtime: 0.302s
+
+func fib_len(n, base=10) {
+
+    static S = (sqrt(1.25) + 0.5)
+    static T = (1 - S)
+    static W = (S - T)
+
+    1 + ilog((S**n - T**n) / W, base)
+}
+
+say (^Inf -> first_by {|n| fib_len(n) == 1000 })
