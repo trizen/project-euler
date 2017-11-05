@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 09 October 2017
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=36
+
+# Runtime: 0.320s
+
+var sum = 0
+var limit = 1e6
+
+for k in (0 .. limit.log2.ceil>>1) {
+    [0,1].variations_with_repetition(k, {|*a|
+
+        next if a[0]==0
+
+        for b in (['', '0', '1']) {
+            with (Num(a.join + b + a.join.flip, 2)) { |n|
+                if (n<limit && Str(n)==Str(n).flip) {
+                    sum += n
+                }
+            }
+        }
+    })
+}
+
+say sum
