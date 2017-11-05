@@ -19,17 +19,13 @@ var primes = limit.primes
 
 for a,b in (primes ~X primes) {
 
-    do {
-        var n = 0
-        while (n*n + a*n + b -> is_prime) { ++n }
+    with (^Inf -> first_by {|k| !is_prime(k*k + a*k + b) }) { |n|
         if (n > m) {
             (m, p, q) = (n, a, b)
         }
     }
 
-    do {
-        var n = 0
-        while (n*n - a*n + b -> is_prime) { ++n }
+    with (^Inf -> first_by {|k| !is_prime(k*k - a*k + b) }) { |n|
         if (n > m) {
             (m, p, q) = (n, -a, b)
         }
