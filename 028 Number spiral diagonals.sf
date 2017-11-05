@@ -24,10 +24,11 @@ What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed 
 
 */
 
-var n = 1001;
+var N = 1001
+var sum = 1
 
-var sum = 1;
-range(2, int(n/2)+1).each { |n|
-    sum += (n * (16*n - 28) + 16);
+for n in (2 .. ceil(N/2)) {
+    sum += (n * (16*n - 28) + 16)
 }
-say sum;
+
+say sum
