@@ -1,8 +1,7 @@
 #!/usr/bin/perl
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# https://github.com/trizen
 
 # The following iterative sequence is defined for the set of positive integers:
 
@@ -13,22 +12,23 @@
 
 # https://projecteuler.net/problem=14
 
-# Runtime: 7.065s
+# Runtime: 2.222s
 
 use 5.010;
 use strict;
-use integer;
 
-use Memoize qw(memoize);
-
-memoize('collatz');
+my %cache;
 
 sub collatz {
     my ($n) = @_;
-    $n == 1 ? 1 : (
-         $n % 2 == 0 ? 1 + collatz($n / 2)
-                     : 1 + collatz((3*$n + 1) / 2)
-    );
+
+    return 1 if ($n == 1);
+
+    $cache{$n} //= (
+                    ($n % 2 == 0)
+                    ? 1 + collatz($n >> 1)
+                    : 1 + collatz((3 * $n + 1) >> 1)
+                   );
 }
 
 my $num = 0;
