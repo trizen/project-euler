@@ -6,31 +6,24 @@
 
 # https://projecteuler.net/problem=320
 
-# Runtime: 1 min, 04 sec
+# Runtime: 28.967s
 
 use 5.010;
 use strict;
 use warnings;
 
 use List::Util qw(uniq);
-use ntheory qw(addmod factor);
+use experimental qw(signatures);
+use ntheory qw(addmod factor vecsum todigits);
 
-sub p_adic_valuation {
-    my ($n, $p) = @_;
-
-    my $s = 0;
-    while ($n >= $p) {
-        $s += int($n /= $p);
-    }
-
-    return $s;
+sub factorial_power ($n, $p) {
+    ($n - vecsum(todigits($n, $p))) / ($p - 1);
 }
 
-sub p_adic_inverse {
-    my ($p, $k) = @_;
+sub p_adic_inverse ($p, $k) {
 
     my $n = $k * ($p - 1);
-    while (p_adic_valuation($n, $p) < $k) {
+    while (factorial_power($n, $p) < $k) {
         $n -= $n % $p;
         $n += $p;
     }
@@ -51,7 +44,7 @@ sub p_320 {
 
     foreach my $i ($from .. $to) {
         foreach my $p (uniq(factor($i))) {
-            my $v = p_adic_valuation($i, $p);
+            my $v = factorial_power($i, $p);
             my $t = p_adic_inverse($p, $pow * $v);
             $max = $t if $t > $max;
         }
