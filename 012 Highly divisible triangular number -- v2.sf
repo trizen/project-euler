@@ -8,6 +8,6 @@
 
 # Runtime: 0.932s
 
-say polygonal(^Inf -> first_by { |i|
-    i*(i+1)/2 -> factor_exp.prod_by {|f| f[1] + 1 } > 500
+say polygonal(^Inf -> first_by { |n|
+    polygonal(n, 3).factor_exp.prod_by {|f| f[1] + 1 } > 500
 }, 3)
