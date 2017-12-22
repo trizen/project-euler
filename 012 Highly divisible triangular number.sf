@@ -11,6 +11,7 @@
 # Runtime: 0.263s
 
 var n = 0
+
 Inf.times { |i|
     n += i;
     if (n.sigma0 > 500) {
