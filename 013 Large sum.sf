@@ -113,4 +113,4 @@ var nums = %n(
     53503534226472524250874054075591789781264330331690
 );
 
-say nums.sum.to_s.substr(0, 10);
+say Str(nums.sum).first(10)
