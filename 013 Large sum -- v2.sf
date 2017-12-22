@@ -29,7 +29,7 @@ func long_addition(String a, String b, Number base=10) {
         }
     }
 
-    return c.join.flip
+    return c.map { .base(base) }.join.flip
 }
 
 var sum = "0"
