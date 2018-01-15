@@ -27,12 +27,11 @@ foreach my $k (2 .. 24) {
     my @cache;
     my $S = sub ($n, $k) {
 
-        return 0 if ($n < 0);
         return 1 if ($n == 0);
         return 0 if ($k == 0);
 
         $cache[$n][$k] //=
-            addmod(__SUB__->($n, $k - 1),
+            addmod(__SUB__->($n, $k - 1), ($n - $primes[$k - 1]) < 0 ? 0 :
                 mulmod($primes[$k - 1], __SUB__->($n - $primes[$k - 1], $k), $mod), $mod);
 
     }->($n, scalar @primes);
