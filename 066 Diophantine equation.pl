@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=66
 
-# Runtime: 1.171s
+# Runtime: 0.501s
 
 use 5.010;
 use strict;
@@ -33,21 +33,33 @@ sub sqrt_convergents {
     return @convergents;
 }
 
-sub continued_frac {
-    my ($i, $c) = @_;
-    $i < 0 ? 0 : ($c->[$i] + continued_frac($i - 1, $c))->inv;
+sub cfrac_denominator {
+    my (@cfrac) = @_;
+
+    my ($f1, $f2) = (0, 1);
+
+    foreach my $n (@cfrac) {
+        ($f1, $f2) = ($f2, $n * $f2 + $f1);
+    }
+
+    return $f1;
 }
 
-sub solve {
+sub solve_pell {
     my ($d) = @_;
 
-    my ($k, @c) = sqrt_convergents($d);
+    my ($k, @period) = sqrt_convergents($d);
 
-    my @period = @c;
-    for (my $i = 0 ; ; ++$i) {
-        if ($i > $#c) { push @c, @period; $i = 2 * $i - 1 }
-        my $x = continued_frac($i, [$k, (@c) x ($i + 1)])->denominator;
-        return $x if is_square(4 * $d * ($x*$x - 1));
+    {
+        my $x = cfrac_denominator($k, @period);
+        my $p = 4 * $d * ($x * $x - 1);
+
+        if (is_square($p)) {
+            return ($x, isqrt($p) / (2 * $d));
+        }
+
+        push @period, @period;
+        redo;
     }
 }
 
@@ -56,7 +68,7 @@ my %max = (x => 0, d => -1);
 foreach my $i (2 .. 1000) {
     is_square($i) && next;
 
-    my $x = solve($i);
+    my $x = solve_pell($i);
 
     if ($x > $max{x}) {
         $max{x} = $x;
