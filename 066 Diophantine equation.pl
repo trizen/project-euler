@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=66
 
-# Runtime: 0.501s
+# Runtime: 0.151s
 
 use 5.010;
 use strict;
@@ -15,10 +15,15 @@ use warnings;
 
 use Math::AnyNum qw(isqrt is_square);
 
+use constant {
+              ONE  => Math::AnyNum->new(1),
+              ZERO => Math::AnyNum->new(0),
+             };
+
 sub sqrt_convergents {
     my ($n) = @_;
 
-    my $x = isqrt($n);
+    my $x = int(sqrt($n));
     my $y = $x;
     my $z = 1;
 
@@ -36,7 +41,7 @@ sub sqrt_convergents {
 sub cfrac_denominator {
     my (@cfrac) = @_;
 
-    my ($f1, $f2) = (0, 1);
+    my ($f1, $f2) = (ZERO, ONE);
 
     foreach my $n (@cfrac) {
         ($f1, $f2) = ($f2, $n * $f2 + $f1);
@@ -52,10 +57,11 @@ sub solve_pell {
 
     {
         my $x = cfrac_denominator($k, @period);
+        #my $y = isqrt(($x * $x - 1) / $d);
         my $p = 4 * $d * ($x * $x - 1);
 
         if (is_square($p)) {
-            return ($x, isqrt($p) / (2 * $d));
+            return $x;
         }
 
         push @period, @period;
