@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 12 February 2018
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=66
+
+# Runtime: 0.325s
+
+func cfrac_denominator (cfrac) {
+
+    var (f1, f2) = (0, 1)
+
+    for n in (cfrac) {
+        (f1, f2) = (f2, n*f2 + f1)
+    }
+
+    return f1
+}
+
+func solve_pell (d) {
+    var (k, *period) = sqrt_cfrac(d)...
+
+    2.times {
+        var x = cfrac_denominator([k, period...])
+        var p = (4*d * (x*x - 1))
+        p.is_square && return x
+        period += period
+    }
+}
+
+say (2..1000 -> max_by {|n|
+    solve_pell(n)
+})
