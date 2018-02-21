@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# License: GPLv3
+# Date: 21 February 2018
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=479
+
+# Runtime: 39.835s
+
+var n = 1e6
+var m = 1000000007
+
+say sum(1 ..^ n, {|k|
+    var p = (powmod(k+1, 2, m) - 1)
+    (p * ((-1)**n * powmod(p, n, m) - 1) * invmod(p+1, m)) % m
+})%m
