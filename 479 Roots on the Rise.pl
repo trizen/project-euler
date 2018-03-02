@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=479
 
-# Runtime: 1.337s
+# Runtime: 1.225s
 
 use 5.010;
 use strict;
@@ -20,8 +20,8 @@ my $sum = 0;
 my $n = 10**6;
 my $m = 1000000007;
 
-foreach my $k (1 .. $n - 1) {
-    my $p = mulmod($k + 1, $k + 1, $m) - 1;
+foreach my $k (1 .. $n) {
+    my $p = mulmod($k, $k, $m) - 1;
     $sum += divmod($p * ((-1)**$n * powmod($p, $n, $m) - 1), $p + 1, $m);
     $sum %= $m;
 }
