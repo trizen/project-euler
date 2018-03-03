@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 03 March 2018
+# License: GPLv3
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=197
+
+# Runtime: 0.183s
+
+func a(n) is cached {
+    return -1 if (n == 0)
+    floor(2**(30.403243784 - a(n - 1)**2)) * 1e-9
+}
+
+for n in (1..Inf) {
+    if ((a(n  ).round(-9) == a(n+2).round(-9)) &&
+        (a(n+1).round(-9) == a(n+3).round(-9))) {
+        say (a(n) + a(n+1))
+        break
+    }
+}
