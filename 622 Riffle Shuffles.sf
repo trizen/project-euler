@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 13 March 2018
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=622
+
+# Runtime: 0.299s
+
+func rshuffle_cycle_len (n) {
+    lcm(2, znorder(2, n - 1))
+}
+
+func S(n) {
+    (2**n - 1).divisors.sum_by {|d|
+        rshuffle_cycle_len(d+1) == n ? d+1 : 0
+    }
+}
+
+say S(60)
