@@ -30,12 +30,13 @@ sub period_length {
         $y = int(($x + $y) / $z) * $z - $y;
         $z = int(($n - $y * $y) / $z);
         ++$period;
-    } until (($y == $x) && ($z == 1));
+    } while ($z > 1);
 
     $period;
 }
 
 my $count = 0;
+
 for my $i (1 .. 10000) {
     if (!is_power($i, 2)) {
         ++$count if period_length($i) % 2 != 0;

@@ -10,7 +10,7 @@
 # Algorithm from:
 #   http://web.math.princeton.edu/mathlab/jr02fall/Periodicity/mariusjp.pdf
 
-# Runtime: 6.840s
+# Runtime: 6.002s
 
 func period_length(n) {
 
@@ -24,11 +24,11 @@ func period_length(n) {
         y = (((x + y) // z) * z - y)
         z = ((n - y*y) // z)
         ++period
-    } while ((y != x) || (z != 1))
+    } while (z > 1)
 
     return period
 }
 
 say (1..10000 -> count_by { |n|
-    n.is_sqr ? false : (period_length(n) % 2 != 0)
+    n.is_sqr ? false : period_length(n).is_odd
 })

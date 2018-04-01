@@ -10,22 +10,21 @@
 
 # Runtime: 1.755s
 
-require('ntheory');
-
-var primes = [];
+var primes = []
 
 func count(n, i=0, sum=0) is cached {
-    return 1 if (sum == n);
-    return 0 if (sum > n);
-    return 0 if (i > primes.end);
+    return 1 if (sum == n)
+    return 0 if (sum > n)
+    return 0 if (i > primes.end)
 
     count(n, i+1, sum) +
-    count(n, i, sum + primes[i]);
+    count(n, i, sum + primes[i])
 }
 
 for i in (4 .. 1e6) {
-    primes = %S'ntheory'.primes(0, i-2);
+    primes = (i-2).primes
     if (count(i) > 5000) {
-        say i; break;
+        say i
+        break
     }
 }
