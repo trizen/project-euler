@@ -24,6 +24,11 @@ sub l {
         return (($n >> 1) + 1);
     }
 
+    # n+1 is a square, therefore l(n) = n - sqrt(n+1)
+    if (is_square($n+1)) {
+        return ($n - sqrtint($n+1));
+    }
+
     # Prime power or twice a prime power
     if (is_prime_power($n) or ($n % 2 == 0 and is_prime_power($n >> 1))) {
         return 1;
