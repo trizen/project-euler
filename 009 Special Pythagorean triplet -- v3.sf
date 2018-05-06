@@ -1,0 +1,96 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 09 May 2018
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=9
+
+# Runtime: 0.387s
+
+require('ntheory')
+
+func sum_of_two_squares_solutions(n) is cached {
+
+    var prod1 = 1
+    var prod2 = 1
+
+    var prime_powers = []
+
+    for p,e in (n.factor_exp) {
+        if (p % 4 == 3) {                  # p = 3 (mod 4)
+            e.is_even || return []         # power must be even
+            prod2 *= p**(e >> 1)
+        }
+        elsif (p == 2) {                   # p = 2
+            if (e.is_even) {               # power is even
+                prod2 *= p**(e >> 1)
+            }
+            else {                         # power is odd
+                prod1 *= p
+                prod2 *= p**((e - 1) >> 1)
+                prime_powers.append([p, 1])
+            }
+        }
+        else {                             # p = 1 (mod 4)
+            prod1 *= p**e
+            prime_powers.append([p, e])
+        }
+    }
+
+    prod1 == 1 && return []
+    prod1 == 2 && return [[prod2, prod2]]
+
+    # All the solutions to the congruence: x^2 = -1 (mod prod1)
+    var square_roots = gather {
+        gather {
+            for p,e in (prime_powers) {
+                var pp = p**e
+                var r = %S<ntheory>.sqrtmod("#{pp - 1}", "#{pp}")
+                take([[r, pp], [pp - r, pp]])
+            }
+        }.cartesian { |*a|
+            take(Math.chinese(a...))
+        }
+    }
+
+    var solutions = []
+
+    for r in (square_roots) {
+
+        var s = r
+        var q = prod1
+
+        while (s*s > prod1) {
+            (s, q) = (q % s, s)
+        }
+
+        solutions.append([prod2 * s, prod2 * (q % s)])
+    }
+
+    for p,e in (prime_powers) {
+        for (var i = e%2; i < e; i += 2) {
+
+            var sq = p**((e - i) >> 1)
+            var pp = p**(e - i)
+
+            solutions += (
+                __FUNC__(prod1 / pp).map { |pair|
+                    pair.map {|r| sq * prod2 * r }
+                }
+            )
+        }
+    }
+
+    solutions.map     {|pair| pair.sort } \
+             .uniq_by {|pair| pair[0]   } \
+             .sort_by {|pair| pair[0]   }
+}
+
+for n in (1..Inf) {
+    var a = sum_of_two_squares_solutions(n**2) || next
+    var s = a.first { .sum + n == 1000 } || next
+
+    say (s.prod * n)
+    break
+}
