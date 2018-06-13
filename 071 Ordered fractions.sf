@@ -11,8 +11,8 @@
 # Runtime: 0.150s
 
 func before_numerator(b, n, d, m) {
-    m -= (m+b % d);
-    int(m/n + m/d - m/(n*d));
+    m -= (m+b % d)
+    int(m/n + m/d - m/(n*d))
 }
 
-say before_numerator(2, 3, 7, 1e6);
+say before_numerator(2, 3, 7, 1e6)

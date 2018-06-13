@@ -10,7 +10,7 @@
 
 # https://projecteuler.net/problem=37
 
-# Runtime: 2.635s
+# Runtime: 2.395s
 
 func is_truncatable_prime(n) {
 
@@ -27,7 +27,7 @@ func is_truncatable_prime(n) {
     n = orig;
     var p = 10**(l-1)
     (l-1).times { |i|
-         n -= (orig.digit(i) * p)
+         n -= (orig.digit(-i - 1) * p)
          n.is_prime || return false
          p //= 10                         # /
     }
@@ -35,17 +35,17 @@ func is_truncatable_prime(n) {
     return true
 }
 
-var sum = 0;
-var count = 0;
-var p = 11;
+var sum = 0
+var count = 0
+var p = 11
 
 loop {
     if (is_truncatable_prime(p)) {
-        say p;
-        sum += p;
-        ++count == 11 && break;
+        say p
+        sum += p
+        ++count == 11 && break
     }
     p.next_prime!
 }
 
-say "Sum: #{sum}";
+say "Sum: #{sum}"

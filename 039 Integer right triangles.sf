@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=39
 
-# Runtime: 1.840s
+# Runtime: 1.931s
 
 var t = Hash()
 var limit = 1000

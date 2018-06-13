@@ -9,11 +9,11 @@
 # Runtime: 0.154s
 
 func max_square_remainder(a) {
-    a * (a - (2 - (a % 2)));
+    a * (a - (2 - (a % 2)))
 }
 
-var sum = 0;
+var sum = 0
 for a in (3 .. 1e3) {
-    sum += max_square_remainder(a);
+    sum += max_square_remainder(a)
 }
-say sum;
+say sum

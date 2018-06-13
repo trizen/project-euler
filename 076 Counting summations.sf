@@ -10,18 +10,18 @@
 
 # Runtime: 0.626s
 
-var nums = [];
+var nums = []
 
 func count(n, i=0, sum=0) is cached {
-    return 1 if (sum == n);
-    return 0 if (sum > n);
-    return 0 if (i > nums.end);
+    return 1 if (sum == n)
+    return 0 if (sum > n)
+    return 0 if (i > nums.end)
 
     count(n, i+1, sum) +
-    count(n, i, sum + nums[i]);
+    count(n, i, sum + nums[i])
 }
 
-var n = 100;
-nums = @(1 ..^ n);
+var n = 100
+nums = @(1 ..^ n)
 
-say count(100);
+say count(100)

@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=387
 
-# Runtime: 2.425s
+# Runtime: 2.355s
 
 var valid = []
 var limit = 1e14

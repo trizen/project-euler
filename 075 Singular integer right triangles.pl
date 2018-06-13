@@ -40,7 +40,7 @@ foreach my $n (1 .. $end - 1) {
 }
 
 my $count = 0;
-foreach my $v(values %triangle) {
+foreach my $v (values %triangle) {
     ++$count if $v == 1;
 }
 

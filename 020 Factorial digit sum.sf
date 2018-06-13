@@ -10,8 +10,11 @@
 
 # Runtime: 0.110s
 
-var n = 100!;
-say +(^n.len).map { |i| n.digit(i) }.sum;
+var n = 100!
+say +(^n.len).map { |i| n.digit(i) }.sum
 
 # Alternatively:
-say 100!.digits.sum;
+say 100!.digits.sum
+
+# Alternatively 2:
+say 100!.sumdigits

@@ -10,15 +10,12 @@
 
 # Runtime: 0.307s
 
-range(3, 1e100, 2).each { |n|
-    n.is_prime && next;
+for n in (3..Inf `by` 2 -> lazy.grep{ !.is_prime }) {
 
-    for i in (1 .. isqrt(n/2)) {
-        if (is_prime(n - 2*(i**2))) {
-            goto :NEXT;
-        }
-    }
+    1..isqrt(n>>1) -> any {|i|
+        is_prime(n - 2*i*i)
+    } && next
 
-    say n; break;
-    @:NEXT;
+    say n
+    break
 }

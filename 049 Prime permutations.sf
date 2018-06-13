@@ -27,7 +27,7 @@ perms.each_v { |p|
 
     diffs.each_kv { |k,v|
         if (v.uniq.len == 3) {
-            say "#{k}: #{v.uniq}"
+            say "#{k}: #{v.uniq} -> #{v.uniq.join}"
         }
     }
 }

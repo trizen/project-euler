@@ -24,11 +24,9 @@ sub is_polygonal {
       && ((sqrtint($s) + $k - 4) % (2 * ($k - 2)) == 0);
 }
 
-my @range = grep { substr($_, 2, 1) ne '0' } 1000 .. 9999;
-
 my (%trig, %square, %penta, %hexa, %hepta, %octa);
 
-foreach my $n (@range) {
+foreach my $n (1000 .. 9999) {
     my ($h, $t) = (substr($n, 0, 2), substr($n, -2));
     is_polygonal($n, 3) && undef $trig{$h}{$t};
     is_polygonal($n, 4) && undef $square{$h}{$t};

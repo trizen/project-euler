@@ -11,26 +11,26 @@
 
 # Runtime: 0.359s
 
-var sum = 0;
-var mem = Hash();
+var sum = 0
+var mem = Hash()
 
 for i in (2 ..^ 10000) {
 
-    var d = i.sigma-i;
+    var d = i.sigma-i
 
     if (mem.exists(d)) {
 
-        var n = mem{d};
+        var n = mem{d}
         if (n.sigma-n == d) {
-            sum += d+n;
-            say "#{d} #{n}";
+            sum += d+n
+            say "#{d} #{n}"
         }
 
-        mem.delete(d);
+        mem.delete(d)
     }
     elsif (i != d) {
-        mem{i} = d;
+        mem{i} = d
     }
 }
 
-say "Sum: #{sum}";
+say "Sum: #{sum}"

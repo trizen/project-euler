@@ -8,27 +8,27 @@
 
 # https://projecteuler.net/problem=26
 
-# Runtime: 4.211s
+# Runtime: 3.309s
 
 func rec_cycle(d) {
     for x in (1..d) {
         if (powmod(10, x, d) == 1) {
-            return x;
+            return x
         }
     }
-    return 0;
+    return 0
 }
 
-var d = 1;
-var max = 0;
+var d = 1
+var max = 0
 
 for i in (2..1000) {
-    var r = rec_cycle(i);
+    var r = rec_cycle(i)
 
     if (r > max) {
-        max = r;
-        d = i;
+        max = r
+        d = i
     }
 }
 
-say d;
+say d

@@ -8,33 +8,33 @@
 
 # https://projecteuler.net/problem=38
 
-# Runtime: 1.324s
+# Runtime: 1.644s
 
 func valid_num(n) {
-    var digits = n.digits;
+    var digits = n.digits
 
-    return false if (digits.contains(0));
-    return false if (digits.unique.len != n.len);
+    return false if (digits.contains(0))
+    return false if (digits.unique.len != n.len)
 
-    return true;
+    return true
 }
 
-var max = 0;
-range(1, 10000).each { |i|
-    valid_num(i) || next;
+var max = 0
+for i in (1..10000) {
+    valid_num(i) || next
 
-    var prod = i.to_s;
-    range(2, 9).each { |n|
+    var prod = Str(i)
+    for n in (2..9) {
 
-        var last = prod;
-        prod += (n*i -> to_s);
+        var last = prod
+        prod += Str(n*i)
 
-        if (!valid_num(prod.to_i)) {
-            last = last.to_i;
-            max = last if (max < last);
-            break;
+        if (!valid_num(Num(prod))) {
+            last = last.to_i
+            max = last if (max < last)
+            break
         }
     }
 }
 
-say max;
+say max

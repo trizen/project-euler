@@ -10,20 +10,20 @@
 
 # Runtime: 1.439s
 
-var f1 = func(n) { 3 + n*(4*n - 6) };
-var f2 = func(n) { 5 + n*(4*n - 8) };
-var f3 = func(n) { 7 + n*(4*n - 10) };
+var f1 = func(n) { 3 + n*(4*n - 6) }
+var f2 = func(n) { 5 + n*(4*n - 8) }
+var f3 = func(n) { 7 + n*(4*n - 10) }
 
-var primes = 0;
+var primes = 0
 Inf.times { |i|
 
-    var total = (4*i + 1);
-    var side  = (2*i + 1);
+    var total = (4*i + 1)
+    var side  = (2*i + 1)
 
-    primes += [f1(i+1), f2(i+1), f3(i+1)].count { .is_prime };
+    primes += [f1(i+1), f2(i+1), f3(i+1)].count { .is_prime }
 
     if (side > 7 && (primes/total < 0.1)) {
-        say side;
-        break;
+        say side
+        break
     }
 }

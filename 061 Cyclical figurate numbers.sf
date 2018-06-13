@@ -7,24 +7,19 @@
 
 # https://projecteuler.net/problem=61
 
-# Runtime: 2.106s
+# Runtime: 1.782s
 
 var(:trig, :square, :penta, :hexa, :hepta, :octa)
 
-var seq = (1000..9999 -> lazy.grep {|n|
-    n.digit(2) != 0
-})
+1000..9999 -> lazy.grep{ .digit(1) }.each { |n|
+    var (h, t) = (String(n)/2 -> ...)
 
-seq.each { |n|
-    var h = Number(n.digits.head(2).join)
-    var t = Number(n.digits.tail(2).join)
-
-    is_polygonal(n, 3) && (trig{h}{t}   = true)
-    is_polygonal(n, 4) && (square{h}{t} = true)
-    is_polygonal(n, 5) && (penta{h}{t}  = true)
-    is_polygonal(n, 6) && (hexa{h}{t}   = true)
-    is_polygonal(n, 7) && (hepta{h}{t}  = true)
-    is_polygonal(n, 8) && (octa{h}{t}   = true)
+    trig{h}{t}   = true if is_polygonal(n, 3)
+    square{h}{t} = true if is_polygonal(n, 4)
+    penta{h}{t}  = true if is_polygonal(n, 5)
+    hexa{h}{t}   = true if is_polygonal(n, 6)
+    hepta{h}{t}  = true if is_polygonal(n, 7)
+    octa{h}{t}   = true if is_polygonal(n, 8)
 }
 
 var a = [trig, square, penta, hexa, hepta, octa]
@@ -37,7 +32,7 @@ a.permutations { |*h|
     h.dig(3, ct)     \\ next -> each_k { |dt|
     h.dig(4, dt)     \\ next -> each_k { |et|
     h.dig(5, et, ah) \\ next
-        var nums = "#{ah}#{at} #{at}#{bt} #{bt}#{ct} #{ct}#{dt} #{dt}#{et} #{et}#{ah}".words
+        var nums = "#{ah}#{at} #{at}#{bt} #{bt}#{ct} #{ct}#{dt} #{dt}#{et} #{et}#{ah}".nums
         say "sum(#{nums.join(', ')}) = #{nums.sum}"
     }}}}}}
 }

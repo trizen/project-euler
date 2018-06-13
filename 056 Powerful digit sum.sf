@@ -8,18 +8,18 @@
 
 # https://projecteuler.net/problem=56
 
-# Runtime: 0.191s
+# Runtime: 0.153s
 
-var max = 0;
-var r = range(90, 99);
+var max = 0
+var r = range(90, 99)
 
 r.each { |i|
     r.each { |j|
-        var sum = (i**j -> digits.sum);
+        var sum = (i**j -> sumdigits)
         if (sum > max) {
-            max = sum;
+            max = sum
         }
     }
 }
 
-say max;
+say max

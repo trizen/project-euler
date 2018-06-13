@@ -7,9 +7,9 @@
 
 # https://projecteuler.net/problem=129
 
-# Runtime: 34.454s
+# Runtime: 29.843s
 
-for n (1e6 .. Inf) {
+for n in (1e6 .. Inf) {
 
     gcd(n, 10) == 1 || next
 

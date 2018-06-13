@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=27
 
-# Runtime: 1.749s
+# Runtime: 4.024s
 
 var limit = 1000
 
@@ -17,7 +17,7 @@ var q = 0
 
 var primes = limit.primes
 
-for a,b in (primes ~X primes) {
+for a in primes, b in primes {
 
     with (^Inf -> first_by {|k| !is_prime(k*k + a*k + b) }) { |n|
         if (n > m) {
