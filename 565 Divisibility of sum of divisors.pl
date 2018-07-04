@@ -28,7 +28,7 @@ sub S {
             next if ($s % $t**2 == 0);
 
             if (divisor_sum($s / $t) % $k == 0) {
-                next if (++$seen{$s} >= 2);
+                next if $seen{$s}++;
             }
 
             if (divisor_sum($s) % $k == 0) {
