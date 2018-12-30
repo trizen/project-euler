@@ -24,7 +24,7 @@ end
 function count_sum()
 
     sum = 0
-    const limit = 100000000
+    limit = 100000000
 
     for i in 1:9
         if is_csquare(i)

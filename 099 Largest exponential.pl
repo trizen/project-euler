@@ -4,6 +4,8 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=99
+
 my $max_p = 0;
 my $max_l = 0;
 

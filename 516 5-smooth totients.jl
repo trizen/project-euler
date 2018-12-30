@@ -50,8 +50,8 @@ function p_516(limit::Int64 = 10^12)
         )
     )
 
-    const h   = Int64[1]
-    const mod = 1 << 32
+    h   = Int64[1]
+    mod = 1 << 32
 
     sum = 0
     for p in smooth

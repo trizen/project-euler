@@ -1,0 +1,25 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# License: GPLv3
+# Website: https://github.com/trizen
+
+# https://projecteuler.net/problem=99
+
+var lines = ARGF.lines
+var pairs = eval("["+lines.map{"[#{_}]"}.join(",")+"]")
+
+var max = 0
+var max_line = 1
+
+for k,v in (pairs.kv) {
+    with (v[0].log*v[1]) {|t|
+
+        if (t > max) {
+            max = t
+            max_line = k+1
+        }
+    }
+}
+
+say max_line

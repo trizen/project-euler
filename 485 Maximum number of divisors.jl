@@ -32,7 +32,7 @@ function p485(r, n)
 
         append!(divisors, d)
 
-        if (shift!(divisors) == range_max)
+        if (popfirst!(divisors) == range_max)
             range_max = maximum(divisors)
         end
     end

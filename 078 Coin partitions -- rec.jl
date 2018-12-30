@@ -32,13 +32,18 @@ function partitions_count(n::Int64, mod::Int64, cache)
     x
 end
 
-n = 1
-cache = Dict{Int64, Int64}()
+function p078()
 
-while true
-    if partitions_count(n, 1_000_000, cache) == 0
-        println(n-1)
-        break
+    n = 1
+    cache = Dict{Int64, Int64}()
+
+    while true
+        if partitions_count(n, 1_000_000, cache) == 0
+            println(n-1)
+            break
+        end
+        n += 1
     end
-    n += 1
 end
+
+p078()

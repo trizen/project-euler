@@ -59,7 +59,7 @@ end
 function euler_096()
 
     fh = open("p096_sudoku.txt")
-    lines = filter((x)->ismatch(r"^[0-9]+$",x), readlines(fh))
+    lines = filter((x)->occursin(r"^[0-9]+$",x), readlines(fh))
 
     total = 0
 

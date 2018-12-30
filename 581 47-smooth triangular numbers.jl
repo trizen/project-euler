@@ -12,8 +12,8 @@
 using Primes
 
 function p_581()
-    const smooth = 47
-    const prime_nums = primes(smooth)
+    smooth = 47
+    prime_nums = primes(smooth)
 
     function is_smooth(n)
         for p in prime_nums
@@ -25,8 +25,8 @@ function p_581()
         n == 1
     end
 
-    const seen = Dict{Int64,Bool}()
-    const smooth_nums = Int64[1]
+    seen = Dict{Int64,Bool}()
+    smooth_nums = Int64[1]
 
     sum = 0
 

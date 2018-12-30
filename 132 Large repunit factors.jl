@@ -13,8 +13,8 @@ using Primes
 
 function p_132()
 
-    count   = 40
-    const n = 10^9
+    count = 40
+    n = 10^9
 
     p = 1
     t = 0
