@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# Edit: 04 February 2019
+# https://github.com/trizen
 
 # Find the sum of the only eleven primes that are both truncatable from left to right and right to left.
 
@@ -10,42 +10,43 @@
 
 # https://projecteuler.net/problem=37
 
-# Runtime: 2.395s
+# Runtime: 0.265s
 
-func is_truncatable_prime(n) {
+func digits2num(digits, base) {
+    digits.map_kv {|k,v| base**k * v  }.sum
+}
 
-    n.is_prime || return false
+func is_left_truncatable_prime(digits, base) {
 
-    var orig = n
-    var l = n.len
-
-    (l-1).times {
-        n //= 10                          # /
-        n.is_prime || return false
-    }
-
-    n = orig;
-    var p = 10**(l-1)
-    (l-1).times { |i|
-         n -= (orig.digit(-i - 1) * p)
-         n.is_prime || return false
-         p //= 10                         # /
+    for k in (^digits) {
+        is_prime(digits2num([digits[0..k]], base)) || return false
     }
 
     return true
 }
 
-var sum = 0
-var count = 0
-var p = 11
+func generate_from_prefix(p, base) {
 
-loop {
-    if (is_truncatable_prime(p)) {
-        say p
-        sum += p
-        ++count == 11 && break
+    var seq = [p]
+
+    for n in (1 ..^ base) {
+        var t = [n, p...]
+        if (is_prime(digits2num(t, base))) {
+            seq << __FUNC__(t, base).grep { is_left_truncatable_prime(_, base) }...
+        }
     }
-    p.next_prime!
+
+    return seq
 }
 
-say "Sum: #{sum}"
+func both_truncatable_primes(base) {     # finite sequence for each base
+
+    var prime_digits = (base-1 -> primes)   # prime digits < base
+
+    prime_digits.map  {|p| generate_from_prefix([p], base)... }\
+                .map  {|t| digits2num(t, base) }\
+                .sort
+}
+
+var T = both_truncatable_primes(10)
+say T.grep{.len > 1}.sum
