@@ -62,4 +62,4 @@ foreach my $k (1 .. $n) {
     $sum %= $mod;
 }
 
-say $sum;    # 538319652
+say $sum;

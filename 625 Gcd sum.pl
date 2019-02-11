@@ -103,14 +103,4 @@ sub partial_sums_of_gcd_sum_function ($n, $mod) {
 my $n = 11;
 my $mod = 998244353;
 
-say "a(10^$n) = ", partial_sums_of_gcd_sum_function(10**$n, $mod);      # 551614306
-
-__END__
-a(10^1) = 122
-a(10^2) = 18065
-a(10^3) = 2475190
-a(10^4) = 317257140
-a(10^5) = 783912038
-a(10^6) = 668281525
-a(10^7) = 825808541
-a(10^8) = 29807134
+say "a(10^$n) = ", partial_sums_of_gcd_sum_function(10**$n, $mod);
