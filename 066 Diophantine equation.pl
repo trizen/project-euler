@@ -1,8 +1,7 @@
 #!/usr/bin/perl
 
 # Daniel "Trizen" Șuteu
-# Date: 31 August 2016
-# License: GPLv3
+# Date: 11 February 2019
 # https://github.com/trizen
 
 # https://projecteuler.net/problem=66
@@ -13,60 +12,45 @@ use 5.010;
 use strict;
 use warnings;
 
-use Math::AnyNum qw(isqrt is_square);
+use Math::GMPz;
+use ntheory qw(sqrtint is_square);
+use experimental qw(signatures);
 
 use constant {
-              ONE  => Math::AnyNum->new(1),
-              ZERO => Math::AnyNum->new(0),
+              ONE  => Math::GMPz->new(1),
+              ZERO => Math::GMPz->new(0),
              };
 
-sub sqrt_convergents {
-    my ($n) = @_;
+sub solve_pell ($n, $w = 1) {
 
-    my $x = int(sqrt($n));
+    return () if is_square($n);
+
+    my $x = sqrtint($n);
     my $y = $x;
     my $z = 1;
+    my $r = 2 * $x;
 
-    my @convergents = ($x);
-
-    do {
-        $y = int(($x + $y) / $z) * $z - $y;
-        $z = int(($n - $y * $y) / $z);
-        push @convergents, int(($x + $y) / $z);
-    } until (($y == $x) && ($z == 1));
-
-    return @convergents;
-}
-
-sub cfrac_denominator {
-    my (@cfrac) = @_;
-
+    my ($e1, $e2) = (ONE,  ZERO);
     my ($f1, $f2) = (ZERO, ONE);
 
-    foreach my $n (@cfrac) {
-        ($f1, $f2) = ($f2, $n * $f2 + $f1);
-    }
+    for (1 .. $n) {
 
-    return $f1;
-}
+        $y = $r * $z - $y;
+        $z = ($n - $y * $y) / $z;
+        $r = int(($x + $y) / $z);
 
-sub solve_pell {
-    my ($d) = @_;
+        my $A = $e2 + $x * $f2;
+        my $B = $f2;
 
-    my ($k, @period) = sqrt_convergents($d);
-
-    {
-        my $x = cfrac_denominator($k, @period);
-        #my $y = isqrt(($x * $x - 1) / $d);
-        my $p = 4 * $d * ($x * $x - 1);
-
-        if (is_square($p)) {
-            return $x;
+        if ($z == 1 and $A**2 - $n * $B**2 == 1) {
+            return ($A, $B);
         }
 
-        push @period, @period;
-        redo;
+        ($e1, $e2) = ($e2, $r * $e2 + $e1);
+        ($f1, $f2) = ($f2, $r * $f2 + $f1);
     }
+
+    return ();
 }
 
 my %max = (x => 0, d => -1);
