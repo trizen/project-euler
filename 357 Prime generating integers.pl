@@ -1,27 +1,27 @@
 #!/usr/bin/perl
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
+# Daniel "Trizen" Șuteu
 # Date: 21 August 2016
-# Website: https://github.com/trizen
+# Edit: 07 April 2019
+# https://github.com/trizen
 
 # https://projecteuler.net/problem=357
 
-# Runtime: 1 min 24.70s
+# Runtime: 9.549s
 
-use 5.010;
+use 5.014;
 use strict;
 use integer;
 
-use List::Util qw(all);
-use ntheory qw(divisors is_prime is_square_free);
+use ntheory qw(:all);
 
-my $sum = 1;
+my $sum = 0;
 
-for (my $n = 2 ; $n <= 100_000_000 ; $n += 2) {
-    if (is_square_free($n) and all { is_prime($_ + $n / $_) } divisors($n)) {
+forprimes {
+    my $n = $_-1;
+    if (is_square_free($n) and vecall { is_prime($_ + $n/$_) } divisors($n)) {
         $sum += $n;
     }
-}
+} 100_000_000;
 
 say $sum;
