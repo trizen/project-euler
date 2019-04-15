@@ -1,14 +1,20 @@
-#!/usr/bin/ruby
+#!/usr/bin/perl
 
 # Daniel "Trizen" Șuteu
-# Date: 10 October 2017
+# Date: 16 April 2019
 # https://github.com/trizen
 
 # https://projecteuler.net/problem=11
 
 # Runtime: 0.209s
 
-var text = <<'EOT'
+use 5.014;
+use Math::AnyNum qw(prod max);
+use Math::MatrixLUP;
+
+use experimental qw(signatures);
+
+my $text = <<'EOT';
 08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -31,37 +37,33 @@ var text = <<'EOT'
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 EOT
 
-func horizontal(i, j, matrix) {
-    4.of {|k| matrix[i][j+k] }
+sub horizontal ($i, $j, $matrix) {
+    prod(map { $matrix->[$i][$j + $_] } 0 .. 3);
 }
 
-func diagonal(i, j, matrix) {
-    4.of {|k| matrix[i+k][j+k] }
+sub diagonal ($i, $j, $matrix) {
+    prod(map { $matrix->[$i + $_][$j + $_] } 0 .. 3);
 }
 
-var matrix = Matrix(text.lines.map{ .nums }...)
+my $matrix = Math::MatrixLUP->new([map { [split(' ')] } split(/\R/, $text)]);
 
-var reversed_matrix = matrix.horizontal_flip
-var transposed_matrix = matrix.transpose
+my $reversed_matrix   = $matrix->horizontal_flip;
+my $transposed_matrix = $matrix->transpose;
 
-var e = matrix.end
+my @products;
+my $e = $#{$matrix};
 
-var products = gather {
-    for i in (0..e), j in (0..e) {
-
-        (j+3 <= e) || next
+for my $i (0 .. $e) {
+    for my $j (0 .. $e) {
 
         # Horizontal and vertical
-        take(horizontal(i, j, matrix))
-        take(horizontal(i, j, transposed_matrix))
-
-        (i+3 <= e) || next
+        push @products, horizontal($i, $j, $matrix);
+        push @products, horizontal($i, $j, $transposed_matrix);
 
         # Left-to-right and right-to-left diagonals
-        take(diagonal(i, j, matrix))
-        take(diagonal(i, j, reversed_matrix))
+        push @products, diagonal($i, $j, $matrix);
+        push @products, diagonal($i, $j, $reversed_matrix);
     }
 }
 
-var nums = products.max_by { .prod }
-say "prod(#{nums}) = #{nums.prod}"
+say max(@products);
