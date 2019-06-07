@@ -1,19 +1,18 @@
 #!/usr/bin/perl
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# https://github.com/trizen
 
 # https://projecteuler.net/problem=70
 
-# Runtime: 6.563s
+# Runtime: 2.228s
 
 use strict;
-use ntheory qw(euler_phi forcomposites);
+use ntheory qw(euler_phi forsemiprimes);
 
 my %min = (ratio => 'inf');
 
-forcomposites {
+forsemiprimes {
     my $phi = euler_phi($_);
     my $ratio = $_ / $phi;
 
