@@ -1,0 +1,55 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 07 June 2019
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=668
+
+# Runtime: 2.402s
+
+# Formula:
+#   R(n) = Sum_{sqrt(n) < p <= n} floor(n/p)
+#
+#   a(n) = n - R(n) - Sum_{p <= sqrt(n)} (p-1) - pi(sqrt(n))
+#        = n - R(n) - Sum_{p <= sqrt(n)} p
+#
+# where p runs over the prime numbers.
+
+# The interesting part is computing R(n) efficiently.
+
+# See also:
+#   https://oeis.org/A064775 -- Card{ k<=n, k such that all prime divisors of k are <= sqrt(k) }.
+
+func R(n) {
+
+    var p = next_prime(n.isqrt)
+    var t = floor(n/p)
+
+    var sum = 0
+
+    while (p <= n) {
+
+        var u = floor(n/p)
+
+        if (u == t) {
+            var q = next_prime(floor(n/u))
+            sum += u*primepi(p, q-1)
+            u = floor(n/q)
+            p = q
+        }
+
+        sum += u
+
+        t = u
+        p = p.next_prime
+    }
+
+    sum
+}
+
+func square_root_smooth_count (n) {
+    n - n.isqrt.primes_sum - R(n)
+}
+
+say square_root_smooth_count(10000000000)
