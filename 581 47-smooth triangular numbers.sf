@@ -3,29 +3,31 @@
 # Daniel "Trizen" Șuteu
 # License: GPLv3
 # Date: 01 May 2017
+# Edit: 28 June 2019
 # https://github.com/trizen
 
 # https://projecteuler.net/problem=581
 
-var smooth = 47
+var B     = 47
+var limit = 1109496723125   # A002072(π(47)) = A002072(15)
 
-var sum  = 0
-var list = [1]
-var seen = Hash()
+var smooth_numbers = [1]
 
-{ |p|
-    say "#{p} -> #{sum}"
-
-    { |n|
-        if (!seen.exists(n) && is_smooth(n+1, smooth)) {
-            seen{n} = true
-            sum += n
+for p in (primes(2, B)) {
+    say "p = #{p}"
+    for n in (smooth_numbers) {
+        if (n*p <= limit) {
+            smooth_numbers << n*p
         }
+    }
+}
 
-        if (n*p <= 1109496723125) {
-            list << n*p
-        }
-    } << list
-} << primes(2, smooth)
+var total = 0
 
-say sum
+for n in (smooth_numbers) {
+    if (is_smooth(n+1, B)) {
+        total += n
+    }
+}
+
+say total
