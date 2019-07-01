@@ -105,11 +105,13 @@ my $B1 = [map { Math::GMPz->new($_) } (1, 2)];
     my $t = Math::GMPz::Rmpz_init_nobless();
 
     sub binomialmod ($n, $k, $m) {
-        my $bin = ($cache[$n][$k] //= do {
-            my $z = Math::GMPz::Rmpz_init_nobless();
-            Math::GMPz::Rmpz_bin_uiui($z, $n, $k);
-            $z;
-        });
+        my $bin = (
+            $cache[$n][$k] //= do {
+                my $z = Math::GMPz::Rmpz_init_nobless();
+                Math::GMPz::Rmpz_bin_uiui($z, $n, $k);
+                $z;
+            }
+        );
         Math::GMPz::Rmpz_mod_ui($t, $bin, $m);
     }
 }
@@ -122,21 +124,12 @@ sub faulhabermod ($n, $p, $m) {
 
     for my $k (0 .. $p) {
 
-        if ($k % 2 == 1 and $k > 1) {
-            next;
-        }
+        $k % 2 == 0 or $k == 1 or next;
 
-        my $B;
-
-        if ($k == 0) {
-            $B = $B0;
-        }
-        elsif ($k == 1) {
-            $B = $B1;
-        }
-        else {
-            $B = $bernoulli[($k >> 1) + 1];
-        }
+        my $B =
+            ($k == 0) ? $B0
+          : ($k == 1) ? $B1
+          :             $bernoulli[($k >> 1) + 1];
 
         $sum += mulmod(divmod(mulmod(binomialmod($p + 1, $k, $m), $B->[0] % $m, $m), $B->[1] % $m, $m),
                        powmod($n, $p - $k + 1, $m), $m);
