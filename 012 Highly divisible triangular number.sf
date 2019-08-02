@@ -1,8 +1,7 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# https://github.com/trizen
 
 # What is the value of the first triangle number to have over five hundred divisors?
 
@@ -12,10 +11,10 @@
 
 var n = 0
 
-Inf.times { |i|
-    n += i;
+Inf.times { |k|
+    n += k
     if (n.sigma0 > 500) {
-        say n;
-        break;
+        say n
+        break
     }
 }

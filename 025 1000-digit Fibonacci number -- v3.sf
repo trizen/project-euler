@@ -1,0 +1,16 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# https://github.com/trizen
+
+# What is the index of the first term in the Fibonacci sequence to contain 1000 digits?
+
+# https://projecteuler.net/problem=25
+
+# Runtime: 0.302s
+
+func fibonacci_inverse_approx(n) {
+    log(n * sqrt(5), Num.phi)
+}
+
+say ceil(fibonacci_inverse_approx(10**(1000 - 1)))

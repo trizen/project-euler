@@ -9,9 +9,9 @@
 
 # https://projecteuler.net/problem=8
 
-# Runtime: 0.221s
+# Runtime: 0.216s
 
-var str = <<'EOT'
+var str = <<'END'
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
@@ -32,12 +32,10 @@ var str = <<'EOT'
 84580156166097919133875499200524063689912560717606
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
-EOT
+END
 
-var digits = Num(str - /\s/g).digits
+var t = Num(str.lines.join).digits
 
-say gather {
-    for i in (0 .. digits.end-12) {
-        take(Math.prod(digits[i .. i+12]))
-    }
-}.max
+say t.map_cons(13, {|*a|
+    a.prod
+}).max

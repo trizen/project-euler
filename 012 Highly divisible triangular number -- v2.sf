@@ -6,8 +6,8 @@
 
 # https://projecteuler.net/problem=12
 
-# Runtime: 0.886s
+# Runtime: 0.329s
 
-say (^Inf -> lazy.map { polygonal(_, 3) }.first_by { |n|
-    n.factor_exp.prod_by {|f| f[1] + 1 } > 500
+say (^Inf -> lazy.map { .polygonal(3) }.first_by {
+    .sigma0 > 500
 })

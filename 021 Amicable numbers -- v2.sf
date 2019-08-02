@@ -9,28 +9,24 @@
 
 # https://projecteuler.net/problem=21
 
-# Runtime: 0.417s
+# Runtime: 0.393s
 
-var sum = 0
-var mem = Hash()
+func proper_sigma(n) {
+    n.sigma - n
+}
 
-for i in (2 ..^ 10000) {
+var total = 0
 
-    var d = i.sigma-i
+for a in (2 ..^ 10000) {
 
-    if (mem.exists(d)) {
+    var b = proper_sigma(a)
+    next if (b <= a)
+    var c = proper_sigma(b)
 
-        var n = mem{d}
-        if (n.sigma-n == d) {
-            sum += d+n
-            say "#{d} #{n}"
-        }
-
-        mem.delete(d)
-    }
-    elsif (i != d) {
-        mem{i} = d
+    if (c == a) {
+        say "#{a} #{b}"
+        total += a+b
     }
 }
 
-say "Sum: #{sum}"
+say total

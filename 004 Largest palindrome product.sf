@@ -1,31 +1,29 @@
 #!/usr/bin/ruby
 
 # Daniel "Trizen" Șuteu
-# License: GPLv3
+# Date: 09 October 2017
 # https://github.com/trizen
 
 # A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
 # Find the largest palindrome made from the product of two 3-digit numbers.
 
 # https://projecteuler.net/problem=4
 
-# Runtime: 5.833s
+# Runtime: 0.175s
 
-# See version 2 for a more efficient algorithm.
+func largest_palindrome_product (n) {
 
-var candidates = []
+    for k in ((10**n - 1) `downto` 10**(n-1)) {
+        var t = Num("#{k}#{Str(k).flip}")
 
-var k = 0
-for i in (999 `downto` 100) {
-    for m in (0 .. k) {
-        var j = 999-m
-        var p = i*j
-        if (p.to_s.is_palindrome) {
-            candidates.append([i, j, p])
-        }
+        t.divisors.grep{.len == n}.combinations(2, {|a,b|
+            if (a*b == t) {
+                return [a, b, t]
+            }
+        })
     }
-    k++
 }
 
-var arr = candidates.max_by { _[2] }
-say "#{arr[0]} * #{arr[1]} == #{arr[2]}"
+say largest_palindrome_product(2)
+say largest_palindrome_product(3)

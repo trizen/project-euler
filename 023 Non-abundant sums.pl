@@ -1,12 +1,13 @@
 #!/usr/bin/perl
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# https://github.com/trizen
+
+# Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
 # https://projecteuler.net/problem=23
 
-# Runtime: 5.372s
+# Runtime: 4.463s
 
 use 5.010;
 use integer;
