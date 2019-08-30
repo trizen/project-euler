@@ -1,28 +1,19 @@
 #!/usr/bin/perl
 
-# Author: Daniel "Trizen" Șuteu
+# Daniel "Trizen" Șuteu
 # Date: 25 August 2016
-# License: GPLv3
-# Website: https://github.com/trizen
+# https://github.com/trizen
 
 # https://projecteuler.net/problem=407
 
-# Runtime: 2 min 32.26s
+# Runtime: ~2 minutes
 
 use 5.010;
 use strict;
 use integer;
 
-use ntheory qw(
-  powmod
-  vecprod
-  forcomb
-  euler_phi
-  factor_exp
-  prime_count
-  is_prime_power
-  forcomposites
-);
+use ntheory qw(:all);
+use List::Util qw(uniq product);
 
 my $limit = 10**7;
 my $sum   = prime_count($limit);
@@ -32,19 +23,13 @@ forcomposites {
         ++$sum;
     }
     else {
-        my $c   = $_;
         my $max = 0;
+        my $rad = product(uniq(factor($_)));
 
-        my @f   = map { $_->[0] } factor_exp($c);
-        my $len = scalar(@f);
-
-        foreach my $i (1 .. $len - 1) {
-            forcomb {
-                my $d = vecprod(@f[@_]);
-                my $f = $c / $d;
-                my $g = $d * powmod($d, euler_phi($f) - 1, $f);
-                $g > $max && ($max = $g);
-            } $len, $i;
+        foreach my $d (divisors($rad)) {
+            my $f = $_ / $d;
+            my $g = $d * powmod($d, euler_phi($f) - 1, $f);
+            $max = $g if ($g > $max);
         }
 
         $sum += $max;

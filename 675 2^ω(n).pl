@@ -7,7 +7,7 @@
 # Based on the identity:
 #   Sum_{d|n} 2^omega(d) = sigma_0(n^2)
 
-# The algorithm iteraters over each number in k = 1..N,
+# The algorithm iterates over each number k in 2..N,
 # and computes sigma_0(k^2) = Prod_{p^e | k} (2*e + 1).
 
 # By keeping track of the partial products, we find sigma_0(k!^2).
