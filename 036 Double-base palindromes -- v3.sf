@@ -1,0 +1,50 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 16 September 2019
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=36
+
+# Runtime: 0.403s
+
+func next_palindrome (n, b=10) {
+
+    var d = n.digits(b)
+    var l = d.end
+    var i = (((d.len+1)>>1) - 1)
+
+    while ((i >= 0) && (d[i] == b-1)) {
+        d[i,l-i] = (0,0)
+        --i
+    }
+
+    if (i >= 0) {
+        d[i]++
+        d[l-i] = d[i]
+    }
+    else {
+        d = (d.len+1).of(0)
+        d[0,-1] = (1,1)
+    }
+
+    d.digits2num(b)
+}
+
+var total = 0
+var limit = 1e6
+
+with (1) {|n|
+    while (n < limit) {
+
+        with (n.base(2)) {|t|
+            if (t == t.flip) {
+                total += n
+            }
+        }
+
+        n = next_palindrome(n, 10)
+    }
+}
+
+say total
