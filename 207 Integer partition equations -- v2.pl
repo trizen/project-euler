@@ -2,12 +2,13 @@
 
 # Author: Daniel "Trizen" Șuteu
 # Date: 24 August 2016
+# Edit: 18 September 2019
 # License: GPLv3
 # Website: https://github.com/trizen
 
 # https://projecteuler.net/problem=207
 
-# Runtime: 34.802s
+# Runtime: 2.689s
 
 use 5.010;
 use strict;
@@ -36,24 +37,23 @@ foreach my $i (1 .. 30) {
     undef $table{4**$i - 2**$i};
 }
 
+my $j = 1;
 my $k = 1;
-my $j = 2;
 
 my $upper_bound;
 
 for (my $i = 1 ; ; $i += $k) {
+
     if (pp_ratio($i * ($i + 1)) < $ratio) {
         $upper_bound = $i * ($i + 1);
         last;
     }
 
-    if ($i % $j == 0) {
-        ++$k;
-        ++$j;
-    }
+    $j += 1;
+    $k += $j;
 }
 
-for (my $i = int sqrt($upper_bound) - 2 * $k ; ; ++$i) {
+for (my $i = int(sqrt($upper_bound) - $j) ; ; ++$i) {
     if (pp_ratio($i * ($i + 1)) < $ratio) {
         say $i * ($i + 1);
         last;
