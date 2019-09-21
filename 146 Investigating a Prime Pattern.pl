@@ -6,7 +6,7 @@
 
 # https://projecteuler.net/problem=146
 
-# Runtime: 15.191s
+# Runtime: 14.922s
 
 use 5.010;
 use strict;
@@ -14,8 +14,9 @@ use integer;
 use ntheory qw(is_prime next_prime);
 
 my $sum = 0;
+
 for (my $i = 10; $i < 150_000_000; $i += 10) {
-    my $x = $i**2;
+    my $x = $i*$i;
     if (      is_prime($x +  1)
         and next_prime($x +  1) == $x + 3
         and next_prime($x +  3) == $x + 7
@@ -25,4 +26,5 @@ for (my $i = 10; $i < 150_000_000; $i += 10) {
         $sum += $i;
     }
 }
+
 say $sum;
