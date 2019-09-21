@@ -18,7 +18,7 @@ use ntheory qw(gcd powmod is_prime);
 my $sum   = 0;
 my $count = 0;
 
-OUTER: for (my $n = 2 ; ; ++$n) {
+for (my $n = 2 ; ; ++$n) {
 
     is_prime($n)     && next;
     gcd($n, 10) != 1 && next;
@@ -27,16 +27,15 @@ OUTER: for (my $n = 2 ; ; ++$n) {
     my $p = 0;
 
     foreach my $k (1 .. $n - 1) {
+
         $r += powmod(10, $k, $n);
         $r %= $n;
         $p += 1;
 
-        if ($r == 1) {
-            (($n - 1) % $p == 0) ? last : next OUTER;
-        }
+        last if ($r == 1);
     }
 
-    if ($r == 1) {
+    if ($r == 1 and ($n - 1) % $p == 0) {
         $sum += $n;
         last if ++$count == 25;
     }

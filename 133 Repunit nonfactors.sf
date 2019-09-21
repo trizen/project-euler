@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 21 September 2019
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=133
+
+# Runtime: 0.335s
+
+# See also:
+#   https://oeis.org/A178070
+
+var limit = 100_000
+
+var N = ipow10(limit.ilog2)
+var P = Set(primes(7, limit).grep {|p| znorder(10, p) `divides` N }...)
+
+say limit.primes.grep { !P.has(_) }.sum

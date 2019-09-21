@@ -1,34 +1,14 @@
 #!/usr/bin/ruby
 
 # Daniel "Trizen" Șuteu
-# License: GPLv3
-# Date: 13 May 2017
+# Date: 21 September 2019
 # https://github.com/trizen
 
 # https://projecteuler.net/problem=130
 
-# Runtime: 2 min, 11 sec
+# Runtime: 0.900s
 
-var sum   = 0
-var count = 0
-
-for n in (2..Inf -> lazy.grep { !.is_prime && .is_coprime(10) }) {
-
-    var r = 1
-    var p = 0
-
-    for k in (1 ..^ n) {
-        r += powmod(10, k, n)
-        r %= n
-        p += 1
-        r == 1 && break
-    }
-
-    if ((r == 1) && p.divides(n-1)) {
-        sum += n
-        say "[#{count+1}] #{n}"
-        ++count == 25 && break
-    }
-}
-
-say sum
+2..Inf -> lazy.grep {|n| n.is_composite }\
+              .grep {|n| gcd(n, 10) == 1 }\
+              .grep {|n| Num('1' * (n-1)) % n == 0 }\
+              .first(25).sum.say

@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 21 September 2019
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=132
+
+# Runtime: 1.035s
+
+# See also:
+#   https://oeis.org/A178070
+
+const N = 1e9
+const C = 40
+
+7..Inf -> lazy.grep { .is_prime }.grep {|p|
+    znorder(10, p) `divides` N
+}.first(C).sum.say

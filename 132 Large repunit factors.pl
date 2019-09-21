@@ -13,7 +13,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use ntheory qw(prime_iterator powmod gcd);
+use ntheory qw(:all);
 
 my $n     = 1e9;
 my $count = 40;
