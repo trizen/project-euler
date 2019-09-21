@@ -13,23 +13,28 @@ use 5.010;
 use strict;
 use warnings;
 
-my $x1 = 1;
-my $x2 = 2;
+#use Math::AnyNum qw(:overload);
 
-while ($x1 <= $x2) {
+my $n = 5000;
+my $u = -600000000000;
 
-    my $x = ($x1 + $x2) / 2;
-    my $r = (-14100 * $x**5001 + 14103 * $x**5000 - 900 * $x + 897) / ($x - 1)**2 + 600000000000;
+my $r1 = 1;
+my $r2 = 2;
 
-    if (abs($x1 - $x2) < 1e-14) {
-        printf("%.12f\n", $x1);
+while ($r1 <= $r2) {
+
+    my $r = ($r1 + $r2) / 2;
+    my $v = ((3*($n-299) * $r**$n) - (3*($n-300) * $r**($n+1)) - 900*$r + 897)/($r-1)**2 - $u;
+
+    if (abs($r1 - $r2) < 1e-14) {
+        printf("%.12f\n", $r1);
         last;
     }
 
-    if ($r > 0) {
-        $x1 = $x;
+    if ($v > 0) {
+        $r1 = $r;
     }
     else {
-        $x2 = $x;
+        $r2 = $r;
     }
 }
