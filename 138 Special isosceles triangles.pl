@@ -8,6 +8,12 @@
 
 # https://projecteuler.net/problem=138
 
+# Simpler solution:
+#   L(n) = fibonacci(6*n + 3) / 2
+
+# See also:
+#   https://oeis.org/A007805
+
 use 5.010;
 use strict;
 use warnings;

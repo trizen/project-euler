@@ -8,6 +8,9 @@
 
 # https://projecteuler.net/problem=138
 
+# See also:
+#   https://oeis.org/A007805
+
 say sum(1..12, {|n|
     fibonacci(6*n + 3) / 2
 })
