@@ -242,7 +242,7 @@ sub count_other_powers_fast ($N) {
         }
     }
 
-    say ":: There are $count solutions to `n^k = a^e + b^e`, with k >= 4 and e >= 4.";
+    say ":: There are $count solutions to `n^k = a^e + b^e`, with k >= 3 and e >= 4.";
 
     return $count;
 }
