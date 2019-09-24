@@ -154,23 +154,6 @@ sub r2_fourth_powers ($n) {
       @{sum_of_two_squares_solutions($n)};
 }
 
-# Returns true if n can be represented as a sum of two cubes.
-sub is_sum_of_two_cubes ($n) {
-
-    my $L = rootint($n - 1, 3) + 1;
-    my $U = rootint(4 * $n, 3);
-
-    foreach my $m (divisors($n)) {
-        if ($L <= $m and $m <= $U) {
-            my $l = $m * $m - $n / $m;
-            $l % 3 == 0 or next;
-            is_square($m * $m - 4 * ($l / 3)) && return 1;
-        }
-    }
-
-    return;
-}
-
 # Count the number of representations as sums of two squares.
 sub count_sum_of_squares ($N) {
 
@@ -226,7 +209,7 @@ sub count_sum_of_fourth_powers ($N) {
 # Count the number of representations as sums of powers a^e with e >= 5.
 sub count_other_powers ($N) {
 
-    say ":: Fourth stage...";    # most of the time is spent here
+    say ":: Fourth stage...";
 
     my $count = 0;
 
