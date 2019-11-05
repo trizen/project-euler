@@ -1,0 +1,48 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 05 November 2019
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=686
+
+# Runtime: 1 minute, 19 seconds.
+
+# The first few exponents are: 90, 379, 575, 864, 1060, 1545, 1741, 2030, 2226, 2515, 2711, 3000, 3196, 3681, 3877, 4166, 4362, 4651, 4847, 5136, ...
+# The set of differences between consecutive exponents is: {196, 289, 485}.
+
+define ln2  = log(2)
+define ln5  = log(5)
+define ln10 = log(10)
+
+func isok(n) {
+    #floor(2**(n - floor((n*ln2)/ln10) + 2) * 5**(2 - floor((n*ln2)/ln10))) == 123
+    floor(exp(ln2*(n - floor((n*ln2)/ln10) + 2) + ln5*(2 - floor((n*ln2)/ln10)))) == 123
+}
+
+var count = 1
+var k = (1..Inf -> first(isok))
+var nth = 678910
+
+loop {
+
+    if (isok(k+196)) {
+        ++count
+        k += 196
+    }
+    elsif (isok(k+289)) {
+        ++count
+        k += 289
+    }
+    elsif (isok(k+485)) {
+        ++count
+        k += 485
+    }
+
+    #say "#{count} out of #{nth} with k = #{k}"
+
+    if (count == nth) {
+        say "Final result: #{k}"
+        break
+    }
+}
