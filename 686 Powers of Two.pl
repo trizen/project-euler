@@ -43,8 +43,6 @@ while (1) {
         $k += 485;
     }
 
-    #say "#{count} out of #{nth} with k = #{k}"
-
     if ($count == $nth) {
         say "Final result: $k";
         last;

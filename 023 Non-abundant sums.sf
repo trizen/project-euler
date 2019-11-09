@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 07 November 2019
+# https://github.com/trizen
+
+# Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
+
+# https://projecteuler.net/problem=23
+
+# Runtime: 24.962s
+
+var total = 0
+var abundant = []
+
+for n in (1..28123) {
+
+    if (n.is_abundant) {
+        abundant << n
+    }
+
+    abundant.any {|k|
+        (n-k).is_abundant
+    } && next
+
+    total += n
+}
+
+say total

@@ -7,13 +7,13 @@
 
 # https://projecteuler.net/problem=36
 
-# Runtime: 3.440s
+# Runtime: 3.153s
 
 var sum = 0
 
-1e6.times {|i|
-    if (i.as_bin.is_palindrome && i.to_s.is_palindrome) {
-        sum += i
+1e6.times {|n|
+    if (n.is_palindrome && n.is_palindrome(2)) {
+        sum += n
     }
 }
 
