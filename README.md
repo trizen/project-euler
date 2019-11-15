@@ -220,6 +220,7 @@ Thanks, Project Euler! The way to go!
     * [678 Fermat-like Equations](./Perl/678%20Fermat-like%20Equations.pl)
     * [678 Fermat-like Equations (v2)](./Perl/678%20Fermat-like%20Equations%20--%20v2.pl)
     * [686 Powers of Two](./Perl/686%20Powers%20of%20Two.pl)
+    * [688 Piles of Plates](./Perl/688%20Piles%20of%20Plates.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -342,3 +343,4 @@ Thanks, Project Euler! The way to go!
     * [622 Riffle Shuffles](./Sidef/622%20Riffle%20Shuffles.sf)
     * [668 Square root smooth numbers](./Sidef/668%20Square%20root%20smooth%20numbers.sf)
     * [686 Powers of Two](./Sidef/686%20Powers%20of%20Two.sf)
+    * [688 Piles of Plates](./Sidef/688%20Piles%20of%20Plates.sf)

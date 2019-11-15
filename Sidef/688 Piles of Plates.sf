@@ -1,0 +1,246 @@
+#!/usr/bin/ruby
+
+# Author: Daniel "Trizen" Șuteu
+# Date: 15 November 2019
+# https://github.com/trizen
+
+# Solution to the "Piles of Plates" problem.
+# https://projecteuler.net/problem=688
+
+# Let:
+#   g(k) = k mod 2
+#   f(k) = Sum_{d|k} g(d) = Sum_{d|k, d is odd} 1
+
+# Then:
+#   F(n) = Sum_{k=1..n} f(k)
+#   F(n) = Sum_{k=1..n} g(k) * floor(n/k)
+
+#   S(n) = Sum_{k=1..n} (n-k+1) * Sum_{d|k, d is odd} 1
+#   S(n) = Sum_{k=1..n} Sum_{j=1..k} f(j)
+#   S(n) = Sum_{k=1..n} f(k) * (n - k + 1)
+
+# By splitting the last sum into individual sums, we get:
+#   S(n) = (n+1)*Sum_{k=1..n} f(k) - Sum_{k=1..n} f(k)*k
+
+# To compute S(10^18), we need a sub-linear formula for computing:
+#   A(n) = Sum_{k=1..n} f(k)
+#   B(n) = Sum_{k=1..n} k*f(k)
+
+# Then:
+#   S(n) = (n+1)*A(n) - B(n)
+
+# OEIS sequences:
+#   A(n) = A060831(n)
+#   B(n) = A285900(n)
+
+# Formulas:
+#   A(n) = Sum_{k=1..floor((n+1)/2)} (2*k-1) * floor(n/(2*k-1))
+#   B(n) = Sum_{k=1..floor((n+1)/2)} (2*k-1)/2 * floor(n/(2*k-1)) * floor(1 + n/(2*k-1))
+
+# A(n) can be computed in sub-linear time as:
+#   A(n) = H(n) - H(floor(n/2))
+
+# where:
+#   H(n) = Sum_{k=1..n} floor(n/k)
+#   H(n) = 2*Sum_{k=1..floor(sqrt(n))} floor(n/k) - floor(sqrt(n))^2
+
+# Alternatively:
+#   A(n) = Sum_{k=1..floor(sqrt(n))} (V(floor(n/k)) + g(k)*floor(n/k)) - V(floor(sqrt(n)))*floor(sqrt(n))
+
+# where:
+#   V(n) = floor((n+1)/2)
+
+# B(n) can be computed in sub-linear time as:
+#   B(n) = Sum_{k=1..floor(sqrt(n))} k * (G(floor(n/k)) + g(k) * F_1(floor(n/k))) - F_1(floor(sqrt(n))) * G(floor(sqrt(n)))
+
+# where:
+#   G(n) = floor((n+1)/2)^2
+#   F_1(n) = n*(n+1)/2
+
+#----------------------------------
+
+func g(k) { k % 2 }
+
+#----------------------------------
+
+func f(k) {
+    k.divisors.sum {|d| g(d) }
+}
+
+#----------------------------------
+
+func F1(n) {
+    sum(1..n, {|k|
+        f(k)
+    })
+}
+
+#----------------------------------
+
+func F2(n) {
+    sum(1..n, {|k|
+        g(k) * floor(n/k)
+    })
+}
+
+#----------------------------------
+
+func S1(n) {
+    sum(1..n, {|k|
+        F1(k)
+    })
+}
+
+#----------------------------------
+
+func S2(n) {
+    sum(1..n, {|k|
+        (n - k + 1) * f(k)
+    })
+}
+
+#----------------------------------
+
+func S3(n) {
+    (n+1) * sum(1..n, {|k|
+        f(k)
+    }) - sum(1..n, {|k|
+        k * f(k)
+    })
+}
+
+#----------------------------------
+
+func A1(n) {
+    sum(1..n, {|k|
+        f(k)
+    })
+}
+
+func B1(n) {
+    sum(1..n, {|k|
+        f(k) * k
+    })
+}
+
+func S4(n) {
+    (n+1)*A1(n) - B1(n)
+}
+
+#----------------------------------
+
+func A2(n) {
+    sum(1..floor((n+1)/2), {|k|
+        floor(n/(2*k - 1))
+    })
+}
+
+func B2(n) {
+    sum(1..floor((n+1)/2), {|k|
+        (2*k - 1) * faulhaber_sum(floor(n/(2*k - 1)),1)
+    })
+}
+
+func S5(n) {
+    (n+1)*A2(n) - B2(n)
+}
+
+#----------------------------------
+
+func G(n) {
+    floor((n+1)/2)**2
+}
+
+func H(n) {
+    var total = 0
+    var s = n.isqrt
+
+    for k in (1 .. s) {
+        total += 2*floor(n/k)
+    }
+
+    total -= s**2
+    return total
+}
+
+func A3(n) {
+    H(n) - H(n>>1)
+}
+
+func B3(n) {
+
+    var total = 0
+    var s = n.isqrt
+
+    for k in (1..s) {
+        total += k*G(floor(n/k))
+        total += k*g(k)*faulhaber(floor(n/k), 1)
+    }
+
+    total -= G(s)*faulhaber(s,1)
+    return total
+}
+
+func S6(n) {
+    (n+1)*A3(n) - B3(n)
+}
+
+#----------------------------------
+
+func V(n) {
+    floor((n+1)/2)
+}
+
+func A4(n) {
+
+    var total = 0
+    var s = n.isqrt
+
+    for k in (1..s) {
+        total += V(floor(n/k))
+        total += g(k)*floor(n/k)
+    }
+
+    total -= V(s)*s
+    return total
+}
+
+func S7(n) {
+    (n+1)*A4(n) - B3(n)
+}
+
+#----------------------------------
+
+assert_eq(F1(100), 275)
+assert_eq(F2(100), 275)
+
+assert_eq(S1(100), 12656)
+assert_eq(S2(100), 12656)
+assert_eq(S3(100), 12656)
+assert_eq(S4(100), 12656)
+assert_eq(S5(100), 12656)
+assert_eq(S6(100), 12656)
+assert_eq(S7(100), 12656)
+
+assert_eq(20.of(A1), 20.of(A2))
+assert_eq(20.of(A1), 20.of(A3))
+assert_eq(20.of(A1), 20.of(A4))
+assert_eq(20.of(B1), 20.of(B2))
+assert_eq(20.of(B1), 20.of(B3))
+
+for n in (1..16) {
+    say ("S(10^#{n}) = ", S6(10**n))
+}
+
+__END__
+S(10^1)  = 83
+S(10^2)  = 12656
+S(10^3)  = 1817711
+S(10^4)  = 238998218
+S(10^5)  = 29651877833
+S(10^6)  = 3540779596783
+S(10^7)  = 411641938861705
+S(10^8)  = 46920649099203041
+S(10^9)  = 5267711097612683319
+S(10^10) = 584335736126953554014
+S(10^11) = 64190036334552593839325
