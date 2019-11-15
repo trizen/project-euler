@@ -22,7 +22,7 @@
 # By splitting the last sum into individual sums, we get:
 #   S(n) = (n+1)*Sum_{k=1..n} f(k) - Sum_{k=1..n} f(k)*k
 
-# To compute S(10^18), we need a sub-linear formula for computing:
+# To compute S(10^16), we need a sub-linear formula for computing:
 #   A(n) = Sum_{k=1..n} f(k)
 #   B(n) = Sum_{k=1..n} k*f(k)
 
