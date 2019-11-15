@@ -19,10 +19,10 @@
 #   S(n) = Sum_{k=1..n} Sum_{j=1..k} f(j)
 #   S(n) = Sum_{k=1..n} f(k) * (n - k + 1)
 
-# By splitting the last sum into individual sums, we get:
+# By splitting the last sum into two sums, we get:
 #   S(n) = (n+1)*Sum_{k=1..n} f(k) - Sum_{k=1..n} f(k)*k
 
-# To compute S(10^16), we need a sub-linear formula for computing:
+# In order to compute S(10^16), we need a sub-linear formula for computing:
 #   A(n) = Sum_{k=1..n} f(k)
 #   B(n) = Sum_{k=1..n} k*f(k)
 
@@ -34,7 +34,7 @@
 #   B(n) = A285900(n)
 
 # Formulas:
-#   A(n) = Sum_{k=1..floor((n+1)/2)} (2*k-1) * floor(n/(2*k-1))
+#   A(n) = Sum_{k=1..floor((n+1)/2)} floor(n/(2*k-1))
 #   B(n) = Sum_{k=1..floor((n+1)/2)} (2*k-1)/2 * floor(n/(2*k-1)) * floor(1 + n/(2*k-1))
 
 # A(n) can be computed in sub-linear time as:
