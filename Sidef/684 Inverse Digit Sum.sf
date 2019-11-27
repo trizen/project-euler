@@ -33,14 +33,6 @@ func S(k) {
     sum
 }
 
-func S(k) {
-
-    var n = floor(k/9)
-    var r = (k%9 + 2)
-
-    (((r - 1)*r + 10) * 10**n - 2*(r + 9*n + 4))/2
-}
-
 func modular_S(k) {
 
     var n   = floor(k/9)

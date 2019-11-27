@@ -219,6 +219,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [675 2^ω(n)](./Perl/675%202^ω(n).pl)
     * [678 Fermat-like Equations](./Perl/678%20Fermat-like%20Equations.pl)
     * [678 Fermat-like Equations (v2)](./Perl/678%20Fermat-like%20Equations%20--%20v2.pl)
+    * [684 Inverse Digit Sum](./Perl/684%20Inverse%20Digit%20Sum.pl)
     * [686 Powers of Two](./Perl/686%20Powers%20of%20Two.pl)
     * [688 Piles of Plates](./Perl/688%20Piles%20of%20Plates.pl)
 * Raku
