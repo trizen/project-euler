@@ -342,5 +342,6 @@ Thanks, Project Euler! The way to go!
     * [601 Divisibility streaks](./Sidef/601%20Divisibility%20streaks.sf)
     * [622 Riffle Shuffles](./Sidef/622%20Riffle%20Shuffles.sf)
     * [668 Square root smooth numbers](./Sidef/668%20Square%20root%20smooth%20numbers.sf)
+    * [684 Inverse Digit Sum](./Sidef/684%20Inverse%20Digit%20Sum.sf)
     * [686 Powers of Two](./Sidef/686%20Powers%20of%20Two.sf)
     * [688 Piles of Plates](./Sidef/688%20Piles%20of%20Plates.sf)

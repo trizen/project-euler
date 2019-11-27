@@ -1,0 +1,56 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 27 November 2019
+# https://github.com/trizen
+
+# See OEIS sequence:
+#   https://oeis.org/A051885
+
+# The smallest numbers whose sum of digits is n, are numbers of the form r*10^j-1, with r=1..9 and j >= 0.
+
+# This solution uses the following formula:
+#   Sum_{j=0..n} (r*10^j-1) = (r * 10^(n+1) - r - 9*n - 9)/9
+
+# By letting r=1..9, we get:
+#   Sum_{r=1..9} Sum_{j=0..n} (r*10^j-1) = 2*(2^n * 5^(n+2) - 7) - 9*n
+
+# https://projecteuler.net/problem=686
+
+# Runtime: 0.188s
+
+const MOD = 1000000007
+
+func S(k) {
+
+    var n   = floor(k/9)
+    var sum = (2*(2**n * 5**(n+2) - 7) - 9*n)
+
+    for r in (k%9 + 2 .. 9) {
+        sum -= (r * 10**n - 1)
+    }
+
+    sum
+}
+
+func modular_S(k) {
+
+    var n   = floor(k/9)
+    var sum = (2*(powmod(2, n, MOD) * powmod(5, n+2, MOD) - 7) - 9*n)%MOD
+
+    for r in (k%9 + 2 .. 9) {
+        sum -= (r * powmod(10, n, MOD) - 1)%MOD
+    }
+
+    sum % MOD
+}
+
+assert_eq(S(20), 1074)
+assert_eq(S(49), 1999945)
+
+assert_eq(modular_S(20), 1074)
+assert_eq(modular_S(49), 1999945)
+
+say sum(2..90, {|k|
+    modular_S(fib(k))
+})%MOD

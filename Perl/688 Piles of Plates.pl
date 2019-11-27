@@ -15,7 +15,7 @@
 #   F(n) = Sum_{k=1..n} f(k)
 #   F(n) = Sum_{k=1..n} g(k) * floor(n/k)
 
-#   S(n) = Sum_{k=1..n} (n-k+1) * Sum_{d|k, d is odd} 1
+#   S(n) = Sum_{k=1..n} F(k)
 #   S(n) = Sum_{k=1..n} Sum_{j=1..k} f(j)
 #   S(n) = Sum_{k=1..n} f(k) * (n - k + 1)
 
