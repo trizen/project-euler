@@ -13,11 +13,15 @@
 #   Sum_{j=0..n} (r*10^j-1) = (r * 10^(n+1) - r - 9*n - 9)/9
 
 # By letting r=1..9, we get:
-#   Sum_{r=1..9} Sum_{j=0..n} (r*10^j-1) = 2*(2^n * 5^(n+2) - 7) - 9*n
+#   R(k) = Sum_{r=1..9} Sum_{j=0..n} (r*10^j-1) = 2*(2^n * 5^(n+2) - 7) - 9*n
 
-# By simplifying the formula further, we get:
+# From R(k), we get S(k) as:
+#   S(k) = R(k) - Sum_{j=2+(k mod 9) .. 9} (j*10^n-1)
+#   S(k) = R(k) - (10-r) * (10^n * (r+9) - 2)/2
+
+# Simplifying the formula, we get:
 #   S(k) = (((r-1)*r + 10) * 10^n - 2*(r + 9*n + 4))/2
-#
+
 # where:
 #   n = floor(k/9)
 #   r = 2+(k mod 9)
