@@ -37,6 +37,10 @@
 #   https://en.wikipedia.org/wiki/Dirichlet_hyperbola_method
 #   https://trizenx.blogspot.com/2018/11/partial-sums-of-arithmetical-functions.html
 
+# https://projecteuler.net/problem=625
+
+# WARNING: this program uses more than 3 GB of memory!
+
 use 5.020;
 use strict;
 use warnings;

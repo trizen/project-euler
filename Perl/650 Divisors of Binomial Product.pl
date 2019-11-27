@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Daniel "Trizen" Șuteu
+# Date: 15 January 2019
+# https://github.com/trizen
+
 # Formula for computing the sum of divisors of the product of binomials.
 
 # Using the identities:
@@ -17,6 +21,10 @@
 #   Jeffrey C. Lagarias, Harsh Mehta
 #   Products of binomial coefficients and unreduced Farey fractions
 #   http://arxiv.org/abs/1409.4145
+
+# https://projecteuler.net/problem=650
+
+# WARNING: this program uses more than 3 GB of memory!
 
 use 5.020;
 use strict;

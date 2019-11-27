@@ -8,6 +8,8 @@
 #   https://oeis.org/A033307
 #   https://en.wikipedia.org/wiki/Champernowne_constant
 
+# https://projecteuler.net/problem=40
+
 # Runtime: 0.153s
 
 func champernowne_nth_digit(n) {

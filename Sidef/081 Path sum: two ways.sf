@@ -4,6 +4,8 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
+# https://projecteuler.net/problem=81
+
 # usage: sidef problem_081.sf < p081_matrix.txt
 
 var matrix = []

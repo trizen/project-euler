@@ -5,8 +5,7 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
-# This is not a very good algorithm!
-# (it takes ~5 hours to complete on my machine)
+# https://projecteuler.net/problem=160
 
 use 5.010;
 use strict;
@@ -26,7 +25,9 @@ sub power {
     $s;
 }
 
-my $k = 1_000_000_000_000;      # 2560000 yields the same answer
+#my $k = 1_000_000_000_000;      # 2560000 yields the same answer
+
+my $k = 2560000;
 my $t = power($k, 5);
 
 sub f {

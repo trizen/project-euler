@@ -21,7 +21,7 @@
 # where:
 #   n = floor(k/9)
 
-# https://projecteuler.net/problem=686
+# https://projecteuler.net/problem=684
 
 # Runtime: 0.188s
 

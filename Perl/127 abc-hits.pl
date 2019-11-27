@@ -5,9 +5,9 @@
 # Date: 20 May 2017
 # https://github.com/trizen
 
-# Runtime: 33 min, 6 sec
+# https://projecteuler.net/problem=127
 
-# 18407904
+# Runtime: 33 min, 6 sec
 
 use 5.010;
 use strict;
