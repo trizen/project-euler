@@ -15,42 +15,33 @@
 # By letting r=1..9, we get:
 #   Sum_{r=1..9} Sum_{j=0..n} (r*10^j-1) = 2*(2^n * 5^(n+2) - 7) - 9*n
 
+# By simplifying the formula further, we get:
+#   S(k) = (((r-1)*r + 10) * 10^n - 2*(r + 9*n + 4))/2
+#
+# where:
+#   n = floor(k/9)
+#   r = 2+(k mod 9)
+
 # https://projecteuler.net/problem=686
 
-# Runtime: 0.188s
+# Runtime: 0.176s
 
 const MOD = 1000000007
-
-func S(k) {
-
-    var n   = floor(k/9)
-    var sum = (2*(2**n * 5**(n+2) - 7) - 9*n)
-
-    for r in (k%9 + 2 .. 9) {
-        sum -= (r * 10**n - 1)
-    }
-
-    sum
-}
 
 func S(k) {
 
     var n = floor(k/9)
     var r = (k%9 + 2)
 
-    (((r - 1)*r + 10) * 10**n - 2*(r + 9*n + 4))/2
+    (((r-1)*r + 10) * 10**n - 2*(r + 9*n + 4))/2
 }
 
 func modular_S(k) {
 
-    var n   = floor(k/9)
-    var sum = (2*(powmod(2, n, MOD) * powmod(5, n+2, MOD) - 7) - 9*n)%MOD
+    var n = floor(k/9)
+    var r = (k%9 + 2)
 
-    for r in (k%9 + 2 .. 9) {
-        sum -= (r * powmod(10, n, MOD) - 1)%MOD
-    }
-
-    sum % MOD
+    ((((r-1)*r + 10) * powmod(10, n, MOD) - 2*(r + 9*n + 4)) * invmod(2, MOD)) % MOD
 }
 
 assert_eq(S(20), 1074)
