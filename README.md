@@ -11,7 +11,7 @@ trizen: Everytime you solve a problem Project Euler asks you not to publish solu
         Please make your github repo private or delete it.
 ```
 
-Thanks, Project Euler! The way to go!
+Thanks, Project Euler! The way to go! This repository will remain public.
 
 ### Summary
 
