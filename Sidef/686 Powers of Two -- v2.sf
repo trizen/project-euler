@@ -1,0 +1,65 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 03 February 2020
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=686
+
+# Runtime: 2 minutes, 10 seconds.
+
+# General solution, computing the set of differences between consecutive exponents using Farey approximations of `log_10(2)`.
+
+func farey_approximations(r, callback) {
+
+    var (a1 = r.int, b1 = 1)
+    var (a2 = a1+1,  b2 = 1)
+
+    loop {
+        var a3 = a1+a2
+        var b3 = b1+b2
+
+        if (a3 < r*b3) {
+            (a1, b1) = (a3, b3)
+        }
+        else {
+            (a2, b2) = (a3, b3)
+        }
+
+        callback(a3 / b3)
+    }
+}
+
+func p(L, nth) {
+
+    define ln2  = log(2)
+    define ln5  = log(5)
+    define ln10 = log(10)
+
+    var t = L.len-1
+
+    func isok(n) {
+        floor(exp(ln2*(n - floor((n*ln2)/ln10) + t) + ln5*(t - floor((n*ln2)/ln10)))) == L
+    }
+
+    var deltas = gather {
+        farey_approximations(ln2/ln10, {|r|
+            take(r.de) if (r.de.len == L.len)
+            break      if (r.de.len >  L.len)
+        })
+    }.sort.uniq
+
+    var c = 0
+    var k = (1..Inf -> first_by(isok))
+
+    loop {
+        return k if (++c == nth)
+        k += (deltas.first_by {|d| isok(k+d) } \\ die "error: #{k}")
+    }
+}
+
+assert_eq(p(12, 1), 7)
+assert_eq(p(12, 2), 80)
+assert_eq(p(123, 45), 12710)
+
+say p(123, 678910)

@@ -346,4 +346,5 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [684 Inverse Digit Sum](./Sidef/684%20Inverse%20Digit%20Sum.sf)
     * [684 Inverse Digit Sum (v2)](./Sidef/684%20Inverse%20Digit%20Sum%20--%20v2.sf)
     * [686 Powers of Two](./Sidef/686%20Powers%20of%20Two.sf)
+    * [686 Powers of Two (v2)](./Sidef/686%20Powers%20of%20Two%20--%20v2.sf)
     * [688 Piles of Plates](./Sidef/688%20Piles%20of%20Plates.sf)
