@@ -1,0 +1,54 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 09 February 2020
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=700
+
+# Runtime: ~100ms.
+
+# Using the denominators of Farey approximations of 1504170715041707/4503599627370517.
+
+# See also:
+#   https://en.wikipedia.org/wiki/Farey_sequence
+
+func farey_approximations(r, callback) {
+
+    var a1 = r.int
+    var b1 = 1
+
+    var a2 = a1+1
+    var b2 = 1
+
+    loop {
+
+        var a3 = a1+a2
+        var b3 = b1+b2
+
+        if (a3 < r*b3) {
+            (a1, b1) = (a3, b3)
+        }
+        else {
+            (a2, b2) = (a3, b3)
+        }
+
+        callback(a3, b3)
+    }
+}
+
+var a = 1504170715041707
+var b = 4503599627370517
+
+var min = a
+var sum = min
+
+farey_approximations(a/b, {|_,d|
+    var t = (a*d % b)
+    if (t < min) {
+        sum += t
+        break if (t == 0)
+    }
+})
+
+say sum

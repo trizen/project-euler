@@ -348,3 +348,4 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [686 Powers of Two](./Sidef/686%20Powers%20of%20Two.sf)
     * [686 Powers of Two (v2)](./Sidef/686%20Powers%20of%20Two%20--%20v2.sf)
     * [688 Piles of Plates](./Sidef/688%20Piles%20of%20Plates.sf)
+    * [700 Eulercoin](./Sidef/700%20Eulercoin.sf)
