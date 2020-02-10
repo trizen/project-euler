@@ -222,6 +222,9 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [684 Inverse Digit Sum](./Perl/684%20Inverse%20Digit%20Sum.pl)
     * [686 Powers of Two](./Perl/686%20Powers%20of%20Two.pl)
     * [688 Piles of Plates](./Perl/688%20Piles%20of%20Plates.pl)
+    * [694 Cube-full Divisors](./Perl/694%20Cube-full%20Divisors.pl)
+    * [700 Eulercoin](./Perl/700%20Eulercoin.pl)
+    * [700 Eulercoin (v2)](./Perl/700%20Eulercoin%20--%20v2.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -348,4 +351,5 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [686 Powers of Two](./Sidef/686%20Powers%20of%20Two.sf)
     * [686 Powers of Two (v2)](./Sidef/686%20Powers%20of%20Two%20--%20v2.sf)
     * [688 Piles of Plates](./Sidef/688%20Piles%20of%20Plates.sf)
+    * [694 Cube-full Divisors](./Sidef/694%20Cube-full%20Divisors.sf)
     * [700 Eulercoin](./Sidef/700%20Eulercoin.sf)

@@ -1,0 +1,79 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 10 February 2020
+# https://github.com/trizen
+
+# See also:
+#   https://oeis.org/A036966
+#   THE DISTRIBUTION OF CUBE-FULL NUMBERS, by P. SHIU (1990).
+
+# https://projecteuler.net/problem=694
+
+func cubefull_numbers (n) {    # cubefull numbers <= n
+
+    var cubefull = Set()
+
+    for a in (1..iroot(n,5)), b in (1..iroot(idiv(n, a**5), 4)) {
+        var v = (a**5 * b**4)
+        for c in (1..iroot(idiv(n, v), 3)) {
+            cubefull << (v * c**3)
+        }
+    }
+
+    cubefull.sort
+}
+
+func sum_of_cubefull_divisors_count(n) {
+
+    var t = 0
+    var s = n.isqrt
+
+    var sqrt_cubefull = cubefull_numbers(s)
+
+    for k in (sqrt_cubefull) {
+        t += idiv(n,k)
+    }
+
+    var cubefull = cubefull_numbers(n)
+
+    for (var k = 1 ; k <= s; ++k) {
+
+        var w = idiv(n,k)
+        var i = cubefull.end.bsearch_le {|j|
+            cubefull[j] <=> w
+        }
+
+        var r = idiv(n, cubefull[i])
+        r = s if (r > s)
+        t += ((1+i) * (r - k + 1))
+        k = r
+    }
+
+    t -= s*sqrt_cubefull.len
+
+    return t
+}
+
+for n in (1..18) {
+    say ("S(10^#{n}) = ", sum_of_cubefull_divisors_count(10**n))
+}
+
+__END__
+S(10^1) = 11
+S(10^2) = 126
+S(10^3) = 1318
+S(10^4) = 13344
+S(10^5) = 133848
+S(10^6) = 1339485
+S(10^7) = 13397119
+S(10^8) = 133976753
+S(10^9) = 1339780424
+S(10^10) = 13397833208
+S(10^11) = 133978396859
+S(10^12) = 1339784112539
+S(10^13) = 13397841446161
+S(10^14) = 133978415161307
+S(10^15) = 1339784153146359
+S(10^16) = 13397841534812404
+S(10^17) = 133978415355411689
