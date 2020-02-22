@@ -53,7 +53,8 @@ farey_approximations($a, $b, sub ($n, $d) {
     my $t = mulmod($a, $d, $b);
     if ($t < $min) {
         $sum += $t;
-        return $t > 0;
+        $min = $t;
+        return $t > 1;
     }
     return 1;
 });

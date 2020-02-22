@@ -5,7 +5,7 @@
 # License: GPLv3
 # Website: https://github.com/trizen
 
-# Find the number of integers 1 < n < 107, for which n and n + 1 have the same number of positive divisors.
+# Find the number of integers 1 < n < 10^7, for which n and n + 1 have the same number of positive divisors.
 
 # https://projecteuler.net/problem=179
 

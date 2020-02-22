@@ -10,7 +10,7 @@
 
 # https://projecteuler.net/problem=694
 
-# Runtime: 16.915s
+# Runtime: 10.132s
 
 use 5.020;
 use integer;
@@ -45,21 +45,29 @@ sub bsearch_le ($left, $right, $callback) {
     return $mid;
 }
 
-sub cubefull_numbers ($n) {    # cubefull numbers <= n
+sub powerful_numbers ($n, $k) {    # k-powerful numbers <= n
 
-    my %cubefull;
+    my @powerful;
 
-    for my $a (1 .. rootint($n, 5)) {
-        for my $b (1 .. rootint(divint($n, powint($a, 5)), 4)) {
-            my $v = mulint(powint($a, 5), powint($b, 4));
-            foreach my $c (1 .. rootint(divint($n, $v), 3)) {
-                my $z = $v * $c * $c * $c;
-                undef $cubefull{$z};
-            }
+    sub ($m, $r) {
+
+        if ($r < $k) {
+            push @powerful, $m;
+            return;
         }
-    }
 
-    sort { $a <=> $b } keys %cubefull;
+        for my $v (1 .. rootint(divint($n, $m), $r)) {
+
+            if ($r > $k) {
+                gcd($m, $v) == 1   or next;
+                is_square_free($v) or next;
+            }
+
+            __SUB__->($m * powint($v, $r), $r - 1);
+        }
+    }->(1, 2 * $k - 1);
+
+    sort { $a <=> $b } @powerful;
 }
 
 sub sum_of_cubefull_divisors_count($n) {
@@ -67,13 +75,13 @@ sub sum_of_cubefull_divisors_count($n) {
     my $t = 0;
     my $s = sqrtint($n);
 
-    my @sqrt_cubefull = cubefull_numbers($s);
+    my @sqrt_cubefull = powerful_numbers($s, 3);
 
     foreach my $k (@sqrt_cubefull) {
         $t += $n / $k;
     }
 
-    my @cubefull = cubefull_numbers($n);
+    my @cubefull = powerful_numbers($n, 3);
 
     for (my $k = 1 ; $k <= $s ; ++$k) {
 

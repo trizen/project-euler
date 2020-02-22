@@ -10,18 +10,27 @@
 
 # https://projecteuler.net/problem=694
 
-func cubefull_numbers (n) {    # cubefull numbers <= n
+func powerful(n, k) {  # k-powerful numbers <= n
 
-    var cubefull = Set()
+    var list = []
 
-    for a in (1..iroot(n,5)), b in (1..iroot(idiv(n, a**5), 4)) {
-        var v = (a**5 * b**4)
-        for c in (1..iroot(idiv(n, v), 3)) {
-            cubefull << (v * c**3)
+    func (m,r) {
+
+        if (r < k) {
+            list << m
+            return nil
         }
-    }
 
-    cubefull.sort
+        for a in (1 .. iroot(idiv(n,m), r)) {
+            if (r > k) {
+                a.is_coprime(m) || next
+                a.is_squarefree || next
+            }
+            __FUNC__(m * a**r, r-1)
+        }
+    }(1, 2*k - 1)
+
+    list.sort
 }
 
 func sum_of_cubefull_divisors_count(n) {
@@ -29,13 +38,13 @@ func sum_of_cubefull_divisors_count(n) {
     var t = 0
     var s = n.isqrt
 
-    var sqrt_cubefull = cubefull_numbers(s)
+    var sqrt_cubefull = powerful(s, 3)
 
     for k in (sqrt_cubefull) {
         t += idiv(n,k)
     }
 
-    var cubefull = cubefull_numbers(n)
+    var cubefull = powerful(n, 3)
 
     for (var k = 1 ; k <= s; ++k) {
 

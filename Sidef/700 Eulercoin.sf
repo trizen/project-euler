@@ -46,6 +46,7 @@ var sum = min
 farey_approximations(a/b, {|_,d|
     var t = (a*d % b)
     if (t < min) {
+        min = t
         sum += t
         break if (t == 0)
     }
