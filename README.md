@@ -353,3 +353,4 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [688 Piles of Plates](./Sidef/688%20Piles%20of%20Plates.sf)
     * [694 Cube-full Divisors](./Sidef/694%20Cube-full%20Divisors.sf)
     * [700 Eulercoin](./Sidef/700%20Eulercoin.sf)
+    * [704 Factors of Two in Binomial Coefficients](./Sidef/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.sf)
