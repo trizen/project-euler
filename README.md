@@ -225,6 +225,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [694 Cube-full Divisors](./Perl/694%20Cube-full%20Divisors.pl)
     * [700 Eulercoin](./Perl/700%20Eulercoin.pl)
     * [700 Eulercoin (v2)](./Perl/700%20Eulercoin%20--%20v2.pl)
+    * [704 Factors of Two in Binomial Coefficients](./Perl/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef

@@ -10,7 +10,7 @@
 
 # https://projecteuler.net/problem=694
 
-# Runtime: 10.132s
+# Runtime: 9.783s
 
 use 5.020;
 use integer;

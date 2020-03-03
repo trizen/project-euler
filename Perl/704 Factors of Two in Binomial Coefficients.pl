@@ -1,13 +1,13 @@
-#!/usr/bin/ruby
+#!/usr/bin/perl
 
 # Daniel "Trizen" Șuteu
-# Date: 02 March 2020
+# Date: 03 March 2020
 # https://github.com/trizen
 
 # Factors of Two in Binomial Coefficients
 # https://projecteuler.net/problem=704
 
-# Runtime: 0.165s
+# Runtime: 0.031s
 
 # The maximal value of m for a given n-1, is given by:
 #   A053645(n) = n - 2^floor(log_2(n))
@@ -35,19 +35,25 @@
 #   https://oeis.org/A061168
 #   https://oeis.org/A011371
 
-func A(n) {
-    (n+1)*ilog2(n) - 2*(2**ilog2(n) - 1)
+use 5.020;
+use warnings;
+
+use ntheory qw(:all);
+use experimental qw(signatures);
+
+sub A($n) {
+    ($n+1)*logint($n,2) - 2*(powint(2, logint($n, 2)) - 1);
 }
 
-func B(n) {
-    n - hammingweight(n)
+sub B($n) {
+    $n - hammingweight($n);
 }
 
-func S(n) {
-    A(n+1) - B(n+1)
+sub S($n) {
+    A($n+1) - B($n+1);
 }
 
-say S(10**16)
+say S(powint(10, 16));
 
 __END__
 S(10^(10^5)) = 3321898588...7585514573 (100006 digits)
