@@ -1,6 +1,6 @@
+\\ Pari/GP
 
 \\ Daniel "Trizen" Șuteu
-\\ License: GPLv3
 \\ Date: 27 September 2017
 \\ https://github.com/trizen
 

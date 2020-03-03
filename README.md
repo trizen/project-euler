@@ -43,6 +43,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
 * PARI GP
     * [182 RSA encryption](./PARI%20GP/182%20RSA%20encryption.gp)
     * [235 An Arithmetic Geometric sequence](./PARI%20GP/235%20An%20Arithmetic%20Geometric%20sequence.gp)
+    * [704 Factors of Two in Binomial Coefficients](./PARI%20GP/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.gp)
 * Perl
     * [011 Largest product in a grid](./Perl/011%20Largest%20product%20in%20a%20grid.pl)
     * [014 Longest Collatz sequence](./Perl/014%20Longest%20Collatz%20sequence.pl)
