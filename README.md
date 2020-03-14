@@ -197,6 +197,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [512 Sums of totients of powers](./Perl/512%20Sums%20of%20totients%20of%20powers.pl)
     * [516 5-smooth totients](./Perl/516%205-smooth%20totients.pl)
     * [516 5-smooth totients (v2)](./Perl/516%205-smooth%20totients%20--%20v2.pl)
+    * [521 Smallest prime factor](./Perl/521%20Smallest%20prime%20factor.pl)
     * [531 Chinese leftovers](./Perl/531%20Chinese%20leftovers.pl)
     * [545 Faulhaber's Formulas](./Perl/545%20Faulhaber's%20Formulas.pl)
     * [545 Faulhaber's Formulas (v2)](./Perl/545%20Faulhaber's%20Formulas%20--%20v2.pl)
