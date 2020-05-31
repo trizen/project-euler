@@ -1,0 +1,28 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 22 May 2020
+# https://github.com/trizen
+
+# Twos are all you need
+# https://projecteuler.net/problem=708
+
+# Solution by counting the number of k-almost primes <= n.
+
+# Let:
+#   pi_k(n) = the number of k-almost primes <= n.
+
+# Then:
+#   S(n) = Sum_{k=1..n} 2^bigomega(k)
+#        = Sum_{k=1..floor(log_2(n))} 2^k * pi_k(n)
+
+# Runtime: 6.378s
+
+func S(n) {
+    sum(0..n.ilog2, {|k|
+        2**k * pi_k(n, k)
+    })
+}
+
+say ("S(10^8)  = ", S(10**8))
+say ("S(10^14) = ", S(10**14))

@@ -184,6 +184,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [407 Idempotents](./Perl/407%20Idempotents.pl)
     * [407 Idempotents (v2)](./Perl/407%20Idempotents%20--%20v2.pl)
     * [407 Idempotents (v3)](./Perl/407%20Idempotents%20--%20v3.pl)
+    * [417 Reciprocal cycles II](./Perl/417%20Reciprocal%20cycles%20II.pl)
     * [425 Prime connection](./Perl/425%20Prime%20connection.pl)
     * [429 Sum of squares of unitary divisors](./Perl/429%20Sum%20of%20squares%20of%20unitary%20divisors.pl)
     * [435 Polynomials of Fibonacci numbers](./Perl/435%20Polynomials%20of%20Fibonacci%20numbers.pl)
@@ -228,6 +229,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [700 Eulercoin](./Perl/700%20Eulercoin.pl)
     * [700 Eulercoin (v2)](./Perl/700%20Eulercoin%20--%20v2.pl)
     * [704 Factors of Two in Binomial Coefficients](./Perl/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.pl)
+    * [708 Twos are all you need](./Perl/708%20Twos%20are%20all%20you%20need.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -357,3 +359,4 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [694 Cube-full Divisors](./Sidef/694%20Cube-full%20Divisors.sf)
     * [700 Eulercoin](./Sidef/700%20Eulercoin.sf)
     * [704 Factors of Two in Binomial Coefficients](./Sidef/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.sf)
+    * [708 Twos are all you need](./Sidef/708%20Twos%20are%20all%20you%20need.sf)
