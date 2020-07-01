@@ -4,6 +4,9 @@
 # Date: 22 May 2020
 # https://github.com/trizen
 
+# Twos are all you need
+# https://projecteuler.net/problem=708
+
 # Solution by counting the number of k-almost primes <= n.
 
 # Let:

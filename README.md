@@ -40,6 +40,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [565 Divisibility of sum of divisors](./Julia/565%20Divisibility%20of%20sum%20of%20divisors.jl)
     * [581 47-smooth triangular numbers](./Julia/581%2047-smooth%20triangular%20numbers.jl)
     * [675 2^ω(n)](./Julia/675%202^ω(n).jl)
+    * [719 Number Splitting](./Julia/719%20Number%20Splitting.jl)
 * PARI GP
     * [182 RSA encryption](./PARI%20GP/182%20RSA%20encryption.gp)
     * [235 An Arithmetic Geometric sequence](./PARI%20GP/235%20An%20Arithmetic%20Geometric%20sequence.gp)
@@ -230,6 +231,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [700 Eulercoin (v2)](./Perl/700%20Eulercoin%20--%20v2.pl)
     * [704 Factors of Two in Binomial Coefficients](./Perl/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.pl)
     * [708 Twos are all you need](./Perl/708%20Twos%20are%20all%20you%20need.pl)
+    * [719 Number Splitting](./Perl/719%20Number%20Splitting.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
