@@ -7,42 +7,33 @@
 # Number Splitting
 # https://projecteuler.net/problem=719
 
-# Runtime: 9 min, 15 sec
+# Runtime: 2.720s
 
-function isok(i::Int64, j::Int64, d::Array{Int64}, e::Int64, n::Int64, sum::Int64 = 0)
+function isok(n::Int64, m::Int64)
 
-    if (sum + parse(Int64, join(d[i:e])) < n)
-        return false
-    end
+    (m  < n) && return false
+    (m == n) && return true
 
-    new_sum = sum + parse(Int64, join(d[i:j]))
-
-    if (new_sum > n)
-        return false
-    end
-
-    if (new_sum == n && j >= e)
-        return true
-    end
-
-    if (j+1 <= e)
-        isok(j+1, j+1, d, e, n, new_sum) && return true
-        isok(i,   j+1, d, e, n, sum)     && return true
+    t = 10
+    while (t < m)
+        q,r = divrem(m, t)
+        (r < n) && isok(n - r, q) && return true
+        t *= 10
     end
 
     return false
 end
 
-function p719(upto::Int64)
-    sum = 0
-    for n in (2:upto)
-        d = reverse(digits(n*n))
-        if (isok(1, 1, d, length(d), n))
-            println(n*n)
-            sum += n*n
+function p719(upto)
+    total = 0
+
+    for n in 2:upto
+        if isok(n, n*n)
+            total += n*n
         end
     end
-    return sum
+
+    return total
 end
 
-println("Total: ", p719(10^6))
+println(p719(10^6))
