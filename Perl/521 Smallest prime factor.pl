@@ -9,7 +9,7 @@
 
 # For each prime p < sqrt(n), we count how many integers k <= n have lpf(k) = p.
 
-# We have G(n,p) = number of integers k <= n such that lpf(k).
+# We have G(n,p) = number of integers k <= n such that lpf(k) = p.
 # G(n,p) can be evaluated recursively over primes q < p.
 # There are t = floor(n/p) integers <= n that are divisible by p.
 # From t we subtract the number integers that are divisible by smaller primes than p.
