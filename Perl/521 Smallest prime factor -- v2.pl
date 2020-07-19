@@ -11,6 +11,9 @@
 
 # We have G(n,p) = number of integers k <= n such that lpf(k) = p.
 # G(n,p) can be evaluated recursively over primes q < p.
+
+# Equivalently, G(n,p) is the number of p-rough numbers <= floor(n/p);
+
 # There are t = floor(n/p) integers <= n that are divisible by p.
 # From t we subtract the number integers that are divisible by smaller primes than p.
 

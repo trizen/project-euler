@@ -73,24 +73,15 @@ sub G ($n, $p) {
 }
 
 sub S($n) {
+
     my $sum = 0;
+    my $s = sqrtint($n);
 
-    for (my $p = 2 ; ; $p = next_prime($p)) {
+    forprimes {
+        $sum += mulmod($_, G($n,$_), $MOD);
+    } $s;
 
-        my $t = G($n, $p);
-
-        #say "$p -> $t";
-
-        if ($t == 1) {
-            $sum = addmod($sum, sum_primes($p, $n) % $MOD, $MOD);
-            last;
-        }
-        else {
-            $sum += mulmod($t, $p, $MOD);
-        }
-    }
-
-    return $sum % $MOD;
+    addmod($sum, sum_primes(next_prime($s), $n) % $MOD, $MOD);
 }
 
 say S(1e12);
