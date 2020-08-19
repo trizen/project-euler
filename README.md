@@ -195,6 +195,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [479 Roots on the Rise](./Perl/479%20Roots%20on%20the%20Rise.pl)
     * [485 Maximum number of divisors](./Perl/485%20Maximum%20number%20of%20divisors.pl)
     * [487 Sums of power sums](./Perl/487%20Sums%20of%20power%20sums.pl)
+    * [487 Sums of power sums (v2)](./Perl/487%20Sums%20of%20power%20sums%20--%20v2.pl)
     * [500 Problem 500!!!](./Perl/500%20Problem%20500!!!.pl)
     * [512 Sums of totients of powers](./Perl/512%20Sums%20of%20totients%20of%20powers.pl)
     * [516 5-smooth totients](./Perl/516%205-smooth%20totients.pl)

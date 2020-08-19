@@ -16,7 +16,7 @@ use experimental qw(signatures);
 use Math::GMPz;
 use Math::GMPq;
 
-use ntheory qw(forprimes addmod divmod mulmod powmod);
+use ntheory qw(forprimes addmod submod divmod mulmod powmod);
 
 sub tangent_numbers ($n) {
 
@@ -85,7 +85,7 @@ sub bernoulli_numbers ($n) {
 
 say ":: Computing Bernoulli numbers...";
 
-my $power = 10000;
+my $power = 1e4;
 
 my @bernoulli = map {
     my $num = Math::GMPz->new(0);
@@ -135,32 +135,21 @@ sub faulhabermod ($n, $p, $m) {
                        powmod($n, $p - $k + 1, $m), $m);
 
         $sum %= $m;
-
-        ## $sum += Math::AnyNum::binomial($p + 1, $k) * Math::AnyNum::bernfrac($k) * ipow($n, $p - $k + 1);
     }
 
-    ## return $sum / ($p + 1);
     divmod($sum, $p + 1, $m);
 }
 
 # Efficient formula for computing:
-#
 #   S_p(n) = Sum_{k=1..n} Sum_{j=1..k} j^p
-#
 # for some positive integer p.
 
 # The formula is:
 #   S_p(n) = (n+1) * F_p(n) - F_(p+1)(n)
-
-# where F_n(x) are the Faulhaber polynomials, defined as:
-#
-#   F_n(x) = (Bernoulli(n+1, x+1) - Bernoulli(n+1, 1)) / (n+1)
-#
-# where Bernoulli(n,x) are the Bernoulli polynomials.
+# where F_n(x) are the Faulhaber polynomials.
 
 sub S ($n, $p, $mod) {
-    ## (($n+1) * Math::AnyNum::faulhaber_sum($n, $p) - Math::AnyNum::faulhaber_sum($n, $p+1))  % $mod;
-    addmod(mulmod($n + 1, faulhabermod($n, $p, $mod), $mod), -faulhabermod($n, $p + 1, $mod), $mod);
+    submod(mulmod($n + 1, faulhabermod($n, $p, $mod), $mod), faulhabermod($n, $p + 1, $mod), $mod);
 }
 
 # Sanity check

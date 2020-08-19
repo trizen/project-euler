@@ -84,12 +84,12 @@ sub H($n) {
     }
 
     $A = mulmod($A, 2, $mod);
-    $A = addmod($A, -mulmod($s, $s, $mod), $mod);
+    $A = submod($A, mulmod($s, $s, $mod), $mod);
     return $A;
 }
 
 sub A($n) {
-    addmod(H($n), -H($n >> 1), $mod);
+    submod(H($n), H($n >> 1), $mod);
 }
 
 sub B($n) {
@@ -115,14 +115,14 @@ sub B($n) {
     my $C = divmod(mulmod(G($s), mulmod($s, $s + 1, $mod), $mod), 2, $mod);
 
     my $total = 0;    # A + B - C
-    $total = addmod($A,     $B,  $mod);
-    $total = addmod($total, -$C, $mod);
+    $total = addmod($A,     $B, $mod);
+    $total = submod($total, $C, $mod);
 
     return $total;
 }
 
 sub S($n) {
-    addmod(mulmod($n + 1, A($n), $mod), -(B($n)), $mod);
+    submod(mulmod($n + 1, A($n), $mod), B($n), $mod);
 }
 
 S(100) == 12656 or die "error";
