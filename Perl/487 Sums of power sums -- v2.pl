@@ -20,8 +20,8 @@ use Math::Prime::Util::GMP qw(bernvec modint);
 
 say ":: Computing Bernoulli numbers...";
 
-my $power = 2e3;
-my @bernoulli = bernvec(($power+1)>>1);
+my $power     = 1e4;
+my @bernoulli = bernvec(($power + 1) >> 1);
 
 splice(@bernoulli, 1, 0, [1, 2]);
 
@@ -30,7 +30,9 @@ say ":: Applying Faulhaber's formula...";
 my $B0 = [1, 1];
 my $B1 = [1, 2];
 
-@bernoulli = map { [map{Math::GMPz->new($_)} @$_] } @bernoulli;
+@bernoulli = map {
+    [map { Math::GMPz->new($_) } @$_]
+} @bernoulli;
 
 {
     my @cache;
