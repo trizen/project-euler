@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=581
 
-# Runtime: 4.153s.
+# Runtime: 3.492s.
 
 using Primes
 
@@ -29,7 +29,7 @@ function p_581()
                 n = div(n, g)
             end
             n == 1 && return true
-            g = gcd(n, k)
+            g = gcd(n, g)
         end
 
         n == 1

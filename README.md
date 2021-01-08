@@ -178,6 +178,8 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [357 Prime generating integers](./Perl/357%20Prime%20generating%20integers.pl)
     * [365 A huge binomial coefficient](./Perl/365%20A%20huge%20binomial%20coefficient.pl)
     * [365 A huge binomial coefficient (v2)](./Perl/365%20A%20huge%20binomial%20coefficient%20--%20v2.pl)
+    * [365 A huge binomial coefficient (v3)](./Perl/365%20A%20huge%20binomial%20coefficient%20--%20v3.pl)
+    * [379 Least common multiple count](./Perl/379%20Least%20common%20multiple%20count.pl)
     * [381 prime-k factorial](./Perl/381%20prime-k%20factorial.pl)
     * [381 prime-k factorial (v2)](./Perl/381%20prime-k%20factorial%20--%20v2.pl)
     * [387 Harshad Numbers](./Perl/387%20Harshad%20Numbers.pl)

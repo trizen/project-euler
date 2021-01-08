@@ -16,6 +16,8 @@
 
 # Runtime: ~1 hour.
 
+# (see version 2 for a faster solution)
+
 use 5.020;
 use strict;
 use integer;
