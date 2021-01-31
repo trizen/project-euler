@@ -45,7 +45,7 @@ func modular_S(k) {
     var n = floor(k/9)
     var r = (k%9 + 2)
 
-    ((((r-1)*r + 10) * powmod(10, n, MOD) - 2*(r + 9*n + 4)) * invmod(2, MOD)) % MOD
+    (((r-1)*r + 10) * Mod(10,MOD)**n - 2*(r + 9*n + 4)) / Mod(2, MOD)
 }
 
 assert_eq(S(20), 1074)
@@ -54,6 +54,6 @@ assert_eq(S(49), 1999945)
 assert_eq(modular_S(20), 1074)
 assert_eq(modular_S(49), 1999945)
 
-say sum(2..90, {|k|
+say map(2..90, {|k|
     modular_S(fib(k))
-})%MOD
+}).reduce {|a,b| a + b }

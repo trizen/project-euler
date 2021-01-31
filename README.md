@@ -239,6 +239,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [704 Factors of Two in Binomial Coefficients](./Perl/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.pl)
     * [708 Twos are all you need](./Perl/708%20Twos%20are%20all%20you%20need.pl)
     * [719 Number Splitting](./Perl/719%20Number%20Splitting.pl)
+    * [745 Sum of Squares](./Perl/745%20Sum%20of%20Squares.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -369,3 +370,4 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [700 Eulercoin](./Sidef/700%20Eulercoin.sf)
     * [704 Factors of Two in Binomial Coefficients](./Sidef/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.sf)
     * [708 Twos are all you need](./Sidef/708%20Twos%20are%20all%20you%20need.sf)
+    * [745 Sum of Squares](./Sidef/745%20Sum%20of%20Squares.sf)
