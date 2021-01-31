@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 09 February 2017
+# https://github.com/trizen
+
+# Squarefree Numbers
+# https://projecteuler.net/problem=193
+
+# Formula for counting the number of squarefree numbers <= n:
+#   S(n) = Sum_{k=1..floor(sqrt(n))} moebius(k) * floor(n/k^2)
+
+# Runtime: ~6 seconds.
+
+say squarefree_count(2**50)     # built-in

@@ -7,26 +7,26 @@
 
 # https://projecteuler.net/problem=193
 
-# Runtime: 4.370s
+# Runtime: 3.838s
 
 use 5.010;
 use strict;
 use integer;
 
-use ntheory qw(moebius sqrtint);
+use ntheory qw(:all);
 
-sub squarefree_count_pow2 {
-    my ($pow) = @_;
+sub squarefree_count {
+    my ($n) = @_;
 
     my $count = 0;
-    my $n     = 1 << $pow;
 
     my $k = 0;
     foreach my $m (moebius(1, sqrtint($n))) {
-        $count += $m * $n / (++$k)**2;
+        ++$k;
+        $count += $m * $n / ($k*$k) if $m;
     }
 
     return $count;
 }
 
-say squarefree_count_pow2(50);
+say squarefree_count(1 << 50);

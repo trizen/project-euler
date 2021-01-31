@@ -349,6 +349,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [183 Maximum product of parts](./Sidef/183%20Maximum%20product%20of%20parts.sf)
     * [188 The hyperexponentiation of a number](./Sidef/188%20The%20hyperexponentiation%20of%20a%20number.sf)
     * [191 Prize Strings](./Sidef/191%20Prize%20Strings.sf)
+    * [193 Squarefree Numbers](./Sidef/193%20Squarefree%20Numbers.sf)
     * [197 Investigating the behaviour of a recursively defined sequence](./Sidef/197%20Investigating%20the%20behaviour%20of%20a%20recursively%20defined%20sequence.sf)
     * [203 Squarefree Binomial Coefficients](./Sidef/203%20Squarefree%20Binomial%20Coefficients.sf)
     * [235 An Arithmetic Geometric sequence](./Sidef/235%20An%20Arithmetic%20Geometric%20sequence.sf)
