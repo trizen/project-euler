@@ -1,0 +1,43 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 05 April 2021
+# https://github.com/trizen
+
+# Powers of 1+sqrt(7)
+# https://projecteuler.net/problem=752
+
+define Q = Quadratic(1, 1, 7)
+
+func quadratic_prime_order(p) is cached {
+
+    if (p == 7) {
+        return p
+    }
+
+    ((kronecker(7,p) == 1) ? (p-1) : ((p-1)*(p+1))) -> divisors.first_by {|d|
+        [Q.powmod(d, p).reals] == [1,0]
+    }
+}
+
+func quadratic_order(n) {
+    n.factor_map {|p,k| quadratic_prime_order(p) * p**(k-1) }.lcm
+}
+
+func G(n) {
+
+    var total = 0
+
+    for k in (2..n) {
+        if (k.is_congruent(1, 6) || k.is_congruent(5, 6)) {
+            say "Processing: #{k}"
+            total += quadratic_order(k)
+        }
+    }
+
+    return total
+}
+
+assert_eq(G(1e2), 28891)
+
+say G(1e6)

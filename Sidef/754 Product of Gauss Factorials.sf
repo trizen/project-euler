@@ -1,0 +1,62 @@
+#!/usr/bin/ruby
+
+# Product of Gauss Factorials
+# https://projecteuler.net/problem=754
+
+# See also:
+#   https://oeis.org/A001783
+
+func g(n) {
+    1..n -> grep {|k| gcd(k,n) == 1 }.prod
+}
+
+func G(n) {
+    1..n -> prod(g)
+}
+
+func F(n) {
+
+    var t = 1
+
+    for k in (1..n) {
+        if (k.is_prime) {
+            t *= (k-1)!
+        }
+        else {
+            t *= (k**phi(k) * k.squarefree_divisors.prod {|d|
+                ((k/d)! / (k/d)**(k/d))**mu(d)
+            })
+        }
+    }
+
+    return t
+}
+
+func F(n, m) {
+
+    var prod = 1
+
+    for k in (1..n) {
+        if (k.is_prime) {
+            prod = mulmod(prod, factorialmod(k-1, m), m)
+        }
+        else {
+            prod = mulmod(
+                mulmod(prod, powmod(k, phi(k), m), m),
+                k.squarefree_divisors.map {|d|
+                    powmod(divmod(factorialmod(k/d, m), powmod(k/d, k/d, m), m), mu(d), m)
+                }.reduce {|a,b| mulmod(a,b,m) },
+            m)
+        }
+    }
+
+    return prod
+}
+
+assert_eq(G(10), F(10))
+assert_eq(G(10), F(10, 1e20.next_prime))
+
+#say F(1e3, 1000000007)      # takes 0.4s
+#say F(1e4, 1000000007)      # takes 3.8s
+#say F(1e5, 1000000007)      # takes 1 min
+say F(1e8, 1000000007)

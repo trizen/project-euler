@@ -240,6 +240,11 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [708 Twos are all you need](./Perl/708%20Twos%20are%20all%20you%20need.pl)
     * [719 Number Splitting](./Perl/719%20Number%20Splitting.pl)
     * [745 Sum of Squares](./Perl/745%20Sum%20of%20Squares.pl)
+    * [745 Sum of Squares (v2)](./Perl/745%20Sum%20of%20Squares%20--%20v2.pl)
+    * [748 Upside down Diophantine equation](./Perl/748%20Upside%20down%20Diophantine%20equation.pl)
+    * [752 Powers of 1 + sqrt(7)](./Perl/752%20Powers%20of%201%20+%20sqrt(7).pl)
+    * [754 Product of Gauss Factorials](./Perl/754%20Product%20of%20Gauss%20Factorials.pl)
+    * [754 Product of Gauss Factorials (v2)](./Perl/754%20Product%20of%20Gauss%20Factorials%20--%20v2.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -372,3 +377,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [704 Factors of Two in Binomial Coefficients](./Sidef/704%20Factors%20of%20Two%20in%20Binomial%20Coefficients.sf)
     * [708 Twos are all you need](./Sidef/708%20Twos%20are%20all%20you%20need.sf)
     * [745 Sum of Squares](./Sidef/745%20Sum%20of%20Squares.sf)
+    * [745 Sum of Squares (v2)](./Sidef/745%20Sum%20of%20Squares%20--%20v2.sf)
+    * [748 Upside down Diophantine equation](./Sidef/748%20Upside%20down%20Diophantine%20equation.sf)
+    * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
+    * [754 Product of Gauss Factorials](./Sidef/754%20Product%20of%20Gauss%20Factorials.sf)

@@ -20,7 +20,7 @@
 
 func S(n) {
     sum(0..n.ilog2, {|k|
-        2**k * pi_k(n, k)
+        2**k * k.almost_primepi(n)
     })
 }
 

@@ -20,7 +20,7 @@
 # The sum of the primes is p * G(n,p).
 # When G(n,p) = 1, then G(n,p+r) = 1 for all r >= 1.
 
-# Runtime: 2 min, 18 sec
+# Runtime: 34 seconds
 
 use 5.020;
 use integer;

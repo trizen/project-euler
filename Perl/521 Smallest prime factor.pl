@@ -78,7 +78,7 @@ sub S($n) {
     my $s = sqrtint($n);
 
     forprimes {
-        $sum += mulmod($_, G($n,$_), $MOD);
+        $sum += mulmod($_, G($n, $_), $MOD);
     } $s;
 
     addmod($sum, sum_primes(next_prime($s), $n) % $MOD, $MOD);
