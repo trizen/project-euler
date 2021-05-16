@@ -2,9 +2,9 @@
 
 # Daniel "Trizen" Șuteu
 # Date: 17 February 2017
-# License: GPLv3
 # https://github.com/trizen
 
+# Diophantine reciprocals I
 # https://projecteuler.net/problem=108
 
 # Runtime: 0.195s

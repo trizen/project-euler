@@ -1,26 +1,40 @@
 #!/usr/bin/perl
 
 # Daniel "Trizen" Șuteu
-# License: GPLv3
-# Date: 17 February 2017
-# Website: https://github.com/trizen
+# Date: 15 May 2021
+# https://github.com/trizen
 
+# Diophantine reciprocals II
 # https://projecteuler.net/problem=110
 
-# Runtime: 1.807s
+# See also:
+#   https://oeis.org/A018892
 
-use 5.010;
-use strict;
+# Runtime: 0.550s
 
-use LWP::Simple qw(get);
-use Math::BigNum qw(:constant);
+use 5.020;
+use warnings;
+use experimental qw(signatures);
 
-use ntheory qw(divisors);
+use ntheory qw(nth_prime);
+use Math::AnyNum qw(:overload);
 
-for my $line (split(/\R/, get('http://oeis.org/A002093/b002093.txt'))) {
-    my $n = (split(' ', $line))[-1] >> 1;
-    if ((divisors($n * $n) + 1) >> 1 > 4e6) {
-        say $n;
-        last;
+sub solve ($threshold, $least_solution = Inf, $k = 1, $max_a = Inf, $solutions = 1, $n = 1) {
+
+    if ($solutions > $threshold) {
+        return $n;
     }
+
+    my $p = nth_prime($k);
+
+    for (my $a = 1 ; $a <= $max_a ; ++$a) {
+        $n *= $p;
+        last if ($n > $least_solution);
+        $least_solution = __SUB__->($threshold, $least_solution, $k + 1, $a, $solutions * (2 * $a + 1), $n);
+    }
+
+    return $least_solution;
 }
+
+my $LIMIT = 4 * 10**6;
+say solve(2 * $LIMIT + 1);

@@ -39,5 +39,6 @@ func G(n) {
 }
 
 assert_eq(G(1e2), 28891)
+#assert_eq(G(1e3), 13131583)
 
 say G(1e6)

@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 15 May 2021
+# https://github.com/trizen
+
+# Diophantine reciprocals I
+# https://projecteuler.net/problem=108
+
+# See also:
+#   https://oeis.org/A018892
+
+# Runtime: 3.913s
+
+var N = 1000
+
+1..Inf -> first {|n|
+    (sigma0(n*n) + 1) > 2*N
+} -> say

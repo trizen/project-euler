@@ -13,6 +13,6 @@
 # https://projecteuler.net/problem=349
 
 use 5.010;
-use Math::BigNum qw(:constant);
+use Math::AnyNum qw(:overload);
 
 say ((10**18 - 11235 - 37) / 104 * 12 + 868);
