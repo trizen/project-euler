@@ -1,8 +1,8 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# Edit: 25 July 2021
+# https://github.com/trizen
 
 # What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 
@@ -10,7 +10,7 @@
 
 # Runtime: 0.307s
 
-for n in (3..Inf `by` 2 -> lazy.grep{ !.is_prime }) {
+3..Inf `by` 2 -> lazy.grep{ .is_composite }.each {|n|
 
     1..isqrt(n>>1) -> any {|i|
         is_prime(n - 2*i*i)

@@ -8,7 +8,7 @@
 
 # Runtime: 3.127s
 
-@inline function is_csquare(n)
+@inline function is_csquare(n::Int64)
     s = isqrt(n)
     for i in 1:s-1
         sum = i^2
@@ -21,10 +21,9 @@
     return false
 end
 
-function count_sum()
+function count_sum(limit::Int64)
 
     sum = 0
-    limit = 100000000
 
     for i in 1:9
         if is_csquare(i)
@@ -57,4 +56,4 @@ function count_sum()
     return sum
 end
 
-println(count_sum())
+println(count_sum(100000000))

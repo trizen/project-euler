@@ -1,33 +1,25 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
-# License: GPLv3
-# Website: https://github.com/trizen
+# Daniel "Trizen" Șuteu
+# Edit: 25 July 2021
+# https://github.com/trizen
 
 # Find the value of d < 1000 for which 1/d contains the longest recurring cycle in its decimal fraction part.
 
 # https://projecteuler.net/problem=26
 
-# Runtime: 3.309s
-
-func rec_cycle(d) {
-    for x in (1..d) {
-        if (powmod(10, x, d) == 1) {
-            return x
-        }
-    }
-    return 0
-}
+# Runtime: 0.196s
 
 var d = 1
 var max = 0
 
-for i in (2..1000) {
-    var r = rec_cycle(i)
+for n in (2..1000) {
+
+    var r = znorder(10, n)
 
     if (r > max) {
         max = r
-        d = i
+        d = n
     }
 }
 

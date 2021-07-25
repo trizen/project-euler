@@ -1,0 +1,42 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 25 July 2021
+# https://github.com/trizen
+
+# Which prime, below one-million, can be written as the sum of the most consecutive primes?
+
+# https://projecteuler.net/problem=50
+
+# Runtime: 0.227s
+
+func p50 (limit) {
+
+    var prime_sum = [0]
+
+    for (var p = 2; true ; p.next_prime!) {
+        var sum = (prime_sum.tail + p)
+        break if (sum >= limit)
+        prime_sum << sum
+    }
+
+    var terms         = 1
+    var max_prime     = 2
+    var start_p_index = 1
+
+    for i in (^prime_sum) {
+        for (var j = prime_sum.end; j >= (i + terms); --j) {
+
+            var n = (prime_sum[j] - prime_sum[i])
+
+            if (((j-i > terms) or (n > max_prime)) and (n < limit) and n.is_prime) {
+                (terms, max_prime, start_p_index) = (j-i, n, i+1)
+                break
+            }
+        }
+    }
+
+    say "#{max_prime} is the sum of #{terms} consecutive primes with first prime = #{prime(start_p_index)}"
+}
+
+p50(1e6)

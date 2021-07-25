@@ -8,12 +8,13 @@
 
 # https://projecteuler.net/problem=48
 
-# Runtime: 0.139s
+# Runtime: 0.209s
 
-var sum = 0
+var mod = 10**10
+var sum = Mod(0, mod)
 
 for i in (1..1000) {
-    sum += i**i
+    sum += Mod(i, mod)**i
 }
 
-say (sum % 10**10)
+say sum.lift

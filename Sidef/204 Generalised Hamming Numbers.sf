@@ -1,0 +1,13 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 25 July 2021
+# https://github.com/trizen
+
+# How many generalised Hamming numbers of type 100 are there which don't exceed 10^9?
+
+# https://projecteuler.net/problem=204
+
+# Runtime: 0.734s
+
+say 100.smooth_count(1e9)

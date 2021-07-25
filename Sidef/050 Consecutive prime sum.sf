@@ -8,32 +8,32 @@
 
 # https://projecteuler.net/problem=50
 
-# Runtime: 1.410s
+# Runtime: 1.712s
 
-define limit = 1e6;
+define limit = 1e6
 
-var sum = 0;
-var primes = [];
+var sum = 0
+var primes = []
 
-var p = 2;
+var p = 2
 
 loop {
     (sum += p)/1.2 > limit && break;        # /1.2 is a lucky optimization?
-    primes << p;
+    primes << p
     p.next_prime!
 }
 
-var l = primes.len;
-var arr = [];
+var l = primes.len
+var arr = []
 
 for (var i = 0; i <= l; ++i) {
-    var sum = primes[i];
+    var sum = primes[i]
     for (var j = i+1; (j <= l-i) && ((sum += primes[j]) < limit); ++j) {
         if (sum.is_prime) {
-            arr << [j-i + 1, sum, i, j];
+            arr << [j-i + 1, sum, i, j]
         }
     }
 }
 
-var res = arr.max_by { |a| a[0] };
-say "#{res[1]} is the sum of the following #{res[0]} consecutive primes: #{primes.ft(res[2], res[3])}";
+var res = arr.max_by { .head }
+say "#{res[1]} is the sum of #{res[0]} starting with #{prime(res[2]+1)}"

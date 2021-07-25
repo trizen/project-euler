@@ -1,0 +1,14 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 25 July 2021
+# https://github.com/trizen
+
+# Sum of Euler phi function phi(k) for 2 <= k <= 10^6.
+
+# https://projecteuler.net/problem=72
+
+# Runtime: 0.205s
+
+say dirichlet_sum(1e6, { .moebius }, { _ },
+                       { .mertens }, { .faulhaber(1) })-1

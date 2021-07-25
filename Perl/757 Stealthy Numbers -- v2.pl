@@ -1,5 +1,9 @@
 #!/usr/bin/perl
 
+# Daniel "Trizen" Șuteu
+# Date: 05 June 2021
+# https://github.com/trizen
+
 # Stealthy Numbers
 # https://projecteuler.net/problem=757
 

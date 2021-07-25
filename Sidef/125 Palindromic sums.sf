@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 25 July 2021
+# https://github.com/trizen
+
+# Find the sum of all the numbers less than 10^8 that are both palindromic and can be written as the sum of consecutive squares.
+
+# https://projecteuler.net/problem=125
+
+# Runtime: 4.868s
+
+func p125(limit) {
+
+    var s = limit.isqrt
+    var sums = Set()
+
+    for a in (1 .. s) {
+        var sum = a*a
+        for b in (a+1 .. s)  {
+            sum += b*b
+            #var sum = faulhaber_range(a, b, 2)
+            break if (sum >= limit)
+            sums << sum if sum.is_palindrome
+        }
+    }
+
+    sums.sum
+}
+
+say p125(1e8)

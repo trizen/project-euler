@@ -7,9 +7,12 @@
 
 # https://projecteuler.net/problem=72
 
-# Runtime: 0.413s
+# Runtime: 0.378s
 
 use 5.010;
+use strict;
+use warnings;
+
 use ntheory qw(euler_phi);
 
 sub count_frac {
