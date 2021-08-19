@@ -226,6 +226,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [622 Riffle Shuffles](./Perl/622%20Riffle%20Shuffles.pl)
     * [622 Riffle Shuffles (v2)](./Perl/622%20Riffle%20Shuffles%20--%20v2.pl)
     * [625 Gcd sum](./Perl/625%20Gcd%20sum.pl)
+    * [634 Numbers of the form a^2b^3](./Perl/634%20Numbers%20of%20the%20form%20a^2b^3.pl)
     * [642 Sum of largest prime factors](./Perl/642%20Sum%20of%20largest%20prime%20factors.pl)
     * [642 Sum of largest prime factors (v2)](./Perl/642%20Sum%20of%20largest%20prime%20factors%20--%20v2.pl)
     * [650 Divisors of Binomial Product](./Perl/650%20Divisors%20of%20Binomial%20Product.pl)
