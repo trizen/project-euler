@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+
+# Numbers of the form a^2 * b^3, where a,b > 1.
+# https://projecteuler.net/problem=634
+
+# Using the method posted by al13n.
+
+# Runtime: 22 seconds.
+
+func F(n) {
+    var count = 0
+
+    2..n.iroot(3) -> each_squarefree {|k|
+        count += isqrt(idiv(n, k**3))-1
+    }
+
+    2..n.iroot(6) -> each {|k|
+        count += 3.powerfree_count(isqrt(idiv(n, k**6)))
+    }
+
+    count -= prime_count(iroot(n, 6))
+    count
+}
+
+F(2 * 1e4) == 130   || die "error"
+F(3 * 1e6) == 2014  || die "error"
+F(5 * 1e9) == 91255 || die "error"
+
+say F(9 * 1e18)
