@@ -1,0 +1,116 @@
+#!/usr/bin/ruby
+
+# Sum over Bitwise Operators
+# https://projecteuler.net/problem=760
+
+func f_xor(a,b) {
+    a ^ b
+}
+
+func f_or(a,b) {
+    a | b
+}
+
+func f_and(a,b) {
+    a & b
+}
+
+func f2_xor(n) {
+    n + 3*sum(1..n.ilog2, {|j|
+        4**(j - 1) * (n >> j)
+    })
+}
+
+func G_xor(N) {
+    sum(0..N,{|n|
+      sum(0..n, { |k|
+            f_xor(k, n - k)
+      })
+    })
+}
+
+func G2_xor(N) {
+    sum(1..N, {|k|
+        f2_xor(k)
+    })
+}
+
+func G_or(N) {
+    sum(0..N,{|n|
+      sum(0..n, { |k|
+            f_or(k, n - k)
+      })
+    })
+}
+
+func G_and(N) {
+    sum(0..N,{|n|
+      sum(0..n, { |k|
+            f_and(k, n - k)
+      })
+    })
+}
+
+func G(N) {
+    sum(0..N, {|n|
+      sum(0..n, { |k|
+            f_xor(k, n-k) + f_and(k, n-k) + f_or(k, n-k)
+      })
+    })
+}
+
+say 15.of(G)
+say 15.of { _+1 }.map_reduce {|a,b| f_or(a,b) + f_and(a,b) + f_xor(a,b) }
+say 15.of { _+1 }.map_reduce {|a,b| f_xor(a,b) }
+
+say G(10)
+say G(100)
+
+say ''
+
+var n = 100
+
+say G_and(n)
+say ((n+1)*sum(0..n, {|k| f_and(k, n-k)}) - sum(0..n, {|k| k * f_and(k, n-k) }))
+#say sum(0..n, {|k| f_and(k, n-k) * (n - k + 1) })
+
+
+# XOR for 2^n - 1 = 4^(n-1)*(2^n-1)
+#
+
+#var n = 100
+
+#say G(n)
+#say (G_xor(n) + G_and(n) + G_or(n))
+#say 10.of(G_xor)
+#say 10.of(G_and)
+#say 10.of(G_or)
+
+#100.of(G_xor).diffs.each{.say}
+#100.of(G_or).diffs.each{.say}
+#100.of(G_and).diffs.each{.say}
+
+#for n in (1..100) {
+#    say G_xor(n)
+#}
+
+__END__
+
+for k in (1..10) {
+    say [G_xor(2**k - 1), G_or(2**k - 1), G_and(2**k - 1)]
+}
+
+__END__
+
+say 20.of(G_xor)
+say 20.of(G2_xor)
+
+say ''
+
+say 20.of(G_or)
+#say 20.of(G2_or)
+
+say ''
+
+say 20.of(G_and)
+#say 20.of(G2_or)

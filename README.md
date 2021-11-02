@@ -247,10 +247,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [719 Number Splitting](./Perl/719%20Number%20Splitting.pl)
     * [745 Sum of Squares](./Perl/745%20Sum%20of%20Squares.pl)
     * [745 Sum of Squares (v2)](./Perl/745%20Sum%20of%20Squares%20--%20v2.pl)
-    * [748 Upside down Diophantine equation](./Perl/748%20Upside%20down%20Diophantine%20equation.pl)
     * [752 Powers of 1 + sqrt(7)](./Perl/752%20Powers%20of%201%20+%20sqrt(7).pl)
-    * [754 Product of Gauss Factorials](./Perl/754%20Product%20of%20Gauss%20Factorials.pl)
-    * [754 Product of Gauss Factorials (v2)](./Perl/754%20Product%20of%20Gauss%20Factorials%20--%20v2.pl)
     * [757 Stealthy Numbers](./Perl/757%20Stealthy%20Numbers.pl)
     * [757 Stealthy Numbers (v2)](./Perl/757%20Stealthy%20Numbers%20--%20v2.pl)
 * Raku
@@ -397,3 +394,12 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [748 Upside down Diophantine equation](./Sidef/748%20Upside%20down%20Diophantine%20equation.sf)
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [754 Product of Gauss Factorials](./Sidef/754%20Product%20of%20Gauss%20Factorials.sf)
+* Yet to solve
+    * [693 Finite Sequence Generator](./Yet%20to%20solve/693%20Finite%20Sequence%20Generator.sf)
+    * [748 Upside down Diophantine equation](./Yet%20to%20solve/748%20Upside%20down%20Diophantine%20equation.pl)
+    * [754 Product of Gauss Factorials](./Yet%20to%20solve/754%20Product%20of%20Gauss%20Factorials.pl)
+    * [754 Product of Gauss Factorials](./Yet%20to%20solve/754%20Product%20of%20Gauss%20Factorials.sf)
+    * [754 Product of Gauss Factorials (v2)](./Yet%20to%20solve/754%20Product%20of%20Gauss%20Factorials%20--%20v2.pl)
+    * [760 Sum over Bitwise Operators](./Yet%20to%20solve/760%20Sum%20over%20Bitwise%20Operators.sf)
+    * [764 Asymmetric Diophantine Equation - difference of squares](./Yet%20to%20solve/764%20Asymmetric%20Diophantine%20Equation%20-%20difference%20of%20squares.pl)
+    * [764 Asymmetric Diophantine Equation - pythagorean triples](./Yet%20to%20solve/764%20Asymmetric%20Diophantine%20Equation%20-%20pythagorean%20triples.pl)

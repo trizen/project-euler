@@ -1,0 +1,30 @@
+#!/usr/bin/ruby
+
+# Finite Sequence Generator
+# https://projecteuler.net/problem=693
+
+func l(x,y) {
+    var a = y
+    var count = 1
+    for z in (x..Inf) {
+        a = powmod(a, 2, z)
+        ++count
+        if (a <= 1) {
+            break
+        }
+    }
+    count
+}
+
+func g(x) {
+    1..^x -> map {|y| l(x,y) }.max
+}
+
+func f(n) {
+    1..n -> flip.map { |x| g(x) }.max
+}
+
+say l(5,3)
+say g(5)
+#say f(50)
+say f(100)

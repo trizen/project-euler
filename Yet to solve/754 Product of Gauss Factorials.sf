@@ -1,0 +1,124 @@
+#!/usr/bin/ruby
+
+# Product of Gauss Factorials
+# https://projecteuler.net/problem=754
+
+func g(n) {
+    1..n -> grep { .is_coprime(n) }.prod
+}
+
+func G(n) {
+    1..n -> prod(g)
+}
+
+func g2(n) {
+    #n^phi(n)*Product_{d|n} (d!/d^d)^mu(n/d)
+    n.divisors.prod {|d|
+        (d!)**mu(n/d)
+    }
+}
+
+func g3(n) {
+    n.factor_map {|p|
+        p**(phi(n) / (p-1))
+    }.prod
+}
+
+func G2(n) {
+
+    var A = (1..n -> prod { |k|
+       g2(k)
+    })
+
+    var B = (1..n -> prod {|k|
+        g3(k)
+    })
+
+    A / B
+}
+
+say G(10)
+say G2(10)
+
+say 11.of(G2)
+say 11.of(g)
+say 11.of(g2)
+say 11.of(g3)
+
+say '';
+
+say 20.of(g2).map{.valuation(2) }
+#say 20.of(g3).map{.valuation(2) }
+#say 20.of(g2).map{.valuation(3) }
+
+#product(p^(phi(n)/(p-1)),p prime dividing n)
+
+func G3(n) {
+    2..(n-1) -> map {|k|
+        [k, floor((n - k + 1)*phi(k) / k)]
+    }
+}
+
+func G4(n) {
+    2..(n-1) -> prod {|k|
+        k**floor((n - k + 1)*phi(k) / k)
+    }
+}
+
+for n in (1..30) {
+    if (G(n) != G4(n)) {
+        print(n, ", ")
+    }
+}
+
+func G13(n) {
+    2..n -> prod {|k|
+
+        var t = 1
+        var seen = Set()
+
+        for p in (k.factor.uniq) {
+            for(var j = p; j <= k; j += p) {
+                t *= j if !seen.has(j)
+                seen << j
+            }
+        }
+
+        t
+    }
+}
+
+func G4(n) {
+    superfactorial(n) / G3(n)
+}
+
+var MOD = next_prime(1e9)
+
+func G5(n) {
+
+    var prod1 = 1
+    var prod2 = 1
+
+    for k in (2..n) {
+        prod1 = mulmod(prod1, powmod(k, n - k + 1, MOD), MOD)
+    }
+
+    for k in (2..n) {
+
+        var prod_t = 1
+        var seen = Set()
+
+        for p in (k.factor.uniq) {
+            for(var j = p; j <= k; j += p) {
+                prod_t = mulmod(prod_t, j, MOD) if !seen.has(j)
+                seen << j
+            }
+        }
+
+        say [seen.len, k]
+
+        prod2 = mulmod(prod2, prod_t, MOD)
+    }
+
+    divmod(prod1, prod2, MOD)
+}
