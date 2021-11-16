@@ -88,7 +88,6 @@ function p_417()
             end
         end
 
-        println(k)
         total += length(smooth) * znorder(10, k)
     end
 
