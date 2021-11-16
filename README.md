@@ -29,6 +29,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [125 Palindromic sums](./Julia/125%20Palindromic%20sums.jl)
     * [132 Large repunit factors](./Julia/132%20Large%20repunit%20factors.jl)
     * [133 Repunit nonfactors](./Julia/133%20Repunit%20nonfactors.jl)
+    * [133 Repunit nonfactors (v2)](./Julia/133%20Repunit%20nonfactors%20--%20v2.jl)
     * [191 Prize Strings](./Julia/191%20Prize%20Strings.jl)
     * [191 Prize Strings (v2)](./Julia/191%20Prize%20Strings%20--%20v2.jl)
     * [225 Tribonacci non-divisors](./Julia/225%20Tribonacci%20non-divisors.jl)

@@ -7,7 +7,7 @@
 # Number Splitting
 # https://projecteuler.net/problem=719
 
-# Runtime: 2.720s
+# Runtime: 2.054s
 
 function isok(n::Int64, m::Int64)
 

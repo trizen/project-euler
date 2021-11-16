@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=92
 
-# Runtime: 3.236s
+# Runtime: 2.405s
 
 const cache = zeros(Int64, 10^7)
 

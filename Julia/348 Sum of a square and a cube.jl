@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=348
 
-# Runtime: 18.444s
+# Runtime: 15.005s
 
 function p348(n)
 

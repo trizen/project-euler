@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=68
 
-# Runtime: 1.826s
+# Runtime: 1.532s
 
 using Combinatorics
 

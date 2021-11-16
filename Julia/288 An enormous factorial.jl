@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=288
 
-# Runtime: 1.276s
+# Runtime: 0.928s
 
 const p = 61
 const q = 10^7

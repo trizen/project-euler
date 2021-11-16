@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=225
 
-# Runtime: 5.017s
+# Runtime: 3.249s
 
 function p_225(nth=124)
 
