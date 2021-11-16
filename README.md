@@ -18,6 +18,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
 * Go
     * [078 Coin partitions](./Go/078%20Coin%20partitions.go)
 * Julia
+    * [026 Reciprocal cycles](./Julia/026%20Reciprocal%20cycles.jl)
     * [068 Magic 5-gon ring](./Julia/068%20Magic%205-gon%20ring.jl)
     * [074 Digit factorial chains](./Julia/074%20Digit%20factorial%20chains.jl)
     * [075 Singular integer right triangles](./Julia/075%20Singular%20integer%20right%20triangles.jl)
@@ -28,6 +29,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [096 Su Doku](./Julia/096%20Su%20Doku.jl)
     * [125 Palindromic sums](./Julia/125%20Palindromic%20sums.jl)
     * [132 Large repunit factors](./Julia/132%20Large%20repunit%20factors.jl)
+    * [132 Large repunit factors (v2)](./Julia/132%20Large%20repunit%20factors%20--%20v2.jl)
     * [133 Repunit nonfactors](./Julia/133%20Repunit%20nonfactors.jl)
     * [133 Repunit nonfactors (v2)](./Julia/133%20Repunit%20nonfactors%20--%20v2.jl)
     * [191 Prize Strings](./Julia/191%20Prize%20Strings.jl)
@@ -40,6 +42,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [516 5-smooth totients](./Julia/516%205-smooth%20totients.jl)
     * [565 Divisibility of sum of divisors](./Julia/565%20Divisibility%20of%20sum%20of%20divisors.jl)
     * [581 47-smooth triangular numbers](./Julia/581%2047-smooth%20triangular%20numbers.jl)
+    * [622 Riffle Shuffles](./Julia/622%20Riffle%20Shuffles.jl)
     * [675 2 to omega of n](./Julia/675%202%20to%20omega%20of%20n.jl)
     * [719 Number Splitting](./Julia/719%20Number%20Splitting.jl)
     * [757 Stealthy Numbers](./Julia/757%20Stealthy%20Numbers.jl)

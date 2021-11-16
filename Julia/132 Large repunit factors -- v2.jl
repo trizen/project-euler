@@ -4,9 +4,9 @@
 # Date: 16 November 2021
 # https://github.com/trizen
 
-# https://projecteuler.net/problem=133
+# https://projecteuler.net/problem=132
 
-# Runtime: 1.137s
+# Runtime: 1.133s
 
 using Primes
 
@@ -39,27 +39,25 @@ function prime_znorder(a, n)
     end
 end
 
-function p_133()
+function p_132()
 
-    factors = Dict{Int64, Nothing}()
-    limit = 100_000
+    N = 1e9
+    C = 40
 
-    N = 10^floor(Int64, log2(big(limit)))
-
-    for p in primes(7, limit)
-        if (rem(N, prime_znorder(10, p)) == 0)
-            factors[p] = nothing
-        end
-    end
-
+    count = 0
     total = 0
-    for p in primes(limit)
-        if !haskey(factors, p)
+
+    p = 7
+    while true
+        if (rem(N, prime_znorder(10, p)) == 0)
             total += p
+            count += 1
+            count >= C && break
         end
+        p = nextprime(p+1)
     end
 
     return total
 end
 
-println(p_133())
+println(p_132())
