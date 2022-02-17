@@ -1,0 +1,130 @@
+#!/usr/bin/ruby
+
+# https://projecteuler.net/problem=773
+
+#var S = [2, 5,
+func S(n) {
+    [2, 5, n.by { .is_prime && (_%10 == 7) }...]
+}
+
+func F(n) {
+    var s = S(n)
+    var Nk = s.prod
+
+    say s
+
+    var k = floor((Nk + 7) / 10)
+    var total = k*(5*k + 2)
+
+    #var k3 = floor(Nk + 3 / 30)
+    #var total3 = 3*k3*(5*k3 + 4)
+
+    var k7 = floor((Nk + 7*9) / (7*10))
+    var total7 = 7*k7*(5*k7 - 4)
+
+    var k17 = floor((Nk + 17*9) / (17*10))
+    var total17 = 17*k17*(5*k17 - 4)
+
+    var k37 = floor((Nk + 37*9) / (37*10))
+    var total37 = 37*k37*(5*k37 - 4)
+
+    #say total3
+    #total -= total3
+
+    total -= total7
+    total -= total17
+    total -= total37
+
+    #say total
+
+    #1..Nk -> grep { _ % 10 == 7}.sum
+    #say (1..Nk -> grep { _ % 10 == 7 }.grep { _ % 3 == 0 }.sum)
+
+    #say total7
+    #say (1..Nk -> grep { _ % 10 == 7 }.grep { _ % 7 == 0 }.sum)
+
+    #say total17
+    #say (1..Nk -> grep { _ % 10 == 7 }.grep { _ % 17 == 0 }.sum)
+
+    say Nk
+
+    1..floor((Nk + 3) / 10) -> each {|k|
+        #if (k % 10 == 7) {
+            k = (10*k - 3)
+            next if (k % 7 == 0)
+            next if (k % 17 == 0)
+            next if (k % 37 == 0)
+            if (gcd(Nk, k) != 1) {
+                total -= k
+            }
+        #}
+    }
+
+    #say (1..Nk -> grep { _ % 10 == 7 }.grep { _ % (7*17) == 0 })
+
+    #total += (1..floor((Nk - 7)/10) -> map { 10*_ + 7 }.grep { _ % (7*17) == 0 }.sum)
+    #total += (1..floor((Nk - 7)/10) -> map { 10*_ + 7 }.grep { _ % (7*37) == 0 }.sum)
+    #total += (1..floor((Nk - 7)/10) -> map { 10*_ + 7 }.grep { _ % (17*37) == 0 }.sum)
+    total += (1..floor((Nk + 3)/10) -> map { 10*_ - 3 }.grep { _ % (7*17*37) == 0 }.sum)
+
+    total += (1..floor((Nk + 3)/10) -> map { 10*_ - 3 }.grep {
+        (_ % (7*17) == 0) || ( _ % (7*37) == 0) || ( _ % (17*37) == 0)
+    }.sum)
+
+    #total += (1..floor((Nk - 7)/10) -> map { 10*_ + 7 }.grep { _ % (7*37) == 0 }.sum)
+    #total += (1..floor((Nk - 7)/10) -> map { 10*_ + 7 }.grep { _ % (17*37) == 0 }.sum)
+    #total += (1..floor((Nk - 7)/10) -> map { 10*_ + 7 }.grep { _ % (7*17*37) == 0 }.sum)
+
+    total
+
+    #1..Nk -> grep { _ % 10 == 7}.grep { gcd(Nk, _) == 1 }.sum
+}
+
+func F2(n) {
+    var s = S(n)
+    var Nk = s.prod
+
+    say s
+
+    var k = floor((Nk + 7) / 10)
+    var total = k*(5*k + 2)
+
+    say Nk
+
+    var sub_count = 0
+
+    1..floor((Nk + 3) / 10) -> each {|k|
+        #if (k % 10 == 7) {
+            k = (10*k - 3)
+            if (gcd(Nk, k) != 1) {
+                total -= k
+                ++sub_count
+            }
+        #}
+    }
+
+    say "Subtractions: #{sub_count}"
+
+    total
+}
+
+say F2(3)        # 76101452
+say F2(4)        # 164491606552
+
+say ''
+
+say F(3)        # 76101452
+say F(4)        # 164491606552
+
+#say F(97)
+
+#F(3).each{.factor.say}
+#say F(97)
+
+__END__
+var n = 3
+say S(3)
+
+var Nk = S(n).prod
+
+say Nk
