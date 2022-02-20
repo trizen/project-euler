@@ -1,0 +1,33 @@
+#!/usr/bin/ruby
+
+# Reciprocal Pairs
+# https://projecteuler.net/problem=784
+
+func F(n) {
+
+    var total = 0
+
+    for a in (2 .. n) {
+        var v = (a*a - 1)
+
+        v.divisors.each {|d|
+            d <= a || break
+
+            var p = (a + d)
+            var q = (a + v/d)
+
+            if (p <= n) {
+                total += p+q
+            }
+            else {
+                break
+            }
+        }
+    }
+
+    return total
+}
+
+say F(5)
+say F(10**2)
+say F(2 * 1e6)
