@@ -11,7 +11,7 @@ find {
         if (/^(\d{3}) /) {
             my $d = $1 =~ s/^0+//r;
             my $content = read_text($_);
-            if (not $content =~ /problem=$d/) {
+            if (not $content =~ /problem=$d\b/) {
                 say "$File::Find::dir/$_";
             }
         }
