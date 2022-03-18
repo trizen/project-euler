@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 20 August 2016
+# Translated to Sidef: 18 March 2022
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=169
+
+# Runtime: 0.243s
+
+func f((0)) { 0 }
+func f((1)) { 1 }
+
+func f(n { .is_even }) is cached {
+    __FUNC__(n/2)
+}
+
+func f(n) is cached {
+    __FUNC__((n-1)/2) + __FUNC__((n-1)/2 + 1)
+}
+
+say f(10**25 + 1)

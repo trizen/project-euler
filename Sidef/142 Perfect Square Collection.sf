@@ -1,0 +1,45 @@
+#!/usr/bin/ruby
+
+# Perfect Square Collection
+# https://projecteuler.net/problem=142
+
+# Find the smallest x + y + z with integers x > y > z > 0 such that x + y, x − y, x + z, x − z, y + z, y − z are all perfect squares.
+
+# See also the Perl version for shorter runtime.
+
+func difference_of_two_squares_solutions(n) {
+
+    n.divisors.map {|d|
+
+        break if (d*d >= n)
+
+        var a = d
+        var b = n/d
+
+        (a+b).is_even || next
+
+        var x = (a + b)/2
+        var y = (b - a)/2
+
+        [x, y]
+    }.flip
+}
+
+for k in (1 .. 1e9) {
+    say "Checking: #{k}"
+
+    difference_of_two_squares_solutions(k**2).each_2d {|x,y|
+
+        x-y -> is_square || next
+        x+y -> is_square || next
+
+        for n in (1 .. y.isqrt) {
+
+            var z = (y - n*n)
+
+            if (is_square(x + z) && is_square(x - z) && is_square(y + z) && is_square(y - z)) {
+                die "Found: sum(#{[x,y,z]}) = #{x+y+z}\n"
+            }
+        }
+    }
+}

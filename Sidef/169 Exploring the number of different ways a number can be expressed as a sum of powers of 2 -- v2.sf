@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date 18 March 2022
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=169
+
+# Runtime: 0.249s
+
+func fusc(n) {
+
+     var (a=1, b=0)
+
+     if (n.is_even) {
+        n.remove!(2)
+     }
+
+     for bit in (n.bits) {
+        if (bit) {
+            b += a
+        }
+        else {
+            a += b
+        }
+     }
+
+     return b
+}
+
+say fusc(10**25 + 1)

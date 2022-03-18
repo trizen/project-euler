@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 18 March 2022
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=104
+
+# Runtime: 18.915s
+
+# Solution using Binet's formula to compute the first 9 digits of fib(n),
+# and also modular exponentiation to compute the last 9 digits of fib(n).
+
+func f(n) {
+    n*log((1+sqrt(5))/2) - log(5)/2
+}
+
+func nth_fib_first_k_digits(n,k,b=10) {
+    var v = f(n)
+    var l = b.log
+    int(b**(k-1) * exp(v - l*floor(v/l)))
+}
+
+var t = 123456789.digits.sort.join
+
+for (var k = 2749; true; ++k) {
+    if ((fibmod(k, 1e9).digits.sort.join == t) && (nth_fib_first_k_digits(k, 9).digits.sort.join == t)) {
+        say k
+        break
+    }
+}
