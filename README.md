@@ -255,6 +255,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [719 Number Splitting](./Perl/719%20Number%20Splitting.pl)
     * [745 Sum of Squares](./Perl/745%20Sum%20of%20Squares.pl)
     * [745 Sum of Squares (v2)](./Perl/745%20Sum%20of%20Squares%20--%20v2.pl)
+    * [751 Concatenation Coincidence](./Perl/751%20Concatenation%20Coincidence.pl)
     * [752 Powers of 1 + sqrt(7)](./Perl/752%20Powers%20of%201%20+%20sqrt(7).pl)
     * [757 Stealthy Numbers](./Perl/757%20Stealthy%20Numbers.pl)
     * [757 Stealthy Numbers (v2)](./Perl/757%20Stealthy%20Numbers%20--%20v2.pl)
