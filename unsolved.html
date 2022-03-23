@@ -1,0 +1,602 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+
+  <head>
+  <style>
+  tt { font-family: monospace; font-size: 100%; }
+  p.editing { font-family: monospace; margin: 10px; text-indent: -10px; word-wrap:break-word;}
+  p { word-wrap: break-word; }
+
+  table, th, td {
+    border: 5px solid black;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border-color: #96D4D4;
+  }
+  </style>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>Unsolved Project-Euler problems</title>
+  </head>
+  <body bgcolor=#ffffff>
+
+  <table>
+  <tr><th><br><strong><span> ID </span></strong><br><br></th><th> Title </th><th> Solved by </th><th> Difficulty </th></tr>
+<tr><td>79</td><td><a href="https://projecteuler.net/problem=79" title="Friday, 17th September 2004, 06:00 pm">Passcode derivation</a></td><td>41496</td><td>5%</td></tr>
+<tr><td>751</td><td><a href="https://projecteuler.net/problem=751" title="Saturday, 13th March 2021, 10:00 pm">Concatenation Coincidence</a></td><td>1367</td><td>5%</td></tr>
+<tr><td>493</td><td><a href="https://projecteuler.net/problem=493" title="Saturday, 13th December 2014, 04:00 pm">Under The Rainbow</a></td><td>5208</td><td>10%</td></tr>
+<tr><td>692</td><td><a href="https://projecteuler.net/problem=692" title="Saturday, 7th December 2019, 01:00 pm">Siegbert and Jo</a></td><td>1091</td><td>10%</td></tr>
+<tr><td>710</td><td><a href="https://projecteuler.net/problem=710" title="Saturday, 11th April 2020, 08:00 pm">One Million Members</a></td><td>902</td><td>10%</td></tr>
+<tr><td>725</td><td><a href="https://projecteuler.net/problem=725" title="Saturday, 12th September 2020, 05:00 pm">Digit sum numbers</a></td><td>816</td><td>10%</td></tr>
+<tr><td>743</td><td><a href="https://projecteuler.net/problem=743" title="Saturday, 16th January 2021, 10:00 pm">Window into a Matrix</a></td><td>771</td><td>10%</td></tr>
+<tr><td>205</td><td><a href="https://projecteuler.net/problem=205" title="Saturday, 6th September 2008, 02:00 pm">Dice Game</a></td><td>14885</td><td>15%</td></tr>
+<tr><td>301</td><td><a href="https://projecteuler.net/problem=301" title="Saturday, 11th September 2010, 04:00 pm">Nim</a></td><td>6372</td><td>15%</td></tr>
+<tr><td>345</td><td><a href="https://projecteuler.net/problem=345" title="Saturday, 3rd September 2011, 04:00 pm">Matrix Sum</a></td><td>5591</td><td>15%</td></tr>
+<tr><td>504</td><td><a href="https://projecteuler.net/problem=504" title="Saturday, 21st February 2015, 10:00 pm">Square on the Inside</a></td><td>2954</td><td>15%</td></tr>
+<tr><td>709</td><td><a href="https://projecteuler.net/problem=709" title="Saturday, 4th April 2020, 05:00 pm">Even Stevens</a></td><td>673</td><td>15%</td></tr>
+<tr><td>755</td><td><a href="https://projecteuler.net/problem=755" title="Sunday, 18th April 2021, 11:00 am">Not Zeckendorf</a></td><td>598</td><td>15%</td></tr>
+<tr><td>749</td><td><a href="https://projecteuler.net/problem=749" title="Saturday, 27th February 2021, 04:00 pm">Near Power Sums</a></td><td>510</td><td>15%</td></tr>
+<tr><td>323</td><td><a href="https://projecteuler.net/problem=323" title="Sunday, 6th February 2011, 07:00 am">Bitwise-OR operations on random integers</a></td><td>3815</td><td>20%</td></tr>
+<tr><td>315</td><td><a href="https://projecteuler.net/problem=315" title="Sunday, 19th December 2010, 10:00 am">Digital root clocks</a></td><td>3331</td><td>20%</td></tr>
+<tr><td>587</td><td><a href="https://projecteuler.net/problem=587" title="Sunday, 22nd January 2017, 01:00 am">Concave triangle</a></td><td>2970</td><td>20%</td></tr>
+<tr><td>491</td><td><a href="https://projecteuler.net/problem=491" title="Sunday, 30th November 2014, 10:00 am">Double pandigital number divisible by 11</a></td><td>2079</td><td>20%</td></tr>
+<tr><td>613</td><td><a href="https://projecteuler.net/problem=613" title="Sunday, 5th November 2017, 04:00 am">Pythagorean Ant</a></td><td>1702</td><td>20%</td></tr>
+<tr><td>607</td><td><a href="https://projecteuler.net/problem=607" title="Saturday, 10th June 2017, 01:00 pm">Marsh Crossing</a></td><td>1631</td><td>20%</td></tr>
+<tr><td>518</td><td><a href="https://projecteuler.net/problem=518" title="Saturday, 30th May 2015, 04:00 pm">Prime triples and geometric sequences</a></td><td>1536</td><td>20%</td></tr>
+<tr><td>577</td><td><a href="https://projecteuler.net/problem=577" title="Saturday, 12th November 2016, 07:00 pm">Counting hexagons</a></td><td>1503</td><td>20%</td></tr>
+<tr><td>630</td><td><a href="https://projecteuler.net/problem=630" title="Sunday, 1st July 2018, 07:00 am">Crossed lines</a></td><td>916</td><td>20%</td></tr>
+<tr><td>679</td><td><a href="https://projecteuler.net/problem=679" title="Sunday, 15th September 2019, 01:00 am">Freefarea</a></td><td>747</td><td>20%</td></tr>
+<tr><td>713</td><td><a href="https://projecteuler.net/problem=713" title="Sunday, 26th April 2020, 02:00 am">Turán's water heating system</a></td><td>584</td><td>20%</td></tr>
+<tr><td>754</td><td><a href="https://projecteuler.net/problem=754" title="Sunday, 4th April 2021, 08:00 am">Product of Gauss Factorials</a></td><td>478</td><td>20%</td></tr>
+<tr><td>706</td><td><a href="https://projecteuler.net/problem=706" title="Sunday, 15th March 2020, 07:00 am">3-Like Numbers</a></td><td>463</td><td>20%</td></tr>
+<tr><td>731</td><td><a href="https://projecteuler.net/problem=731" title="Sunday, 25th October 2020, 10:00 am">A Stoneham Number</a></td><td>428</td><td>20%</td></tr>
+<tr><td>772</td><td><a href="https://projecteuler.net/problem=772" title="Saturday, 13th November 2021, 04:00 pm">Balanceable k-bounded partitions</a></td><td>333</td><td>20%</td></tr>
+<tr><td>91</td><td><a href="https://projecteuler.net/problem=91" title="Friday, 18th March 2005, 06:00 pm">Right triangles with integer coordinates</a></td><td>15598</td><td>25%</td></tr>
+<tr><td>351</td><td><a href="https://projecteuler.net/problem=351" title="Saturday, 17th September 2011, 10:00 pm">Hexagonal orchards</a></td><td>2508</td><td>25%</td></tr>
+<tr><td>329</td><td><a href="https://projecteuler.net/problem=329" title="Sunday, 20th March 2011, 01:00 am">Prime Frog</a></td><td>2461</td><td>25%</td></tr>
+<tr><td>336</td><td><a href="https://projecteuler.net/problem=336" title="Saturday, 30th April 2011, 07:00 pm">Maximix Arrangements</a></td><td>2015</td><td>25%</td></tr>
+<tr><td>358</td><td><a href="https://projecteuler.net/problem=358" title="Saturday, 12th November 2011, 07:00 pm">Cyclic numbers</a></td><td>1583</td><td>25%</td></tr>
+<tr><td>359</td><td><a href="https://projecteuler.net/problem=359" title="Saturday, 19th November 2011, 10:00 pm">Hilbert's New Hotel</a></td><td>1497</td><td>25%</td></tr>
+<tr><td>605</td><td><a href="https://projecteuler.net/problem=605" title="Sunday, 28th May 2017, 07:00 am">Pairwise Coin-Tossing Game</a></td><td>790</td><td>25%</td></tr>
+<tr><td>662</td><td><a href="https://projecteuler.net/problem=662" title="Sunday, 24th March 2019, 01:00 am">Fibonacci paths</a></td><td>709</td><td>25%</td></tr>
+<tr><td>714</td><td><a href="https://projecteuler.net/problem=714" title="Sunday, 3rd May 2020, 05:00 am">Duodigits</a></td><td>603</td><td>25%</td></tr>
+<tr><td>643</td><td><a href="https://projecteuler.net/problem=643" title="Saturday, 17th November 2018, 07:00 pm">2-Friendly</a></td><td>546</td><td>25%</td></tr>
+<tr><td>722</td><td><a href="https://projecteuler.net/problem=722" title="Sunday, 28th June 2020, 05:00 am">Slowly converging series</a></td><td>417</td><td>25%</td></tr>
+<tr><td>727</td><td><a href="https://projecteuler.net/problem=727" title="Saturday, 26th September 2020, 11:00 pm">Triangle of Circular Arcs</a></td><td>417</td><td>25%</td></tr>
+<tr><td>759</td><td><a href="https://projecteuler.net/problem=759" title="Saturday, 12th June 2021, 11:00 pm">A squared recurrence relation</a></td><td>411</td><td>25%</td></tr>
+<tr><td>712</td><td><a href="https://projecteuler.net/problem=712" title="Saturday, 18th April 2020, 11:00 pm">Exponent Difference</a></td><td>410</td><td>25%</td></tr>
+<tr><td>739</td><td><a href="https://projecteuler.net/problem=739" title="Sunday, 20th December 2020, 10:00 am">Summation of Summations</a></td><td>405</td><td>25%</td></tr>
+<tr><td>717</td><td><a href="https://projecteuler.net/problem=717" title="Saturday, 23rd May 2020, 02:00 pm">Summation of a Modular Formula</a></td><td>396</td><td>25%</td></tr>
+<tr><td>705</td><td><a href="https://projecteuler.net/problem=705" title="Sunday, 8th March 2020, 04:00 am">Total Inversion Count of Divided Sequences</a></td><td>380</td><td>25%</td></tr>
+<tr><td>733</td><td><a href="https://projecteuler.net/problem=733" title="Saturday, 7th November 2020, 04:00 pm">Ascending subsequences</a></td><td>373</td><td>25%</td></tr>
+<tr><td>776</td><td><a href="https://projecteuler.net/problem=776" title="Sunday, 12th December 2021, 04:00 am">Digit Sum Division</a></td><td>354</td><td>25%</td></tr>
+<tr><td>779</td><td><a href="https://projecteuler.net/problem=779" title="Saturday, 1st January 2022, 01:00 pm">Prime Factor and Exponent</a></td><td>318</td><td>25%</td></tr>
+<tr><td>116</td><td><a href="https://projecteuler.net/problem=116" title="Friday, 3rd March 2006, 06:00 pm">Red, green or blue tiles</a></td><td>12144</td><td>30%</td></tr>
+<tr><td>113</td><td><a href="https://projecteuler.net/problem=113" title="Friday, 10th February 2006, 06:00 pm">Non-bouncy numbers</a></td><td>11108</td><td>30%</td></tr>
+<tr><td>321</td><td><a href="https://projecteuler.net/problem=321" title="Sunday, 23rd January 2011, 01:00 am">Swapping Counters</a></td><td>1686</td><td>30%</td></tr>
+<tr><td>371</td><td><a href="https://projecteuler.net/problem=371" title="Sunday, 12th February 2012, 10:00 am">Licence plates</a></td><td>1579</td><td>30%</td></tr>
+<tr><td>313</td><td><a href="https://projecteuler.net/problem=313" title="Sunday, 5th December 2010, 04:00 am">Sliding game</a></td><td>1573</td><td>30%</td></tr>
+<tr><td>389</td><td><a href="https://projecteuler.net/problem=389" title="Saturday, 16th June 2012, 05:00 pm">Platonic Dice</a></td><td>1494</td><td>30%</td></tr>
+<tr><td>461</td><td><a href="https://projecteuler.net/problem=461" title="Saturday, 1st March 2014, 04:00 pm">Almost Pi</a></td><td>1146</td><td>30%</td></tr>
+<tr><td>340</td><td><a href="https://projecteuler.net/problem=340" title="Sunday, 29th May 2011, 07:00 am">Crazy Function</a></td><td>1072</td><td>30%</td></tr>
+<tr><td>510</td><td><a href="https://projecteuler.net/problem=510" title="Saturday, 4th April 2015, 04:00 pm">Tangent Circles</a></td><td>975</td><td>30%</td></tr>
+<tr><td>523</td><td><a href="https://projecteuler.net/problem=523" title="Sunday, 6th September 2015, 07:00 am">First Sort I</a></td><td>938</td><td>30%</td></tr>
+<tr><td>458</td><td><a href="https://projecteuler.net/problem=458" title="Sunday, 9th February 2014, 07:00 am">Permutations of Project</a></td><td>885</td><td>30%</td></tr>
+<tr><td>506</td><td><a href="https://projecteuler.net/problem=506" title="Sunday, 8th March 2015, 04:00 am">Clock sequence</a></td><td>838</td><td>30%</td></tr>
+<tr><td>628</td><td><a href="https://projecteuler.net/problem=628" title="Sunday, 3rd June 2018, 01:00 am">Open chess positions</a></td><td>741</td><td>30%</td></tr>
+<tr><td>561</td><td><a href="https://projecteuler.net/problem=561" title="Saturday, 21st May 2016, 10:00 pm">Divisor Pairs</a></td><td>717</td><td>30%</td></tr>
+<tr><td>527</td><td><a href="https://projecteuler.net/problem=527" title="Saturday, 26th September 2015, 04:00 pm">Randomized Binary Search</a></td><td>696</td><td>30%</td></tr>
+<tr><td>555</td><td><a href="https://projecteuler.net/problem=555" title="Sunday, 10th April 2016, 04:00 am">McCarthy 91 function</a></td><td>661</td><td>30%</td></tr>
+<tr><td>543</td><td><a href="https://projecteuler.net/problem=543" title="Saturday, 16th January 2016, 04:00 pm">Prime-Sum Numbers</a></td><td>653</td><td>30%</td></tr>
+<tr><td>612</td><td><a href="https://projecteuler.net/problem=612" title="Sunday, 22nd October 2017, 01:00 am">Friend numbers</a></td><td>621</td><td>30%</td></tr>
+<tr><td>540</td><td><a href="https://projecteuler.net/problem=540" title="Sunday, 27th December 2015, 07:00 am">Counting primitive Pythagorean triples</a></td><td>606</td><td>30%</td></tr>
+<tr><td>624</td><td><a href="https://projecteuler.net/problem=624" title="Saturday, 7th April 2018, 01:00 pm">Two heads are better than one</a></td><td>578</td><td>30%</td></tr>
+<tr><td>697</td><td><a href="https://projecteuler.net/problem=697" title="Sunday, 12th January 2020, 04:00 am">Randomly Decaying Sequence</a></td><td>488</td><td>30%</td></tr>
+<tr><td>657</td><td><a href="https://projecteuler.net/problem=657" title="Saturday, 23rd February 2019, 01:00 pm">Incomplete words</a></td><td>482</td><td>30%</td></tr>
+<tr><td>655</td><td><a href="https://projecteuler.net/problem=655" title="Sunday, 10th February 2019, 07:00 am">Divisible Palindromes</a></td><td>463</td><td>30%</td></tr>
+<tr><td>647</td><td><a href="https://projecteuler.net/problem=647" title="Sunday, 16th December 2018, 07:00 am">Linear Transformations of Polygonal Numbers</a></td><td>401</td><td>30%</td></tr>
+<tr><td>770</td><td><a href="https://projecteuler.net/problem=770" title="Sunday, 31st October 2021, 10:00 am">Delphi Flip</a></td><td>390</td><td>30%</td></tr>
+<tr><td>698</td><td><a href="https://projecteuler.net/problem=698" title="Sunday, 19th January 2020, 07:00 am">123 Numbers</a></td><td>384</td><td>30%</td></tr>
+<tr><td>649</td><td><a href="https://projecteuler.net/problem=649" title="Saturday, 29th December 2018, 01:00 pm">Low-Prime Chessboard Nim</a></td><td>369</td><td>30%</td></tr>
+<tr><td>721</td><td><a href="https://projecteuler.net/problem=721" title="Sunday, 21st June 2020, 02:00 am">High powers of irrational numbers</a></td><td>355</td><td>30%</td></tr>
+<tr><td>724</td><td><a href="https://projecteuler.net/problem=724" title="Saturday, 5th September 2020, 02:00 pm">Drone Delivery</a></td><td>329</td><td>30%</td></tr>
+<tr><td>737</td><td><a href="https://projecteuler.net/problem=737" title="Sunday, 6th December 2020, 04:00 am">Coin Loops</a></td><td>301</td><td>30%</td></tr>
+<tr><td>778</td><td><a href="https://projecteuler.net/problem=778" title="Sunday, 26th December 2021, 10:00 am">Freshman's Product</a></td><td>277</td><td>30%</td></tr>
+<tr><td>756</td><td><a href="https://projecteuler.net/problem=756" title="Saturday, 1st May 2021, 02:00 pm">Approximating a Sum</a></td><td>273</td><td>30%</td></tr>
+<tr><td>86</td><td><a href="https://projecteuler.net/problem=86" title="Friday, 7th January 2005, 06:00 pm">Cuboid route</a></td><td>12835</td><td>35%</td></tr>
+<tr><td>84</td><td><a href="https://projecteuler.net/problem=84" title="Friday, 3rd December 2004, 06:00 pm">Monopoly odds</a></td><td>12770</td><td>35%</td></tr>
+<tr><td>101</td><td><a href="https://projecteuler.net/problem=101" title="Friday, 29th July 2005, 06:00 pm">Optimum polynomial</a></td><td>11553</td><td>35%</td></tr>
+<tr><td>117</td><td><a href="https://projecteuler.net/problem=117" title="Friday, 10th March 2006, 06:00 pm">Red, green, and blue tiles</a></td><td>11138</td><td>35%</td></tr>
+<tr><td>107</td><td><a href="https://projecteuler.net/problem=107" title="Friday, 21st October 2005, 06:00 pm">Minimal network</a></td><td>11032</td><td>35%</td></tr>
+<tr><td>114</td><td><a href="https://projecteuler.net/problem=114" title="Friday, 17th February 2006, 06:00 pm">Counting block combinations I</a></td><td>10847</td><td>35%</td></tr>
+<tr><td>115</td><td><a href="https://projecteuler.net/problem=115" title="Friday, 24th February 2006, 06:00 pm">Counting block combinations II</a></td><td>9899</td><td>35%</td></tr>
+<tr><td>121</td><td><a href="https://projecteuler.net/problem=121" title="Friday, 19th May 2006, 06:00 pm">Disc game prize fund</a></td><td>9722</td><td>35%</td></tr>
+<tr><td>297</td><td><a href="https://projecteuler.net/problem=297" title="Friday, 18th June 2010, 05:00 pm">Zeckendorf Representation</a></td><td>2729</td><td>35%</td></tr>
+<tr><td>317</td><td><a href="https://projecteuler.net/problem=317" title="Saturday, 1st January 2011, 04:00 pm">Firecracker</a></td><td>2594</td><td>35%</td></tr>
+<tr><td>333</td><td><a href="https://projecteuler.net/problem=333" title="Saturday, 16th April 2011, 01:00 pm">Special partitions</a></td><td>1188</td><td>35%</td></tr>
+<tr><td>363</td><td><a href="https://projecteuler.net/problem=363" title="Sunday, 18th December 2011, 10:00 am">Bézier Curves</a></td><td>1073</td><td>35%</td></tr>
+<tr><td>378</td><td><a href="https://projecteuler.net/problem=378" title="Sunday, 1st April 2012, 07:00 am">Triangle Triples</a></td><td>827</td><td>35%</td></tr>
+<tr><td>430</td><td><a href="https://projecteuler.net/problem=430" title="Sunday, 2nd June 2013, 07:00 am">Range flips</a></td><td>825</td><td>35%</td></tr>
+<tr><td>539</td><td><a href="https://projecteuler.net/problem=539" title="Sunday, 20th December 2015, 04:00 am">Odd elimination</a></td><td>774</td><td>35%</td></tr>
+<tr><td>437</td><td><a href="https://projecteuler.net/problem=437" title="Saturday, 21st September 2013, 10:00 pm">Fibonacci primitive roots</a></td><td>747</td><td>35%</td></tr>
+<tr><td>392</td><td><a href="https://projecteuler.net/problem=392" title="Saturday, 1st September 2012, 02:00 pm">Enmeshed unit circle</a></td><td>742</td><td>35%</td></tr>
+<tr><td>457</td><td><a href="https://projecteuler.net/problem=457" title="Sunday, 2nd February 2014, 04:00 am">A polynomial modulo the square of a prime</a></td><td>740</td><td>35%</td></tr>
+<tr><td>473</td><td><a href="https://projecteuler.net/problem=473" title="Sunday, 25th May 2014, 04:00 am">Phigital number base</a></td><td>698</td><td>35%</td></tr>
+<tr><td>595</td><td><a href="https://projecteuler.net/problem=595" title="Sunday, 19th March 2017, 01:00 am">Incremental Random Sort</a></td><td>588</td><td>35%</td></tr>
+<tr><td>537</td><td><a href="https://projecteuler.net/problem=537" title="Saturday, 5th December 2015, 10:00 pm">Counting tuples</a></td><td>584</td><td>35%</td></tr>
+<tr><td>548</td><td><a href="https://projecteuler.net/problem=548" title="Sunday, 21st February 2016, 07:00 am">Gozinta Chains</a></td><td>580</td><td>35%</td></tr>
+<tr><td>600</td><td><a href="https://projecteuler.net/problem=600" title="Saturday, 22nd April 2017, 04:00 pm">Integer sided equiangular hexagons</a></td><td>578</td><td>35%</td></tr>
+<tr><td>575</td><td><a href="https://projecteuler.net/problem=575" title="Saturday, 22nd October 2016, 01:00 pm">Wandering Robots</a></td><td>551</td><td>35%</td></tr>
+<tr><td>615</td><td><a href="https://projecteuler.net/problem=615" title="Sunday, 3rd December 2017, 10:00 am">The millionth number with at least one million prime factors</a></td><td>547</td><td>35%</td></tr>
+<tr><td>610</td><td><a href="https://projecteuler.net/problem=610" title="Saturday, 23rd September 2017, 07:00 pm">Roman Numerals II</a></td><td>542</td><td>35%</td></tr>
+<tr><td>593</td><td><a href="https://projecteuler.net/problem=593" title="Saturday, 4th March 2017, 07:00 pm">Fleeting Medians</a></td><td>505</td><td>35%</td></tr>
+<tr><td>602</td><td><a href="https://projecteuler.net/problem=602" title="Saturday, 6th May 2017, 10:00 pm">Product of Head Counts</a></td><td>468</td><td>35%</td></tr>
+<tr><td>641</td><td><a href="https://projecteuler.net/problem=641" title="Saturday, 3rd November 2018, 01:00 pm">A Long Row of Dice</a></td><td>444</td><td>35%</td></tr>
+<tr><td>632</td><td><a href="https://projecteuler.net/problem=632" title="Saturday, 28th July 2018, 01:00 pm">Square prime factors</a></td><td>442</td><td>35%</td></tr>
+<tr><td>760</td><td><a href="https://projecteuler.net/problem=760" title="Sunday, 27th June 2021, 02:00 am">Sum over Bitwise Operators</a></td><td>343</td><td>35%</td></tr>
+<tr><td>663</td><td><a href="https://projecteuler.net/problem=663" title="Sunday, 31st March 2019, 04:00 am">Sums of subarrays</a></td><td>318</td><td>35%</td></tr>
+<tr><td>718</td><td><a href="https://projecteuler.net/problem=718" title="Saturday, 30th May 2020, 05:00 pm">Unreachable Numbers</a></td><td>301</td><td>35%</td></tr>
+<tr><td>673</td><td><a href="https://projecteuler.net/problem=673" title="Sunday, 2nd June 2019, 07:00 am">Beds and Desks</a></td><td>296</td><td>35%</td></tr>
+<tr><td>711</td><td><a href="https://projecteuler.net/problem=711" title="Saturday, 11th April 2020, 08:00 pm">Binary Blackboard</a></td><td>291</td><td>35%</td></tr>
+<tr><td>750</td><td><a href="https://projecteuler.net/problem=750" title="Saturday, 6th March 2021, 07:00 pm">Optimal Card Stacking</a></td><td>272</td><td>35%</td></tr>
+<tr><td>720</td><td><a href="https://projecteuler.net/problem=720" title="Saturday, 13th June 2020, 11:00 pm">Unpredictable Permutations</a></td><td>268</td><td>35%</td></tr>
+<tr><td>734</td><td><a href="https://projecteuler.net/problem=734" title="Saturday, 14th November 2020, 07:00 pm">A bit of prime</a></td><td>268</td><td>35%</td></tr>
+<tr><td>744</td><td><a href="https://projecteuler.net/problem=744" title="Sunday, 24th January 2021, 01:00 am">What? Where? When?</a></td><td>248</td><td>35%</td></tr>
+<tr><td>766</td><td><a href="https://projecteuler.net/problem=766" title="Saturday, 2nd October 2021, 11:00 pm">Sliding Block Puzzle</a></td><td>235</td><td>35%</td></tr>
+<tr><td>738</td><td><a href="https://projecteuler.net/problem=738" title="Sunday, 13th December 2020, 07:00 am">Counting Ordered Factorisations</a></td><td>229</td><td>35%</td></tr>
+<tr><td>746</td><td><a href="https://projecteuler.net/problem=746" title="Sunday, 7th February 2021, 07:00 am">A Messy Dinner</a></td><td>229</td><td>35%</td></tr>
+<tr><td>90</td><td><a href="https://projecteuler.net/problem=90" title="Friday, 4th March 2005, 06:00 pm">Cube digit pairs</a></td><td>11354</td><td>40%</td></tr>
+<tr><td>88</td><td><a href="https://projecteuler.net/problem=88" title="Friday, 4th February 2005, 06:00 pm">Product-sum numbers</a></td><td>10188</td><td>40%</td></tr>
+<tr><td>122</td><td><a href="https://projecteuler.net/problem=122" title="Friday, 2nd June 2006, 06:00 pm">Efficient exponentiation</a></td><td>7789</td><td>40%</td></tr>
+<tr><td>265</td><td><a href="https://projecteuler.net/problem=265" title="Saturday, 21st November 2009, 09:00 am">Binary Circles</a></td><td>4141</td><td>40%</td></tr>
+<tr><td>307</td><td><a href="https://projecteuler.net/problem=307" title="Sunday, 24th October 2010, 10:00 am">Chip Defects</a></td><td>1605</td><td>40%</td></tr>
+<tr><td>287</td><td><a href="https://projecteuler.net/problem=287" title="Saturday, 10th April 2010, 09:00 am">Quadtree encoding (a simple compression algorithm)</a></td><td>1402</td><td>40%</td></tr>
+<tr><td>501</td><td><a href="https://projecteuler.net/problem=501" title="Saturday, 31st January 2015, 01:00 pm">Eight Divisors</a></td><td>1265</td><td>40%</td></tr>
+<tr><td>310</td><td><a href="https://projecteuler.net/problem=310" title="Saturday, 13th November 2010, 07:00 pm">Nim Square</a></td><td>1104</td><td>40%</td></tr>
+<tr><td>327</td><td><a href="https://projecteuler.net/problem=327" title="Saturday, 5th March 2011, 07:00 pm">Rooms of Doom</a></td><td>1103</td><td>40%</td></tr>
+<tr><td>449</td><td><a href="https://projecteuler.net/problem=449" title="Sunday, 8th December 2013, 04:00 am">Chocolate covered candy</a></td><td>865</td><td>40%</td></tr>
+<tr><td>375</td><td><a href="https://projecteuler.net/problem=375" title="Saturday, 10th March 2012, 10:00 pm">Minimum of subsequences</a></td><td>849</td><td>40%</td></tr>
+<tr><td>469</td><td><a href="https://projecteuler.net/problem=469" title="Saturday, 26th April 2014, 04:00 pm">Empty chairs</a></td><td>710</td><td>40%</td></tr>
+<tr><td>386</td><td><a href="https://projecteuler.net/problem=386" title="Sunday, 27th May 2012, 08:00 am">Maximum length of an antichain</a></td><td>699</td><td>40%</td></tr>
+<tr><td>455</td><td><a href="https://projecteuler.net/problem=455" title="Saturday, 18th January 2014, 10:00 pm">Powers With Trailing Digits</a></td><td>687</td><td>40%</td></tr>
+<tr><td>395</td><td><a href="https://projecteuler.net/problem=395" title="Saturday, 22nd September 2012, 11:00 pm">Pythagorean tree</a></td><td>669</td><td>40%</td></tr>
+<tr><td>418</td><td><a href="https://projecteuler.net/problem=418" title="Saturday, 9th March 2013, 07:00 pm">Factorisation triples</a></td><td>663</td><td>40%</td></tr>
+<tr><td>374</td><td><a href="https://projecteuler.net/problem=374" title="Saturday, 3rd March 2012, 07:00 pm">Maximum Integer Partition Product</a></td><td>656</td><td>40%</td></tr>
+<tr><td>366</td><td><a href="https://projecteuler.net/problem=366" title="Saturday, 7th January 2012, 07:00 pm">Stone Game III</a></td><td>654</td><td>40%</td></tr>
+<tr><td>396</td><td><a href="https://projecteuler.net/problem=396" title="Sunday, 30th September 2012, 02:00 am">Weak Goodstein sequence</a></td><td>643</td><td>40%</td></tr>
+<tr><td>431</td><td><a href="https://projecteuler.net/problem=431" title="Sunday, 9th June 2013, 10:00 am">Square Space Silo</a></td><td>590</td><td>40%</td></tr>
+<tr><td>405</td><td><a href="https://projecteuler.net/problem=405" title="Sunday, 9th December 2012, 04:00 am">A rectangular tiling</a></td><td>578</td><td>40%</td></tr>
+<tr><td>498</td><td><a href="https://projecteuler.net/problem=498" title="Sunday, 18th January 2015, 07:00 am">Remainder of polynomial division</a></td><td>492</td><td>40%</td></tr>
+<tr><td>497</td><td><a href="https://projecteuler.net/problem=497" title="Sunday, 11th January 2015, 04:00 am">Drunken Tower of Hanoi</a></td><td>490</td><td>40%</td></tr>
+<tr><td>604</td><td><a href="https://projecteuler.net/problem=604" title="Sunday, 21st May 2017, 04:00 am">Convex path in square</a></td><td>473</td><td>40%</td></tr>
+<tr><td>598</td><td><a href="https://projecteuler.net/problem=598" title="Sunday, 9th April 2017, 10:00 am">Split Divisibilities</a></td><td>459</td><td>40%</td></tr>
+<tr><td>616</td><td><a href="https://projecteuler.net/problem=616" title="Saturday, 16th December 2017, 01:00 pm">Creative numbers</a></td><td>458</td><td>40%</td></tr>
+<tr><td>515</td><td><a href="https://projecteuler.net/problem=515" title="Sunday, 10th May 2015, 07:00 am">Dissonant Numbers</a></td><td>441</td><td>40%</td></tr>
+<tr><td>552</td><td><a href="https://projecteuler.net/problem=552" title="Saturday, 19th March 2016, 07:00 pm">Chinese leftovers II</a></td><td>410</td><td>40%</td></tr>
+<tr><td>588</td><td><a href="https://projecteuler.net/problem=588" title="Sunday, 29th January 2017, 04:00 am">Quintinomial coefficients</a></td><td>409</td><td>40%</td></tr>
+<tr><td>617</td><td><a href="https://projecteuler.net/problem=617" title="Saturday, 30th December 2017, 04:00 pm">Mirror Power Sequence</a></td><td>360</td><td>40%</td></tr>
+<tr><td>638</td><td><a href="https://projecteuler.net/problem=638" title="Sunday, 7th October 2018, 04:00 am">Weighted lattice paths</a></td><td>343</td><td>40%</td></tr>
+<tr><td>753</td><td><a href="https://projecteuler.net/problem=753" title="Sunday, 28th March 2021, 05:00 am">Fermat Equation</a></td><td>335</td><td>40%</td></tr>
+<tr><td>635</td><td><a href="https://projecteuler.net/problem=635" title="Saturday, 25th August 2018, 07:00 pm">Subset sums</a></td><td>315</td><td>40%</td></tr>
+<tr><td>538</td><td><a href="https://projecteuler.net/problem=538" title="Sunday, 13th December 2015, 01:00 am">Maximum quadrilaterals</a></td><td>304</td><td>40%</td></tr>
+<tr><td>670</td><td><a href="https://projecteuler.net/problem=670" title="Sunday, 19th May 2019, 01:00 am">Colouring a Strip</a></td><td>300</td><td>40%</td></tr>
+<tr><td>701</td><td><a href="https://projecteuler.net/problem=701" title="Saturday, 8th February 2020, 04:00 pm">Random connected area</a></td><td>299</td><td>40%</td></tr>
+<tr><td>683</td><td><a href="https://projecteuler.net/problem=683" title="Saturday, 12th October 2019, 01:00 pm">The Chase II</a></td><td>295</td><td>40%</td></tr>
+<tr><td>764</td><td><a href="https://projecteuler.net/problem=764" title="Saturday, 11th September 2021, 05:00 pm">Asymmetric Diophantine Equation</a></td><td>279</td><td>40%</td></tr>
+<tr><td>660</td><td><a href="https://projecteuler.net/problem=660" title="Saturday, 9th March 2019, 07:00 pm">Pandigital Triangles</a></td><td>278</td><td>40%</td></tr>
+<tr><td>693</td><td><a href="https://projecteuler.net/problem=693" title="Saturday, 14th December 2019, 04:00 pm">Finite Sequence Generator</a></td><td>269</td><td>40%</td></tr>
+<tr><td>646</td><td><a href="https://projecteuler.net/problem=646" title="Sunday, 9th December 2018, 04:00 am">Bounded Divisors</a></td><td>259</td><td>40%</td></tr>
+<tr><td>691</td><td><a href="https://projecteuler.net/problem=691" title="Sunday, 1st December 2019, 10:00 am">Long substring with many repetitions</a></td><td>247</td><td>40%</td></tr>
+<tr><td>728</td><td><a href="https://projecteuler.net/problem=728" title="Sunday, 4th October 2020, 02:00 am">Circle of Coins</a></td><td>239</td><td>40%</td></tr>
+<tr><td>775</td><td><a href="https://projecteuler.net/problem=775" title="Sunday, 5th December 2021, 01:00 am">Saving Paper</a></td><td>194</td><td>40%</td></tr>
+<tr><td>732</td><td><a href="https://projecteuler.net/problem=732" title="Saturday, 31st October 2020, 01:00 pm">Standing on the shoulders of trolls</a></td><td>191</td><td>40%</td></tr>
+<tr><td>109</td><td><a href="https://projecteuler.net/problem=109" title="Friday, 18th November 2005, 06:00 pm">Darts</a></td><td>8153</td><td>45%</td></tr>
+<tr><td>103</td><td><a href="https://projecteuler.net/problem=103" title="Friday, 26th August 2005, 06:00 pm">Special subset sums: optimum</a></td><td>8067</td><td>45%</td></tr>
+<tr><td>105</td><td><a href="https://projecteuler.net/problem=105" title="Friday, 23rd September 2005, 06:00 pm">Special subset sums: testing</a></td><td>8063</td><td>45%</td></tr>
+<tr><td>164</td><td><a href="https://projecteuler.net/problem=164" title="Saturday, 20th October 2007, 06:00 am">Numbers for which no three consecutive digits have a sum greater than a given value</a></td><td>5705</td><td>45%</td></tr>
+<tr><td>162</td><td><a href="https://projecteuler.net/problem=162" title="Friday, 5th October 2007, 10:00 pm">Hexadecimal numbers</a></td><td>5298</td><td>45%</td></tr>
+<tr><td>341</td><td><a href="https://projecteuler.net/problem=341" title="Sunday, 5th June 2011, 10:00 am">Golomb's self-describing sequence</a></td><td>906</td><td>45%</td></tr>
+<tr><td>294</td><td><a href="https://projecteuler.net/problem=294" title="Saturday, 29th May 2010, 09:00 am">Sum of digits - experience #23</a></td><td>884</td><td>45%</td></tr>
+<tr><td>377</td><td><a href="https://projecteuler.net/problem=377" title="Sunday, 25th March 2012, 05:00 am">Sum of digits - experience #13</a></td><td>681</td><td>45%</td></tr>
+<tr><td>411</td><td><a href="https://projecteuler.net/problem=411" title="Saturday, 19th January 2013, 10:00 pm">Uphill paths</a></td><td>617</td><td>45%</td></tr>
+<tr><td>452</td><td><a href="https://projecteuler.net/problem=452" title="Saturday, 28th December 2013, 01:00 pm">Long Products</a></td><td>551</td><td>45%</td></tr>
+<tr><td>399</td><td><a href="https://projecteuler.net/problem=399" title="Sunday, 21st October 2012, 11:00 am">Squarefree Fibonacci Numbers</a></td><td>545</td><td>45%</td></tr>
+<tr><td>480</td><td><a href="https://projecteuler.net/problem=480" title="Sunday, 14th September 2014, 01:00 am">The Last Question</a></td><td>545</td><td>45%</td></tr>
+<tr><td>509</td><td><a href="https://projecteuler.net/problem=509" title="Saturday, 28th March 2015, 01:00 pm">Divisor Nim</a></td><td>534</td><td>45%</td></tr>
+<tr><td>368</td><td><a href="https://projecteuler.net/problem=368" title="Sunday, 22nd January 2012, 01:00 am">A Kempner-like series</a></td><td>531</td><td>45%</td></tr>
+<tr><td>525</td><td><a href="https://projecteuler.net/problem=525" title="Sunday, 13th September 2015, 10:00 am">Rolling Ellipse</a></td><td>469</td><td>45%</td></tr>
+<tr><td>423</td><td><a href="https://projecteuler.net/problem=423" title="Sunday, 14th April 2013, 10:00 am">Consecutive die throws</a></td><td>460</td><td>45%</td></tr>
+<tr><td>517</td><td><a href="https://projecteuler.net/problem=517" title="Saturday, 23rd May 2015, 01:00 pm">A real recursion</a></td><td>437</td><td>45%</td></tr>
+<tr><td>476</td><td><a href="https://projecteuler.net/problem=476" title="Saturday, 14th June 2014, 01:00 pm">Circle Packing II</a></td><td>404</td><td>45%</td></tr>
+<tr><td>603</td><td><a href="https://projecteuler.net/problem=603" title="Sunday, 14th May 2017, 01:00 am">Substring sums of prime concatenations</a></td><td>395</td><td>45%</td></tr>
+<tr><td>520</td><td><a href="https://projecteuler.net/problem=520" title="Saturday, 13th June 2015, 10:00 pm">Simbers</a></td><td>379</td><td>45%</td></tr>
+<tr><td>619</td><td><a href="https://projecteuler.net/problem=619" title="Saturday, 27th January 2018, 10:00 pm">Square subsets</a></td><td>375</td><td>45%</td></tr>
+<tr><td>569</td><td><a href="https://projecteuler.net/problem=569" title="Saturday, 10th September 2016, 07:00 pm">Prime Mountain Range</a></td><td>371</td><td>45%</td></tr>
+<tr><td>654</td><td><a href="https://projecteuler.net/problem=654" title="Sunday, 3rd February 2019, 04:00 am">Neighbourly Constraints</a></td><td>311</td><td>45%</td></tr>
+<tr><td>563</td><td><a href="https://projecteuler.net/problem=563" title="Sunday, 5th June 2016, 04:00 am">Robot Welders</a></td><td>308</td><td>45%</td></tr>
+<tr><td>637</td><td><a href="https://projecteuler.net/problem=637" title="Sunday, 23rd September 2018, 01:00 am">Flexible digit sum</a></td><td>300</td><td>45%</td></tr>
+<tr><td>623</td><td><a href="https://projecteuler.net/problem=623" title="Sunday, 25th March 2018, 10:00 am">Lambda Count</a></td><td>293</td><td>45%</td></tr>
+<tr><td>669</td><td><a href="https://projecteuler.net/problem=669" title="Saturday, 11th May 2019, 10:00 pm">The King's Banquet</a></td><td>288</td><td>45%</td></tr>
+<tr><td>653</td><td><a href="https://projecteuler.net/problem=653" title="Sunday, 27th January 2019, 01:00 am">Frictionless Tube</a></td><td>284</td><td>45%</td></tr>
+<tr><td>648</td><td><a href="https://projecteuler.net/problem=648" title="Sunday, 23rd December 2018, 10:00 am">Skipping Squares</a></td><td>264</td><td>45%</td></tr>
+<tr><td>703</td><td><a href="https://projecteuler.net/problem=703" title="Saturday, 22nd February 2020, 10:00 pm">Circular Logic II</a></td><td>263</td><td>45%</td></tr>
+<tr><td>687</td><td><a href="https://projecteuler.net/problem=687" title="Saturday, 2nd November 2019, 10:00 pm">Shuffling Cards</a></td><td>255</td><td>45%</td></tr>
+<tr><td>666</td><td><a href="https://projecteuler.net/problem=666" title="Saturday, 20th April 2019, 01:00 pm">Polymorphic Bacteria</a></td><td>252</td><td>45%</td></tr>
+<tr><td>716</td><td><a href="https://projecteuler.net/problem=716" title="Sunday, 17th May 2020, 11:00 am">Grid Graphs</a></td><td>202</td><td>45%</td></tr>
+<tr><td>106</td><td><a href="https://projecteuler.net/problem=106" title="Friday, 7th October 2005, 06:00 pm">Special subset sums: meta-testing</a></td><td>6400</td><td>50%</td></tr>
+<tr><td>144</td><td><a href="https://projecteuler.net/problem=144" title="Friday, 9th March 2007, 05:00 pm">Investigating multiple reflections of a laser beam</a></td><td>6200</td><td>50%</td></tr>
+<tr><td>139</td><td><a href="https://projecteuler.net/problem=139" title="Saturday, 27th January 2007, 09:00 am">Pythagorean tiles</a></td><td>5577</td><td>50%</td></tr>
+<tr><td>151</td><td><a href="https://projecteuler.net/problem=151" title="Friday, 20th April 2007, 06:00 pm">Paper sheets of standard sizes: an expected-value problem</a></td><td>5455</td><td>50%</td></tr>
+<tr><td>148</td><td><a href="https://projecteuler.net/problem=148" title="Saturday, 7th April 2007, 02:00 am">Exploring Pascal's triangle</a></td><td>5083</td><td>50%</td></tr>
+<tr><td>149</td><td><a href="https://projecteuler.net/problem=149" title="Friday, 13th April 2007, 10:00 pm">Searching for a maximum-sum subsequence</a></td><td>4787</td><td>50%</td></tr>
+<tr><td>190</td><td><a href="https://projecteuler.net/problem=190" title="Friday, 18th April 2008, 10:00 pm">Maximising a weighted product</a></td><td>4102</td><td>50%</td></tr>
+<tr><td>166</td><td><a href="https://projecteuler.net/problem=166" title="Saturday, 3rd November 2007, 01:00 pm">Criss Cross</a></td><td>4048</td><td>50%</td></tr>
+<tr><td>215</td><td><a href="https://projecteuler.net/problem=215" title="Friday, 31st October 2008, 01:00 pm">Crack-free Walls</a></td><td>3660</td><td>50%</td></tr>
+<tr><td>267</td><td><a href="https://projecteuler.net/problem=267" title="Friday, 4th December 2009, 01:00 pm">Billionaire</a></td><td>3348</td><td>50%</td></tr>
+<tr><td>234</td><td><a href="https://projecteuler.net/problem=234" title="Saturday, 28th February 2009, 01:00 am">Semidivisible numbers</a></td><td>3223</td><td>50%</td></tr>
+<tr><td>230</td><td><a href="https://projecteuler.net/problem=230" title="Saturday, 31st January 2009, 01:00 pm">Fibonacci Words</a></td><td>2852</td><td>50%</td></tr>
+<tr><td>286</td><td><a href="https://projecteuler.net/problem=286" title="Saturday, 3rd April 2010, 05:00 am">Scoring probabilities</a></td><td>2102</td><td>50%</td></tr>
+<tr><td>300</td><td><a href="https://projecteuler.net/problem=300" title="Saturday, 4th September 2010, 01:00 pm">Protein folding</a></td><td>1066</td><td>50%</td></tr>
+<tr><td>278</td><td><a href="https://projecteuler.net/problem=278" title="Saturday, 13th February 2010, 05:00 am">Linear Combinations of Semiprimes</a></td><td>1017</td><td>50%</td></tr>
+<tr><td>290</td><td><a href="https://projecteuler.net/problem=290" title="Friday, 30th April 2010, 05:00 pm">Digital Signature</a></td><td>956</td><td>50%</td></tr>
+<tr><td>318</td><td><a href="https://projecteuler.net/problem=318" title="Saturday, 1st January 2011, 04:00 pm">2011 nines</a></td><td>913</td><td>50%</td></tr>
+<tr><td>312</td><td><a href="https://projecteuler.net/problem=312" title="Sunday, 28th November 2010, 01:00 am">Cyclic paths on Sierpiński graphs</a></td><td>821</td><td>50%</td></tr>
+<tr><td>309</td><td><a href="https://projecteuler.net/problem=309" title="Saturday, 6th November 2010, 04:00 pm">Integer Ladders</a></td><td>786</td><td>50%</td></tr>
+<tr><td>342</td><td><a href="https://projecteuler.net/problem=342" title="Saturday, 11th June 2011, 01:00 pm">The totient of a square is a cube</a></td><td>773</td><td>50%</td></tr>
+<tr><td>393</td><td><a href="https://projecteuler.net/problem=393" title="Saturday, 8th September 2012, 05:00 pm">Migrating ants</a></td><td>738</td><td>50%</td></tr>
+<tr><td>324</td><td><a href="https://projecteuler.net/problem=324" title="Sunday, 13th February 2011, 10:00 am">Building a tower</a></td><td>681</td><td>50%</td></tr>
+<tr><td>364</td><td><a href="https://projecteuler.net/problem=364" title="Saturday, 24th December 2011, 01:00 pm">Comfortable distance</a></td><td>680</td><td>50%</td></tr>
+<tr><td>421</td><td><a href="https://projecteuler.net/problem=421" title="Sunday, 31st March 2013, 04:00 am">Prime factors of <var>n</var><sup>15</sup>+1</a></td><td>615</td><td>50%</td></tr>
+<tr><td>332</td><td><a href="https://projecteuler.net/problem=332" title="Sunday, 10th April 2011, 10:00 am">Spherical triangles</a></td><td>577</td><td>50%</td></tr>
+<tr><td>360</td><td><a href="https://projecteuler.net/problem=360" title="Sunday, 27th November 2011, 01:00 am">Scary Sphere</a></td><td>576</td><td>50%</td></tr>
+<tr><td>408</td><td><a href="https://projecteuler.net/problem=408" title="Saturday, 29th December 2012, 01:00 pm">Admissible paths through a grid</a></td><td>546</td><td>50%</td></tr>
+<tr><td>412</td><td><a href="https://projecteuler.net/problem=412" title="Sunday, 27th January 2013, 01:00 am">Gnomon numbering</a></td><td>478</td><td>50%</td></tr>
+<tr><td>419</td><td><a href="https://projecteuler.net/problem=419" title="Saturday, 16th March 2013, 10:00 pm">Look and say sequence</a></td><td>474</td><td>50%</td></tr>
+<tr><td>353</td><td><a href="https://projecteuler.net/problem=353" title="Sunday, 9th October 2011, 04:00 am">Risky moon</a></td><td>465</td><td>50%</td></tr>
+<tr><td>383</td><td><a href="https://projecteuler.net/problem=383" title="Saturday, 5th May 2012, 11:00 pm">Divisibility comparison between factorials</a></td><td>462</td><td>50%</td></tr>
+<tr><td>454</td><td><a href="https://projecteuler.net/problem=454" title="Saturday, 11th January 2014, 07:00 pm">Diophantine reciprocals III</a></td><td>451</td><td>50%</td></tr>
+<tr><td>551</td><td><a href="https://projecteuler.net/problem=551" title="Saturday, 12th March 2016, 04:00 pm">Sum of digits sequence</a></td><td>451</td><td>50%</td></tr>
+<tr><td>475</td><td><a href="https://projecteuler.net/problem=475" title="Sunday, 8th June 2014, 10:00 am">Music festival</a></td><td>420</td><td>50%</td></tr>
+<tr><td>467</td><td><a href="https://projecteuler.net/problem=467" title="Sunday, 13th April 2014, 10:00 am">Superinteger</a></td><td>413</td><td>50%</td></tr>
+<tr><td>474</td><td><a href="https://projecteuler.net/problem=474" title="Sunday, 1st June 2014, 07:00 am">Last digits of divisors</a></td><td>393</td><td>50%</td></tr>
+<tr><td>406</td><td><a href="https://projecteuler.net/problem=406" title="Sunday, 16th December 2012, 07:00 am">Guessing Game</a></td><td>365</td><td>50%</td></tr>
+<tr><td>445</td><td><a href="https://projecteuler.net/problem=445" title="Saturday, 16th November 2013, 10:00 pm">Retractions A</a></td><td>363</td><td>50%</td></tr>
+<tr><td>583</td><td><a href="https://projecteuler.net/problem=583" title="Saturday, 24th December 2016, 01:00 pm">Heron Envelopes</a></td><td>358</td><td>50%</td></tr>
+<tr><td>606</td><td><a href="https://projecteuler.net/problem=606" title="Sunday, 4th June 2017, 10:00 am">Gozinta Chains II</a></td><td>355</td><td>50%</td></tr>
+<tr><td>596</td><td><a href="https://projecteuler.net/problem=596" title="Sunday, 26th March 2017, 04:00 am">Number of lattice points in a hyperball</a></td><td>338</td><td>50%</td></tr>
+<tr><td>519</td><td><a href="https://projecteuler.net/problem=519" title="Saturday, 6th June 2015, 07:00 pm">Tricoloured Coin Fountains</a></td><td>329</td><td>50%</td></tr>
+<tr><td>640</td><td><a href="https://projecteuler.net/problem=640" title="Sunday, 28th October 2018, 10:00 am">Shut the Box</a></td><td>323</td><td>50%</td></tr>
+<tr><td>572</td><td><a href="https://projecteuler.net/problem=572" title="Sunday, 2nd October 2016, 04:00 am">Idempotent matrices</a></td><td>317</td><td>50%</td></tr>
+<tr><td>533</td><td><a href="https://projecteuler.net/problem=533" title="Sunday, 8th November 2015, 10:00 am">Minimum values of the Carmichael function</a></td><td>305</td><td>50%</td></tr>
+<tr><td>582</td><td><a href="https://projecteuler.net/problem=582" title="Sunday, 18th December 2016, 10:00 am">Nearly isosceles 120 degree triangles</a></td><td>304</td><td>50%</td></tr>
+<tr><td>633</td><td><a href="https://projecteuler.net/problem=633" title="Saturday, 28th July 2018, 01:00 pm">Square prime factors II</a></td><td>300</td><td>50%</td></tr>
+<tr><td>496</td><td><a href="https://projecteuler.net/problem=496" title="Sunday, 4th January 2015, 01:00 am">Incenter and circumcenter of triangle</a></td><td>288</td><td>50%</td></tr>
+<tr><td>672</td><td><a href="https://projecteuler.net/problem=672" title="Sunday, 26th May 2019, 04:00 am">One more one</a></td><td>254</td><td>50%</td></tr>
+<tr><td>682</td><td><a href="https://projecteuler.net/problem=682" title="Sunday, 6th October 2019, 10:00 am">5-Smooth Pairs</a></td><td>253</td><td>50%</td></tr>
+<tr><td>574</td><td><a href="https://projecteuler.net/problem=574" title="Sunday, 16th October 2016, 10:00 am">Verifying Primes</a></td><td>250</td><td>50%</td></tr>
+<tr><td>676</td><td><a href="https://projecteuler.net/problem=676" title="Saturday, 22nd June 2019, 04:00 pm">Matching Digit Sums</a></td><td>223</td><td>50%</td></tr>
+<tr><td>656</td><td><a href="https://projecteuler.net/problem=656" title="Sunday, 17th February 2019, 10:00 am">Palindromic sequences</a></td><td>222</td><td>50%</td></tr>
+<tr><td>681</td><td><a href="https://projecteuler.net/problem=681" title="Sunday, 29th September 2019, 07:00 am">Maximal Area</a></td><td>210</td><td>50%</td></tr>
+<tr><td>758</td><td><a href="https://projecteuler.net/problem=758" title="Saturday, 29th May 2021, 08:00 pm">Buckets of Water</a></td><td>205</td><td>50%</td></tr>
+<tr><td>736</td><td><a href="https://projecteuler.net/problem=736" title="Sunday, 29th November 2020, 01:00 am">Paths to Equality</a></td><td>197</td><td>50%</td></tr>
+<tr><td>726</td><td><a href="https://projecteuler.net/problem=726" title="Saturday, 19th September 2020, 08:00 pm">Falling bottles</a></td><td>180</td><td>50%</td></tr>
+<tr><td>762</td><td><a href="https://projecteuler.net/problem=762" title="Saturday, 4th September 2021, 02:00 pm">Amoebas in a 2D grid</a></td><td>162</td><td>50%</td></tr>
+<tr><td>773</td><td><a href="https://projecteuler.net/problem=773" title="Saturday, 20th November 2021, 07:00 pm">Ruff Numbers</a></td><td>155</td><td>50%</td></tr>
+<tr><td>128</td><td><a href="https://projecteuler.net/problem=128" title="Friday, 29th September 2006, 06:00 pm">Hexagonal tile differences</a></td><td>4965</td><td>55%</td></tr>
+<tr><td>126</td><td><a href="https://projecteuler.net/problem=126" title="Friday, 18th August 2006, 06:00 pm">Cuboid layers</a></td><td>4684</td><td>55%</td></tr>
+<tr><td>150</td><td><a href="https://projecteuler.net/problem=150" title="Friday, 13th April 2007, 10:00 pm">Searching a triangular array for a sub-triangle having minimum-sum</a></td><td>3906</td><td>55%</td></tr>
+<tr><td>172</td><td><a href="https://projecteuler.net/problem=172" title="Saturday, 15th December 2007, 09:00 am">Investigating numbers with few repeated digits</a></td><td>3727</td><td>55%</td></tr>
+<tr><td>158</td><td><a href="https://projecteuler.net/problem=158" title="Friday, 15th June 2007, 02:00 pm">Exploring strings for which only one character comes lexicographically after its neighbour to the left</a></td><td>3576</td><td>55%</td></tr>
+<tr><td>178</td><td><a href="https://projecteuler.net/problem=178" title="Saturday, 19th January 2008, 01:00 am">Step Numbers</a></td><td>3359</td><td>55%</td></tr>
+<tr><td>185</td><td><a href="https://projecteuler.net/problem=185" title="Saturday, 8th March 2008, 01:00 am">Number Mind</a></td><td>3070</td><td>55%</td></tr>
+<tr><td>218</td><td><a href="https://projecteuler.net/problem=218" title="Saturday, 22nd November 2008, 01:00 am">Perfect right-angled triangles</a></td><td>2994</td><td>55%</td></tr>
+<tr><td>250</td><td><a href="https://projecteuler.net/problem=250" title="Saturday, 13th June 2009, 05:00 am">250250</a></td><td>2934</td><td>55%</td></tr>
+<tr><td>220</td><td><a href="https://projecteuler.net/problem=220" title="Saturday, 6th December 2008, 09:00 am">Heighway Dragon</a></td><td>2165</td><td>55%</td></tr>
+<tr><td>284</td><td><a href="https://projecteuler.net/problem=284" title="Saturday, 27th March 2010, 01:00 am">Steady Squares</a></td><td>1223</td><td>55%</td></tr>
+<tr><td>285</td><td><a href="https://projecteuler.net/problem=285" title="Saturday, 3rd April 2010, 05:00 am">Pythagorean odds</a></td><td>1177</td><td>55%</td></tr>
+<tr><td>306</td><td><a href="https://projecteuler.net/problem=306" title="Sunday, 17th October 2010, 07:00 am">Paper-strip Game</a></td><td>1148</td><td>55%</td></tr>
+<tr><td>281</td><td><a href="https://projecteuler.net/problem=281" title="Friday, 5th March 2010, 01:00 pm">Pizza Toppings</a></td><td>927</td><td>55%</td></tr>
+<tr><td>316</td><td><a href="https://projecteuler.net/problem=316" title="Saturday, 25th December 2010, 01:00 pm">Numbers in decimal expansions</a></td><td>636</td><td>55%</td></tr>
+<tr><td>352</td><td><a href="https://projecteuler.net/problem=352" title="Sunday, 2nd October 2011, 01:00 am">Blood tests</a></td><td>584</td><td>55%</td></tr>
+<tr><td>388</td><td><a href="https://projecteuler.net/problem=388" title="Saturday, 9th June 2012, 02:00 pm">Distinct Lines</a></td><td>553</td><td>55%</td></tr>
+<tr><td>326</td><td><a href="https://projecteuler.net/problem=326" title="Saturday, 26th February 2011, 04:00 pm">Modulo Summations</a></td><td>511</td><td>55%</td></tr>
+<tr><td>394</td><td><a href="https://projecteuler.net/problem=394" title="Saturday, 15th September 2012, 08:00 pm">Eating pie</a></td><td>507</td><td>55%</td></tr>
+<tr><td>367</td><td><a href="https://projecteuler.net/problem=367" title="Saturday, 14th January 2012, 10:00 pm">Bozo sort</a></td><td>485</td><td>55%</td></tr>
+<tr><td>400</td><td><a href="https://projecteuler.net/problem=400" title="Saturday, 27th October 2012, 02:00 pm">Fibonacci tree game</a></td><td>455</td><td>55%</td></tr>
+<tr><td>436</td><td><a href="https://projecteuler.net/problem=436" title="Saturday, 14th September 2013, 07:00 pm">Unfair wager</a></td><td>438</td><td>55%</td></tr>
+<tr><td>409</td><td><a href="https://projecteuler.net/problem=409" title="Saturday, 5th January 2013, 04:00 pm">Nim Extreme</a></td><td>436</td><td>55%</td></tr>
+<tr><td>511</td><td><a href="https://projecteuler.net/problem=511" title="Saturday, 11th April 2015, 07:00 pm">Sequences with nice divisibility properties</a></td><td>390</td><td>55%</td></tr>
+<tr><td>456</td><td><a href="https://projecteuler.net/problem=456" title="Sunday, 26th January 2014, 01:00 am">Triangles containing the origin II</a></td><td>384</td><td>55%</td></tr>
+<tr><td>402</td><td><a href="https://projecteuler.net/problem=402" title="Saturday, 17th November 2012, 07:00 pm">Integer-valued polynomials</a></td><td>381</td><td>55%</td></tr>
+<tr><td>398</td><td><a href="https://projecteuler.net/problem=398" title="Sunday, 14th October 2012, 08:00 am">Cutting rope</a></td><td>362</td><td>55%</td></tr>
+<tr><td>403</td><td><a href="https://projecteuler.net/problem=403" title="Saturday, 24th November 2012, 10:00 pm">Lattice points enclosed by parabola and line</a></td><td>344</td><td>55%</td></tr>
+<tr><td>614</td><td><a href="https://projecteuler.net/problem=614" title="Sunday, 19th November 2017, 07:00 am">Special partitions 2</a></td><td>292</td><td>55%</td></tr>
+<tr><td>532</td><td><a href="https://projecteuler.net/problem=532" title="Sunday, 1st November 2015, 07:00 am">Nanobots on Geodesics</a></td><td>291</td><td>55%</td></tr>
+<tr><td>534</td><td><a href="https://projecteuler.net/problem=534" title="Saturday, 14th November 2015, 01:00 pm">Weak Queens</a></td><td>286</td><td>55%</td></tr>
+<tr><td>567</td><td><a href="https://projecteuler.net/problem=567" title="Saturday, 3rd September 2016, 04:00 pm">Reciprocal games I</a></td><td>277</td><td>55%</td></tr>
+<tr><td>557</td><td><a href="https://projecteuler.net/problem=557" title="Sunday, 24th April 2016, 10:00 am">Cutting triangles</a></td><td>272</td><td>55%</td></tr>
+<tr><td>568</td><td><a href="https://projecteuler.net/problem=568" title="Saturday, 3rd September 2016, 04:00 pm">Reciprocal games II</a></td><td>268</td><td>55%</td></tr>
+<tr><td>570</td><td><a href="https://projecteuler.net/problem=570" title="Saturday, 17th September 2016, 10:00 pm">Snowflakes</a></td><td>261</td><td>55%</td></tr>
+<tr><td>665</td><td><a href="https://projecteuler.net/problem=665" title="Sunday, 14th April 2019, 10:00 am">Proportionate Nim</a></td><td>231</td><td>55%</td></tr>
+<tr><td>658</td><td><a href="https://projecteuler.net/problem=658" title="Saturday, 23rd February 2019, 01:00 pm">Incomplete words II</a></td><td>229</td><td>55%</td></tr>
+<tr><td>576</td><td><a href="https://projecteuler.net/problem=576" title="Saturday, 29th October 2016, 04:00 pm">Irrational jumps</a></td><td>224</td><td>55%</td></tr>
+<tr><td>629</td><td><a href="https://projecteuler.net/problem=629" title="Sunday, 17th June 2018, 04:00 am">Scatterstone Nim</a></td><td>224</td><td>55%</td></tr>
+<tr><td>661</td><td><a href="https://projecteuler.net/problem=661" title="Saturday, 16th March 2019, 10:00 pm">A Long Chess Match</a></td><td>208</td><td>55%</td></tr>
+<tr><td>707</td><td><a href="https://projecteuler.net/problem=707" title="Sunday, 22nd March 2020, 10:00 am">Lights Out</a></td><td>207</td><td>55%</td></tr>
+<tr><td>740</td><td><a href="https://projecteuler.net/problem=740" title="Saturday, 26th December 2020, 01:00 pm">Secret Santa</a></td><td>178</td><td>55%</td></tr>
+<tr><td>141</td><td><a href="https://projecteuler.net/problem=141" title="Saturday, 17th February 2007, 05:00 am">Investigating progressive numbers, <i>n</i>, which are also square</a></td><td>3872</td><td>60%</td></tr>
+<tr><td>155</td><td><a href="https://projecteuler.net/problem=155" title="Saturday, 19th May 2007, 02:00 am">Counting Capacitor Circuits</a></td><td>3547</td><td>60%</td></tr>
+<tr><td>159</td><td><a href="https://projecteuler.net/problem=159" title="Saturday, 30th June 2007, 02:00 pm">Digital root sums of factorisations</a></td><td>3244</td><td>60%</td></tr>
+<tr><td>186</td><td><a href="https://projecteuler.net/problem=186" title="Saturday, 15th March 2008, 05:00 am">Connectedness of a network</a></td><td>2809</td><td>60%</td></tr>
+<tr><td>202</td><td><a href="https://projecteuler.net/problem=202" title="Saturday, 5th July 2008, 02:00 pm">Laserbeam</a></td><td>2492</td><td>60%</td></tr>
+<tr><td>249</td><td><a href="https://projecteuler.net/problem=249" title="Saturday, 13th June 2009, 05:00 am">Prime Subset Sums</a></td><td>2492</td><td>60%</td></tr>
+<tr><td>209</td><td><a href="https://projecteuler.net/problem=209" title="Friday, 19th September 2008, 06:00 pm">Circular Logic</a></td><td>2469</td><td>60%</td></tr>
+<tr><td>213</td><td><a href="https://projecteuler.net/problem=213" title="Saturday, 18th October 2008, 10:00 am">Flea Circus</a></td><td>2268</td><td>60%</td></tr>
+<tr><td>240</td><td><a href="https://projecteuler.net/problem=240" title="Friday, 10th April 2009, 10:00 pm">Top Dice</a></td><td>2140</td><td>60%</td></tr>
+<tr><td>222</td><td><a href="https://projecteuler.net/problem=222" title="Friday, 19th December 2008, 01:00 pm">Sphere Packing</a></td><td>2056</td><td>60%</td></tr>
+<tr><td>308</td><td><a href="https://projecteuler.net/problem=308" title="Saturday, 30th October 2010, 01:00 pm">An amazing Prime-generating Automaton</a></td><td>746</td><td>60%</td></tr>
+<tr><td>302</td><td><a href="https://projecteuler.net/problem=302" title="Saturday, 18th September 2010, 07:00 pm">Strong Achilles Numbers</a></td><td>723</td><td>60%</td></tr>
+<tr><td>279</td><td><a href="https://projecteuler.net/problem=279" title="Saturday, 20th February 2010, 09:00 am">Triangles with integral sides and an integral angle </a></td><td>702</td><td>60%</td></tr>
+<tr><td>298</td><td><a href="https://projecteuler.net/problem=298" title="Friday, 25th June 2010, 09:00 pm">Selective Amnesia</a></td><td>639</td><td>60%</td></tr>
+<tr><td>299</td><td><a href="https://projecteuler.net/problem=299" title="Saturday, 3rd July 2010, 01:00 am">Three similar triangles</a></td><td>602</td><td>60%</td></tr>
+<tr><td>305</td><td><a href="https://projecteuler.net/problem=305" title="Sunday, 10th October 2010, 04:00 am">Reflexive Position</a></td><td>587</td><td>60%</td></tr>
+<tr><td>356</td><td><a href="https://projecteuler.net/problem=356" title="Saturday, 29th October 2011, 01:00 pm">Largest roots of cubic polynomials</a></td><td>570</td><td>60%</td></tr>
+<tr><td>296</td><td><a href="https://projecteuler.net/problem=296" title="Friday, 11th June 2010, 01:00 pm">Angular Bisector and Tangent</a></td><td>557</td><td>60%</td></tr>
+<tr><td>390</td><td><a href="https://projecteuler.net/problem=390" title="Saturday, 23rd June 2012, 08:00 pm">Triangles with non rational sides and integral area</a></td><td>552</td><td>60%</td></tr>
+<tr><td>380</td><td><a href="https://projecteuler.net/problem=380" title="Saturday, 14th April 2012, 02:00 pm">Amazing Mazes!</a></td><td>481</td><td>60%</td></tr>
+<tr><td>350</td><td><a href="https://projecteuler.net/problem=350" title="Saturday, 10th September 2011, 07:00 pm">Constraining the least greatest and the greatest least</a></td><td>451</td><td>60%</td></tr>
+<tr><td>369</td><td><a href="https://projecteuler.net/problem=369" title="Sunday, 29th January 2012, 04:00 am">Badugi</a></td><td>451</td><td>60%</td></tr>
+<tr><td>530</td><td><a href="https://projecteuler.net/problem=530" title="Sunday, 18th October 2015, 01:00 am">GCD of Divisors</a></td><td>426</td><td>60%</td></tr>
+<tr><td>420</td><td><a href="https://projecteuler.net/problem=420" title="Sunday, 24th March 2013, 01:00 am">2x2 positive integer matrix</a></td><td>419</td><td>60%</td></tr>
+<tr><td>372</td><td><a href="https://projecteuler.net/problem=372" title="Saturday, 18th February 2012, 01:00 pm">Pencils of rays</a></td><td>390</td><td>60%</td></tr>
+<tr><td>424</td><td><a href="https://projecteuler.net/problem=424" title="Saturday, 20th April 2013, 01:00 pm">Kakuro</a></td><td>387</td><td>60%</td></tr>
+<tr><td>442</td><td><a href="https://projecteuler.net/problem=442" title="Saturday, 26th October 2013, 01:00 pm">Eleven-free integers</a></td><td>379</td><td>60%</td></tr>
+<tr><td>440</td><td><a href="https://projecteuler.net/problem=440" title="Sunday, 13th October 2013, 07:00 am">GCD and Tiling</a></td><td>357</td><td>60%</td></tr>
+<tr><td>446</td><td><a href="https://projecteuler.net/problem=446" title="Saturday, 16th November 2013, 10:00 pm">Retractions B</a></td><td>342</td><td>60%</td></tr>
+<tr><td>492</td><td><a href="https://projecteuler.net/problem=492" title="Saturday, 6th December 2014, 01:00 pm">Exploding sequence</a></td><td>332</td><td>60%</td></tr>
+<tr><td>550</td><td><a href="https://projecteuler.net/problem=550" title="Saturday, 5th March 2016, 01:00 pm">Divisor game</a></td><td>324</td><td>60%</td></tr>
+<tr><td>382</td><td><a href="https://projecteuler.net/problem=382" title="Saturday, 28th April 2012, 08:00 pm">Generating polygons</a></td><td>319</td><td>60%</td></tr>
+<tr><td>460</td><td><a href="https://projecteuler.net/problem=460" title="Saturday, 22nd February 2014, 01:00 pm">An ant on the move</a></td><td>313</td><td>60%</td></tr>
+<tr><td>404</td><td><a href="https://projecteuler.net/problem=404" title="Sunday, 2nd December 2012, 01:00 am">Crisscross Ellipses</a></td><td>312</td><td>60%</td></tr>
+<tr><td>611</td><td><a href="https://projecteuler.net/problem=611" title="Saturday, 7th October 2017, 10:00 pm">Hallway of square steps</a></td><td>312</td><td>60%</td></tr>
+<tr><td>462</td><td><a href="https://projecteuler.net/problem=462" title="Saturday, 8th March 2014, 07:00 pm">Permutation of 3-smooth numbers</a></td><td>302</td><td>60%</td></tr>
+<tr><td>503</td><td><a href="https://projecteuler.net/problem=503" title="Saturday, 14th February 2015, 07:00 pm">Compromise or persist</a></td><td>298</td><td>60%</td></tr>
+<tr><td>464</td><td><a href="https://projecteuler.net/problem=464" title="Sunday, 23rd March 2014, 01:00 am">Möbius function and intervals</a></td><td>294</td><td>60%</td></tr>
+<tr><td>444</td><td><a href="https://projecteuler.net/problem=444" title="Saturday, 9th November 2013, 07:00 pm">The Roundtable Lottery</a></td><td>293</td><td>60%</td></tr>
+<tr><td>513</td><td><a href="https://projecteuler.net/problem=513" title="Sunday, 26th April 2015, 01:00 am">Integral median</a></td><td>293</td><td>60%</td></tr>
+<tr><td>526</td><td><a href="https://projecteuler.net/problem=526" title="Saturday, 19th September 2015, 01:00 pm">Largest prime factors of consecutive numbers</a></td><td>288</td><td>60%</td></tr>
+<tr><td>599</td><td><a href="https://projecteuler.net/problem=599" title="Saturday, 15th April 2017, 01:00 pm">Distinct Colourings of a Rubik's Cube</a></td><td>287</td><td>60%</td></tr>
+<tr><td>535</td><td><a href="https://projecteuler.net/problem=535" title="Saturday, 21st November 2015, 04:00 pm">Fractal Sequence</a></td><td>274</td><td>60%</td></tr>
+<tr><td>536</td><td><a href="https://projecteuler.net/problem=536" title="Saturday, 28th November 2015, 07:00 pm">Modulo power identity </a></td><td>270</td><td>60%</td></tr>
+<tr><td>592</td><td><a href="https://projecteuler.net/problem=592" title="Saturday, 25th February 2017, 04:00 pm">Factorial trailing digits 2</a></td><td>267</td><td>60%</td></tr>
+<tr><td>414</td><td><a href="https://projecteuler.net/problem=414" title="Sunday, 10th February 2013, 07:00 am">Kaprekar constant</a></td><td>266</td><td>60%</td></tr>
+<tr><td>528</td><td><a href="https://projecteuler.net/problem=528" title="Saturday, 3rd October 2015, 07:00 pm">Constrained Sums</a></td><td>259</td><td>60%</td></tr>
+<tr><td>472</td><td><a href="https://projecteuler.net/problem=472" title="Sunday, 18th May 2014, 01:00 am">Comfortable Distance II</a></td><td>253</td><td>60%</td></tr>
+<tr><td>590</td><td><a href="https://projecteuler.net/problem=590" title="Sunday, 12th February 2017, 10:00 am">Sets with a given Least Common Multiple</a></td><td>248</td><td>60%</td></tr>
+<tr><td>627</td><td><a href="https://projecteuler.net/problem=627" title="Saturday, 19th May 2018, 10:00 pm">Counting products</a></td><td>227</td><td>60%</td></tr>
+<tr><td>564</td><td><a href="https://projecteuler.net/problem=564" title="Sunday, 12th June 2016, 07:00 am">Maximal polygons</a></td><td>223</td><td>60%</td></tr>
+<tr><td>689</td><td><a href="https://projecteuler.net/problem=689" title="Sunday, 17th November 2019, 04:00 am">Binary Series</a></td><td>214</td><td>60%</td></tr>
+<tr><td>690</td><td><a href="https://projecteuler.net/problem=690" title="Sunday, 24th November 2019, 07:00 am">Tom and Jerry</a></td><td>179</td><td>60%</td></tr>
+<tr><td>747</td><td><a href="https://projecteuler.net/problem=747" title="Sunday, 14th February 2021, 10:00 am">Triangular Pizza</a></td><td>177</td><td>60%</td></tr>
+<tr><td>715</td><td><a href="https://projecteuler.net/problem=715" title="Sunday, 10th May 2020, 08:00 am">Sextuplet Norms</a></td><td>174</td><td>60%</td></tr>
+<tr><td>767</td><td><a href="https://projecteuler.net/problem=767" title="Sunday, 10th October 2021, 02:00 am">Window into a Matrix II</a></td><td>144</td><td>60%</td></tr>
+<tr><td>147</td><td><a href="https://projecteuler.net/problem=147" title="Saturday, 31st March 2007, 06:00 am">Rectangles in cross-hatched grids</a></td><td>2982</td><td>65%</td></tr>
+<tr><td>171</td><td><a href="https://projecteuler.net/problem=171" title="Saturday, 8th December 2007, 05:00 am">Finding numbers for which the sum of the squares of the digits is a square</a></td><td>2725</td><td>65%</td></tr>
+<tr><td>143</td><td><a href="https://projecteuler.net/problem=143" title="Friday, 2nd March 2007, 09:00 pm">Investigating the Torricelli point of a triangle</a></td><td>2696</td><td>65%</td></tr>
+<tr><td>157</td><td><a href="https://projecteuler.net/problem=157" title="Friday, 1st June 2007, 06:00 pm">Solving the diophantine equation <sup>1</sup>/<sub><var>a</var></sub>+<sup>1</sup>/<sub><var>b</var></sub>= <sup><var>p</var></sup>/<sub>10<sup><var>n</var></sup></sub> </a></td><td>2667</td><td>65%</td></tr>
+<tr><td>152</td><td><a href="https://projecteuler.net/problem=152" title="Friday, 27th April 2007, 02:00 pm">Writing 1/2 as a sum of inverse squares</a></td><td>2644</td><td>65%</td></tr>
+<tr><td>168</td><td><a href="https://projecteuler.net/problem=168" title="Friday, 16th November 2007, 05:00 pm">Number Rotations</a></td><td>2617</td><td>65%</td></tr>
+<tr><td>154</td><td><a href="https://projecteuler.net/problem=154" title="Saturday, 12th May 2007, 06:00 am">Exploring Pascal's pyramid</a></td><td>2597</td><td>65%</td></tr>
+<tr><td>153</td><td><a href="https://projecteuler.net/problem=153" title="Saturday, 5th May 2007, 10:00 am">Investigating Gaussian Integers</a></td><td>2572</td><td>65%</td></tr>
+<tr><td>165</td><td><a href="https://projecteuler.net/problem=165" title="Saturday, 27th October 2007, 10:00 am">Intersections</a></td><td>2541</td><td>65%</td></tr>
+<tr><td>200</td><td><a href="https://projecteuler.net/problem=200" title="Saturday, 28th June 2008, 10:00 am">Find the 200th prime-proof sqube containing the contiguous sub-string "200"</a></td><td>2315</td><td>65%</td></tr>
+<tr><td>201</td><td><a href="https://projecteuler.net/problem=201" title="Saturday, 5th July 2008, 02:00 pm">Subsets with a unique sum</a></td><td>2264</td><td>65%</td></tr>
+<tr><td>227</td><td><a href="https://projecteuler.net/problem=227" title="Saturday, 10th January 2009, 01:00 am">The Chase</a></td><td>2066</td><td>65%</td></tr>
+<tr><td>239</td><td><a href="https://projecteuler.net/problem=239" title="Friday, 3rd April 2009, 05:00 pm">Twenty-two Foolish Primes</a></td><td>1796</td><td>65%</td></tr>
+<tr><td>232</td><td><a href="https://projecteuler.net/problem=232" title="Friday, 13th February 2009, 05:00 pm">The Race</a></td><td>1732</td><td>65%</td></tr>
+<tr><td>226</td><td><a href="https://projecteuler.net/problem=226" title="Friday, 2nd January 2009, 09:00 pm">A Scoop of Blancmange</a></td><td>1705</td><td>65%</td></tr>
+<tr><td>266</td><td><a href="https://projecteuler.net/problem=266" title="Saturday, 28th November 2009, 01:00 pm">Pseudo Square Root</a></td><td>1644</td><td>65%</td></tr>
+<tr><td>247</td><td><a href="https://projecteuler.net/problem=247" title="Friday, 29th May 2009, 09:00 pm">Squares under a hyperbola</a></td><td>1436</td><td>65%</td></tr>
+<tr><td>274</td><td><a href="https://projecteuler.net/problem=274" title="Friday, 15th January 2010, 01:00 pm">Divisibility Multipliers</a></td><td>1379</td><td>65%</td></tr>
+<tr><td>280</td><td><a href="https://projecteuler.net/problem=280" title="Saturday, 27th February 2010, 01:00 pm">Ant and seeds</a></td><td>998</td><td>65%</td></tr>
+<tr><td>292</td><td><a href="https://projecteuler.net/problem=292" title="Saturday, 15th May 2010, 01:00 am">Pythagorean Polygons</a></td><td>553</td><td>65%</td></tr>
+<tr><td>370</td><td><a href="https://projecteuler.net/problem=370" title="Sunday, 5th February 2012, 07:00 am">Geometric triangles</a></td><td>502</td><td>65%</td></tr>
+<tr><td>335</td><td><a href="https://projecteuler.net/problem=335" title="Saturday, 23rd April 2011, 04:00 pm">Gathering the beans</a></td><td>490</td><td>65%</td></tr>
+<tr><td>334</td><td><a href="https://projecteuler.net/problem=334" title="Saturday, 23rd April 2011, 04:00 pm">Spilling the beans</a></td><td>458</td><td>65%</td></tr>
+<tr><td>433</td><td><a href="https://projecteuler.net/problem=433" title="Saturday, 22nd June 2013, 04:00 pm">Steps in Euclid's algorithm</a></td><td>457</td><td>65%</td></tr>
+<tr><td>354</td><td><a href="https://projecteuler.net/problem=354" title="Sunday, 16th October 2011, 07:00 am">Distances in a bee's honeycomb </a></td><td>420</td><td>65%</td></tr>
+<tr><td>441</td><td><a href="https://projecteuler.net/problem=441" title="Sunday, 20th October 2013, 10:00 am">The inverse summation of coprime couples</a></td><td>344</td><td>65%</td></tr>
+<tr><td>384</td><td><a href="https://projecteuler.net/problem=384" title="Sunday, 13th May 2012, 02:00 am">Rudin-Shapiro sequence</a></td><td>318</td><td>65%</td></tr>
+<tr><td>466</td><td><a href="https://projecteuler.net/problem=466" title="Sunday, 6th April 2014, 07:00 am">Distinct terms in a multiplication table</a></td><td>302</td><td>65%</td></tr>
+<tr><td>477</td><td><a href="https://projecteuler.net/problem=477" title="Saturday, 23rd August 2014, 04:00 pm">Number Sequence Game</a></td><td>246</td><td>65%</td></tr>
+<tr><td>558</td><td><a href="https://projecteuler.net/problem=558" title="Saturday, 30th April 2016, 01:00 pm">Irrational base</a></td><td>234</td><td>65%</td></tr>
+<tr><td>470</td><td><a href="https://projecteuler.net/problem=470" title="Saturday, 3rd May 2014, 07:00 pm">Super Ramvok</a></td><td>218</td><td>65%</td></tr>
+<tr><td>542</td><td><a href="https://projecteuler.net/problem=542" title="Saturday, 9th January 2016, 01:00 pm">Geometric Progression with Maximum Sum</a></td><td>217</td><td>65%</td></tr>
+<tr><td>735</td><td><a href="https://projecteuler.net/problem=735" title="Saturday, 21st November 2020, 10:00 pm">Divisors of 2n^2</a></td><td>190</td><td>65%</td></tr>
+<tr><td>631</td><td><a href="https://projecteuler.net/problem=631" title="Sunday, 15th July 2018, 10:00 am">Constrained Permutations</a></td><td>189</td><td>65%</td></tr>
+<tr><td>685</td><td><a href="https://projecteuler.net/problem=685" title="Saturday, 19th October 2019, 04:00 pm">Inverse Digit Sum II</a></td><td>187</td><td>65%</td></tr>
+<tr><td>680</td><td><a href="https://projecteuler.net/problem=680" title="Sunday, 22nd September 2019, 04:00 am">Yarra Gnisrever</a></td><td>177</td><td>65%</td></tr>
+<tr><td>664</td><td><a href="https://projecteuler.net/problem=664" title="Sunday, 7th April 2019, 07:00 am">An infinite game</a></td><td>175</td><td>65%</td></tr>
+<tr><td>723</td><td><a href="https://projecteuler.net/problem=723" title="Sunday, 5th July 2020, 08:00 am">Pythagorean Quadrilaterals</a></td><td>168</td><td>65%</td></tr>
+<tr><td>765</td><td><a href="https://projecteuler.net/problem=765" title="Saturday, 18th September 2021, 08:00 pm">Trillionaire</a></td><td>161</td><td>65%</td></tr>
+<tr><td>730</td><td><a href="https://projecteuler.net/problem=730" title="Sunday, 18th October 2020, 08:00 am">Shifted Pythagorean Triples</a></td><td>159</td><td>65%</td></tr>
+<tr><td>729</td><td><a href="https://projecteuler.net/problem=729" title="Sunday, 11th October 2020, 05:00 am">Range of periodic sequence</a></td><td>147</td><td>65%</td></tr>
+<tr><td>156</td><td><a href="https://projecteuler.net/problem=156" title="Friday, 25th May 2007, 10:00 pm">Counting Digits</a></td><td>2383</td><td>70%</td></tr>
+<tr><td>233</td><td><a href="https://projecteuler.net/problem=233" title="Friday, 20th February 2009, 09:00 pm">Lattice points on a circle</a></td><td>2254</td><td>70%</td></tr>
+<tr><td>161</td><td><a href="https://projecteuler.net/problem=161" title="Friday, 21st September 2007, 06:00 pm">Triominoes</a></td><td>2078</td><td>70%</td></tr>
+<tr><td>189</td><td><a href="https://projecteuler.net/problem=189" title="Friday, 11th April 2008, 05:00 pm">Tri-colouring a triangular grid</a></td><td>2009</td><td>70%</td></tr>
+<tr><td>170</td><td><a href="https://projecteuler.net/problem=170" title="Saturday, 1st December 2007, 01:00 am">Find the largest 0 to 9 pandigital that can be formed by concatenating products</a></td><td>1941</td><td>70%</td></tr>
+<tr><td>181</td><td><a href="https://projecteuler.net/problem=181" title="Saturday, 9th February 2008, 01:00 pm">Investigating in how many ways objects of two different colours can be grouped</a></td><td>1935</td><td>70%</td></tr>
+<tr><td>199</td><td><a href="https://projecteuler.net/problem=199" title="Saturday, 21st June 2008, 06:00 am">Iterative Circle Packing</a></td><td>1905</td><td>70%</td></tr>
+<tr><td>176</td><td><a href="https://projecteuler.net/problem=176" title="Friday, 4th January 2008, 05:00 pm">Right-angled triangles that share a cathetus</a></td><td>1852</td><td>70%</td></tr>
+<tr><td>163</td><td><a href="https://projecteuler.net/problem=163" title="Saturday, 13th October 2007, 02:00 am">Cross-hatched triangles</a></td><td>1767</td><td>70%</td></tr>
+<tr><td>175</td><td><a href="https://projecteuler.net/problem=175" title="Friday, 28th December 2007, 01:00 pm">Fractions involving the number of different ways a number can be expressed as a sum of powers of 2</a></td><td>1740</td><td>70%</td></tr>
+<tr><td>208</td><td><a href="https://projecteuler.net/problem=208" title="Friday, 12th September 2008, 02:00 pm">Robot Walks</a></td><td>1714</td><td>70%</td></tr>
+<tr><td>210</td><td><a href="https://projecteuler.net/problem=210" title="Friday, 26th September 2008, 10:00 pm">Obtuse Angled Triangles</a></td><td>1668</td><td>70%</td></tr>
+<tr><td>258</td><td><a href="https://projecteuler.net/problem=258" title="Saturday, 3rd October 2009, 09:00 am">A lagged Fibonacci sequence</a></td><td>1559</td><td>70%</td></tr>
+<tr><td>237</td><td><a href="https://projecteuler.net/problem=237" title="Saturday, 21st March 2009, 01:00 pm">Tours on a 4 x n playing board</a></td><td>1529</td><td>70%</td></tr>
+<tr><td>223</td><td><a href="https://projecteuler.net/problem=223" title="Friday, 26th December 2008, 05:00 pm">Almost right-angled triangles I</a></td><td>1473</td><td>70%</td></tr>
+<tr><td>217</td><td><a href="https://projecteuler.net/problem=217" title="Friday, 14th November 2008, 09:00 pm">Balanced Numbers</a></td><td>1471</td><td>70%</td></tr>
+<tr><td>259</td><td><a href="https://projecteuler.net/problem=259" title="Saturday, 10th October 2009, 01:00 pm">Reachable Numbers</a></td><td>1457</td><td>70%</td></tr>
+<tr><td>219</td><td><a href="https://projecteuler.net/problem=219" title="Saturday, 29th November 2008, 05:00 am">Skew-cost coding</a></td><td>1443</td><td>70%</td></tr>
+<tr><td>229</td><td><a href="https://projecteuler.net/problem=229" title="Saturday, 24th January 2009, 09:00 am">Four Representations using Squares</a></td><td>1440</td><td>70%</td></tr>
+<tr><td>268</td><td><a href="https://projecteuler.net/problem=268" title="Friday, 11th December 2009, 05:00 pm">Counting numbers with at least four distinct prime factors less than 100</a></td><td>1413</td><td>70%</td></tr>
+<tr><td>251</td><td><a href="https://projecteuler.net/problem=251" title="Saturday, 20th June 2009, 09:00 am">Cardano Triplets</a></td><td>1351</td><td>70%</td></tr>
+<tr><td>212</td><td><a href="https://projecteuler.net/problem=212" title="Saturday, 11th October 2008, 06:00 am">Combined Volume of Cuboids</a></td><td>1341</td><td>70%</td></tr>
+<tr><td>228</td><td><a href="https://projecteuler.net/problem=228" title="Saturday, 17th January 2009, 05:00 am">Minkowski Sums</a></td><td>1292</td><td>70%</td></tr>
+<tr><td>244</td><td><a href="https://projecteuler.net/problem=244" title="Saturday, 9th May 2009, 02:00 pm">Sliders</a></td><td>1284</td><td>70%</td></tr>
+<tr><td>260</td><td><a href="https://projecteuler.net/problem=260" title="Friday, 16th October 2009, 01:00 pm">Stone Game</a></td><td>1277</td><td>70%</td></tr>
+<tr><td>282</td><td><a href="https://projecteuler.net/problem=282" title="Friday, 12th March 2010, 05:00 pm">The Ackermann function</a></td><td>970</td><td>70%</td></tr>
+<tr><td>339</td><td><a href="https://projecteuler.net/problem=339" title="Sunday, 22nd May 2011, 04:00 am">Peredur fab Efrawg</a></td><td>530</td><td>70%</td></tr>
+<tr><td>355</td><td><a href="https://projecteuler.net/problem=355" title="Sunday, 23rd October 2011, 10:00 am">Maximal coprime subset</a></td><td>511</td><td>70%</td></tr>
+<tr><td>330</td><td><a href="https://projecteuler.net/problem=330" title="Sunday, 27th March 2011, 05:00 am">Euler's Number</a></td><td>502</td><td>70%</td></tr>
+<tr><td>337</td><td><a href="https://projecteuler.net/problem=337" title="Saturday, 7th May 2011, 10:00 pm">Totient Stairstep Sequences</a></td><td>498</td><td>70%</td></tr>
+<tr><td>432</td><td><a href="https://projecteuler.net/problem=432" title="Saturday, 15th June 2013, 01:00 pm">Totient sum</a></td><td>462</td><td>70%</td></tr>
+<tr><td>362</td><td><a href="https://projecteuler.net/problem=362" title="Sunday, 11th December 2011, 07:00 am">Squarefree factors</a></td><td>456</td><td>70%</td></tr>
+<tr><td>322</td><td><a href="https://projecteuler.net/problem=322" title="Sunday, 30th January 2011, 04:00 am">Binomial coefficients divisible by 10</a></td><td>446</td><td>70%</td></tr>
+<tr><td>311</td><td><a href="https://projecteuler.net/problem=311" title="Saturday, 20th November 2010, 10:00 pm">Biclinic Integral Quadrilaterals</a></td><td>419</td><td>70%</td></tr>
+<tr><td>385</td><td><a href="https://projecteuler.net/problem=385" title="Sunday, 20th May 2012, 05:00 am">Ellipses inside triangles</a></td><td>271</td><td>70%</td></tr>
+<tr><td>410</td><td><a href="https://projecteuler.net/problem=410" title="Saturday, 12th January 2013, 07:00 pm">Circle and tangent line</a></td><td>269</td><td>70%</td></tr>
+<tr><td>376</td><td><a href="https://projecteuler.net/problem=376" title="Sunday, 18th March 2012, 01:00 am">Nontransitive sets of dice</a></td><td>264</td><td>70%</td></tr>
+<tr><td>397</td><td><a href="https://projecteuler.net/problem=397" title="Sunday, 7th October 2012, 05:00 am">Triangle on parabola</a></td><td>259</td><td>70%</td></tr>
+<tr><td>468</td><td><a href="https://projecteuler.net/problem=468" title="Saturday, 19th April 2014, 01:00 pm">Smooth divisors of binomial coefficients</a></td><td>254</td><td>70%</td></tr>
+<tr><td>486</td><td><a href="https://projecteuler.net/problem=486" title="Saturday, 25th October 2014, 07:00 pm">Palindrome-containing strings</a></td><td>241</td><td>70%</td></tr>
+<tr><td>639</td><td><a href="https://projecteuler.net/problem=639" title="Sunday, 21st October 2018, 07:00 am">Summing a multiplicative function</a></td><td>237</td><td>70%</td></tr>
+<tr><td>481</td><td><a href="https://projecteuler.net/problem=481" title="Sunday, 21st September 2014, 04:00 am">Chef Showdown</a></td><td>227</td><td>70%</td></tr>
+<tr><td>626</td><td><a href="https://projecteuler.net/problem=626" title="Saturday, 5th May 2018, 07:00 pm">Counting Binary Matrices</a></td><td>213</td><td>70%</td></tr>
+<tr><td>547</td><td><a href="https://projecteuler.net/problem=547" title="Sunday, 14th February 2016, 04:00 am">Distance of random points within hollow square laminae</a></td><td>204</td><td>70%</td></tr>
+<tr><td>695</td><td><a href="https://projecteuler.net/problem=695" title="Saturday, 28th December 2019, 10:00 pm">Random Rectangles</a></td><td>189</td><td>70%</td></tr>
+<tr><td>652</td><td><a href="https://projecteuler.net/problem=652" title="Saturday, 19th January 2019, 10:00 pm">Distinct values of a proto-logarithmic function</a></td><td>158</td><td>70%</td></tr>
+<tr><td>651</td><td><a href="https://projecteuler.net/problem=651" title="Saturday, 12th January 2019, 07:00 pm">Patterned Cylinders</a></td><td>157</td><td>70%</td></tr>
+<tr><td>167</td><td><a href="https://projecteuler.net/problem=167" title="Friday, 9th November 2007, 01:00 pm">Investigating Ulam sequences</a></td><td>1647</td><td>75%</td></tr>
+<tr><td>184</td><td><a href="https://projecteuler.net/problem=184" title="Friday, 29th February 2008, 09:00 pm">Triangles containing the origin</a></td><td>1597</td><td>75%</td></tr>
+<tr><td>180</td><td><a href="https://projecteuler.net/problem=180" title="Saturday, 2nd February 2008, 09:00 am">Rational zeros of a function of three variables</a></td><td>1536</td><td>75%</td></tr>
+<tr><td>194</td><td><a href="https://projecteuler.net/problem=194" title="Saturday, 17th May 2008, 10:00 am">Coloured Configurations</a></td><td>1358</td><td>75%</td></tr>
+<tr><td>195</td><td><a href="https://projecteuler.net/problem=195" title="Friday, 23rd May 2008, 02:00 pm">Inscribed circles of triangles with one angle of 60 degrees</a></td><td>1351</td><td>75%</td></tr>
+<tr><td>224</td><td><a href="https://projecteuler.net/problem=224" title="Friday, 26th December 2008, 05:00 pm">Almost right-angled triangles II</a></td><td>1191</td><td>75%</td></tr>
+<tr><td>276</td><td><a href="https://projecteuler.net/problem=276" title="Friday, 29th January 2010, 09:00 pm">Primitive Triangles</a></td><td>1048</td><td>75%</td></tr>
+<tr><td>242</td><td><a href="https://projecteuler.net/problem=242" title="Saturday, 25th April 2009, 06:00 am">Odd Triplets</a></td><td>1020</td><td>75%</td></tr>
+<tr><td>263</td><td><a href="https://projecteuler.net/problem=263" title="Saturday, 7th November 2009, 01:00 am">An engineers' dream come true</a></td><td>994</td><td>75%</td></tr>
+<tr><td>253</td><td><a href="https://projecteuler.net/problem=253" title="Friday, 28th August 2009, 01:00 pm">Tidying up</a></td><td>987</td><td>75%</td></tr>
+<tr><td>254</td><td><a href="https://projecteuler.net/problem=254" title="Friday, 4th September 2009, 05:00 pm">Sums of Digit Factorials</a></td><td>936</td><td>75%</td></tr>
+<tr><td>238</td><td><a href="https://projecteuler.net/problem=238" title="Sunday, 29th March 2009, 03:00 pm">Infinite string tour</a></td><td>930</td><td>75%</td></tr>
+<tr><td>255</td><td><a href="https://projecteuler.net/problem=255" title="Friday, 11th September 2009, 09:00 pm">Rounded Square Roots</a></td><td>834</td><td>75%</td></tr>
+<tr><td>283</td><td><a href="https://projecteuler.net/problem=283" title="Friday, 19th March 2010, 09:00 pm">Integer sided triangles for which the  area/perimeter ratio is integral</a></td><td>618</td><td>75%</td></tr>
+<tr><td>295</td><td><a href="https://projecteuler.net/problem=295" title="Saturday, 5th June 2010, 01:00 pm">Lenticular holes</a></td><td>440</td><td>75%</td></tr>
+<tr><td>413</td><td><a href="https://projecteuler.net/problem=413" title="Sunday, 3rd February 2013, 04:00 am">One-child Numbers</a></td><td>368</td><td>75%</td></tr>
+<tr><td>434</td><td><a href="https://projecteuler.net/problem=434" title="Saturday, 29th June 2013, 07:00 pm">Rigid graphs</a></td><td>327</td><td>75%</td></tr>
+<tr><td>373</td><td><a href="https://projecteuler.net/problem=373" title="Saturday, 25th February 2012, 04:00 pm">Circumscribed Circles</a></td><td>324</td><td>75%</td></tr>
+<tr><td>560</td><td><a href="https://projecteuler.net/problem=560" title="Saturday, 14th May 2016, 07:00 pm">Coprime Nim</a></td><td>290</td><td>75%</td></tr>
+<tr><td>391</td><td><a href="https://projecteuler.net/problem=391" title="Saturday, 30th June 2012, 11:00 pm">Hopping Game</a></td><td>263</td><td>75%</td></tr>
+<tr><td>422</td><td><a href="https://projecteuler.net/problem=422" title="Sunday, 7th April 2013, 07:00 am">Sequence of points on a hyperbola</a></td><td>262</td><td>75%</td></tr>
+<tr><td>426</td><td><a href="https://projecteuler.net/problem=426" title="Saturday, 4th May 2013, 07:00 pm">Box-ball system</a></td><td>248</td><td>75%</td></tr>
+<tr><td>580</td><td><a href="https://projecteuler.net/problem=580" title="Sunday, 4th December 2016, 04:00 am">Squarefree Hilbert numbers</a></td><td>230</td><td>75%</td></tr>
+<tr><td>586</td><td><a href="https://projecteuler.net/problem=586" title="Saturday, 14th January 2017, 10:00 pm">Binary Quadratic Form</a></td><td>220</td><td>75%</td></tr>
+<tr><td>524</td><td><a href="https://projecteuler.net/problem=524" title="Sunday, 6th September 2015, 07:00 am">First Sort II</a></td><td>212</td><td>75%</td></tr>
+<tr><td>471</td><td><a href="https://projecteuler.net/problem=471" title="Saturday, 10th May 2014, 10:00 pm">Triangle inscribed in ellipse</a></td><td>202</td><td>75%</td></tr>
+<tr><td>645</td><td><a href="https://projecteuler.net/problem=645" title="Sunday, 2nd December 2018, 01:00 am">Every Day is a Holiday</a></td><td>197</td><td>75%</td></tr>
+<tr><td>562</td><td><a href="https://projecteuler.net/problem=562" title="Sunday, 29th May 2016, 01:00 am">Maximal perimeter</a></td><td>182</td><td>75%</td></tr>
+<tr><td>674</td><td><a href="https://projecteuler.net/problem=674" title="Sunday, 9th June 2019, 10:00 am">Solving \mathcal{I}-equations</a></td><td>164</td><td>75%</td></tr>
+<tr><td>742</td><td><a href="https://projecteuler.net/problem=742" title="Saturday, 9th January 2021, 07:00 pm">Minimum area of a convex grid polygon</a></td><td>151</td><td>75%</td></tr>
+<tr><td>777</td><td><a href="https://projecteuler.net/problem=777" title="Sunday, 19th December 2021, 07:00 am">Lissajous Curves</a></td><td>84</td><td>75%</td></tr>
+<tr><td>177</td><td><a href="https://projecteuler.net/problem=177" title="Friday, 11th January 2008, 09:00 pm">Integer angled Quadrilaterals</a></td><td>1243</td><td>80%</td></tr>
+<tr><td>198</td><td><a href="https://projecteuler.net/problem=198" title="Saturday, 14th June 2008, 02:00 am">Ambiguous Numbers</a></td><td>1084</td><td>80%</td></tr>
+<tr><td>272</td><td><a href="https://projecteuler.net/problem=272" title="Saturday, 2nd January 2010, 05:00 am">Modular Cubes, part 2</a></td><td>939</td><td>80%</td></tr>
+<tr><td>241</td><td><a href="https://projecteuler.net/problem=241" title="Saturday, 18th April 2009, 02:00 am">Perfection Quotients</a></td><td>910</td><td>80%</td></tr>
+<tr><td>236</td><td><a href="https://projecteuler.net/problem=236" title="Saturday, 14th March 2009, 09:00 am">Luxury Hampers</a></td><td>908</td><td>80%</td></tr>
+<tr><td>252</td><td><a href="https://projecteuler.net/problem=252" title="Saturday, 27th June 2009, 01:00 pm">Convex Holes</a></td><td>811</td><td>80%</td></tr>
+<tr><td>245</td><td><a href="https://projecteuler.net/problem=245" title="Friday, 15th May 2009, 02:00 pm">Coresilience</a></td><td>791</td><td>80%</td></tr>
+<tr><td>246</td><td><a href="https://projecteuler.net/problem=246" title="Friday, 22nd May 2009, 05:00 pm">Tangents to an ellipse</a></td><td>776</td><td>80%</td></tr>
+<tr><td>256</td><td><a href="https://projecteuler.net/problem=256" title="Saturday, 19th September 2009, 01:00 am">Tatami-Free Rooms</a></td><td>709</td><td>80%</td></tr>
+<tr><td>262</td><td><a href="https://projecteuler.net/problem=262" title="Friday, 30th October 2009, 09:00 pm">Mountain Range</a></td><td>695</td><td>80%</td></tr>
+<tr><td>269</td><td><a href="https://projecteuler.net/problem=269" title="Saturday, 19th December 2009, 09:00 am">Polynomials with at least one integer root</a></td><td>666</td><td>80%</td></tr>
+<tr><td>270</td><td><a href="https://projecteuler.net/problem=270" title="Saturday, 26th December 2009, 01:00 am">Cutting Squares</a></td><td>626</td><td>80%</td></tr>
+<tr><td>325</td><td><a href="https://projecteuler.net/problem=325" title="Saturday, 19th February 2011, 01:00 pm">Stone Game II</a></td><td>577</td><td>80%</td></tr>
+<tr><td>314</td><td><a href="https://projecteuler.net/problem=314" title="Sunday, 12th December 2010, 07:00 am">The Mouse on the Moon</a></td><td>490</td><td>80%</td></tr>
+<tr><td>448</td><td><a href="https://projecteuler.net/problem=448" title="Sunday, 24th November 2013, 01:00 am">Average least common multiple</a></td><td>322</td><td>80%</td></tr>
+<tr><td>608</td><td><a href="https://projecteuler.net/problem=608" title="Saturday, 17th June 2017, 04:00 pm">Divisor Sums</a></td><td>288</td><td>80%</td></tr>
+<tr><td>416</td><td><a href="https://projecteuler.net/problem=416" title="Saturday, 23rd February 2013, 01:00 pm">A frog's trip</a></td><td>287</td><td>80%</td></tr>
+<tr><td>488</td><td><a href="https://projecteuler.net/problem=488" title="Sunday, 9th November 2014, 01:00 am">Unbalanced Nim</a></td><td>226</td><td>80%</td></tr>
+<tr><td>554</td><td><a href="https://projecteuler.net/problem=554" title="Sunday, 3rd April 2016, 01:00 am">Centaurs on a chess board</a></td><td>219</td><td>80%</td></tr>
+<tr><td>578</td><td><a href="https://projecteuler.net/problem=578" title="Saturday, 19th November 2016, 10:00 pm">Integers with decreasing prime powers</a></td><td>215</td><td>80%</td></tr>
+<tr><td>573</td><td><a href="https://projecteuler.net/problem=573" title="Sunday, 9th October 2016, 07:00 am">Unfair race</a></td><td>188</td><td>80%</td></tr>
+<tr><td>667</td><td><a href="https://projecteuler.net/problem=667" title="Saturday, 27th April 2019, 04:00 pm">Moving Pentagon</a></td><td>187</td><td>80%</td></tr>
+<tr><td>699</td><td><a href="https://projecteuler.net/problem=699" title="Sunday, 26th January 2020, 10:00 am">Triffle Numbers</a></td><td>174</td><td>80%</td></tr>
+<tr><td>620</td><td><a href="https://projecteuler.net/problem=620" title="Sunday, 11th February 2018, 01:00 am">Planetary Gears</a></td><td>164</td><td>80%</td></tr>
+<tr><td>671</td><td><a href="https://projecteuler.net/problem=671" title="Sunday, 19th May 2019, 01:00 am">Colouring a Loop</a></td><td>155</td><td>80%</td></tr>
+<tr><td>741</td><td><a href="https://projecteuler.net/problem=741" title="Saturday, 2nd January 2021, 04:00 pm">Binary grid colouring</a></td><td>140</td><td>80%</td></tr>
+<tr><td>771</td><td><a href="https://projecteuler.net/problem=771" title="Saturday, 6th November 2021, 01:00 pm">Pseudo Geometric Sequences</a></td><td>101</td><td>80%</td></tr>
+<tr><td>261</td><td><a href="https://projecteuler.net/problem=261" title="Friday, 23rd October 2009, 05:00 pm">Pivotal Square Sums</a></td><td>667</td><td>85%</td></tr>
+<tr><td>257</td><td><a href="https://projecteuler.net/problem=257" title="Saturday, 26th September 2009, 05:00 am">Angular Bisectors</a></td><td>664</td><td>85%</td></tr>
+<tr><td>275</td><td><a href="https://projecteuler.net/problem=275" title="Friday, 22nd January 2010, 05:00 pm">Balanced Sculptures</a></td><td>579</td><td>85%</td></tr>
+<tr><td>264</td><td><a href="https://projecteuler.net/problem=264" title="Saturday, 14th November 2009, 05:00 am">Triangle Centres</a></td><td>541</td><td>85%</td></tr>
+<tr><td>522</td><td><a href="https://projecteuler.net/problem=522" title="Sunday, 28th June 2015, 04:00 am">Hilbert's Blackout</a></td><td>254</td><td>85%</td></tr>
+<tr><td>529</td><td><a href="https://projecteuler.net/problem=529" title="Saturday, 10th October 2015, 10:00 pm">10-substrings</a></td><td>233</td><td>85%</td></tr>
+<tr><td>556</td><td><a href="https://projecteuler.net/problem=556" title="Sunday, 17th April 2016, 07:00 am">Squarefree Gaussian Integers</a></td><td>231</td><td>85%</td></tr>
+<tr><td>546</td><td><a href="https://projecteuler.net/problem=546" title="Sunday, 7th February 2016, 01:00 am">The Floor's Revenge</a></td><td>222</td><td>85%</td></tr>
+<tr><td>465</td><td><a href="https://projecteuler.net/problem=465" title="Sunday, 30th March 2014, 05:00 am">Polar polygons</a></td><td>205</td><td>85%</td></tr>
+<tr><td>553</td><td><a href="https://projecteuler.net/problem=553" title="Saturday, 26th March 2016, 10:00 pm">Power sets of power sets</a></td><td>202</td><td>85%</td></tr>
+<tr><td>482</td><td><a href="https://projecteuler.net/problem=482" title="Sunday, 28th September 2014, 07:00 am">The incenter of a triangle</a></td><td>197</td><td>85%</td></tr>
+<tr><td>594</td><td><a href="https://projecteuler.net/problem=594" title="Saturday, 11th March 2017, 10:00 pm">Rhombus Tilings</a></td><td>174</td><td>85%</td></tr>
+<tr><td>768</td><td><a href="https://projecteuler.net/problem=768" title="Sunday, 17th October 2021, 05:00 am">Chandelier</a></td><td>88</td><td>85%</td></tr>
+<tr><td>774</td><td><a href="https://projecteuler.net/problem=774" title="Saturday, 27th November 2021, 10:00 pm">Conjunctive Sequences</a></td><td>84</td><td>85%</td></tr>
+<tr><td>289</td><td><a href="https://projecteuler.net/problem=289" title="Friday, 23rd April 2010, 01:00 pm">Eulerian Cycles</a></td><td>471</td><td>90%</td></tr>
+<tr><td>319</td><td><a href="https://projecteuler.net/problem=319" title="Saturday, 8th January 2011, 07:00 pm">Bounded Sequences</a></td><td>386</td><td>90%</td></tr>
+<tr><td>361</td><td><a href="https://projecteuler.net/problem=361" title="Sunday, 4th December 2011, 04:00 am">Subsequence of Thue-Morse sequence</a></td><td>289</td><td>90%</td></tr>
+<tr><td>428</td><td><a href="https://projecteuler.net/problem=428" title="Sunday, 19th May 2013, 01:00 am">Necklace of circles</a></td><td>233</td><td>90%</td></tr>
+<tr><td>544</td><td><a href="https://projecteuler.net/problem=544" title="Saturday, 23rd January 2016, 07:00 pm">Chromatic Conundrum</a></td><td>230</td><td>90%</td></tr>
+<tr><td>508</td><td><a href="https://projecteuler.net/problem=508" title="Sunday, 22nd March 2015, 10:00 am">Integers in base i-1</a></td><td>222</td><td>90%</td></tr>
+<tr><td>507</td><td><a href="https://projecteuler.net/problem=507" title="Sunday, 15th March 2015, 07:00 am">Shortest Lattice Vector</a></td><td>204</td><td>90%</td></tr>
+<tr><td>514</td><td><a href="https://projecteuler.net/problem=514" title="Sunday, 3rd May 2015, 04:00 am">Geoboard Shapes</a></td><td>201</td><td>90%</td></tr>
+<tr><td>505</td><td><a href="https://projecteuler.net/problem=505" title="Sunday, 1st March 2015, 01:00 am">Bidirectional Recurrence</a></td><td>199</td><td>90%</td></tr>
+<tr><td>541</td><td><a href="https://projecteuler.net/problem=541" title="Sunday, 3rd January 2016, 10:00 am">Divisibility of Harmonic Number Denominators</a></td><td>198</td><td>90%</td></tr>
+<tr><td>636</td><td><a href="https://projecteuler.net/problem=636" title="Saturday, 8th September 2018, 10:00 pm">Restricted Factorisations</a></td><td>174</td><td>90%</td></tr>
+<tr><td>677</td><td><a href="https://projecteuler.net/problem=677" title="Saturday, 29th June 2019, 07:00 pm">Coloured Graphs</a></td><td>164</td><td>90%</td></tr>
+<tr><td>644</td><td><a href="https://projecteuler.net/problem=644" title="Saturday, 24th November 2018, 10:00 pm">Squares on the line</a></td><td>147</td><td>90%</td></tr>
+<tr><td>761</td><td><a href="https://projecteuler.net/problem=761" title="Sunday, 11th July 2021, 05:00 am">Runner and Swimmer</a></td><td>117</td><td>90%</td></tr>
+<tr><td>769</td><td><a href="https://projecteuler.net/problem=769" title="Sunday, 24th October 2021, 07:00 am">Binary Quadratic Form II</a></td><td>97</td><td>90%</td></tr>
+<tr><td>328</td><td><a href="https://projecteuler.net/problem=328" title="Saturday, 12th March 2011, 10:00 pm">Lowest-cost Search</a></td><td>404</td><td>95%</td></tr>
+<tr><td>338</td><td><a href="https://projecteuler.net/problem=338" title="Sunday, 15th May 2011, 01:00 am">Cutting Rectangular Grid Paper</a></td><td>317</td><td>95%</td></tr>
+<tr><td>427</td><td><a href="https://projecteuler.net/problem=427" title="Saturday, 11th May 2013, 10:00 pm">n-sequences</a></td><td>296</td><td>95%</td></tr>
+<tr><td>490</td><td><a href="https://projecteuler.net/problem=490" title="Sunday, 23rd November 2014, 07:00 am">Jumping frog</a></td><td>282</td><td>95%</td></tr>
+<tr><td>447</td><td><a href="https://projecteuler.net/problem=447" title="Saturday, 16th November 2013, 10:00 pm">Retractions C</a></td><td>280</td><td>95%</td></tr>
+<tr><td>438</td><td><a href="https://projecteuler.net/problem=438" title="Sunday, 29th September 2013, 01:00 am">Integer part of polynomial equation's solutions</a></td><td>264</td><td>95%</td></tr>
+<tr><td>453</td><td><a href="https://projecteuler.net/problem=453" title="Saturday, 4th January 2014, 04:00 pm">Lattice Quadrilaterals</a></td><td>207</td><td>95%</td></tr>
+<tr><td>589</td><td><a href="https://projecteuler.net/problem=589" title="Sunday, 5th February 2017, 07:00 am">Poohsticks Marathon</a></td><td>189</td><td>95%</td></tr>
+<tr><td>591</td><td><a href="https://projecteuler.net/problem=591" title="Saturday, 18th February 2017, 01:00 pm">Best Approximations by Quadratic Integers</a></td><td>179</td><td>95%</td></tr>
+<tr><td>702</td><td><a href="https://projecteuler.net/problem=702" title="Saturday, 15th February 2020, 07:00 pm">Jumping Flea</a></td><td>142</td><td>95%</td></tr>
+<tr><td>331</td><td><a href="https://projecteuler.net/problem=331" title="Sunday, 3rd April 2011, 08:00 am">Cross flips</a></td><td>381</td><td>100%</td></tr>
+<tr><td>439</td><td><a href="https://projecteuler.net/problem=439" title="Sunday, 6th October 2013, 04:00 am">Sum of sum of divisors</a></td><td>372</td><td>100%</td></tr>
+<tr><td>484</td><td><a href="https://projecteuler.net/problem=484" title="Saturday, 11th October 2014, 01:00 pm">Arithmetic Derivative</a></td><td>320</td><td>100%</td></tr>
+<tr><td>499</td><td><a href="https://projecteuler.net/problem=499" title="Sunday, 25th January 2015, 10:00 am">St. Petersburg Lottery</a></td><td>307</td><td>100%</td></tr>
+<tr><td>344</td><td><a href="https://projecteuler.net/problem=344" title="Saturday, 25th June 2011, 07:00 pm">Silver dollar game</a></td><td>302</td><td>100%</td></tr>
+<tr><td>415</td><td><a href="https://projecteuler.net/problem=415" title="Sunday, 17th February 2013, 10:00 am">Titanic sets</a></td><td>295</td><td>100%</td></tr>
+<tr><td>502</td><td><a href="https://projecteuler.net/problem=502" title="Saturday, 7th February 2015, 04:00 pm">Counting Castles</a></td><td>278</td><td>100%</td></tr>
+<tr><td>495</td><td><a href="https://projecteuler.net/problem=495" title="Saturday, 27th December 2014, 10:00 pm">Writing n as the product of k distinct positive integers</a></td><td>269</td><td>100%</td></tr>
+<tr><td>459</td><td><a href="https://projecteuler.net/problem=459" title="Sunday, 16th February 2014, 10:00 am">Flipping game</a></td><td>223</td><td>100%</td></tr>
+<tr><td>489</td><td><a href="https://projecteuler.net/problem=489" title="Sunday, 16th November 2014, 04:00 am">Common factors between two sequences</a></td><td>220</td><td>100%</td></tr>
+<tr><td>483</td><td><a href="https://projecteuler.net/problem=483" title="Sunday, 5th October 2014, 10:00 am">Repeated permutation</a></td><td>208</td><td>100%</td></tr>
+<tr><td>494</td><td><a href="https://projecteuler.net/problem=494" title="Saturday, 20th December 2014, 07:00 pm">Collatz prefix families</a></td><td>205</td><td>100%</td></tr>
+<tr><td>584</td><td><a href="https://projecteuler.net/problem=584" title="Saturday, 31st December 2016, 04:00 pm">Birthday Problem Revisited</a></td><td>192</td><td>100%</td></tr>
+<tr><td>450</td><td><a href="https://projecteuler.net/problem=450" title="Sunday, 15th December 2013, 07:00 am">Hypocycloid and Lattice points</a></td><td>182</td><td>100%</td></tr>
+<tr><td>559</td><td><a href="https://projecteuler.net/problem=559" title="Saturday, 7th May 2016, 04:00 pm">Permuted Matrices</a></td><td>179</td><td>100%</td></tr>
+<tr><td>478</td><td><a href="https://projecteuler.net/problem=478" title="Saturday, 30th August 2014, 07:00 pm">Mixtures</a></td><td>174</td><td>100%</td></tr>
+<tr><td>585</td><td><a href="https://projecteuler.net/problem=585" title="Saturday, 7th January 2017, 07:00 pm">Nested square roots</a></td><td>164</td><td>100%</td></tr>
+<tr><td>597</td><td><a href="https://projecteuler.net/problem=597" title="Sunday, 2nd April 2017, 07:00 am">Torpids</a></td><td>161</td><td>100%</td></tr>
+<tr><td>696</td><td><a href="https://projecteuler.net/problem=696" title="Sunday, 5th January 2020, 01:00 am">Mahjong</a></td><td>161</td><td>100%</td></tr>
+<tr><td>566</td><td><a href="https://projecteuler.net/problem=566" title="Saturday, 25th June 2016, 01:00 pm">Cake Icing Puzzle</a></td><td>149</td><td>100%</td></tr>
+<tr><td>579</td><td><a href="https://projecteuler.net/problem=579" title="Sunday, 27th November 2016, 01:00 am">Lattice points in lattice cubes</a></td><td>149</td><td>100%</td></tr>
+<tr><td>763</td><td><a href="https://projecteuler.net/problem=763" title="Saturday, 4th September 2021, 02:00 pm">Amoebas in a 3D grid</a></td><td>53</td><td>100%</td></tr>
+<tr><td>780</td><td><a href="https://projecteuler.net/problem=780" title="Saturday, 8th January 2022, 04:00 pm">Toriangulations</a></td><td>41</td><td>100%</td></tr>
+<tr><td>788</td><td><a href="https://projecteuler.net/problem=788" title="Saturday, 5th March 2022, 04:00 pm">Dominating Numbers</a></td><td>319</td><td>-</td></tr>
+<tr><td>787</td><td><a href="https://projecteuler.net/problem=787" title="Saturday, 26th February 2022, 01:00 pm">Bézout's Game</a></td><td>137</td><td>-</td></tr>
+<tr><td>783</td><td><a href="https://projecteuler.net/problem=783" title="Sunday, 30th January 2022, 01:00 am">Urns</a></td><td>135</td><td>-</td></tr>
+<tr><td>785</td><td><a href="https://projecteuler.net/problem=785" title="Sunday, 13th February 2022, 07:00 am">Symmetric Diophantine equation</a></td><td>132</td><td>-</td></tr>
+<tr><td>789</td><td><a href="https://projecteuler.net/problem=789" title="Saturday, 12th March 2022, 07:00 pm">Minimal pairing modulo p</a></td><td>111</td><td>-</td></tr>
+<tr><td>782</td><td><a href="https://projecteuler.net/problem=782" title="Saturday, 22nd January 2022, 10:00 pm">Distinct Rows and Columns</a></td><td>108</td><td>-</td></tr>
+<tr><td>790</td><td><a href="https://projecteuler.net/problem=790" title="Saturday, 19th March 2022, 10:00 pm">Clock Grid</a></td><td>108</td><td>-</td></tr>
+<tr><td>781</td><td><a href="https://projecteuler.net/problem=781" title="Saturday, 15th January 2022, 07:00 pm">Feynman Diagrams</a></td><td>65</td><td>-</td></tr>
+<tr><td>786</td><td><a href="https://projecteuler.net/problem=786" title="Sunday, 20th February 2022, 10:00 am">Billiard</a></td><td>61</td><td>-</td></tr>
+</table></body></html>
