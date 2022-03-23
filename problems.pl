@@ -200,7 +200,7 @@ foreach my $problem (@problems) {
                            map { sprintf("<td>%s</td>", $_) } (
                                              $problem->{id},
                                              sprintf(
-                                                     q{<a href="https://projecteuler.net/problem=%s" title="%s">%s</a>},
+                                                     q{<a href="https://projecteuler.net/problem=%s" title="%s" target="_blank" rel="noopener noreferrer">%s</a>},
                                                      $problem->{id}, $problem->{published}, $problem->{title}
                                                     ),
                                              $problem->{solve_count},
