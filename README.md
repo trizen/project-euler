@@ -408,6 +408,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [745 Sum of Squares](./Sidef/745%20Sum%20of%20Squares.sf)
     * [745 Sum of Squares (v2)](./Sidef/745%20Sum%20of%20Squares%20--%20v2.sf)
     * [748 Upside down Diophantine equation](./Sidef/748%20Upside%20down%20Diophantine%20equation.sf)
+    * [751 Concatenation Coincidence](./Sidef/751%20Concatenation%20Coincidence.sf)
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
 * Yet to solve

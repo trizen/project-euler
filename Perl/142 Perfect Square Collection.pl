@@ -9,6 +9,13 @@
 
 # Find the smallest x + y + z with integers x > y > z > 0 such that x + y, x − y, x + z, x − z, y + z, y − z are all perfect squares.
 
+# Solution based on the following idea:
+#   (x+y)*(x-y) = x^2 - y^2
+
+# Since x+y and x-y must be squares, their product is also a square: (x+y)*(x-y) = n^2
+# Iterate over n=1..Inf and find the (x,y) solutions to the equation n^2 = x^2 - y^2.
+# Then, for each solution (x,y), try to find z, iterating from k=1 to sqrt(y), setting z = y - k^2 and checking if it satisfies the conditions.
+
 # Runtime: ~11 minutes.
 
 use 5.020;

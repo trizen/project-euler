@@ -1,0 +1,37 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 23 March 2022
+# https://github.com/trizen
+
+# Concatenation Coincidence
+# https://projecteuler.net/problem=751
+
+# Runtime: 0.533s
+
+func b(n, t=nil) is cached {
+    return t if (n == 1)
+    floor(b(n-1, t)) * (b(n-1, t) - floor(b(n-1, t)) + 1)
+}
+
+assert_eq(
+    1..10 -> map {|n| b(n, 2.956938891377988).floor }
+    3..12 -> map { .fib }
+)
+
+define PREC = 24
+
+func f(t) {
+    var terms = (1..PREC -> map {|n| b(n, t).floor })
+    var lead = terms.shift
+    var x = Num(sprintf("%s.%s", lead, terms.join).first(PREC+2))
+    say "#{t} <=> #{x}"
+    return x
+}
+
+var theta = bsearch_le(10**PREC, 10**(PREC+1), {|k|
+    var t = 2+(k / 10**(k.ilog10+1))
+    t <=> f(t)
+})
+
+say ("Answer: ", Num("2.#{theta}").round(-PREC))

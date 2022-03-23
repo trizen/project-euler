@@ -25,7 +25,7 @@ use constant {
               USE_TOR_PROXY      => 0,    # true to use the Tor proxy (127.0.0.1:9050)
              };
 
-my $cache_dir = 'cache';
+my $cache_dir = '.cache';
 
 if (not -d $cache_dir) {
     mkdir($cache_dir);
