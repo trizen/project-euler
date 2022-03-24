@@ -418,6 +418,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
     * [79 Passcode derivation](./Sidef/79%20Passcode%20derivation.sf)
+    * [79 Passcode derivation (v2)](./Sidef/79%20Passcode%20derivation%20--%20v2.sf)
 * Trashed attempts
     * [345 Matrix Sum](./Trashed%20attempts/345%20Matrix%20Sum.pl)
     * [345 Matrix Sum](./Trashed%20attempts/345%20Matrix%20Sum.sf)

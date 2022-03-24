@@ -1,0 +1,56 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 24 March 2022
+# https://github.com/trizen
+
+# Passcode derivation
+# https://projecteuler.net/problem=79
+
+# Solution using the longest chain in a tree.
+
+# Assumes that each passcode has no repeated digits and that there is only a solution.
+
+# Runtime: 0.251s
+
+func make_tree(matrix) {
+
+    var tree = Hash()
+
+    for entry in (matrix) {
+        var ref = tree
+        for d in (entry) {
+            ref = (ref{d} := Hash())
+        }
+    }
+
+    return tree
+}
+
+func longest_chain(tree, hash = tree, seen = Set()) {
+
+    var candidates = []
+
+    if (seen.has(hash.refaddr)) {
+        return ''
+    }
+
+    hash.keys.sort.each {|key|
+        if (tree.has(key)) {
+            candidates << key+__FUNC__(tree, tree{key}, seen+hash.refaddr)
+        }
+        else {
+            candidates << key+__FUNC__(tree, hash{key}, seen+hash.refaddr)
+        }
+    }
+
+    candidates.max_by { .len }
+}
+
+var passcodes = %w[
+  319 680 180 690 129 620 762 689 318 368 710 720 629 168 160 716
+  731 736 729 316 769 290 719 389 162 289 718 790 890 362 760 380 728
+].map{ .chars }
+
+var tree = make_tree(passcodes)
+say longest_chain(tree)
