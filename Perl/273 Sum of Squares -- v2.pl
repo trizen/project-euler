@@ -12,7 +12,6 @@ use warnings;
 
 use ntheory qw(:all);
 use experimental qw(signatures);
-use Memoize qw(memoize);
 
 my @primes = grep { $_ % 4 == 1 } @{primes(150)};
 my $plen   = scalar(@primes);

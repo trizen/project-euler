@@ -182,6 +182,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [304 Primonacci](./Perl/304%20Primonacci.pl)
     * [320 Factorials divisible by a huge integer](./Perl/320%20Factorials%20divisible%20by%20a%20huge%20integer.pl)
     * [343 Fractional Sequences](./Perl/343%20Fractional%20Sequences.pl)
+    * [345 Matrix Sum](./Perl/345%20Matrix%20Sum.pl)
     * [346 Strong Repunits](./Perl/346%20Strong%20Repunits.pl)
     * [347 Largest integer divisible by two primes](./Perl/347%20Largest%20integer%20divisible%20by%20two%20primes.pl)
     * [348 Sum of a square and a cube](./Perl/348%20Sum%20of%20a%20square%20and%20a%20cube.pl)
@@ -390,6 +391,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [235 An Arithmetic Geometric sequence](./Sidef/235%20An%20Arithmetic%20Geometric%20sequence.sf)
     * [277 A Modified Collatz sequence](./Sidef/277%20A%20Modified%20Collatz%20sequence.sf)
     * [293 Pseudo-Fortunate Numbers](./Sidef/293%20Pseudo-Fortunate%20Numbers.sf)
+    * [345 Matrix Sum](./Sidef/345%20Matrix%20Sum.sf)
     * [387 Harshad Numbers](./Sidef/387%20Harshad%20Numbers.sf)
     * [463 A weird recurrence relation](./Sidef/463%20A%20weird%20recurrence%20relation.sf)
     * [479 Roots on the Rise](./Sidef/479%20Roots%20on%20the%20Rise.sf)
@@ -415,6 +417,12 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
     * [79 Passcode derivation](./Sidef/79%20Passcode%20derivation.sf)
+* Trashed attempts
+    * [345 Matrix Sum](./Trashed%20attempts/345%20Matrix%20Sum.pl)
+    * [345 Matrix Sum](./Trashed%20attempts/345%20Matrix%20Sum.sf)
+    * [345 Matrix Sum (v2)](./Trashed%20attempts/345%20Matrix%20Sum%20--%20v2.sf)
+    * [345 Matrix Sum (v3)](./Trashed%20attempts/345%20Matrix%20Sum%20--%20v3.sf)
+    * [345 Matrix Sum (v4)](./Trashed%20attempts/345%20Matrix%20Sum%20--%20v4.sf)
 * Yet to solve
     * [693 Finite Sequence Generator](./Yet%20to%20solve/693%20Finite%20Sequence%20Generator.sf)
     * [748 Upside down Diophantine equation](./Yet%20to%20solve/748%20Upside%20down%20Diophantine%20equation.pl)
