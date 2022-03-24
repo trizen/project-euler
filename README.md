@@ -183,6 +183,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [320 Factorials divisible by a huge integer](./Perl/320%20Factorials%20divisible%20by%20a%20huge%20integer.pl)
     * [343 Fractional Sequences](./Perl/343%20Fractional%20Sequences.pl)
     * [345 Matrix Sum](./Perl/345%20Matrix%20Sum.pl)
+    * [345 Matrix Sum (v2)](./Perl/345%20Matrix%20Sum%20--%20v2.pl)
     * [346 Strong Repunits](./Perl/346%20Strong%20Repunits.pl)
     * [347 Largest integer divisible by two primes](./Perl/347%20Largest%20integer%20divisible%20by%20two%20primes.pl)
     * [348 Sum of a square and a cube](./Perl/348%20Sum%20of%20a%20square%20and%20a%20cube.pl)
