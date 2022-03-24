@@ -7,9 +7,9 @@
 # Concatenation Coincidence
 # https://projecteuler.net/problem=751
 
-# Runtime: 0.533s
+# Runtime: 0.454s
 
-func b(n, t=nil) is cached {
+func b(n, t) is cached {
     return t if (n == 1)
     floor(b(n-1, t)) * (b(n-1, t) - floor(b(n-1, t)) + 1)
 }
@@ -19,19 +19,28 @@ assert_eq(
     3..12 -> map { .fib }
 )
 
-define PREC = 24
+define PREC   = 24
+define PREFIX = 2
 
 func f(t) {
-    var terms = (1..PREC -> map {|n| b(n, t).floor })
+    var terms = []
+
+    1..PREC -> lazy.while {|k|
+        terms << b(k, t).floor
+        terms.join.len <= PREC
+    }
+
     var lead = terms.shift
-    var x = Num(sprintf("%s.%s", lead, terms.join).first(PREC+2))
+    var dec = Num(terms.join)
+
+    var x = lead+(dec / 10**(dec.ilog10+1))
     say "#{t} <=> #{x}"
     return x
 }
 
 var theta = bsearch_le(10**PREC, 10**(PREC+1), {|k|
-    var t = 2+(k / 10**(k.ilog10+1))
+    var t = PREFIX+(k / 10**(k.ilog10+1))
     t <=> f(t)
 })
 
-say ("Answer: ", Num("2.#{theta}").round(-PREC))
+say ("Answer: ", Num("#{PREFIX}.#{theta}").round(-PREC))

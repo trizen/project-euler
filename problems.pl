@@ -23,6 +23,7 @@ my $problems_count = 790;
 use constant {
               GET_PROBLEMS_COUNT => 0,    # true to retrieve the current number of problems
               USE_TOR_PROXY      => 0,    # true to use the Tor proxy (127.0.0.1:9050)
+              UNCACHE_RECENT     => 0,    # remove recent problems from cache
              };
 
 my $cache_dir = '.cache';
@@ -113,6 +114,13 @@ foreach my $id (1 .. $problems_count) {
     my $difficulty;
     if ($content =~ m{\bDifficulty rating: (\d+)%}) {
         $difficulty = $1;
+    }
+    elsif (UNCACHE_RECENT) {
+        say ":: Uncaching recent problem: $id";
+        $lwp->uncache;
+    }
+    else {
+        say ":: Problem $id does not have a difficulty rating";
     }
 
     my $title;

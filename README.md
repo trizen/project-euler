@@ -262,6 +262,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [757 Stealthy Numbers (v2)](./Perl/757%20Stealthy%20Numbers%20--%20v2.pl)
     * [784 Reciprocal Pairs](./Perl/784%20Reciprocal%20Pairs.pl)
     * [784 Reciprocal Pairs (v2)](./Perl/784%20Reciprocal%20Pairs%20--%20v2.pl)
+    * [79 Passcode derivation](./Perl/79%20Passcode%20derivation.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -413,6 +414,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [751 Concatenation Coincidence](./Sidef/751%20Concatenation%20Coincidence.sf)
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
+    * [79 Passcode derivation](./Sidef/79%20Passcode%20derivation.sf)
 * Yet to solve
     * [693 Finite Sequence Generator](./Yet%20to%20solve/693%20Finite%20Sequence%20Generator.sf)
     * [748 Upside down Diophantine equation](./Yet%20to%20solve/748%20Upside%20down%20Diophantine%20equation.pl)

@@ -1,0 +1,52 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 24 March 2022
+# https://github.com/trizen
+
+# Passcode derivation
+# https://projecteuler.net/problem=79
+
+# General recursive solution.
+
+# Runtime: 5.897s
+
+func find_candidates(callback, a, b, re_a = Regex(a.join('.*?')), re_b = Regex(b.join('.*?')), a_i=0, b_i=0, solution=[]) {
+
+    if ((solution.join =~ re_a) && (solution.join =~ re_b)) {
+        callback(solution)
+        return solution
+    }
+
+    if ((a_i <= a.end) && (b_i <= b.end) && (a[a_i] == b[b_i])) {
+        __FUNC__(callback, a, b, re_a, re_b, a_i+1, b_i+1, [solution..., a[a_i]])
+    }
+
+    __FUNC__(callback, a, b, re_a, re_b, a_i+1, b_i, [solution..., a[a_i]]) if (a_i <= a.end);
+    __FUNC__(callback, a, b, re_a, re_b, a_i, b_i+1, [solution..., b[b_i]]) if (b_i <= b.end);
+}
+
+var passcodes = %n[319 680 180 690 129 620 762 689 318 368 710 720 629 168 160 716 731 736 729 316 769 290 719 389 162 289 718 790 890 362 760 380 728].sort
+var candidates = [passcodes.shift.digits.flip]
+
+while (passcodes) {
+
+    var b = passcodes.shift.digits.flip
+
+    var new_candidates = []
+
+    for a in (candidates) {
+        find_candidates({|solution|
+            new_candidates << solution
+        }, a, b)
+    }
+
+    new_candidates.uniq!
+
+    var best = new_candidates.min_by { .len }
+    candidates = new_candidates.grep { .len == best.len }
+
+    say "Found: #{candidates.len} candidates (best: #{best.join})"
+}
+
+say "Final candidates: #{candidates.map{.join}}"

@@ -7,7 +7,7 @@
 # Concatenation Coincidence
 # https://projecteuler.net/problem=751
 
-# Runtime: 0.214s
+# Runtime: 0.182s
 
 use 5.020;
 use warnings;
@@ -30,10 +30,17 @@ my $PREC   = 24;
 my $PREFIX = 2;
 
 sub f ($t) {
-    my @terms = map { floor(b($_, $t)) } 1 .. $PREC;
-    my $lead  = shift(@terms);
-    my $x     = Math::AnyNum->new(substr(sprintf("%s.%s", $lead, join('', @terms)), 0, $PREC + 2));
-    say sprintf("%s <=> %s", float($t), $x);
+    my @terms;
+
+    for (my $k = 1 ; length(join('', @terms)) <= $PREC ; ++$k) {
+        push @terms, floor(b($k, $t));
+    }
+
+    my $lead = shift(@terms);
+    my $dec  = Math::AnyNum->new(join('', @terms));
+
+    my $x = $lead + ($dec / 10**(ilog10($dec) + 1));
+    say sprintf("%s <=> %s", float($t), float($x));
     return $x;
 }
 
