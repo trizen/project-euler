@@ -21,6 +21,8 @@
 # where:
 #   W(n) = Sum_{p <= n} p.
 
+# Runtime: ~5 minutes.
+
 use 5.020;
 use integer;
 use ntheory qw(:all);
