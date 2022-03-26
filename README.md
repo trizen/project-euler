@@ -95,6 +95,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [077 Prime summations (unoptimized)](./Perl/077%20Prime%20summations%20--%20unoptimized.pl)
     * [078 Coin partitions](./Perl/078%20Coin%20partitions.pl)
     * [078 Coin partitions (rec)](./Perl/078%20Coin%20partitions%20--%20rec.pl)
+    * [079 Passcode derivation](./Perl/079%20Passcode%20derivation.pl)
     * [081 Path sum two ways](./Perl/081%20Path%20sum%20two%20ways.pl)
     * [082 Path sum three ways](./Perl/082%20Path%20sum%20three%20ways.pl)
     * [083 Path sum four ways](./Perl/083%20Path%20sum%20four%20ways.pl)
@@ -264,7 +265,6 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [757 Stealthy Numbers (v2)](./Perl/757%20Stealthy%20Numbers%20--%20v2.pl)
     * [784 Reciprocal Pairs](./Perl/784%20Reciprocal%20Pairs.pl)
     * [784 Reciprocal Pairs (v2)](./Perl/784%20Reciprocal%20Pairs%20--%20v2.pl)
-    * [79 Passcode derivation](./Perl/79%20Passcode%20derivation.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -350,6 +350,8 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [072 Counting fractions (v2)](./Sidef/072%20Counting%20fractions%20--%20v2.sf)
     * [076 Counting summations](./Sidef/076%20Counting%20summations.sf)
     * [077 Prime summations](./Sidef/077%20Prime%20summations.sf)
+    * [079 Passcode derivation](./Sidef/079%20Passcode%20derivation.sf)
+    * [079 Passcode derivation (v2)](./Sidef/079%20Passcode%20derivation%20--%20v2.sf)
     * [080 Square root digital expansion](./Sidef/080%20Square%20root%20digital%20expansion.sf)
     * [081 Path sum two ways](./Sidef/081%20Path%20sum%20two%20ways.sf)
     * [082 Path sum three ways](./Sidef/082%20Path%20sum%20three%20ways.sf)
@@ -417,8 +419,6 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [751 Concatenation Coincidence](./Sidef/751%20Concatenation%20Coincidence.sf)
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
-    * [79 Passcode derivation](./Sidef/79%20Passcode%20derivation.sf)
-    * [79 Passcode derivation (v2)](./Sidef/79%20Passcode%20derivation%20--%20v2.sf)
 * Trashed attempts
     * [345 Matrix Sum](./Trashed%20attempts/345%20Matrix%20Sum.pl)
     * [345 Matrix Sum](./Trashed%20attempts/345%20Matrix%20Sum.sf)
@@ -432,6 +432,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [754 Product of Gauss Factorials](./Yet%20to%20solve/754%20Product%20of%20Gauss%20Factorials.sf)
     * [754 Product of Gauss Factorials (v2)](./Yet%20to%20solve/754%20Product%20of%20Gauss%20Factorials%20--%20v2.pl)
     * [754 Product of Gauss Factorials (v2)](./Yet%20to%20solve/754%20Product%20of%20Gauss%20Factorials%20--%20v2.sf)
+    * [755 Not Zeckendorf](./Yet%20to%20solve/755%20Not%20Zeckendorf.sf)
     * [760 Sum over Bitwise Operators](./Yet%20to%20solve/760%20Sum%20over%20Bitwise%20Operators.sf)
     * [764 Asymmetric Diophantine Equation - difference of squares](./Yet%20to%20solve/764%20Asymmetric%20Diophantine%20Equation%20-%20difference%20of%20squares.pl)
     * [764 Asymmetric Diophantine Equation - pythagorean triples](./Yet%20to%20solve/764%20Asymmetric%20Diophantine%20Equation%20-%20pythagorean%20triples.pl)
