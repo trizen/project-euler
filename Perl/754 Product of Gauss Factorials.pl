@@ -14,7 +14,7 @@
 
 # Runtime: ~25 minutes.
 
-use 5.014;
+use 5.020;
 use strict;
 use warnings;
 

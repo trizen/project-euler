@@ -259,6 +259,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [751 Concatenation Coincidence](./Perl/751%20Concatenation%20Coincidence.pl)
     * [752 Powers of 1 + sqrt(7)](./Perl/752%20Powers%20of%201%20+%20sqrt(7).pl)
     * [754 Product of Gauss Factorials](./Perl/754%20Product%20of%20Gauss%20Factorials.pl)
+    * [754 Product of Gauss Factorials (v2)](./Perl/754%20Product%20of%20Gauss%20Factorials%20--%20v2.pl)
     * [757 Stealthy Numbers (v2)](./Perl/757%20Stealthy%20Numbers%20--%20v2.pl)
     * [784 Reciprocal Pairs (v2)](./Perl/784%20Reciprocal%20Pairs%20--%20v2.pl)
 * Raku
