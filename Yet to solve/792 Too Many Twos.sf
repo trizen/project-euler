@@ -1,0 +1,98 @@
+#!/usr/bin/ruby
+
+# Too Many Twos
+# https://projecteuler.net/problem=792
+
+# See also:
+#   https://oeis.org/A059304
+
+func g(n) {
+    return 0 if (n < 0)
+    return 1 if (n == 0)
+    __FUNC__(n-1)*(8 - 4/n)
+}
+
+func Sg(n) {
+    return 1 if (n == 0)
+    return g(n)+g(0) if (n == 1)
+    return g(n)+g(1)+g(0) if (n == 2)
+    return g(n)+g(2)+g(1)+g(0) if (n == 3)
+    #__FUNC__(n-1) + g(n)
+
+    #assert_eq((8 - 4/n), g(n)/g(n-1))
+    #assert_eq((8 - 4/(n-1)), g(n-1)/g(n-2))
+
+    (g(n)/g(n-1) * __FUNC__(n-1)) - ((n-2) * __FUNC__(n-2))
+}
+
+#~ say 10.of(g).acc
+#~ say 10.of(Sg)
+
+#say 10.of {|n| g(n) / g(n-1) }
+#say 10.of {|n| g(n+1) / g(n) }
+
+func S2(n) {
+    sum(1..n, {|k|
+        3 * (-2)**k * binomial(2*k, k)
+    })
+}
+
+func f(n) {
+    return 4/3 if (n == 0)
+    (-1)**n * (2**n * (2*n)!) / ((n!)**2)
+}
+
+func S(N) {
+    sum(1..N, {|n|
+        #(-1)**n * (2**n * (2*n)!) / ((n!)**2)
+        f(n)
+    })
+}
+
+func f2(n) {
+    return 1 if (n == 0)
+    __FUNC__(n-1) * (8 - 4/n)
+}
+
+func S4(n) {
+    return  4  if (n == 0)
+    #return f(1) if (n == 1)
+    #return f(1) if (n == 2)
+    #n*__FUNC__(n-1) - (n - 1)*__FUNC__(n-2)
+    __FUNC__(n-1) + 3*f(n)
+}
+
+func u5(n) {
+
+    return 2 if (n == 0)
+
+    __FUNC__(n-1).valuation(2) - ((-1)**n + (n + valuation((2*n)!, 2)) - valuation(((n!)**2), 2))
+}
+
+#~ func S(n) {
+    #~ 2**n * n * binomial(2*n, n)
+#~ }
+
+func u2(n) {
+    3*S(n) + 4 -> valuation(2)
+}
+
+func u(n) {
+    S4(n)  -> valuation(2)
+}
+
+func U(N) {
+    sum(1..N, {|n|
+        u(n**3)
+    })
+}
+
+say S(4)
+say u(4)
+say u(20)
+say U(5)
+#say U(1e4)
+
+assert_eq(u(4), 7)
+assert_eq(u(20), 24)
+assert_eq(U(5), 241)

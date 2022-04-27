@@ -37,13 +37,13 @@ sub F ($n, $m) {
         }
         else {
             $prod = mulmod(
-                mulmod($prod, powmod($k, euler_phi($k), $m), $m),
-                (
-                 reduce { mulmod($a, $b, $m) } map {
-                     powmod(divmod(factorialmod($k / $_, $m), powmod($k / $_, $k / $_, $m), $m), moebius($_), $m)
-                 } squarefree_divisors($k)
-                ),
-                $m
+                           mulmod($prod, powmod($k, euler_phi($k), $m), $m),
+                           (
+                            reduce { mulmod($a, $b, $m) }
+                              map { powmod(divmod(factorialmod($k / $_, $m), powmod($k / $_, $k / $_, $m), $m), moebius($_), $m) }
+                              squarefree_divisors($k)
+                           ),
+                           $m
                           );
         }
     }

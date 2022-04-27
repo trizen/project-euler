@@ -31,37 +31,40 @@ var text = <<'EOT'
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48
 EOT
 
-func horizontal(i, j, matrix) {
-    4.of {|k| matrix[i][j+k] }
+func horizontal(N, i, j, matrix) {
+    N.of {|k| matrix[i][j+k] }
 }
 
-func diagonal(i, j, matrix) {
-    4.of {|k| matrix[i+k][j+k] }
+func diagonal(N, i, j, matrix) {
+    N.of {|k| matrix[i+k][j+k] }
 }
 
 var matrix = Matrix(text.lines.map{ .nums }...)
 
-var reversed_matrix = matrix.horizontal_flip
+var reversed_matrix   = matrix.horizontal_flip
 var transposed_matrix = matrix.transpose
 
-var e = matrix.end
+const e = matrix.end
 
-var products = gather {
-    for i in (0..e), j in (0..e) {
+for N in (1..6) {
 
-        (j+3 <= e) || next
+    var products = gather {
+        for i in (0..e), j in (0..e) {
 
-        # Horizontal and vertical
-        take(horizontal(i, j, matrix))
-        take(horizontal(i, j, transposed_matrix))
+            (j+N < e) || next
 
-        (i+3 <= e) || next
+            # Horizontal and vertical
+            take(horizontal(N, i, j, matrix))
+            take(horizontal(N, i, j, transposed_matrix))
 
-        # Left-to-right and right-to-left diagonals
-        take(diagonal(i, j, matrix))
-        take(diagonal(i, j, reversed_matrix))
+            (i+N < e) || next
+
+            # Left-to-right and right-to-left diagonals
+            take(diagonal(N, i, j, matrix))
+            take(diagonal(N, i, j, reversed_matrix))
+        }
     }
-}
 
-var nums = products.max_by { .prod }
-say "prod(#{nums}) = #{nums.prod}"
+    var nums = products.max_by { .prod }
+    say "Largest product of #{N} adjacent elements: prod(#{nums}) = #{nums.prod}"
+}

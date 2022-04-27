@@ -17,11 +17,11 @@ func largest_palindrome_product (n) {
     for k in ((10**n - 1) `downto` 10**(n-1)) {
         var t = Num("#{k}#{Str(k).flip}")
 
-        t.divisors.grep{.len == n}.combinations(2, {|a,b|
-            if (a*b == t) {
-                return [a, b, t]
+        t.divisors.each {|d|
+            if ((d.len == n) && ((t/d).len == n)) {
+                return [d, t/d, t]
             }
-        })
+        }
     }
 }
 

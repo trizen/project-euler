@@ -18,12 +18,12 @@ require HTTP::Message;
 
 binmode(STDOUT, ':utf8');
 
-my $problems_count = 790;
+my $problems_count = 792;
 
 use constant {
-              GET_PROBLEMS_COUNT => 0,    # true to retrieve the current number of problems
+              GET_PROBLEMS_COUNT => 1,    # true to retrieve the current number of problems
               USE_TOR_PROXY      => 0,    # true to use the Tor proxy (127.0.0.1:9050)
-              UNCACHE_RECENT     => 0,    # remove recent problems from cache
+              UNCACHE_RECENT     => 1,    # remove recent problems from cache
              };
 
 my $cache_dir = '.cache';
