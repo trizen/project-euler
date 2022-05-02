@@ -262,6 +262,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [754 Product of Gauss Factorials (v2)](./Perl/754%20Product%20of%20Gauss%20Factorials%20--%20v2.pl)
     * [757 Stealthy Numbers (v2)](./Perl/757%20Stealthy%20Numbers%20--%20v2.pl)
     * [784 Reciprocal Pairs (v2)](./Perl/784%20Reciprocal%20Pairs%20--%20v2.pl)
+    * [795 Alternating GCD Sum](./Perl/795%20Alternating%20GCD%20Sum.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -431,6 +432,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [754 Product of Gauss Factorials (v3)](./Trashed%20attempts/754%20Product%20of%20Gauss%20Factorials%20--%20v3.pl)
     * [757 Stealthy Numbers](./Trashed%20attempts/757%20Stealthy%20Numbers.pl)
     * [784 Reciprocal Pairs](./Trashed%20attempts/784%20Reciprocal%20Pairs.pl)
+    * [795 Alternating GCD Sum](./Trashed%20attempts/795%20Alternating%20GCD%20Sum.sf)
 * Yet to solve
     * [693 Finite Sequence Generator](./Yet%20to%20solve/693%20Finite%20Sequence%20Generator.sf)
     * [748 Upside down Diophantine equation](./Yet%20to%20solve/748%20Upside%20down%20Diophantine%20equation.pl)

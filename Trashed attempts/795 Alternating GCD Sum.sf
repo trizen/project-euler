@@ -1,0 +1,81 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 02 May 2022
+# https://github.com/trizen
+
+# Alternating GCD Sum
+# https://projecteuler.net/problem=795
+
+# Formula:
+#   g(4) = 6
+#   g(n) = -n, if n is odd
+#   g(2^k * n) = (g2(2^k) - 2^k) * Prod_{p^e | n} g2(p^e), where n is odd
+
+# where:
+#   g2(n) = A078430(n)
+#         = Sum_{d|n} d * phi(n/d) * f(n/d)
+
+# where:
+#   f(n) = A000188(n)
+#        = Prod_{p^e | n} p^floor(e/2)
+
+# Then:
+#   G(n) = Sum_{k=1..n} g(k)
+
+# See also:
+#   https://oeis.org/A078430 -- Sum of gcd(k^2,n) for 1 <= k <= n.
+#   https://oeis.org/A199084 -- Sum_{k=1..n} (-1)^(k+1) gcd(k,n).
+#   https://oeis.org/A000188 -- Number of solutions to x^2 == 0 (mod n).
+
+# Too slow in Sidef.
+# See the Perl version.
+
+func f(n) {
+    n.factor_prod {|p,e|
+        (e == 1) ? 1 : p**(e>>1)
+    }
+}
+
+func g2(n) {
+
+    n.is_prime && return (n + (n-1))
+
+    static cache = Hash()
+    cache{n} := n.divisors.sum {|d|
+        d * phi(n/d) * f(n/d)
+    }
+}
+
+func g(n) {
+
+    return -n if n.is_odd
+    return  6 if (n == 4)
+
+    if (is_prime(n>>1)) {
+        return n-1
+    }
+
+    var k = n.valuation(2)
+    n >>= k
+
+    (g2(ipow2(k)) - ipow2(k)) * n.factor_prod {|p,e|
+        g2(p**e)
+    }
+}
+
+func G(n) {
+    sum(1..n, g)
+}
+
+assert_eq(g(2 * 47), 93);
+assert_eq(g(97),     -97);
+assert_eq(g(3 * 31), -93);
+
+assert_eq(G(100),  7111);
+assert_eq(G(200),  36268);
+assert_eq(G(300),  89075);
+assert_eq(G(1234), 2194708);
+
+say ":: Computing G(12345678)..."
+say G(12345678)
