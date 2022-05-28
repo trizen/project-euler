@@ -16,7 +16,7 @@
 #   S(n) = Sum_{k=1..n} 2^bigomega(k)
 #        = Sum_{k=0..floor(log_2(n))} 2^k * pi_k(n)
 
-# Runtime: 5.876s
+# Runtime: 0.371s (previously 5.876s)
 
 func S(n) {
     sum(0..n.ilog2, {|k|
