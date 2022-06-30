@@ -15,7 +15,6 @@ use warnings;
 use experimental qw(signatures);
 
 use ntheory qw(:all);
-use Set::Product::XS qw(product);
 
 my %cache;
 
@@ -66,7 +65,7 @@ sub sum_of_two_squares_solutions ($n) {
 
     my @square_roots;
 
-    product {
+    forsetproduct {
         push @square_roots, chinese(@_);
     } values %table;
 

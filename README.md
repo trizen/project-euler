@@ -281,6 +281,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [009 Special Pythagorean triplet](./Sidef/009%20Special%20Pythagorean%20triplet.sf)
     * [009 Special Pythagorean triplet (v2)](./Sidef/009%20Special%20Pythagorean%20triplet%20--%20v2.sf)
     * [010 Summation of primes](./Sidef/010%20Summation%20of%20primes.sf)
+    * [010 Summation of primes (v2)](./Sidef/010%20Summation%20of%20primes%20--%20v2.sf)
     * [011 Largest product in a grid](./Sidef/011%20Largest%20product%20in%20a%20grid.sf)
     * [011 Largest product in a grid (v2)](./Sidef/011%20Largest%20product%20in%20a%20grid%20--%20v2.sf)
     * [012 Highly divisible triangular number](./Sidef/012%20Highly%20divisible%20triangular%20number.sf)

@@ -16,7 +16,6 @@ use experimental qw(signatures);
 
 use Math::GMPz;
 use ntheory qw(:all);
-use Set::Product::XS qw(product);
 use Math::Prime::Util::GMP;
 
 sub sum_of_two_squares_solutions ($n) {
@@ -43,7 +42,7 @@ sub sum_of_two_squares_solutions ($n) {
 
     my @square_roots;
 
-    product {
+    forsetproduct {
         push @square_roots, Math::GMPz->new(Math::Prime::Util::GMP::chinese(@_));
     } values %table;
 

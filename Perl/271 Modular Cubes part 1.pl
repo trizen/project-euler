@@ -13,8 +13,7 @@ use 5.010;
 use strict;
 use warnings;
 
-use Set::Product::XS qw(product);
-use ntheory qw(chinese powmod factor_exp);
+use ntheory qw(chinese powmod factor_exp forsetproduct);
 
 sub modular_cubes {
     my ($n) = @_;
@@ -35,7 +34,7 @@ sub modular_cubes {
 
     my $sum = 0;
 
-    product {
+    forsetproduct {
         my $x = chinese(@_);
         if ($x > 1 and powmod($x, 3, $n) == 1) {
             $sum += $x;

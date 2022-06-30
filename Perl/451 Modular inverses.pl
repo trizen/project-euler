@@ -14,7 +14,6 @@ use strict;
 use warnings;
 
 use ntheory qw(:all);
-use Set::Product::XS qw(product);
 
 sub l {
     my ($n) = @_;
@@ -57,7 +56,7 @@ sub l {
     my $solution = 1;
 
     # Generate the solutions and pick the largest one bellow n-1
-    product {
+    forsetproduct {
         my $x = chinese(@_);
         if ($x > $solution and $x < $n - 1) {
             $solution = $x;
