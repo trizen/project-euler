@@ -1,0 +1,38 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 03 November 2022
+# https://github.com/trizen
+
+# Hybrid Integers
+# https://projecteuler.net/problem=800
+
+# Runtime: 26 seconds.
+
+func C(a, b) {
+
+    var limit = log(a)*b
+    var count = 0
+
+    for (var p = 2; true; p.next_prime!) {
+
+        var p_log = p.log
+
+        #~ var k = bsearch_inverse(p+1, limit/p_log, {|q|
+            #~ (p_log*q + q.log*p) <~> limit
+        #~ }) \\ break
+
+        var k = bsearch_le(p+1, limit/p_log, {|q|
+            (p_log*q + q.log*p) <=> limit
+        })
+
+        count += (prime_count(p+1, k) || break)
+    }
+
+    return count
+}
+
+say C(800, 1)           #=> 2
+say C(163, 165)         #=> 1000
+say C(800, 800)         #=> 10790
+say C(800800, 800800)

@@ -263,6 +263,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [757 Stealthy Numbers (v2)](./Perl/757%20Stealthy%20Numbers%20--%20v2.pl)
     * [784 Reciprocal Pairs (v2)](./Perl/784%20Reciprocal%20Pairs%20--%20v2.pl)
     * [795 Alternating GCD Sum](./Perl/795%20Alternating%20GCD%20Sum.pl)
+    * [800 Hybrid Integers](./Perl/800%20Hybrid%20Integers.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -418,6 +419,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [751 Concatenation Coincidence](./Sidef/751%20Concatenation%20Coincidence.sf)
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
+    * [800 Hybrid Integers](./Sidef/800%20Hybrid%20Integers.sf)
 * Trashed attempts
     * [111 Primes with runs](./Trashed%20attempts/111%20Primes%20with%20runs.pl)
     * [273 Sum of Squares](./Trashed%20attempts/273%20Sum%20of%20Squares.pl)
