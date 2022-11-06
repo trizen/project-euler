@@ -420,6 +420,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [752 Powers of 1 + sqrt(7)](./Sidef/752%20Powers%20of%201%20+%20sqrt(7).sf)
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
     * [800 Hybrid Integers](./Sidef/800%20Hybrid%20Integers.sf)
+    * [808 Reversible prime squares](./Sidef/808%20Reversible%20prime%20squares.sf)
 * Trashed attempts
     * [111 Primes with runs](./Trashed%20attempts/111%20Primes%20with%20runs.pl)
     * [273 Sum of Squares](./Trashed%20attempts/273%20Sum%20of%20Squares.pl)

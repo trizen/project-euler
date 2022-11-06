@@ -1,0 +1,35 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 06 November 2022
+# https://github.com/trizen
+
+# Reversible prime squares
+# https://projecteuler.net/problem=808
+
+# From the first few terms, it seems that if n = p^2 and reverse(n) = q^2, then p = reverse(q).
+
+# However, this is not always the case, as discovered by neverforget:
+#   110092211^2 = 12120294922868521
+#   112191011^2 = 12586822949202121
+
+# Runtime: 26 seconds.
+
+func p808(N) {
+
+    var list = []
+
+    for (var p = 2; list.len < N; p.next_prime!) {
+
+        var t = p*p
+
+        if (t.flip.is_square && t.flip.isqrt.is_prime && !t.is_palindrome) {
+            list << t
+            say [list.len, p, list.tail]
+        }
+    }
+
+    list.sum
+}
+
+say p808(50)
