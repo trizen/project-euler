@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=173
 
-# Runtime: 43.581s
+# Runtime: 35.684s (previously: 43.581s)
 
 var count = 0
 var tiles = 1e6

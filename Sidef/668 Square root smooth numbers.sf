@@ -6,7 +6,7 @@
 
 # https://projecteuler.net/problem=668
 
-# Runtime: 2.402s
+# Runtime: 1.535s (previously: 2.402s)
 
 # Formula:
 #   R(n) = Sum_{sqrt(n) < p <= n} floor(n/p)
@@ -24,18 +24,18 @@
 func R(n) {
 
     var p = next_prime(n.isqrt)
-    var t = floor(n/p)
+    var t = idiv(n,p)
 
     var sum = 0
 
     while (p <= n) {
 
-        var u = floor(n/p)
+        var u = idiv(n,p)
 
         if (u == t) {
-            var q = next_prime(floor(n/u))
+            var q = next_prime(idiv(n,u))
             sum += u*primepi(p, q-1)
-            u = floor(n/q)
+            u = idiv(n,q)
             p = q
         }
 

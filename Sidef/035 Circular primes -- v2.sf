@@ -1,0 +1,43 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 15 March 2023
+# https://github.com/trizen
+
+# How many circular primes are there below one million?
+
+# https://projecteuler.net/problem=35
+
+# Runtime: 0.405s
+
+func primes_from_digits(upto, digits, base = 10) {
+
+    upto = prev_prime(upto+1)
+
+    var list = []
+    var end_digits = digits.grep { .is_coprime(base) }
+
+    for k in (1 .. upto.ilog(base)) {
+        digits.variations_with_repetition(k, {|*a|
+            var v = a.digits2num(base)
+            end_digits.each {|d|
+                var n = (v*base + d)
+                list << n if (n.is_prime && (n <= upto))
+            }
+        })
+    }
+
+    list.sort
+}
+
+var count = 4      # number of circular primes < 10
+var limit = 1e6
+
+primes_from_digits(limit, [1,3,7,9]).each {|p|
+    var d = Str(p).chars
+    if (d.range.all {|k| Num(d.rotate(k).join).is_prime }) {
+        ++count
+    }
+}
+
+say count

@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=72
 
-# Runtime: 5.425s
+# Runtime: 3.661s (previously 5.425s)
 
 func count_frac(n) {
     sum(2..n, {|k| euler_totient(k) })

@@ -27,7 +27,7 @@
 # S(10^12) = 724418227020757048
 # S(10^13) = 22908104289912800016
 
-# Runtime: ~3 minutes.
+# Runtime: ~2 minutes (previously: ~3 minutes).
 
 func S(n) {
     sum(1..n.isqrt, {|k|

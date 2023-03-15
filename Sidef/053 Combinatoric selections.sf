@@ -14,7 +14,7 @@ var count = 0
 
 for k in (1 .. 100) {
     for n in (k+1 .. 100) {
-        if (n.nok(k) > 1e6) {
+        if (binomial(n,k) > 1e6) {
             ++count
         }
     }

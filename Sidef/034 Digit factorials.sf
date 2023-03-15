@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=34
 
-# Runtime: 2.673s
+# Runtime: 1.636s (previously: 2.673s)
 
 var f = (0..9 -> map {|d| d! })
 

@@ -9,12 +9,12 @@
 
 # Runtime: 0.170s
 
-func nth_permutation(arr, k) {
+func nth_permutation(arr, k, q=nil) {
     gather {
         var f = factorial(arr.len)
         while (arr) {
             f //= arr.len
-            (var q, k) = divmod(k, f)
+            (q, k) = divmod(k, f)
             q %= arr.len
             take(arr[q])
             arr = [arr[^q], arr[q+1 .. arr.end]]
@@ -22,4 +22,5 @@ func nth_permutation(arr, k) {
     }
 }
 
-say nth_permutation([0,1,2,3,4,5,6,7,8,9], 1e6-1).join
+say nth_permutation(@^10, 1e6-1).join
+say @(^10).nth_permutation(1e6-1).join       # buil-in

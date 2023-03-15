@@ -6,7 +6,7 @@
 
 # https://projecteuler.net/problem=7
 
-# Runtime: 1.226s
+# Runtime: 0.757s (previously: 1.226s)
 
 var n = 10_001
 var upper = int(n*(n.log + n.log.log))

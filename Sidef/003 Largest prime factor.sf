@@ -9,6 +9,6 @@
 
 # https://projecteuler.net/problem=3
 
-# Runtime: 0.128
+# Runtime: 0.128s
 
-say factor(600851475143)[-1]
+say gpf(600851475143)

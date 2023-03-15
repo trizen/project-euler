@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=52
 
-# Runtime: 9.650s
+# Runtime: 8.214s (previously: 9.650s)
 
 var x = 1
 loop {

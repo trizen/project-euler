@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=50
 
-# Runtime: 1.712s
+# Runtime: 1.345s
 
 define limit = 1e6
 

@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=35
 
-# Runtime: 1.235s
+# Runtime: 0.999s (previously 1.235s)
 
 var count = 4      # number of circular primes < 10
 var limit = 1e6

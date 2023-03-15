@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=32
 
-# Runtime: 7.707s
+# Runtime: 4.574s (previously: 7.707s)
 
 func valid_num(n) {
     var digits = n.digits
@@ -34,7 +34,7 @@ a.each { |x|
         valid_num(prod)    || next
         valid_num(Num(pd)) || next
 
-        next if seen.has_key(prod)
+        next if seen.has(prod)
         seen{prod} = 1
 
         say "#{x} * #{y} = #{prod}"

@@ -17,13 +17,13 @@
 # Runtime: 59.832s
 
 var str = ''
-for i (1..Inf) {
+for i in (1..Inf) {
     str += i
     str.len >= 1000000 && break
 }
 
 var prod = 1
-for i (0..6) {
+for i in (0..6) {
     prod *= str.char(10**i - 1)
 }
 say prod

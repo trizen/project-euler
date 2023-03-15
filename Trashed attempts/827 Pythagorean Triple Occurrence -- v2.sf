@@ -1,0 +1,89 @@
+#!/usr/bin/ruby
+
+# Pythagorean Triple Occurrence
+# https://projecteuler.net/problem=827
+
+# For a given number n, the number of Pythagorean triples in which the number n occurs, is equivalent with:
+#   (number of solutions to x^2 - y^2 = n^2, with x,y > 0) + (number of solutions to x^2 + y^2 = n^2, with x,y > 0).
+
+# In Sidef, this is:
+#   (diff_of_squares(n**2).len - 1) + (sum_of_squares(n**2).len - 1)
+
+func count_of_pythagorean_triples(n) {
+
+    # Translation of the PARI/GP program by Michel Marcus, Mar 07 2016.
+    # https://oeis.org/A046081
+
+    var n0_sigma0 = 1
+    var n1_sigma0 = 1
+
+    for p,e in (n.factor_exp) {
+        if (p == 2) {
+            n0_sigma0 *= (2*e - 1)
+        }
+        else {
+            n0_sigma0 *= (2*e + 1)
+            if (p % 4 == 1) {
+                n1_sigma0 *= (2*e + 1)
+            }
+        }
+    }
+
+    (n0_sigma0 + n1_sigma0)/2 - 1
+}
+
+func smallest_number_with_n_divisors(threshold, upperbound = false, least_solution = Inf, k = 1, max_a = Inf, max_b = Inf, sol_a = 1, sol_b = 1, n = 1) {
+
+    if ((sol_a + sol_b)/2 - 1 == threshold) {
+        return n
+    }
+
+    if ((sol_a + sol_b)/2 - 1 > threshold) {
+        return least_solution
+    }
+
+    var p = k.prime
+
+    if ((p==2) || (p % 4 == 3)) {
+        for a in (1 .. max_a) {
+            n *= p
+            break if (n > least_solution)
+            least_solution = __FUNC__(threshold, upperbound, least_solution, k+1, a, (upperbound ? 0 : max_b), sol_a * (p==2 ? (2*a - 1) : (2*a + 1)), sol_b, n)
+        }
+    }
+    else {
+        for b in (1 .. max_b) {
+            n *= p
+            break if (n > least_solution)
+            least_solution = __FUNC__(threshold, upperbound, least_solution, k+1, (upperbound ? 0 : max_a), b, sol_a * (2*b + 1), sol_b * (2*b + 1), n)
+        }
+    }
+
+    return least_solution
+}
+
+func p827(n) {
+
+    var sum = 0
+
+    for k in (1..n) {
+        say "Computing upper-bound for k = #{k}"
+        var upperbound = smallest_number_with_n_divisors(10**k, true)
+        say "Upper-bound: #{upperbound}"
+        var value = smallest_number_with_n_divisors(10**k, false, upperbound)
+        say "Exact value: #{value}\n"
+        sum += value
+    }
+
+    return sum
+}
+
+say count_of_pythagorean_triples(48)
+say count_of_pythagorean_triples(8064000)
+
+assert_eq(
+    1000.of(count_of_pythagorean_triples).ft(1),
+    1000.of { .sqr.sum_of_squares.len.dec + .sqr.diff_of_squares.len.dec }.ft(1)
+)
+
+say p827(18)

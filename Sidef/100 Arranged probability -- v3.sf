@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 15 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=100
+
+# Runtime: 0.268s
+
+var n = bsearch_ge({|n|
+    Math.linear_rec([7, -7, 1], [0, 3, 20], n) <=> 1e12
+})
+
+say Math.linear_rec([7, -7, 1], [1, 3, 15], n)

@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=134
 
-# Runtime: 2.855s
+# Runtime: 2.189s (previously: 2.855s)
 
 # k = 10^(1+floor(log10(p1)))
 # g = (invmod(k, p2) * -p1) % p2

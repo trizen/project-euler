@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=182
 
-# Runtime: 45.963s
+# Runtime: 18.471s (previously 45.963s)
 
 var p = 1009
 var q = 3643
@@ -16,7 +16,7 @@ var phi = (p - 1)*(q - 1)
 var sum = 0
 
 for e in (2 .. phi-1) {
-    if (gcd(e, phi) == 1) {
+    if (e.is_coprime(phi)) {
         if ((gcd(e - 1, p - 1) == 2) &&
             (gcd(e - 1, q - 1) == 2)) {
             sum += e

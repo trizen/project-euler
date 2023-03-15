@@ -10,9 +10,9 @@
 # Runtime: 0.115s
 
 func count(n, k) {
-    var lcm    = Math.lcm((1..n)...)
-    var period = Math.lcm(lcm, n + 1)/lcm
-    var count  = floor((k - 2) / lcm)
+    var L      = lcm(1..n)
+    var period = lcm(L, n + 1)/L
+    var count  = floor((k - 2) / L)
     count - floor(count / period)
 }
 

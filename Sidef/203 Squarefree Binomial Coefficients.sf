@@ -14,7 +14,7 @@ func pascal(rows) {
     for n in (^rows) {
         table{(0..n -> map {|k| binomial(n, k) })...} = ()
     }
-    table.keys.map {|n| Num(n) }.grep { .is_square_free }.sum(0)
+    table.keys.map {|n| Num(n) }.grep { .is_square_free }.sum
 }
 
 say pascal(51)

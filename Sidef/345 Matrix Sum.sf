@@ -7,7 +7,7 @@
 # Matrix Sum
 # https://projecteuler.net/problem=345
 
-# Runtime: 3 minutes, 37 seconds.
+# Runtime: 3 minutes, 10 seconds.
 
 func resize_arr(arr, size, i, j) {
     arr.grep_kv {|k| (k%size != j) && (idiv(k,size) != i) }

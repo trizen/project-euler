@@ -6,7 +6,7 @@
 
 # https://projecteuler.net/problem=104
 
-# Runtime: 18.915s
+# Runtime: 5.904s
 
 # Solution using Binet's formula to compute the first 9 digits of fib(n),
 # and also modular exponentiation to compute the last 9 digits of fib(n).
@@ -21,10 +21,10 @@ func nth_fib_first_k_digits(n,k,b=10) {
     int(b**(k-1) * exp(v - l*floor(v/l)))
 }
 
-var t = 123456789.digits.sort.join
+var t = @(1..9).join
 
 for (var k = 2749; true; ++k) {
-    if ((fibmod(k, 1e9).digits.sort.join == t) && (nth_fib_first_k_digits(k, 9).digits.sort.join == t)) {
+    if ((fibmod(k, 1e9).to_s.sort == t) && (nth_fib_first_k_digits(k, 9).to_s.sort == t)) {
         say k
         break
     }

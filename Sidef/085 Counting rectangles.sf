@@ -21,7 +21,7 @@ loop {
 
     if (d < m) {
         v = [x, y]
-        m = $d
+        m = d
     }
 
     x >= y ? (p > t ? --x : ++y) : break

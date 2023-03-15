@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 15 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=7
+
+# Runtime: 0.236s
+
+var n = 10_001
+var upper = int(n*(n.log + n.log.log))
+
+var p = upper.bsearch_le {|p|
+    p.prime_count <=> n
+}
+
+say p.inc.prev_prime

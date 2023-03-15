@@ -18,7 +18,7 @@ func collatz(n) {
                 n /= 3
                 take('D')
             }
-            elsif ($n % 3 == 1) {
+            elsif (n % 3 == 1) {
                 n = ((4*n + 2) / 3)
                 take('U')
             }

@@ -9,6 +9,8 @@
 
 # https://projecteuler.net/problem=17
 
+# Runtime: 0.357s
+
 var lingua_num = frequire('Lingua::EN::Numbers');
 
 var sum = 0;

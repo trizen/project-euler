@@ -10,7 +10,7 @@
 # See also:
 #   https://oeis.org/A018892
 
-# Runtime: 3.913s
+# Runtime: 2.468s (previously: 3.913s)
 
 var N = 1000
 

@@ -7,11 +7,9 @@
 
 # https://projecteuler.net/problem=124
 
-# Runtime: 6.851s (under -O1)
+# Runtime: 3.662s (previously: 6.851s) (under -O1)
 
-var list = (1..100_000 -> map { |i|
-    [i.is_square_free ? i : i.rad, i]
-})
+var list = (1..100_000 -> map {|i| [i.rad, i] })
 
 list.sort! {|a,b|
            (a[0] <=> b[0]) ||

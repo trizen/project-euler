@@ -14,7 +14,7 @@
 var count = 0
 
 for (var n = 1; true ; ++n) {
-    var p = (3 * n**2 + 3*n + 1)
+    var p = (3*n**2 + 3*n + 1)
     p < 1e6 || break
     p.is_prime && ++count
 }

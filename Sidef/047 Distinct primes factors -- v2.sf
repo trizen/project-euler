@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 13 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=47
+
+# Runtime: 0.454s
+
+func p47() {
+
+    var lo = 647
+    var hi = 2*lo
+
+    loop {
+
+        say "Sieving: [#{lo}, #{hi}]"
+
+        4.each_omega_prime(lo, hi, {|n|
+            if (is_omega_prime(n+1, 4) && is_omega_prime(n+2, 4) && is_omega_prime(n+3, 4)) {
+                return n
+            }
+        })
+
+        lo = hi+1
+        hi = 2*lo
+    }
+}
+
+say p47()

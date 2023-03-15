@@ -1,17 +1,17 @@
 #!/usr/bin/ruby
 
-# Author: Daniel "Trizen" Șuteu
+# Author: Trizen
 # Date: 16 August 2016
-# License: GPLv3
-# Website: https://github.com/trizen
+# Edit: 15 March 2023
+# https://github.com/trizen
 
 # https://projecteuler.net/problem=55
 
-# Runtime: 1.316s
+# Runtime: 0.938s (previously: 1.316s)
 
 say (^10_000 -> count_by { |n|
-    ^49 -> any {
-        n += n.to_s.flip.to_n
-        n.to_s.is_palindrome
-    } -> not
+    ^49 -> none {
+        n += n.flip
+        n.is_palindrome
+    }
 })

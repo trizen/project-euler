@@ -13,12 +13,12 @@
 
 # https://projecteuler.net/problem=14
 
-# Runtime: 47.259s
+# Runtime: 34.996s (previously: 47.259s)
 
 func collatz(n) is cached {
     n.is_one ? 1
-             : (n.is_even ? 1+collatz(n/2)
-                          : 1+collatz((3*n + 1)/2));
+             : (n.is_even ? 1+collatz(n>>1)
+                          : 1+collatz((3*n + 1)>>1));
 }
 
 var num = 0;

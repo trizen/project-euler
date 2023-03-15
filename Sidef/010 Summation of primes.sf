@@ -9,7 +9,7 @@
 
 # https://projecteuler.net/problem=10
 
-# Runtime: 1.564s
+# Runtime: 1.255s
 
 func sum_primes(limit) {
     var sum = 0

@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=125
 
-# Runtime: 4.868s
+# Runtime: 4.553s
 
 func p125(limit) {
 

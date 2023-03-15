@@ -1,0 +1,15 @@
+#!/usr/bin/ruby
+
+# N-th digit of reciprocals
+# https://projecteuler.net/problem=820
+
+# Naive approach.
+
+func S(n) {
+    var m = 10**n
+    sum(1..n, {|k| idiv(m,k)%10 })
+}
+
+say S(7)
+say S(100)
+say S(1e7)

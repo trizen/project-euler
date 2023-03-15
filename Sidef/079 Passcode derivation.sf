@@ -9,7 +9,7 @@
 
 # General recursive solution.
 
-# Runtime: 5.897s
+# Runtime: 5.275s
 
 func find_candidates(callback, a, b, re_a = Regex(a.join('.*?')), re_b = Regex(b.join('.*?')), a_i=0, b_i=0, solution=[]) {
 

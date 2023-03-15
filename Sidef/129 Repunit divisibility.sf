@@ -7,18 +7,17 @@
 
 # https://projecteuler.net/problem=129
 
-# Runtime: 29.843s
+# Runtime: 21.091s (previously: 29.843s)
 
 for n in (1e6 .. Inf) {
 
-    gcd(n, 10) == 1 || next
+    n.is_coprime(10) || next
 
     var k = 1
     var sum = 1
 
     loop {
-        sum += powmod(10, k, n)
-        sum %= n
+        sum = addmod(sum, 10.powmod(k, n), n)
         sum.is_zero && break
         ++k
     }

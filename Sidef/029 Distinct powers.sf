@@ -12,8 +12,8 @@
 
 var seen = Hash()
 
-for a (2..100) {
-    for b (2..100) {
+for a in (2..100) {
+    for b in (2..100) {
         seen{a**b} = true
     }
 }

@@ -10,7 +10,7 @@
 # See also:
 #   https://oeis.org/A018892
 
-# Runtime: 1.444s
+# Runtime: 1.281s
 
 func solve(threshold, least_solution = Inf, k = 1, max_a = Inf, solutions = 1, n = 1) {
 

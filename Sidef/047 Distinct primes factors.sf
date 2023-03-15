@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=47
 
-# Runtime: 2.016s
+# Runtime: 1.370s (previously 2.016s)
 
 for n in (647 .. Inf) {
     if ((omega(n + 0) == 4) &&
