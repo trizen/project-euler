@@ -1,0 +1,18 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 18 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=30
+
+# Runtime: 11.792s
+
+# The limit can be found by solving for `k` in the inequality:
+#  10^k > k * 9^5
+
+var k = bsearch_inverse(0, 10, {|k|
+    10**k <=> k*9**5
+})
+
+say (2 .. 10**k -> lazy.grep {|n| n.digits.sum_by { .ipow(5) } == n }.sum)

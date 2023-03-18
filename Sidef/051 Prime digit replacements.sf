@@ -1,0 +1,49 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 18 March 2023
+# https://github.com/trizen
+
+# Find the smallest prime which, by replacing part of the number (not necessarily adjacent digits) with the same digit, is part of an eight prime value family.
+
+# https://projecteuler.net/problem=51
+
+# Runtime: 33.514s
+
+for n in (1..Inf) {
+
+    say "Sieving #{n}-digit primes..."
+
+    var table = Hash()
+
+    each_prime(10**(n-1), 10**n - 1, {|p|
+
+        var s = p.to_s
+        var indices = Hash()
+
+        s.chars.each_kv {|k,v|
+            indices{v} := [] << k
+        }
+
+        indices.each_value {|idx|
+            for i in (1..idx.len) {
+                idx.combinations(i, {|*a|
+                    table{a.reduce({|a,b| a.insert('*', b, 1) }, s)} := [] << p
+                })
+            }
+        }
+    })
+
+    var min = Inf
+    table.each_value {|value|
+        if ((value.len == 8) && (value.head < min)) {
+            say "Found prime group: #{value}"
+            min = value.head
+        }
+    }
+
+    if (min < Inf) {
+        say "Least such prime is: #{min}"
+        break
+    }
+}

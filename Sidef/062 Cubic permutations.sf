@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 18 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=62
+
+# Runtime: 0.392s
+
+var table = Hash()
+
+for n in (1..Inf) {
+
+    var k = ipow(n,3)
+    var key = k.to_s.sort
+    table{key} := [] << k
+
+    if (table{key}.len == 5) {
+        say table{key}.min
+        break
+    }
+}

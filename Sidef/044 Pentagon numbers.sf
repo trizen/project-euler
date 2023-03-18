@@ -1,0 +1,20 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 18 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=44
+
+# Runtime: 21.932s
+
+for n in (1..Inf), m in (1..^n) {
+
+    var p1 = n.polygonal(5)
+    var p2 = m.polygonal(5)
+
+    if (is_polygonal(p1 + p2, 5) && is_polygonal(p1 - p2, 5)) {
+        say [p1, p2, p1 - p2]
+        break
+    }
+}

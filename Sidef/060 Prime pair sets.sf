@@ -1,0 +1,48 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 18 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=60
+
+# Runtime: 21.765s
+
+var primes = 1e4.primes
+say "Checking primes <= #{primes.tail}"
+
+primes.each_kv {|i,p|
+
+    var indx = []
+    var good = [p]
+
+    for (var j = i+1; true; ++j) {
+
+        var q = primes[j] \\ do {
+            break if indx.is_empty
+            good.pop
+            j = indx.pop
+            next
+        }
+
+        var ok = true
+
+        [q, good...].combinations(2, {|*a|
+            (a.join.to_n.is_prime && a.flip.join.to_n.is_prime) || do {
+                ok = false
+                break
+            }
+        })
+
+        if (ok) {
+
+            good << q
+            indx << j
+
+            if (good.len == 5) {
+                say "sum(#{good}) = #{good.sum}"
+                goto :FINISH
+            }
+        }
+    }
+} @:FINISH
