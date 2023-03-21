@@ -1,0 +1,22 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=87
+
+# Runtime: 16.623s
+
+var values = Hash()
+var limit  = 50e6
+
+limit.isqrt.each_prime {|p|
+    limit - p**2 -> iroot(3).primes.each {|q|
+        limit - p**2 - q**3 -> iroot(4).primes.each {|r|
+            values{p**2 + q**3 + r**4} = nil
+        }
+    }
+}
+
+say values.len

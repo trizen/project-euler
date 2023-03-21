@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=70
+
+# Runtime: 26.131s
+
+var min_ratio = Inf
+var min_value = -1
+
+1e7.each_semiprime {|n|
+
+    var phi = n.phi
+    var r   = (n / phi)
+
+    if ((r < min_ratio) && (n.to_s.sort == phi.to_s.sort)) {
+        say "Checking n = #{n} with ratio #{r.round(-10)}"
+        min_ratio = r
+        min_value = n
+    }
+}
+
+say "#{min_value} with ratio #{min_ratio.round(-10)}"

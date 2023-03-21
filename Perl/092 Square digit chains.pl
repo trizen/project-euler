@@ -7,13 +7,13 @@
 
 # https://projecteuler.net/problem=92
 
-# Runtime: 22.566s
+# Runtime: 8.466s
 
 use 5.010;
 use strict;
-use integer;
 
 use List::Util qw(sum);
+use ntheory qw(todigits);
 
 my @cache;
 my @squares = map { $_ * $_ } 0 .. 9;
@@ -24,7 +24,7 @@ sub chain {
     $n == 1  && return 1;
     $n == 89 && return 89;
 
-    $cache[$n] //= chain(sum(@squares[split(//, $n)]));
+    $cache[$n] //= chain(sum(@squares[todigits($n)]));
 }
 
 my $count = 0;

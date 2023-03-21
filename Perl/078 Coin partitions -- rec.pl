@@ -39,7 +39,7 @@ my $n = 1;
 
 while (1) {
     if (partitions_count($n) == 0) {
-        say $n- 1;
+        say ($n - 1);
         last;
     }
     ++$n;

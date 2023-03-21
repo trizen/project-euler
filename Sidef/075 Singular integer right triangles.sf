@@ -1,0 +1,33 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=75
+
+# Runtime: 2 minutes, 33 seconds
+
+func count_singular_integer_right_triangles(limit) {
+
+    var table = Bag()
+
+    for k in (1 .. idiv(limit, 2)) {
+        k*k -> sum_of_squares.each_2d {|a,b|
+            if (a > 0) {
+                var p = a+b+k
+                if (p <= limit) {
+                    table << p
+                }
+            }
+        }
+    }
+
+    table.values.count_by { .is_one }
+}
+
+assert_eq(count_singular_integer_right_triangles(48), 6)
+assert_eq(count_singular_integer_right_triangles(120), 13)
+assert_eq(count_singular_integer_right_triangles(1200), 129)
+
+say count_singular_integer_right_triangles(1_500_000)

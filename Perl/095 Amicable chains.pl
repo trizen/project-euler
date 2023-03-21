@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=95
 
-# Runtime: 7.517s
+# Runtime: 6.870s
 
 use 5.010;
 use strict;
@@ -25,8 +25,8 @@ foreach my $n (1 .. $limit) {
     my %seen;
     while (1) {
         my $sum = divisor_sum($n) - $n;
-        last if $seen{$sum}++;
         last if $sum > $limit;
+        last if $seen{$sum}++;
         $n = $sum;
         ++$len;
     }

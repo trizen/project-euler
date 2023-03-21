@@ -7,13 +7,13 @@
 
 # https://projecteuler.net/problem=74
 
-# Runtime: 59.693s
+# Runtime: 17.323s
 
 use 5.010;
 use strict;
 
-use ntheory qw(factorial);
-use List::Util qw(sum);
+use List::Util qw(sum0);
+use ntheory qw(factorial todigits);
 
 my @factorial = (map { factorial($_) } 0 .. 9);
 
@@ -23,7 +23,7 @@ sub f {
     my %seen = ($n => 1);
 
     while (1) {
-        my $m = sum(map { $factorial[$_] } split //, $n);
+        my $m = sum0(@factorial[todigits($n)]);
         exists($seen{$m}) && last;
         undef $seen{$m};
         $n = $m;

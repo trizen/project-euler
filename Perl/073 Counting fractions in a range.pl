@@ -15,11 +15,11 @@ use strict;
 use ntheory qw(gcd);
 
 sub count_frac {
-    my ($n, $min, $max) = @_;
+    my ($max_d, $min, $max) = @_;
 
     my $count = 0;
 
-    foreach my $n ($min + $max .. $n) {
+    foreach my $n ($min + $max .. $max_d) {
         foreach my $k (int($n / $min) + 1 .. int(($n - 1) / $max)) {
             ++$count if (gcd($n, $k) == 1);
         }

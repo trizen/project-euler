@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=70
+
+# Runtime: 0.699s
+
+var min_value = -1
+var min_ratio = Inf
+
+for (var p = prev_prime(1e7.isqrt+1); p > 2; p.prev_prime!) {
+    for (var q = prev_prime(idiv(1e7, p) + 1); q > p; q.prev_prime!) {
+
+        var n   = (p * q)
+        var phi = ((p - 1) * (q - 1))
+        var r   = (n / phi)
+
+        r < min_ratio || break
+
+        if (n.to_s.sort == phi.to_s.sort) {
+            say "Checking n = #{n} with ratio #{r.round(-10)}"
+            min_ratio = r
+            min_value = n
+        }
+    }
+}
+
+say "#{min_value} with ratio #{min_ratio.round(-10)}"

@@ -1,0 +1,29 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=68
+
+# Runtime: 28.882s
+
+var max = ''
+
+@(1..10).permutations {|*d|
+
+    if ((d[0] < d[3]) && (d[0] < d[5]) && (d[0] < d[7]) && (d[0] < d[9])) {
+
+        var i = sum(d[0,1,2])
+
+        if ((i == sum(d[3,2,4])) && (i == sum(d[5,4,6])) && (i == sum(d[7,6,8])) && (i == sum(d[9,8,1]))) {
+            var str = join('', d[0,1,2,3,2,4,5,4,6,7,6,8,9,8,1])
+            if ((str > max) && (str.len == 16)) {
+                say "Found: #{str}"
+                max = str
+            }
+        }
+    }
+}
+
+say "Final solution: #{max}"

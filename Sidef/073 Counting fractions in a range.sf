@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=73
+
+# Runtime: 31.865s
+
+func count_frac(max_d, min, max) {
+    (min+max .. max_d) -> sum {|n|
+        RangeNum(idiv(n,min)+1, idiv(n-1, max)).count_by {|k| n.is_coprime(k) }
+    }
+}
+
+assert_eq(count_frac(8, 3, 2), 3)
+
+say count_frac(12_000, 3, 2)

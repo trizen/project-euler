@@ -1,0 +1,34 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 09 October 2016
+# Translated: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=95
+
+# Runtime: ~2 minutes
+
+var limit = 1e6
+var chain = Hash()
+
+for n in (1 .. limit) {
+
+    var len  = 0
+    var orig = n
+    var seen = Hash()
+
+    loop {
+        n = n.aliquot
+        break if (n > limit)
+        break if seen.has(n)
+        seen{n} = nil
+        ++len
+    }
+
+    if (seen.has(orig)) {
+        chain{len} := orig
+    }
+}
+
+say chain{chain.keys.max_by { .to_i }}

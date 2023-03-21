@@ -1,0 +1,42 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 March 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=75
+
+# Runtime: 55.256s
+
+func count_singular_integer_right_triangles(limit) {
+
+    var triangle = Hash()
+
+    var upto = limit.isqrt
+
+    for n in (1 .. upto) {
+        for m in (range(n+1, upto, 2)) {
+
+            n.is_coprime(m) || next
+
+            for (var k = 1; true; ++k) {
+
+                var x = (k * (m*m - n*n))
+                var y = (k * (2 * m * n))
+                var z = (k * (m*m + n*n))
+
+                var p = x+y+z
+                break if (p > limit)
+                triangle{p} := 0 ++
+            }
+        }
+    }
+
+    triangle.values.count_by { .is_one }
+}
+
+assert_eq(count_singular_integer_right_triangles(48), 6)
+assert_eq(count_singular_integer_right_triangles(120), 13)
+assert_eq(count_singular_integer_right_triangles(1200), 129)
+
+say count_singular_integer_right_triangles(1_500_000)
