@@ -2,6 +2,7 @@
 
 # Daniel "Trizen" Șuteu
 # Edit: 04 February 2019
+# Edit: 28 March 2023
 # https://github.com/trizen
 
 # Find the sum of the only eleven primes that are both truncatable from left to right and right to left.
@@ -12,17 +13,8 @@
 
 # Runtime: 0.265s
 
-func digits2num(digits, base) {
-    digits.map_kv {|k,v| base**k * v  }.sum
-}
-
 func is_left_truncatable_prime(digits, base) {
-
-    for k in (^digits) {
-        is_prime(digits2num([digits[0..k]], base)) || return false
-    }
-
-    return true
+    ^digits -> all {|k| digits.first(k+1).digits2num(base).is_prime }
 }
 
 func generate_from_prefix(p, base) {
@@ -31,7 +23,7 @@ func generate_from_prefix(p, base) {
 
     for n in (1 ..^ base) {
         var t = [n, p...]
-        if (is_prime(digits2num(t, base))) {
+        if (t.digits2num(base).is_prime) {
             seq << __FUNC__(t, base).grep { is_left_truncatable_prime(_, base) }...
         }
     }
@@ -48,5 +40,6 @@ func both_truncatable_primes(base) {     # finite sequence for each base
                 .sort
 }
 
-var T = both_truncatable_primes(10)
-say T.grep{.len > 1}.sum
+var base = 10
+var T = both_truncatable_primes(base)
+say T.grep { _ >= base }.sum

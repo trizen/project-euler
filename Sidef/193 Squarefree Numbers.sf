@@ -10,6 +10,6 @@
 # Formula for counting the number of squarefree numbers <= n:
 #   S(n) = Sum_{k=1..floor(sqrt(n))} moebius(k) * floor(n/k^2)
 
-# Runtime: 1.072s (previously: ~6 seconds).
+# Runtime: 0.291s (previously: ~6 seconds).
 
 say squarefree_count(2**50)     # built-in

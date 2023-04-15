@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=129
 
-# Runtime: 21.091s (previously: 29.843s)
+# Runtime: 11.569s (previously: 29.843s)
 
 for n in (1e6 .. Inf) {
 

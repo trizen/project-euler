@@ -29,10 +29,12 @@
 
 # Runtime: ~2 minutes (previously: ~3 minutes).
 
+define MOD = 1_000_000_007
+
 func S(n) {
     sum(1..n.isqrt, {|k|
-        k*k * squarefree_count(idiv(n, k*k))
+        mulmod(k.sqr, squarefree_count(idiv(n, k.sqr)), MOD)
     })
 }
 
-say (S(10**14) % 1_000_000_007)
+say (S(10**14) % MOD)

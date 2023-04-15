@@ -1,0 +1,148 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 12 April 2023
+# https://github.com/trizen
+
+# Generate numbers with increasing and decreasing digits, in a given base.
+
+# See also:
+#   https://projecteuler.net/problem=112
+
+# Runtime: 1 minute, 19 seconds.
+
+func increasing_numbers(limit, base=10) {
+
+    func f(n, min_d) {
+
+        var seq = [n]
+
+        for d in (min_d ..^ base) {
+            var v = (n*base + d)
+            v <= limit || break
+            seq << __FUNC__(v, d)...
+        }
+
+        return seq
+    }
+
+    map(1..min(limit,base-1), {|d| f(d, d) }).flat.sort
+}
+
+func decreasing_numbers(limit, base=10) {
+
+    func f(n, max_d) {
+
+        var seq = [n]
+
+        for d in (0 .. max_d) {
+            var v = (n*base + d)
+            v <= limit || break
+            seq << __FUNC__(v, d)...
+        }
+
+        return seq
+    }
+
+    map(1..min(limit,base-1), {|d| f(d, d) }).flat.sort
+}
+
+func increasing_numbers_count(limit, base=10) {
+
+    func f(n, min_d) {
+
+        var count = 1
+
+        for d in (min_d ..^ base) {
+            var v = (n*base + d)
+            v <= limit || break
+            count += __FUNC__(v, d)
+        }
+
+        return count
+    }
+
+    sum(1..min(limit,base-1), {|d| f(d,d) })
+}
+
+func decreasing_numbers_count(limit, base=10) {
+
+    func f(n, max_d) {
+
+        var count = 1
+
+        for d in (0 .. max_d) {
+            var v = (n*base + d)
+            v <= limit || break
+            count += __FUNC__(v, d)
+        }
+
+        return count
+    }
+
+    sum(1..min(limit,base-1), {|d| f(d,d) })
+}
+
+func non_bouncy_count_slow(limit, base=10) {
+    increasing_numbers(limit, base) + decreasing_numbers(limit, base) -> uniq.len
+}
+
+func non_bouncy_count(limit, base=10) {
+
+    if (limit < base) {
+        return max(0, limit)
+    }
+
+    var t = (increasing_numbers_count(limit, base) + decreasing_numbers_count(limit, base))
+
+    t -= ((base-1) * (limit.len(base)-1))
+
+    var r = (base**limit.len(base) - 1)/(base-1)
+
+    for d in (1 ..^ base) {
+        r*d > limit && break
+        --t
+    }
+
+    return t
+}
+
+assert_eq(
+    2e2.of(non_bouncy_count),
+    2e2.of(non_bouncy_count_slow)
+)
+
+assert_eq(
+    non_bouncy_count_slow(1e3),
+    non_bouncy_count(1e3),
+)
+
+assert_eq(
+    non_bouncy_count_slow(23870),
+    non_bouncy_count(23870)
+)
+
+var target = 0.99
+
+say ":: Searching for an upper-bound, using binary search..."
+
+var upper_bound = {|k|
+    (1 - non_bouncy_count(k)/k) <=> target
+}.bsearch(100)
+
+say ":: Upper-bound: #{upper_bound}"
+
+var non_bouncy = Set(increasing_numbers(upper_bound)+decreasing_numbers(upper_bound) -> sort.uniq...)
+
+var nbc = non_bouncy.len
+assert_eq(nbc, non_bouncy_count(upper_bound))
+
+for (var k = upper_bound; k > 1; --k) {
+    if ((1 - nbc/k) == target) {
+        say ":: Candidate: #{k}"
+    }
+
+    if (non_bouncy.has(k)) {
+        --nbc
+    }
+}

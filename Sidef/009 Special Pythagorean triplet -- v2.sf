@@ -59,7 +59,7 @@ func sum_of_two_squares_solutions(n) is cached {
         var s = r
         var q = prod1
 
-        while (s*s > prod1) {
+        while (s.sqr > prod1) {
             (s, q) = (q % s, s)
         }
 

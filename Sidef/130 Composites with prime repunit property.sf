@@ -2,13 +2,14 @@
 
 # Daniel "Trizen" Șuteu
 # Date: 21 September 2019
+# Edit: 30 March 2023
 # https://github.com/trizen
 
 # https://projecteuler.net/problem=130
 
-# Runtime: 0.900s
+# Runtime: 0.516s
 
 2..Inf -> lazy.grep {|n| n.is_composite }\
-              .grep {|n| gcd(n, 10) == 1 }\
-              .grep {|n| Num('1' * (n-1)) % n == 0 }\
+              .grep {|n| n.is_coprime(10) }\
+              .grep {|n| (Mod(10, n)**(n-1) - 1)/9 == 0 }\
               .first(25).sum.say

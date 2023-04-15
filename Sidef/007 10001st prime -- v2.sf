@@ -14,7 +14,7 @@ var upper = int(n*(n.log + n.log.log))
 var sieve = [true, true]
 for i in (2..upper.isqrt) {
     if (!sieve[i]) {
-        for j in (i*i .. upper -> by(i)) {
+        for j in (i.sqr .. upper -> by(i)) {
             sieve[j] = true
         }
     }

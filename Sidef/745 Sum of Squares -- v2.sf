@@ -31,12 +31,14 @@
 # S(10^12) = 724418227020757048
 # S(10^13) = 22908104289912800016
 
-# Runtime: ~2 minutes (previously: ~3 minutes).
+# Runtime: 1 minute, 53 seconds (previously: ~3 minutes).
+
+define MOD = 1_000_000_007
 
 func S(n) {
     sum(1..n.isqrt, {|k|
-        idiv(n, k*k) * jordan_totient(k,2)
+        mulmod(idiv(n, k.sqr), k.jordan_totient(2), MOD)
     })
 }
 
-say (S(10**14) % 1_000_000_007)
+say (S(10**14) % MOD)

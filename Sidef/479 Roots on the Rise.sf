@@ -7,12 +7,13 @@
 
 # https://projecteuler.net/problem=479
 
-# Runtime: 36.014s
+# Runtime: 19.709s (previously: 36.014s)
 
 var n = 1e6
 var m = 1000000007
 
 say sum(1..n, {|k|
-    var p = (k*k - 1)
-    (p * ((-1)**n * powmod(p, n, m) - 1) * invmod(p+1, m)) % m
+    with (mulmod(k, k, m) - 1) {|p|
+        divmod(p * ((-1)**n * powmod(p, n, m) - 1), p+1, m)
+    }
 })%m

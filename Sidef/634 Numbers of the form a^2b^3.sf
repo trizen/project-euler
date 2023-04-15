@@ -5,7 +5,7 @@
 
 # Using the method posted by al13n.
 
-# Runtime: 15.167s (previously 22 seconds).
+# Runtime: 14.038s (previously 22 seconds).
 
 func F(n) {
     var count = 0

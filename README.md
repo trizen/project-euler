@@ -60,6 +60,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [027 Quadratic primes](./Perl/027%20Quadratic%20primes.pl)
     * [030 Digit fifth powers](./Perl/030%20Digit%20fifth%20powers.pl)
     * [030 Digit fifth powers (v2)](./Perl/030%20Digit%20fifth%20powers%20--%20v2.pl)
+    * [037 Truncatable primes](./Perl/037%20Truncatable%20primes.pl)
     * [039 Integer right triangles](./Perl/039%20Integer%20right%20triangles.pl)
     * [040 Champernowne's constant](./Perl/040%20Champernowne%20s%20constant.pl)
     * [041 Pandigital prime](./Perl/041%20Pandigital%20prime.pl)
@@ -390,6 +391,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [108 Diophantine reciprocals I](./Sidef/108%20Diophantine%20reciprocals%20I.sf)
     * [108 Diophantine reciprocals I (v2)](./Sidef/108%20Diophantine%20reciprocals%20I%20--%20v2.sf)
     * [110 Diophantine reciprocals II](./Sidef/110%20Diophantine%20reciprocals%20II.sf)
+    * [112 Bouncy numbers](./Sidef/112%20Bouncy%20numbers.sf)
     * [120 Square remainders](./Sidef/120%20Square%20remainders.sf)
     * [124 Ordered radicals](./Sidef/124%20Ordered%20radicals.sf)
     * [125 Palindromic sums](./Sidef/125%20Palindromic%20sums.sf)
@@ -448,6 +450,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [808 Reversible prime squares](./Sidef/808%20Reversible%20prime%20squares.sf)
 * Trashed attempts
     * [111 Primes with runs](./Trashed%20attempts/111%20Primes%20with%20runs.pl)
+    * [113 Non-bouncy numbers](./Trashed%20attempts/113%20Non-bouncy%20numbers.pl)
     * [266 Pseudo Square Root](./Trashed%20attempts/266%20Pseudo%20Square%20Root.pl)
     * [273 Sum of Squares](./Trashed%20attempts/273%20Sum%20of%20Squares.pl)
     * [345 Matrix Sum](./Trashed%20attempts/345%20Matrix%20Sum.pl)

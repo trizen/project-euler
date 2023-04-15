@@ -13,7 +13,7 @@
 #   110092211^2 = 12120294922868521
 #   112191011^2 = 12586822949202121
 
-# Runtime: 26 seconds.
+# Runtime: 21.784s (previously: 26 seconds).
 
 func p808(N) {
 
@@ -21,7 +21,7 @@ func p808(N) {
 
     for (var p = 2; list.len < N; p.next_prime!) {
 
-        var t = p*p
+        var t = p.sqr
 
         if (t.flip.is_square && t.flip.isqrt.is_prime && !t.is_palindrome) {
             list << t

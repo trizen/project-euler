@@ -8,7 +8,7 @@
 
 # https://projecteuler.net/problem=125
 
-# Runtime: 4.553s
+# Runtime: 4.334s
 
 func p125(limit) {
 
@@ -16,9 +16,9 @@ func p125(limit) {
     var sums = Set()
 
     for a in (1 .. s) {
-        var sum = a*a
+        var sum = a.sqr
         for b in (a+1 .. s)  {
-            sum += b*b
+            sum += b.sqr
             #var sum = faulhaber_range(a, b, 2)
             break if (sum >= limit)
             sums << sum if sum.is_palindrome
