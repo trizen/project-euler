@@ -1,0 +1,44 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 28 April 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=435
+
+# Runtime: 5.001s
+
+var congruences = []
+
+15!.factor_map { |p,e|
+
+    var n = 10**15
+    var pp = p**e
+
+    var sum = 0
+    var (f1, f2) = (0, 1)
+
+    var arr = []
+
+    for k in (1..n) {
+        var power_sum = 0
+
+        for x in (1..100) {
+            power_sum.addmod!(powmod(x, k, pp), pp)
+        }
+
+        sum.addmulmod!(f2, power_sum, pp)
+        arr << sum
+
+        (f1, f2) = (f2, addmod(f1, f2, pp))
+
+        if ((f1 == 0) && (f2 == 1) && (arr.ft(9, arr.end>>1) == arr.ft(arr.end>>1 + 10))) {
+            sum = arr[(n % k)-1]
+            break
+        }
+    }
+
+    congruences << [sum, pp]
+}
+
+say Math.chinese(congruences...)

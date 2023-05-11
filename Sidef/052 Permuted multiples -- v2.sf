@@ -1,0 +1,19 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 19 April 2023
+# https://github.com/trizen
+
+# Find the smallest positive integer, x, such that 2x, 3x, 4x, 5x, and 6x, contain the same digits.
+
+# https://projecteuler.net/problem=52
+
+# Runtime: 2.483s
+
+for x in (1..Inf) {
+    var t = Str(2*x).sort
+    if (t == Str(3*x).sort && [4,5,6].all {|k| Str(k*x).sort == t }) {
+        say x
+        break
+    }
+}
