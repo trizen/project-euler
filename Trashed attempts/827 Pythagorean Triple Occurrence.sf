@@ -76,8 +76,8 @@ say count_of_pythagorean_triples(48)
 say count_of_pythagorean_triples(8064000)
 
 assert_eq(
-    1000.of(count_of_pythagorean_triples).ft(1),
-    1000.of { .sqr.sum_of_squares.len.dec + .sqr.diff_of_squares.len.dec }.ft(1)
+    1000.of(count_of_pythagorean_triples).slice(1),
+    1000.of { .sqr.sum_of_squares.len.dec + .sqr.diff_of_squares.len.dec }.slice(1)
 )
 
 say p827(18)

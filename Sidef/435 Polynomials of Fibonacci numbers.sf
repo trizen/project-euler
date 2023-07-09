@@ -32,7 +32,7 @@ var congruences = []
 
         (f1, f2) = (f2, addmod(f1, f2, pp))
 
-        if ((f1 == 0) && (f2 == 1) && (arr.ft(9, arr.end>>1) == arr.ft(arr.end>>1 + 10))) {
+        if ((f1 == 0) && (f2 == 1) && (arr.slice(9, (arr.len>>1)-9) == arr.slice(arr.end>>1 + 10))) {
             sum = arr[(n % k)-1]
             break
         }
