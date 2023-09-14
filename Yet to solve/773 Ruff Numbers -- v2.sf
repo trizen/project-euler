@@ -1,0 +1,39 @@
+#!/usr/bin/ruby
+
+# https://projecteuler.net/problem=773
+
+func ruff_generator(k) {
+    Enumerator({|f|
+
+        var P = [2,5, k.by { .is_prime && (_%10 == 7) }...]
+        var c = P.prod
+        var a = []
+
+        say "c = prod(#{P}) = #{c}"
+
+        for n in (1..c) {
+            n.is_coprime(c) || next
+            if (n % 10 == 7) {
+                a.push(n)
+                f(n)
+            }
+        }
+
+        loop {
+            var n = (a.shift + c)
+            if (n % 10 == 7) {
+                a.push(n)
+                f(n)
+            }
+        }
+    })
+}
+
+# F(3) = 76101452
+# F(4) = 164491606552
+
+var k = 3
+var c = [2,5, k.by { .is_prime && (_%10 == 7) }...].prod
+var r = ruff_generator(k)
+
+say r.while { _ < c }.sum

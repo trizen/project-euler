@@ -34,7 +34,7 @@ func R(n) {
 
         if (u == t) {
             var q = next_prime(idiv(n,u))
-            sum += u*primepi(p, q-1)
+            sum += u*prime_count(p, q-1)
             u = idiv(n,q)
             p = q
         }
@@ -52,4 +52,4 @@ func square_root_smooth_count (n) {
     n - n.isqrt.primes_sum - R(n)
 }
 
-say square_root_smooth_count(10000000000)
+say square_root_smooth_count(10_000_000_000)

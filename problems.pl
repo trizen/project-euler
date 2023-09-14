@@ -52,8 +52,8 @@ my $lwp = LWP::UserAgent::Cached->new(
 my $lwp_uc = LWP::UserAgent->new(
                                  timeout       => 60,
                                  show_progress => 1,
-                                 agent    => "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0",
-                                 ssl_opts => {verify_hostname => 1, SSL_version => 'TLSv1_2'},
+                                 agent         => "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:91.0) Gecko/20100101 Firefox/91.0",
+                                 ssl_opts      => {verify_hostname => 1, SSL_version => 'TLSv1_2'},
                                 );
 
 {
@@ -101,8 +101,7 @@ foreach my $lang (@languages) {
 }
 
 my $solved_count = keys %solved_problems;
-say sprintf(":: Count of solved problems: %s (%.2f%% of $problems_count problems)",
-            $solved_count, $solved_count / $problems_count * 100);
+say sprintf(":: Count of solved problems: %s (%.2f%% of %s problems)", $solved_count, $solved_count / $problems_count * 100, $problems_count);
 
 my @problems;
 
@@ -157,11 +156,13 @@ my @unsolved_problems = grep { not $solved_problems{$_->{id}} } @problems;
 
 say sprintf(":: Found %s unsolved problems", scalar(@unsolved_problems));
 
+#<<<
 @problems = sort {
          (($a->{difficulty} // 'inf') <=> ($b->{difficulty} // 'inf'))
       || ($b->{solve_count} <=> $a->{solve_count})
       || ($a->{id}          <=> $b->{id})
 } @problems;
+#>>>
 
 open my $solved_fh,   '>:utf8', 'solved.html';
 open my $unsolved_fh, '>:utf8', 'unsolved.html';
@@ -206,13 +207,13 @@ foreach my $problem (@problems) {
                       join(
                            '',
                            map { sprintf("<td>%s</td>", $_) } (
-                                             $problem->{id},
-                                             sprintf(
-                                                     q{<a href="https://projecteuler.net/problem=%s" title="%s" target="_blank" rel="noopener noreferrer">%s</a>},
-                                                     $problem->{id}, $problem->{published}, $problem->{title}
-                                                    ),
-                                             $problem->{solve_count},
-                                             (defined($problem->{difficulty}) ? sprintf("%s%%", $problem->{difficulty}) : '-'),
+                                           $problem->{id},
+                                           sprintf(
+                                                   q{<a href="https://projecteuler.net/problem=%s" title="%s" target="_blank" rel="noopener noreferrer">%s</a>},
+                                                   $problem->{id}, $problem->{published}, $problem->{title}
+                                                  ),
+                                           $problem->{solve_count},
+                                           (defined($problem->{difficulty}) ? sprintf("%s%%", $problem->{difficulty}) : '-'),
                            )
                           )
                      );

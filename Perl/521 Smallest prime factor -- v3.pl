@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/perl
 
 # Daniel "Trizen" Șuteu
 # Date: 20 July 2020
@@ -6,13 +6,6 @@
 
 # Smallest prime factor
 # https://projecteuler.net/problem=521
-
-# Algorithm with sublinear time for computing:
-#
-#   Sum_{k=2..n} lpf(k)
-#
-# where:
-#   lpf(k) = the least prime factor of k
 
 # For each prime p < sqrt(n), we count how many integers k <= n have lpf(k) = p.
 
@@ -27,24 +20,32 @@
 # The sum of the primes is p * G(n,p).
 # When G(n,p) = 1, then G(n,p+r) = 1 for all r >= 1.
 
-# Runtime: 3.742s (when Kim Walisch's `primesum` tool is installed).
+# Runtime: 2.5 seconds (when Kim Walisch's `primesum` tool is installed).
 
-local Num!USE_PRIMESUM = true
-local Num!USE_PRIMECOUNT = false
+use 5.020;
+use integer;
 
-func S(n) {
+use ntheory qw(:all);
+use Math::Sidef qw();
+use experimental qw(signatures);
 
-    var t = 0
-    var s = n.isqrt
+local $Sidef::Types::Number::Number::USE_PRIMESUM = 1;
 
-    s.each_prime {|p|
-        t += p*p.rough_count(idiv(n,p))
-    }
+my $MOD = 1e9;
 
-    t + sum_primes(s.next_prime, n)
+sub S($n) {
+
+    my $sum = 0;
+    my $s = sqrtint($n);
+
+    forprimes {
+        $sum += mulmod($_, rough_count($n/$_, $_), $MOD);
+    } $s;
+
+    addmod($sum, Math::Sidef::sum_primes(next_prime($s), $n) % $MOD, $MOD);
 }
 
-say (S(1e12) % 1e9)
+say S(1e12);
 
 __END__
 S(10^1)  = 28

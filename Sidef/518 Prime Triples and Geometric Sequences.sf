@@ -1,0 +1,73 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 11 September 2023
+# https://github.com/trizen
+
+# Prime Triples and Geometric Sequences
+# https://projecteuler.net/problem=518
+
+# Solution:
+#    `(p+1, q+1, r+1)` must form a geometric progression and `p < q < r`.
+#
+# This means that there is a positive rational value `r` such that:
+#    (p+1)*r   = q+1
+#    (p+1)*r^2 = r+1
+#
+# Since `r` can be rational, the denominator of the reduced fraction `r` must be a divisor of `p+1`.
+#
+# Furthermore, the denominator `j` must divide `p+1` twice, since we have, with `gcd(k,j) = 1`:
+#    (p+1)*k/j     = q+1
+#    (p+1)*k^2/j^2 = r+1
+#
+# Therefore, we iterate over the primes p <= N, then we iterate over the square-divisors j^2 of p+1,
+# and for each k in the range `2 .. sqrt(n/((p+1)/j^2))` we compute:
+#    q = (p+1)*k/j - 1
+#    r = (p+1)*k^2/j^2 - 1
+
+# Runtime: ~36 minutes (untested)
+
+func problem_518(n) {
+
+    var sum = 0
+
+    n.each_prime {|p|
+
+        for jj in (p+1 -> square_divisors) {
+
+            var j  = jj.isqrt
+            var d1 = idiv(p+1, j)
+            var d2 = idiv(d1,  j)
+
+            for k in (2 .. idiv(n,d2).isqrt) {
+
+                k.is_coprime(j) || next
+
+                var q = d1*k
+                var r = d2*k*k
+
+                p < q || next
+                q < r || next
+
+                q.dec.is_prime || next
+                r.dec.is_prime || next
+
+                #say [p,q.dec,r.dec]
+                sum += (p + q + r - 2)
+            }
+        }
+    }
+
+    return sum
+}
+
+var sum = problem_518(1e8)
+say "Sum = #{sum}"
+
+__END__
+S(10^2) = 1035
+S(10^3) = 75019
+S(10^4) = 4225228
+S(10^5) = 249551109     (takes   3 seconds)
+S(10^6) = 17822459735   (takes  23 seconds)
+S(10^7) = 1316768308545 (takes 221 seconds)
