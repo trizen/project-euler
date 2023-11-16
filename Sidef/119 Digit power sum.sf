@@ -1,0 +1,36 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 18 May 2017
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=119
+
+# Runtime: 0.415s
+
+define nth = 30
+
+var terms = []
+var prev = 0
+
+for (var n = 1; true; ++n) {
+
+    for k in (1..n) {
+        if (n.ipow(k).sumdigits == n) {
+            var t = n.ipow(k)
+            t.len >= 2 || next
+            terms << t
+            say "#{n} -> #{n}^#{k} -> #{n.ipow(k)}"
+        }
+    }
+
+    terms.sort!
+
+    if (terms.len >= 2*nth) {
+        terms[nth-1] == prev && break
+        prev = terms[nth-1]
+    }
+}
+
+say terms[nth-1]

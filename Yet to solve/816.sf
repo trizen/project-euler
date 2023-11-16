@@ -1,0 +1,37 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 22 August 2023
+# https://github.com/trizen
+
+# Shortest Distance Among Points
+# https://projecteuler.net/problem=816
+
+func rng(n) is cached {
+    n == 0 && return 290797
+    powmod(__FUNC__(n-1), 2, 50515093)
+}
+
+func d(k) {
+
+    var P = k.of {|n|
+        [rng(2*n), rng(2*n + 1)]
+    }.sort.uniq
+
+    var min_dist = Inf
+
+    P.each_cons(2, {|a,b|
+        var dist = hypot(a[0] - b[0], a[1] - b[1])
+        say dist
+        if (dist < min_dist) {
+            min_dist = dist
+        }
+    })
+
+    return min_dist.round(-9)
+}
+
+assert_eq(d(14), 546446.466846479f)
+assert_eq(d(1000), 14759.650571745f)
+
+say d(2000000)

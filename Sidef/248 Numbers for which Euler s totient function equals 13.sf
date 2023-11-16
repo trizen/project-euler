@@ -1,0 +1,62 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=248
+
+# Runtime: 0.417s
+
+#!/usr/bin/ruby
+
+# Algorithm from invphi.gp ver. 2.1 by Max Alekseyev.
+
+# See also:
+#   https://home.gwu.edu/~maxal/gpscripts/
+
+# https://projecteuler.net/problem=248
+
+# Runtime: 12.280s
+
+func dynamicPreimage(N, L, unitary = false) {
+
+    var r = Hash(1 => [1])
+
+    L.each {|l|
+        var t = Hash()
+        l.each_2d {|a,b|
+            N/a -> divisors.each {|d|
+                t{a*d} := [] << ((unitary ? r{d}.grep{.is_coprime(b)} : r{d}) ~S* b)... if r.has(d)
+            }
+        }
+        t.each {|k,v|
+            r{k} := [] << v...
+        }
+    }
+
+    r{N} \\ [] -> sort
+}
+
+func cook_phi(N) {
+    var L = Hash()
+
+    N.divisors.each {|d|
+
+        var p = d+1 -> is_prime || next
+        var v = N.valuation(p)
+
+        L{p} := [] << {|k| [d*(p**(k-1)), p**k] }.map(1 .. v+1)...
+    }
+
+    L.values
+}
+
+# Inverse of Euler phi function
+
+func inverse_phi(N) {
+    dynamicPreimage(N, cook_phi(N))
+}
+
+say ::inverse_phi(13!)[150_000 - 1]     # built-in
+say inverse_phi(13!)[150_000 - 1]

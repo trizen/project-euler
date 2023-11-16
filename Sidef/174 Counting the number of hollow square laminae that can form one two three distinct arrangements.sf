@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 20 May 2017
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=174
+
+# Runtime: 41.892s
+
+var counts = Hash()
+var tiles = 1_000_000
+
+for k in (1 .. tiles>>2) {
+    var sum = 0
+    for j in (k+2 .. Inf `by` 2) {
+        sum += (2*j + 2*(j - 2))
+        sum <= tiles || break
+        counts{sum} := 0 ++
+    }
+}
+
+say counts.values.count {|value|
+    value.is_between(1, 10)
+}

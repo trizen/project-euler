@@ -1,0 +1,28 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 16 November 2023
+# https://github.com/trizen
+
+# Sum of largest prime factors
+# https://projecteuler.net/problem=642
+
+# Let G(n,p) be the number of integers k in 1..n such that gpf(k) = p.
+# Equivalently, G(n,p) is the number of p-smooth numbers <= floor(n/p).
+
+# Then we have:
+#   S(n) = Sum_{k=2..n} gpf(k)
+#   S(n) = A(n) + B(n)
+
+# where:
+#   A(n) = Sum_{p <= sqrt(n)} p * G(n,p)
+#   B(n) = Sum_{k=1..sqrt(n)} W(floor(n/k)) - floor(sqrt(n))*W(floor(sqrt(n)))
+
+# where:
+#   W(n) = Sum_{p <= n} p.
+
+# Runtime: 48 seconds (when Kim Walisch's `primesum` tool is installed).
+
+local Num!USE_PRIMESUM = true
+
+say (gpf_sum(201820182018)  % 1e9)      # built-in

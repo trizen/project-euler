@@ -1,0 +1,35 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 September 2016
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=500
+
+# Runtime: 2.753s
+
+func first_n_factors(n) {
+
+    var limit   = n.ilog2*n     # overshoots a little bit
+    var factors = limit.primes
+
+    n.each_prime {|p|
+        while ((p **= 2) <= limit) {
+            factors << p
+        }
+    }
+
+    factors.sort!
+    factors.first(n)
+}
+
+var p   = 1
+var mod = 500500507
+var pow = 500500
+
+for f in (first_n_factors(pow)) {
+    p = mulmod(p, f, mod)
+}
+
+say p

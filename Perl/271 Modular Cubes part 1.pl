@@ -24,10 +24,9 @@ sub modular_cubes {
 
         push @{$table{$pp}}, [1, $pp];
 
-        my %seen;
         foreach my $x (2 .. $pp - 1) {
             if (powmod($x, 3, $pp) == 1) {
-                push @{$table{$pp}}, grep { $_->[0] > 1 and !$seen{$_->[0]}++ } ([$x, $pp], [$x - 1, $pp], [$x - 2, $pp]);
+                push @{$table{$pp}}, [$x, $pp];
             }
         }
     }
@@ -43,5 +42,7 @@ sub modular_cubes {
 
     return $sum;
 }
+
+modular_cubes(91) == 363 or die "error";
 
 say modular_cubes(13082761331670030);

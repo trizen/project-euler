@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 17 August 2016
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=123
+
+# Runtime: 0.504s
+
+var n = 7037
+
+for (var p = nth_prime(n); true; (p.next_prime!; ++n)) {
+
+    var s = p.sqr
+    var r = addmod(powmod(p-1, n, s), powmod(p+1, n, s), s)
+
+    if (r > 1e10) {
+        say n
+        break
+    }
+}

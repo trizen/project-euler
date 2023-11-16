@@ -1,0 +1,44 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 03 September 2019
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=443
+
+# Runtime: 1 minute, 28 seconds
+
+func GCD_sequence (upto) {
+
+    var sum = 13
+
+    for (var n = 5; n <= upto; ++n) {
+        if (n >= 100 && !n.is_coprime(sum)) {
+
+            var k = (n + (n - 1))
+            sum += gcd(n, sum)
+
+            if (k.is_prime) {
+
+                if (k >= upto) {
+                    sum += (upto - n)
+                    break
+                }
+
+                sum += (k - (n - 1))
+                n = k
+            }
+        }
+        else {
+            sum += gcd(n, sum)
+        }
+    }
+
+    return sum
+}
+
+assert_eq(GCD_sequence(1000), 2524)
+assert_eq(GCD_sequence(1000000), 2624152)
+
+say GCD_sequence(1000000000000000)

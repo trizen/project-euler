@@ -1,0 +1,38 @@
+#!/usr/bin/ruby
+
+# How many composite integers, n < 10^8, have precisely two, not necessarily distinct, prime factors?
+
+# https://projecteuler.net/problem=187
+
+# Runtime: 0.313s
+
+func semiprime_count_1(n) {
+    var t = 0
+    n.isqrt.primes.sum {|p|
+        prime_count(idiv(n,p)) - ++t + 1
+    }
+}
+
+func semiprime_count_2(n) {
+    n.isqrt.primes.sum {|p|
+        prime_count(p, idiv(n,p))
+    }
+}
+
+func semiprime_count_3(n) {
+
+    var t = 2*n.isqrt.primes.sum {|p|
+        prime_count(idiv(n,p))
+    }
+
+    var r = prime_count(n.isqrt)
+
+    (t + r - r**2)/2
+}
+
+var n = (10**8 - 1)
+
+say semiprime_count(n)      # built-in
+say semiprime_count_1(n)
+say semiprime_count_2(n)
+say semiprime_count_3(n)

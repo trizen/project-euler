@@ -1,0 +1,32 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 25 August 2016
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=231
+
+# Runtime: 22.889s
+
+var n = 20000000
+var k = 15000000
+var j = n-k
+
+var sum = 0
+
+n.each_prime {|p|
+    var e = factorial_valuation(n, p)
+
+    if (p <= k) {
+        e -= factorial_valuation(k, p)
+    }
+
+    if (p <= j) {
+        e -= factorial_valuation(j, p)
+    }
+
+    sum += e*p
+}
+
+say sum

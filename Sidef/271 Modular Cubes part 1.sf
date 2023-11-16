@@ -1,0 +1,41 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 13 October 2017
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=271
+
+# Runtime: 0.347s
+
+func modular_cubes(n) {
+
+    var table = Hash()
+    for pp in (n.prime_power_divisors) {
+
+        table{pp} = [[1, pp]]
+
+        for x in (2 ..^ pp) {
+            if (powmod(x, 3, pp) == 1) {
+                table{pp} << [x, pp]
+            }
+        }
+    }
+
+    var sum = 0
+
+    table.values.cartesian {|*a|
+        var x = Math.chinese(a...)
+        if ((x > 1) && (powmod(x, 3, n) == 1)) {
+            sum += x
+        }
+    }
+
+    return sum
+}
+
+assert_eq(modular_cubes(91), 363)
+assert_eq(modular_cubes(5040), 21608)
+
+say modular_cubes(13082761331670030)

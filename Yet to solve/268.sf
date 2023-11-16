@@ -1,0 +1,23 @@
+#!/usr/bin/ruby
+
+# https://projecteuler.net/problem=268
+
+#~ It can be verified that there are 23 positive integers less than 1000 that are divisible by at least four distinct primes less than 100.
+
+#~ Find how many positive integers less than 10^16 are divisible by at least four distinct primes less than 100.
+
+# Idea:
+
+#~ We are looking for the number of positive integers less than 10^16 that are divisible by at least four distinct primes less than 100.
+
+#~ The prime numbers less than 100 are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89 and 97.
+
+#~ There are a total of 25 prime numbers less than 100. So, there are C(25, 4) = 2300 ways to choose 4 distinct prime numbers from the 25 prime numbers less than 100.
+
+#~ For each choice of four primes, we can find the least common multiple of the four primes and multiply it by all possible combinations of exponents of the four primes where the exponents are less than or equal to log(10^16) / log(prime) for each prime. This gives all integers less than 10^16 that are divisible by at least four distinct primes less than 100.
+
+#~ The number of integers less than 10^16 that are divisible by at least four distinct primes less than 100 is close to 2300 * (log(10^16) / log(2) )^4.
+
+#~ Using the logarithm properties and the approximation of log(10^16) ≈ 45, we can get an approximation of the result which is 2300 * 45^4
+
+#~ This is a very large number and it's hard to give an exact answer. But it's clear that it's a big number and it's safe to say that the result is greater than 10^12.

@@ -12,10 +12,10 @@ use strict;
 use autodie;
 use warnings;
 
-use Cwd qw(getcwd);
-use File::Spec qw();
+use Cwd            qw(getcwd);
+use File::Spec     qw();
 use File::Basename qw(basename dirname);
-use URI::Escape qw(uri_escape);
+use URI::Escape    qw(uri_escape);
 
 sub add_section {
     my ($section, $file) = @_;
@@ -40,6 +40,12 @@ sub add_section {
 
 my $summary_file = 'README.md';
 my $main_dir     = File::Spec->curdir;
+
+# Directories to ignore
+my %ignore = (
+              'Yet to solve'     => 1,
+              'Trashed attempts' => 1,
+             );
 
 {
     my @root;
@@ -68,6 +74,7 @@ my $main_dir     = File::Spec->curdir;
             }
 
             if (-d $file->{path}) {
+                next if $ignore{$title};    # ignore directory
                 $section .= (' ' x $spaces) . "* $title\n";
                 push @root, $file->{name};
                 $section .= make_section($file->{path}, $spaces + 4);

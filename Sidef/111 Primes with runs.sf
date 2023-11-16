@@ -1,0 +1,75 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 09 February 2017
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=111
+
+# Runtime: 0.674s
+
+define len = 10
+
+define table = Hash(
+             0 => 8,
+             1 => 9,
+             2 => 8,
+             3 => 9,
+             4 => 9,
+             5 => 9,
+             6 => 9,
+             7 => 9,
+             8 => 8,
+             9 => 9,
+            )
+
+func comb_1(digit) {
+
+    var r = (len - 1)
+    var p = r.of(digit)
+
+    var sum = 0
+
+    for i in (0..r), d in (0..9) {
+        var a = p.clone
+        a.insert(i, d)
+        a[0] || next
+        var n = a.join.to_n
+        sum += n if n.is_prime
+    }
+
+    return sum
+}
+
+func comb_2(digit) {
+
+    var r = (len - 2)
+    var p = r.of(digit)
+
+    var sum = 0
+
+    for i in (0..r), d1 in (0..9), j in (0..r), d2 in (0..9) {
+        var a = p.clone
+        a.insert(i, d1)
+        a.insert(j, d2)
+        a[0] || next
+        var n = a.join.to_n
+        sum += n if n.is_prime
+    }
+
+    return sum
+}
+
+var total = 0
+for d in (table.keys) {
+    var max = table{d}
+    if (max == 8) {
+        total += comb_2(d)
+    }
+    elsif (max == 9) {
+        total += comb_1(d)
+    }
+}
+
+say total

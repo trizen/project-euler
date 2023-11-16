@@ -1,0 +1,26 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 August 2016
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=381
+
+# Runtime: 2 minutes, 43 seconds.
+
+# Based on the following relations:
+#
+#   (p-1)! mod p = p-1
+#   (p-2)! mod p = 1
+#   (p-3)! mod p = (p-1)/2
+#   (p-5)! mod p = (p^2 -1)/24
+#
+# (p-4)! mod p has two paths:
+#
+# If (p+1) is     divisible by 6, then: (p-4)! mod p = (p+1)/6
+# If (p+1) is not divisible by 6, then: (p-4)! mod p = p-floor(p/6)
+
+say (5..1e8 -> primes.sum {|p|
+    (1 + (p-1) + idiv(p-1, 2) + (6.divides(p+1) ? idiv(p+1, 6) : (p - idiv(p,6))) + idiv(p*p - 1, 24)) % p
+})

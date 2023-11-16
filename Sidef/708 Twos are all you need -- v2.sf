@@ -1,0 +1,21 @@
+#!/usr/bin/ruby
+
+# Twos are all you need
+# https://projecteuler.net/problem=708
+
+# Based on formula posted by ohadkel:
+#
+#   S(n) = Sum_{k = 1..n, k is squarefull} 2^(bigomega(k) - 2*omega(k)) * D(n/k)
+#
+# where D(n) = Sum_{k=1..n} floor(n/k) = A006218(n).
+
+func S(n) {
+    var total = 0
+    each_squarefull(1, n, {|k|
+        total += ((1 << (k.bigomega - 2*k.omega)) * dirichlet_hyperbola(idiv(n,k)))
+    })
+    return total
+}
+
+say ("S(10^8)  = ", S(10**8))
+say ("S(10^14) = ", S(10**14))

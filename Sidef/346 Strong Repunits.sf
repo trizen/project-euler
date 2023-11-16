@@ -1,0 +1,31 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 21 September 2016
+# Translated: 16 November 2023
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=346
+
+# Runtime: 15.666s
+
+var table = Set()
+var limit = 10**12
+
+for j in (3..Inf) {
+
+     var found = false
+     var repunit = j.of(1)
+
+    for base in (2..Inf) {
+        #var n = idiv(ipow(base,j) - 1, base - 1)
+        var n = repunit.digits2num(base)
+        n < limit || break
+        found ||= true
+        table << n
+    }
+
+    found || break
+}
+
+say 1+table.sum
