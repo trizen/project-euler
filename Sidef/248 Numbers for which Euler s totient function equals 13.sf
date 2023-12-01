@@ -1,15 +1,5 @@
 #!/usr/bin/ruby
 
-# Author: Trizen
-# Date: 16 November 2023
-# https://github.com/trizen
-
-# https://projecteuler.net/problem=248
-
-# Runtime: 0.417s
-
-#!/usr/bin/ruby
-
 # Algorithm from invphi.gp ver. 2.1 by Max Alekseyev.
 
 # See also:

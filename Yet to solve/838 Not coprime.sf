@@ -1,0 +1,48 @@
+#!/usr/bin/ruby
+
+# Not coprime
+# https://projecteuler.net/problem=838
+
+# Let f(N) be the smallest positive integer that is not coprime to any positive integer n <= N
+# whose least significant digit is 3.
+
+# For example f(40) equals to 897 = 3 ⋅ 13 ⋅ 23 since it is not coprime to any of 3, 13, 23, 33.
+# By taking the natural logarithm (log to base ) we obtain ln f(40) = ln 897 ≈ 6.799056
+# when rounded to six digits after the decimal point.
+
+# You are also given ln f(2800) ≈ 715.019337.
+
+# Runtime: 7.351s
+
+# [2183, 2773]
+# [945433, 954803, 955523, 964993, 973543, 975703, 982913, 983933, 985373, 985793, 993403, 995563]
+
+func f(n) {
+    var arr = (1..n -> grep{ _%10 == 3})
+
+    var primes = arr.grep{.is_prime}
+    var prime_prod = primes.prod
+
+    var t = prime_prod
+
+    var coprime = arr.grep{ .is_coprime(t) }
+
+    #say coprime.group_by{.gpf}
+    #say coprime.group_by{.lpf}
+
+    var lpfs = Set(coprime.map{.lpf}.uniq.sort...)
+    var w = (coprime - coprime.grep { !lpfs.has(.gpf) })
+    lpfs = Set(w.map{.lpf}.uniq.sort...)
+
+    t = lcm(t, lpfs.to_a.lcm)
+    t = lcm(arr.grep{ .is_coprime(t) }.map{.gpf}.lcm, t)
+
+    return t
+}
+
+say f(40)
+say f(2800).log.round(-6)
+say f(1e6).log.round(-6)
+
+__END__
+250622.192757

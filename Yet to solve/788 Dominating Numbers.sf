@@ -1,0 +1,63 @@
+#!/usr/bin/ruby
+
+# Dominating numbers
+# A dominating number is a positive integer that has more than half of its digits equal.
+
+# https://projecteuler.net/problem=788
+
+# 1e3 ..^ 1e4 -> count { .digits.sort.run_length.map{.tail}.max*2 > .len }
+# 1e4 ..^ 1e5 -> count { .digits.sort.run_length.map{.tail}.max*2 > .len }
+# 1e5 ..^ 1e6 -> count { .digits.sort.run_length.map{.tail}.max*2 > .len }
+
+func f(n) {
+
+    if (n == 1) {
+        return 9
+    }
+
+    if (n == 2) {
+        return 9
+    }
+
+    var j = (n.dec>>1)
+    var count = 9
+
+    for i in (1 .. j) {
+        count += (9*i * (9**i * n))
+    }
+
+    if (n >= 6) {
+        for i in (1 .. j+1) {
+            count += 9**(j+1)
+        }
+    }
+
+    count
+}
+
+say f(1)
+say f(2)
+say f(3)
+say f(4)
+say f(5)
+say f(6)
+
+assert_eq(f(1), 9)
+assert_eq(f(2), 9)
+assert_eq(f(3), 252)
+assert_eq(f(4), 333)
+assert_eq(f(5), 7704)
+assert_eq(f(6), 11430)
+
+assert_eq(f(1)+f(2)+f(3), 270)
+assert_eq(f(1)+f(2)+f(3)+f(4), 603)
+assert_eq(f(1)+f(2)+f(3)+f(4)+f(5), 8307)
+
+say f(1)+f(2)
+say f(1)+f(2)+f(3)
+say f(1)+f(2)+f(3)+f(4)
+
+say map(1..10, f)
+say map(1..10, f).sum
+
+assert_eq(map(1..10, f).sum, 21893256)

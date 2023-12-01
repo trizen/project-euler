@@ -5,6 +5,8 @@
 # The numbers n seem to be the squares and also numbers of the form:
 #   p * k^2, where p is a prime >= 41
 
+# https://projecteuler.net/problem=804
+
 var total = 0
 
 #var N = 1548

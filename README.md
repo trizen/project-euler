@@ -272,6 +272,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [784 Reciprocal Pairs (v2)](./Perl/784%20Reciprocal%20Pairs%20--%20v2.pl)
     * [795 Alternating GCD Sum](./Perl/795%20Alternating%20GCD%20Sum.pl)
     * [800 Hybrid Integers](./Perl/800%20Hybrid%20Integers.pl)
+    * [816 Shortest distance among points](./Perl/816%20Shortest%20distance%20among%20points.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -468,4 +469,5 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [784 Reciprocal Pairs](./Sidef/784%20Reciprocal%20Pairs.sf)
     * [800 Hybrid Integers](./Sidef/800%20Hybrid%20Integers.sf)
     * [808 Reversible prime squares](./Sidef/808%20Reversible%20prime%20squares.sf)
+    * [816 Shortest distance among points](./Sidef/816%20Shortest%20distance%20among%20points.sf)
     * [836 A Bold Proposition](./Sidef/836%20A%20Bold%20Proposition.sf)
