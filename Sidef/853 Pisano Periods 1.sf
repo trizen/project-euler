@@ -1,0 +1,11 @@
+#!/usr/bin/ruby
+
+# Pisano Periods 1
+# https://projecteuler.net/problem=853
+
+# Runtime: 0.878s
+
+var n = 120
+var limit = 1e9
+
+say n.fib.divisors(limit).grep{ .pisano_period == n }.sum

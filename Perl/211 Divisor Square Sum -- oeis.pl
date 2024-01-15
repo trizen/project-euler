@@ -12,7 +12,7 @@ use strict;
 
 use LWP::Simple qw(get);
 
-my $url   = 'http://oeis.org/A046655/b046655.txt';
+my $url   = 'https://oeis.org/A046655/b046655.txt';
 my $limit = 64_000_000;
 
 my $sum = 0;

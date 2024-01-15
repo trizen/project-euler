@@ -273,6 +273,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [795 Alternating GCD Sum](./Perl/795%20Alternating%20GCD%20Sum.pl)
     * [800 Hybrid Integers](./Perl/800%20Hybrid%20Integers.pl)
     * [816 Shortest distance among points](./Perl/816%20Shortest%20distance%20among%20points.pl)
+    * [853 Pisano Periods 1](./Perl/853%20Pisano%20Periods%201.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -471,3 +472,4 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [808 Reversible prime squares](./Sidef/808%20Reversible%20prime%20squares.sf)
     * [816 Shortest distance among points](./Sidef/816%20Shortest%20distance%20among%20points.sf)
     * [836 A Bold Proposition](./Sidef/836%20A%20Bold%20Proposition.sf)
+    * [853 Pisano Periods 1](./Sidef/853%20Pisano%20Periods%201.sf)

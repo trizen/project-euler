@@ -1,0 +1,24 @@
+#!/usr/bin/ruby
+
+# Larger Digit Permutation
+# https://projecteuler.net/problem=862
+
+var k = 3
+var sum = 0
+
+for n in (10**(k-1) .. (10**k - 1)) {
+    var D = n.digits.flip
+
+    var count = 0
+
+    loop {
+        say [count, D.flip.digits2num]
+        D.next_permutation || break
+        count += 1
+    }
+
+    say ''
+    sum += count
+}
+
+say sum

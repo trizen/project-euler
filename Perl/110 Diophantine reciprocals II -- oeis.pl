@@ -16,7 +16,7 @@ use Math::AnyNum qw(:overload);
 
 use ntheory qw(divisors);
 
-for my $line (split(/\R/, get('http://oeis.org/A002093/b002093.txt'))) {
+for my $line (split(/\R/, get('https://oeis.org/A002093/b002093.txt'))) {
     my $n = (split(' ', $line))[-1] >> 1;
     if ((divisors($n * $n) + 1) >> 1 > 4e6) {
         say $n;

@@ -8,7 +8,7 @@
 # https://projecteuler.net/problem=64
 
 # Algorithm from:
-#   http://web.math.princeton.edu/mathlab/jr02fall/Periodicity/mariusjp.pdf
+#   https://web.math.princeton.edu/mathlab/jr02fall/Periodicity/mariusjp.pdf
 
 # Runtime: 0.170s
 
