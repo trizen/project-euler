@@ -1,0 +1,164 @@
+#!/usr/bin/ruby
+
+# Author: Trizen
+# Date: 12 February 2024
+# https://github.com/trizen
+
+# https://projecteuler.net/problem=96
+
+# Runtime: 35 seconds
+
+func is_valid(board, row, col, num) {
+
+    # Check if the number is not present in the current row and column
+    for i in ^9 {
+        if ((board[row][i] == num) || (board[i][col] == num)) {
+            return false
+        }
+    }
+
+    # Check if the number is not present in the current 3x3 subgrid
+    var (start_row, start_col) = (3*idiv(row, 3), 3*idiv(col, 3))
+
+    for i in ^3, j in ^3 {
+        if (board[start_row + i][start_col + j] == num) {
+            return false
+        }
+    }
+
+    return true
+}
+
+func find_empty_locations(board) {
+
+    var locations = []
+
+    # Find all empty positions (cells with 0)
+    for i in ^9, j in ^9 {
+        if (board[i][j] == 0) {
+            locations << [i, j]
+        }
+    }
+
+    return locations
+}
+
+func find_empty_location(board) {
+
+    # Find an empty position (cell with 0)
+    for i in ^9, j in ^9 {
+        if (board[i][j] == 0) {
+            return (i, j)
+        }
+    }
+
+    return (nil, nil)  # If the board is filled
+}
+
+func solve_sudoku_fallback(board) {
+    var (row, col) = find_empty_location(board)
+
+    if (!defined(row) && !defined(col)) {
+        return true  # Puzzle is solved
+    }
+
+    for num in (1..9) {
+        if (is_valid(board, row, col, num)) {
+            # Try placing the number
+            board[row][col] = num
+
+            # Recursively try to solve the rest of the puzzle
+            if (__FUNC__(board)) {
+                return true
+            }
+
+            # If placing the current number doesn't lead to a solution, backtrack
+            board[row][col] = 0
+        }
+    }
+
+    return false  # No solution found
+}
+
+func solve_sudoku(board) {
+
+    loop {
+
+        # Return early when the first 3 values are solved
+        if ((board[0][0] != 0) && (board[0][1] != 0) && (board[0][2] != 0)) {
+            return board
+        }
+
+        var empty_locations = find_empty_locations(board) || break
+
+        var found = false
+
+        # Solve easy cases
+        for i,j in empty_locations {
+            var(count=0, value=0)
+            for n in (1..9) {
+                is_valid(board, i, j, n) || next
+                break if (++count > 1)
+                value = n
+            }
+            if (count == 1) {
+                board[i][j] = value
+                found ||= true
+            }
+        }
+
+        next if found
+
+        # Solve more complex cases
+        var stats = []
+        for i,j in empty_locations {
+            stats[i][j] = (1..9 -> grep{|n| is_valid(board, i, j, n) })
+        }
+
+        var cols = []
+        var rows = []
+
+        for i,j in empty_locations {
+            stats[i][j].each {|v|
+                cols[j][v] := 0 ++
+                rows[i][v] := 0 ++
+            }
+        }
+
+        found = false
+
+        for i,j in empty_locations {
+            stats[i][j].each {|v|
+                if (cols[j][v] == 1) {
+                    board[i][j] = v
+                    found ||= true
+                }
+                elsif (rows[i][v] == 1) {
+                    board[i][j] = v
+                    found ||= true
+                }
+            }
+        }
+
+        next if found
+
+        # Give up and try brute-force
+        say "Fallback: #{empty_locations.len}"
+        solve_sudoku_fallback(board)
+        return board
+    }
+
+    return board
+}
+
+var grids = File(ARGV[0] \\ "p096_sudoku.txt").open_r.grep(/^[0-9]+$/)
+
+var sum = 0
+
+while (grids) {
+    var grid     = grids.splice(0,9).map{ .chars.map{.to_i} }
+    var solution = solve_sudoku(grid)
+    sum += Num(join('', solution[0][0,1,2]))
+}
+
+say sum

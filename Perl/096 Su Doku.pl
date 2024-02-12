@@ -61,7 +61,7 @@ sub solve_sudoku {
     SOLUTION_FOUND: return;
 }
 
-open my $fh, '<', 'p096_sudoku.txt'
+open my $fh, '<:raw', ($ARGV[0] // 'p096_sudoku.txt')
   or die "Can't open file `p096_sudoku.txt`: $!";
 chomp(my @grids = grep { /^[0-9]+$/ } <$fh>);
 close $fh;

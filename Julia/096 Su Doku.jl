@@ -7,7 +7,7 @@
 
 # https://projecteuler.net/problem=96
 
-# Runtime: 5.685s
+# Runtime: 2.127s
 
 function check(i, j)
     id, im = div(i, 9), mod(i, 9)
