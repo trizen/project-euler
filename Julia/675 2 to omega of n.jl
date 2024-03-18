@@ -12,7 +12,7 @@
 
 # By keeping track of the partial products, we find sigma_0(k!^2).
 
-# Runtime: ~21.374s
+# Runtime: 17.373s
 
 # https://projecteuler.net/problem=675
 

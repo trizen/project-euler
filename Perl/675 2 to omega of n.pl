@@ -12,7 +12,7 @@
 
 # By keeping track of the partial products, we find sigma_0(k!^2).
 
-# Runtime: ~48.085s
+# Runtime: 44.576s
 
 # https://projecteuler.net/problem=675
 
@@ -25,7 +25,7 @@ use experimental qw(signatures declared_refs);
 
 sub F ($N, $mod) {
 
-    my %table;
+    my @table;
     my $total = 0;
     my $partial = 1;
 
@@ -35,9 +35,9 @@ sub F ($N, $mod) {
 
         foreach my \@pp (factor_exp($k)) {
             my ($p, $e) = @pp;
-            $old = mulmod($old, 2 * $table{$p} + 1, $mod) if exists($table{$p});
-            $table{$p} += $e;
-            $partial = mulmod($partial, 2 * $table{$p} + 1, $mod);
+            $old = mulmod($old, 2 * $table[$p] + 1, $mod) if defined($table[$p]);
+            $table[$p] += $e;
+            $partial = mulmod($partial, 2 * $table[$p] + 1, $mod);
         }
 
         $partial = divmod($partial, $old, $mod);    # remove the old product

@@ -43,6 +43,7 @@ my $main_dir     = File::Spec->curdir;
 
 # Directories to ignore
 my %ignore = (
+              'Resources'        => 1,
               'Yet to solve'     => 1,
               'Trashed attempts' => 1,
              );

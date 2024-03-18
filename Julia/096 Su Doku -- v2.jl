@@ -127,14 +127,16 @@ function solve_sudoku(board)
             stats["$i $j"] = arr
         end
 
-        cols = Dict{String,Int}()
-        rows = Dict{String,Int}()
+        cols    = Dict{String,Int}()
+        rows    = Dict{String,Int}()
+        subgrid = Dict{String,Int}()
 
         for (i,j) in empty_locations
             for v in stats["$i $j"]
 
                 k1 = "$j $v"
                 k2 = "$i $v"
+                k3 = join([3*div(i-1,3), 3*div(j-1,3), v], " ")
 
                 if !haskey(cols, k1)
                     cols[k1] = 1
@@ -147,15 +149,20 @@ function solve_sudoku(board)
                 else
                     rows[k2] += 1
                 end
+
+                if !haskey(subgrid, k3)
+                    subgrid[k3] = 1
+                else
+                    subgrid[k3] += 1
+                end
             end
         end
 
         for (i,j) in empty_locations
             for v in stats["$i $j"]
-                if (cols["$j $v"] == 1)
-                    board[i][j] = v
-                    found = true
-                elseif (rows["$i $v"] == 1)
+                if (cols["$j $v"] == 1 ||
+                    rows["$i $v"] == 1 ||
+                    subgrid[join([3*div(i-1,3), 3*div(j-1,3), v], " ")] == 1)
                     board[i][j] = v
                     found = true
                 end

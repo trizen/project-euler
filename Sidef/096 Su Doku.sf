@@ -6,7 +6,7 @@
 
 # https://projecteuler.net/problem=96
 
-# Runtime: 35 seconds
+# Runtime: 31.915s
 
 func is_valid(board, row, col, num) {
 
@@ -117,23 +117,22 @@ func solve_sudoku(board) {
 
         var cols = []
         var rows = []
+        var subgrid = []
 
         for i,j in empty_locations {
             stats[i][j].each {|v|
                 cols[j][v] := 0 ++
                 rows[i][v] := 0 ++
+                subgrid[3*idiv(i,3)][3*idiv(j,3)][v] := 0 ++
             }
         }
 
-        found = false
-
         for i,j in empty_locations {
             stats[i][j].each {|v|
-                if (cols[j][v] == 1) {
-                    board[i][j] = v
-                    found ||= true
-                }
-                elsif (rows[i][v] == 1) {
+                if ((cols[j][v] == 1) ||
+                    (rows[i][v] == 1) ||
+                    (subgrid[3*idiv(i,3)][3*idiv(j,3)][v] == 1)
+                ) {
                     board[i][j] = v
                     found ||= true
                 }

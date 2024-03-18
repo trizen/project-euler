@@ -6,7 +6,7 @@
 
 # https://projecteuler.net/problem=96
 
-# Runtime: 0.607s
+# Runtime: 0.555s
 
 use 5.036;
 
@@ -131,25 +131,22 @@ sub solve_sudoku ($board) {
             $stats[$i][$j] = [grep { is_valid($board, $i, $j, $_) } 1 .. 9];
         }
 
-        my (@rows, @cols);
+        my (@rows, @cols, @subgrid);
         foreach my $ij (@empty_locations) {
             my ($i, $j) = @$ij;
             foreach my $v (@{$stats[$i][$j]}) {
                 ++$cols[$j][$v];
                 ++$rows[$i][$v];
+                ++$subgrid[3 * int($i / 3)][3 * int($j / 3)][$v];
             }
         }
-
-        $found = 0;
 
         foreach my $ij (@empty_locations) {
             my ($i, $j) = @$ij;
             foreach my $v (@{$stats[$i][$j]}) {
-                if ($cols[$j][$v] == 1) {
-                    $board->[$i][$j] = $v;
-                    $found ||= 1;
-                }
-                elsif ($rows[$i][$v] == 1) {
+                if (   $cols[$j][$v] == 1
+                    or $rows[$i][$v] == 1
+                    or $subgrid[3 * int($i / 3)][3 * int($j / 3)][$v] == 1) {
                     $board->[$i][$j] = $v;
                     $found ||= 1;
                 }
