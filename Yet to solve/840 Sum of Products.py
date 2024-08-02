@@ -1,3 +1,7 @@
+#!/usr/bin/python
+
+# https://projecteuler.net/problem=840
+
 from sympy import primerange, isprime, factorint
 
 def D(n, memo):

@@ -275,6 +275,7 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [795 Alternating GCD Sum](./Perl/795%20Alternating%20GCD%20Sum.pl)
     * [800 Hybrid Integers](./Perl/800%20Hybrid%20Integers.pl)
     * [816 Shortest distance among points](./Perl/816%20Shortest%20distance%20among%20points.pl)
+    * [820 Nth Digit of Reciprocals](./Perl/820%20Nth%20Digit%20of%20Reciprocals.pl)
     * [853 Pisano Periods 1](./Perl/853%20Pisano%20Periods%201.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)

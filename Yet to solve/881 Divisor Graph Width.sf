@@ -1,0 +1,59 @@
+#!/usr/bin/ruby
+
+# Divisor Graph Width
+# https://projecteuler.net/problem=881
+
+# Too slow...
+
+func g(n) {
+
+    var D = [n]
+    var max = 0
+
+    loop {
+        D = D.map {|n| n.prime_divisors.map{idiv(n,_)}... }.uniq
+        if (D.len > max) {
+            max = D.len
+        }
+        elsif (D.len < max) {
+            break
+        }
+        D || break
+    }
+
+    return max
+}
+
+assert_eq(g(45), 2)
+assert_eq(g(5040), 12)
+
+var max = 0
+
+for n in (1..1e9) {
+    var t = g(n)
+    if (t > max) {
+        max = t
+        say "g(#{n}) = #{t}"
+        break if (max >= 1e4)
+    }
+}
+
+__END__
+g(4) = 1
+g(12) = 2
+g(30) = 3
+g(60) = 4
+g(180) = 5
+g(210) = 6
+g(420) = 7
+g(840) = 8
+g(1260) = 10
+g(2520) = 11
+g(4620) = 14
+g(9240) = 15
+g(12600) = 16
+g(13860) = 18
+g(27720) = 22
+g(55440) = 23
+g(60060) = 25
+g(69300) = 26
