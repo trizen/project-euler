@@ -1,0 +1,24 @@
+#!/usr/bin/ruby
+
+# Pisano Periods 2
+# https://projecteuler.net/problem=854
+
+# See also:
+#   https://oeis.org/A005013
+
+# Runtime: 6.771s
+
+func P(n, m=1_234_567_891) {
+
+    var v = 2
+
+    for k in (2..n `by` 2) {
+        v = mulmod(v, (k.is_congruent(0, 4) ? fibmod(k>>1, m) : lucasmod(k>>1, m)), m)
+    }
+
+    return v
+}
+
+assert_eq(P(10), 264)
+
+say P(1e6)

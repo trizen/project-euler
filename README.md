@@ -277,6 +277,9 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [816 Shortest distance among points](./Perl/816%20Shortest%20distance%20among%20points.pl)
     * [820 Nth Digit of Reciprocals](./Perl/820%20Nth%20Digit%20of%20Reciprocals.pl)
     * [853 Pisano Periods 1](./Perl/853%20Pisano%20Periods%201.pl)
+    * [853 Pisano Periods 1 (v2)](./Perl/853%20Pisano%20Periods%201%20--%20v2.pl)
+    * [853 Pisano Periods 1 (v3)](./Perl/853%20Pisano%20Periods%201%20--%20v3.pl)
+    * [854 Pisano Periods 2](./Perl/854%20Pisano%20Periods%202.pl)
 * Raku
     * [601 Divisibility streaks](./Raku/601%20Divisibility%20streaks.pl6)
 * Sidef
@@ -477,3 +480,5 @@ Thanks, Project Euler! The way to go! This repository will remain public.
     * [816 Shortest distance among points](./Sidef/816%20Shortest%20distance%20among%20points.sf)
     * [836 A Bold Proposition](./Sidef/836%20A%20Bold%20Proposition.sf)
     * [853 Pisano Periods 1](./Sidef/853%20Pisano%20Periods%201.sf)
+    * [854 Pisano Periods 2](./Sidef/854%20Pisano%20Periods%202.sf)
+    * [854 Pisano Periods 2 (v2)](./Sidef/854%20Pisano%20Periods%202%20--%20v2.sf)

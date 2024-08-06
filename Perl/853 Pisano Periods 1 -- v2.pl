@@ -3,7 +3,7 @@
 # Pisano Periods 1
 # https://projecteuler.net/problem=853
 
-# Runtime: 0.364s
+# Runtime: 0.345s
 
 use 5.036;
 use List::Util qw(first);
@@ -15,6 +15,31 @@ sub fibonacci ($n) {
 
 sub fibmod ($d, $n) {
     (lucas_sequence($n, 1, -1, $d))[0];
+}
+
+sub divisors_le ($n, $k) {
+
+    my @d  = (1);
+    my @pp = grep { $_->[0] <= $k } factor_exp($n);
+
+    foreach my $pp (@pp) {
+
+        my ($p, $e) = @$pp;
+
+        my @t;
+        my $r = 1;
+
+        for my $i (1 .. $e) {
+            $r *= $p;
+            foreach my $u (@d) {
+                push(@t, $u * $r) if ($u * $r <= $k);
+            }
+        }
+
+        push @d, @t;
+    }
+
+    return @d;
 }
 
 sub pisano_period_pp ($p, $k = 1) {
@@ -42,4 +67,4 @@ sub my_pisano_period ($n) {
 my $n     = 120;
 my $limit = 1e9;
 
-say vecsum(grep { my_pisano_period($_) == $n } grep { $_ <= $limit } divisors(fibonacci($n)));
+say vecsum(grep { my_pisano_period($_) == $n } divisors_le(fibonacci($n), $limit));

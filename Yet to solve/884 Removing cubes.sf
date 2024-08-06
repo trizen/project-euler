@@ -1,0 +1,20 @@
+#!/usr/bin/ruby
+
+# Removing Cubes
+# https://projecteuler.net/problem=884
+
+func a(n) {
+
+    var count = 0
+
+    loop {
+        var v = (n - n.icbrt**3)
+        ++count
+        break if (v == 0)
+        n = v
+    }
+
+    return count
+}
+
+say sum(1..99, {|k| a(k) })     #=> 512
