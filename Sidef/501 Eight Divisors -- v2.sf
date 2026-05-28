@@ -1,0 +1,127 @@
+#!/usr/bin/ruby
+
+# Daniel "Trizen" Șuteu
+# Date: 19 May 2026
+# https://github.com/trizen
+
+# Eight Divisors
+# https://projecteuler.net/problem=501
+
+# Runtime: 45.146s
+
+func count_prime_signature_numbers(n, prime_signature) {
+
+    # Handle empty prime signature
+    if (prime_signature.len == 0) {
+        return 1 if (1 <= n)
+        return 0
+    }
+
+    return 0 if (n <= 0)
+
+    var count = 0
+
+    func generate(m, lo, k, P, sum_e, j=0) {
+
+        var e = P[k-1]
+        var hi = idiv(n,m).iroot(sum_e)
+
+        if (lo > hi) {
+            return nil
+        }
+
+        if (k == 1) {
+            count += (hi.prime_count - j)
+            return nil
+        }
+
+        if (k == 2) {
+            var e2 = P[0]
+            primes(lo, hi).each {|p|
+                var t = (m * ipow(p, e))
+                var u = idiv(n,t).iroot(e2)
+                count += (u.prime_count - ++j)
+            }
+            return nil
+        }
+
+        var p = lo
+        while (p <= hi) {
+            var t = (m * ipow(p,e))
+            var r = p.next_prime
+            __FUNC__(t, r, k-1, P, sum_e - e, ++j)
+            p = r
+        }
+    }
+
+    var sum_e = prime_signature.sum || return 0
+
+    if (sum_e > n.ilog2) {
+        return 0
+    }
+
+    prime_signature.sort.uniq_permutations {|*a|
+        generate(1, 2, a.len, a, sum_e)
+    }
+
+    return count
+}
+
+func count_prime_signature_numbers_in_range(A, B, signature) {
+
+    var term_1 = count_prime_signature_numbers(A-1, signature)
+    var term_2 = count_prime_signature_numbers(B, signature)
+
+    term_2 - term_1
+}
+
+func multiplicative_partitions(n, max_value = n) {
+
+    var results = []
+    var divs = n.divisors.slice(1)  # divisors greater than 1
+
+    var path = []
+
+    func (target, min_idx) {
+
+        if (target == 1) {
+            results << [path...]    # copy
+            return nil
+        }
+
+        for i in (min_idx .. divs.end) {
+            var d = divs[i]
+
+            # Prune branch if the divisor exceeds the remaining target
+            break if (d > target)
+            break if (d > max_value)
+
+            if (target % d == 0) {
+                path.push(d)
+                __FUNC__(target/d, i)
+                path.pop
+            }
+        }
+    }(n, 0)
+
+    return results
+}
+
+func count_inverse_tau (A, B, n) {
+
+    var signatures = multiplicative_partitions(n, B.ilog2 + 1).map {
+        .map{ .dec }
+    }
+
+    var count = 0
+    signatures.each {|sig|
+        count += count_prime_signature_numbers_in_range(A, B, sig)
+    }
+    return count
+}
+
+assert_eq(count_inverse_tau(1, 100,  8), 10)
+assert_eq(count_inverse_tau(1, 1000, 8), 180)
+assert_eq(count_inverse_tau(1, 1e6,  8), 224427)
+
+say count_inverse_tau(1, 1e12, 8)

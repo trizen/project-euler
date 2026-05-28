@@ -1,0 +1,8 @@
+#!/usr/bin/ruby
+
+# Eight Divisors
+# https://projecteuler.net/problem=501
+
+# Runtime: 3.919s
+
+say tau_inverse_len(1, 1e12, 8)     # built-in

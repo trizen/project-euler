@@ -1,0 +1,30 @@
+#!/usr/bin/ruby
+
+# Recursive Sequence Summation
+# https://projecteuler.net/problem=918
+
+# Runtime: 0.249s
+
+func a(n) is cached {
+
+    return 1 if (n == 1)
+
+    if (n.is_even) {
+        return (2 * a(n / 2))
+    }
+
+    a((n-1)/2) - 3*a((n-1)/2 + 1)
+}
+
+func S(n) {
+
+    if (n.is_even) {
+        return (4 - a(n/2))
+    }
+
+    4 - 3*a((n+1)/2)
+}
+
+assert_eq(S(10), -13)
+
+say S(10**12)

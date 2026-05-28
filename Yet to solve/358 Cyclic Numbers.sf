@@ -1,0 +1,30 @@
+#!/usr/bin/ruby
+
+var n = bsearch_min(1, 10**9, {|k|
+    (0.00000000137 <=> 1/k)
+})
+
+n -= 6*1e6
+
+n = 724637687-10
+
+loop {
+    ++n
+
+    znorder(10, n) == (n-1) || next
+    var prefix = idiv(10**11, n)
+
+    if (prefix == 137) {
+
+        for k in (5750..10000) {
+            var v = powmod(n, -1, 10**k)
+            if (v.to_s.contains("56789")) {
+                if (v.to_s =~ /(137\d+56789)/) {|m|
+                    var D = Num(m[0]).digits_sum
+                    say "Sum: #{D}"
+                    Sys.exit(0)
+                }
+            }
+        }
+    }
+}

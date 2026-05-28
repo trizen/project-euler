@@ -1,0 +1,11 @@
+#!/usr/bin/ruby
+
+# Under the Rainbow
+# https://projecteuler.net/problem=493
+
+# To find the probability that colour 1 is not present, we must choose all 20 balls from the other 6 colours.
+#   - The total number of balls of the other 6 colours is 70 - 10 = 60.
+#   - The total number of ways to choose 20 balls from the 60 available is binomial(60, 20)
+#   - The total number of ways to choose 20 balls from the entire urn of 70 is (70, 20)
+
+say round(7 * (1 - binomial(70 - 10, 20)/binomial(70, 20)), -9)

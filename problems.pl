@@ -114,6 +114,9 @@ foreach my $id (1 .. $problems_count) {
     if ($content =~ m{\bDifficulty rating: (\d+)%}) {
         $difficulty = $1;
     }
+    elsif ($content =~ m{Difficulty: Level \d+ \[(\d+)%\]}) {
+        $difficulty = $1;
+    }
     elsif (UNCACHE_RECENT) {
         say ":: Uncaching recent problem: $id";
         $lwp->uncache;
